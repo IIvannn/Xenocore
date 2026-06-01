@@ -1,0 +1,90 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
+
+
+public class PlayerMovement : MonoBehaviour
+{
+    public CharacterController controller;
+    public float speed = 5f;
+    public float dashSpeed = 10f;
+    public float dashTime = 1f;
+    public float dashCooldwon = 5f;
+    public int dashCharges = 2;
+    float sprintSpeedBonus = 0;
+    int dashesLeft;
+    bool dashOnCooldwon = false;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        dashesLeft = dashCharges;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+
+        Vector2 input = Vector2.zero;
+
+        if (Keyboard.current.wKey.isPressed)
+        {
+            input.y += 1;
+        }
+        if (Keyboard.current.sKey.isPressed)
+        {
+            input.y -= 1;
+        }
+        if (Keyboard.current.dKey.isPressed)
+        {
+            input.x += 1;
+        }
+        if (Keyboard.current.aKey.isPressed)
+        {
+            input.x -= 1;
+        }
+
+
+        Vector3 move = (transform.right * input.x + transform.forward * input.y).normalized;
+        controller.Move(move * (speed + sprintSpeedBonus) * Time.deltaTime);
+
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            if (dashesLeft > 0)
+            {
+                StartCoroutine(Dash());
+            }
+            if (!dashOnCooldwon)
+            {
+                StartCoroutine(DashCooldown());
+            }
+            
+        }
+
+        IEnumerator Dash()
+        {
+            
+
+            dashesLeft--;
+            Debug.Log("dashes left: " + dashesLeft);
+            float startTime = Time.time;
+
+            while (Time.time < startTime + dashTime)
+            {
+                controller.Move(move * dashSpeed * Time.deltaTime);
+                yield return null;
+            }
+        }
+
+        IEnumerator DashCooldown()
+        {
+            dashOnCooldwon = true;
+            Debug.Log("dash cooldwon started");
+            yield return new WaitForSeconds(dashCooldwon);
+            dashOnCooldwon = false;
+            Debug.Log("dash cooldwon finished");
+            dashesLeft = dashCharges;
+        }
+    }
+}
