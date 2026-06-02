@@ -6,6 +6,7 @@ using UnityEngine.InputSystem.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static Transform playerPosition;
     public CharacterController controller;
     public float speed = 5f;
     public float dashSpeed = 10f;
