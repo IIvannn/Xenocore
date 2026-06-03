@@ -8,6 +8,27 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/IVAN/scenes/Ivanroom.unity
+    guid: 2976aee4bd8c96449b25f5fe3b01643f
+  - enabled: 1
+    path: Assets/IVAN/scenes/Ivanroom 1.unity
+    guid: d7d94c4b1d6a3f64e8541475702d12cd
+  - enabled: 1
+    path: Assets/IVAN/scenes/Ivanroom 2.unity
+    guid: 7cbc0b75ef6f69a46b6a1fe9786a875e
+  - enabled: 1
+    path: Assets/IVAN/scenes/Ivanroom 3.unity
+    guid: cf174465f7c57f340b33a0190d3225df
+  - enabled: 1
+    path: Assets/IVAN/scenes/IvanroomEnd.unity
+    guid: cc732f192f713bd4e96d14fe8a77d667
+  - enabled: 1
+    path: Assets/IVAN/scenes/Spawnroom.unity
+    guid: be595a3a841b2c04fa5d462ad75608d2
+  - enabled: 1
+    path: Assets/IVAN/scenes/IvanroomShop.unity
+    guid: 52faf24fdd236cb4797ff3fbf57cf436
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

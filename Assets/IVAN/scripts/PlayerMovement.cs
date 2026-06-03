@@ -6,8 +6,10 @@ using UnityEngine.InputSystem.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("References")]
     public static Transform playerPosition;
     public CharacterController controller;
+    [Header("Movement")]
     public float speed = 5f;
     public float dashSpeed = 10f;
     public float dashTime = 1f;
@@ -20,12 +22,13 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         dashesLeft = dashCharges;
+        playerPosition = gameObject.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        
 
         Vector2 input = Vector2.zero;
 
