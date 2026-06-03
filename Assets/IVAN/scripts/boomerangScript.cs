@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class boomerangScript : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public float returnSpeed = 1.0f;
+    public float timeBeforeReturn = 3f;
     public float rotateSpeed = 10f;
     bool returning = false;
     public GameObject source;
@@ -17,7 +19,7 @@ public class boomerangScript : MonoBehaviour
     {
         //Destroy(gameObject, 8);
         //shootsnd.Play();
-        //Debug.Log(type);
+        StartCoroutine(Return());
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class boomerangScript : MonoBehaviour
         Vector3 dir = (source.transform.position - transform.position).normalized;
         transform.position += dir * returnSpeed * Time.deltaTime;
     }
+
     void RotateToPlayer()
     {
         Vector3 dir = source.transform.position - transform.position;
@@ -78,4 +81,11 @@ public class boomerangScript : MonoBehaviour
         }
     }
 
+
+    IEnumerator Return()
+    {
+        Debug.Log("testtttt");
+        yield return new WaitForSeconds(timeBeforeReturn);
+        returning = true;
+    }
 }

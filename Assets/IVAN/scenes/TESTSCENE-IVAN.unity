@@ -946,7 +946,7 @@ Transform:
   m_GameObject: {fileID: 458939016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.05, y: -2.16, z: -9.23}
+  m_LocalPosition: {x: -9.32, y: -0.93, z: -8.96}
   m_LocalScale: {x: 2.6529, y: 6.1406674, z: 2.6529}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1071,7 +1071,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.05
+  m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -1204,13 +1204,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47924896fb35bd84d866e7137e4625c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
+  firePoint: {fileID: 2064448516}
+  boomerang: {fileID: 2549096147295879009, guid: 2bbf14146cff70e42bc9e5af216266c1, type: 3}
   firerate: 0.1
   boomerangSpeed: 20
-  boomerangReturnSpeed: 30
+  boomerangReturnSpeed: 35
+  boomerangTimeBeforeReturn: 1
   ammo: 1
   currentAmmo: 1
-  projectile: {fileID: 2549096147295879009, guid: 2bbf14146cff70e42bc9e5af216266c1, type: 3}
-  firePoint: {fileID: 2064448516}
 --- !u!1 &811583903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,7 +2169,7 @@ Transform:
   m_GameObject: {fileID: 1879982483}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: -1.62, z: -7.79}
+  m_LocalPosition: {x: -8.51, y: -1.62, z: -7.93}
   m_LocalScale: {x: 2.6529, y: 6.1406674, z: 2.6529}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2450,13 +2451,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030834601}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27516598, y: -0, z: -0, w: 0.96139675}
-  m_LocalPosition: {x: 0, y: 5.91, z: -7.8}
+  m_LocalRotation: {x: 0.34204513, y: -0, z: -0, w: 0.93968356}
+  m_LocalPosition: {x: 0, y: 8.68, z: -9.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 665172366}
-  m_LocalEulerAnglesHint: {x: 31.944, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40.003, y: 0, z: 0}
 --- !u!114 &2030834605
 MonoBehaviour:
   m_ObjectHideFlags: 0
