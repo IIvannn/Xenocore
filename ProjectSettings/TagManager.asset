@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - terrain
+  - Enemy
   layers:
   - Default
   - TransparentFX

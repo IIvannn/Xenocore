@@ -8,6 +8,7 @@ public class boomerangScript : MonoBehaviour
     public float returnSpeed = 1.0f;
     public float timeBeforeReturn = 3f;
     public float rotateSpeed = 10f;
+    public float damage = 1f;
     bool returning = false;
     public GameObject source;
     public AudioSource shootsnd;
@@ -78,6 +79,12 @@ public class boomerangScript : MonoBehaviour
             other.GetComponent<PlayerShoot>().currentAmmo = other.GetComponent<PlayerShoot>().ammo;
             //Debug.Log("Player has " + other.GetComponent<PlayerShoot>().currentAmmo + " ammo");
             destroyProj();
+        }
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.GetComponent<EnemyDamage>().TakeDamage(damage);
+            source.GetComponent<PlayerShoot>().onHit();
         }
     }
 

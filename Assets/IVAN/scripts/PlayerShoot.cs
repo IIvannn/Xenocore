@@ -13,6 +13,7 @@ public class PlayerShoot : MonoBehaviour
     public float boomerangSpeed;
     public float boomerangReturnSpeed;
     public float boomerangTimeBeforeReturn;
+    public float boomerangDamage = 10;
     
 
     
@@ -48,9 +49,15 @@ public class PlayerShoot : MonoBehaviour
             ball.GetComponent<boomerangScript>().moveSpeed = boomerangSpeed;
             ball.GetComponent<boomerangScript>().returnSpeed = boomerangReturnSpeed;
             ball.GetComponent<boomerangScript>().timeBeforeReturn = boomerangTimeBeforeReturn;
+            ball.GetComponent<boomerangScript>().damage = boomerangDamage;
 
             nextFireTime = Time.time + firerate;
         }
 
+    }
+
+    public void onHit()
+    {
+        Debug.Log("enemy hit");
     }
 }
