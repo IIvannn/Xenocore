@@ -32,7 +32,7 @@ public class DoorScript : MonoBehaviour
                 (numbers[i], numbers[j]) = (numbers[j], numbers[i]);
             }
 
-            Debug.Log(string.Join(", ", numbers));
+            Debug.Log("Room order:  "+string.Join(", ", numbers));
         }
         
     }
@@ -40,19 +40,23 @@ public class DoorScript : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
-        if (distance <= interactionRange)
+        if (!PlayerDamage.dead)
         {
-            indicator.SetActive(true);
-            if (Keyboard.current.eKey.wasPressedThisFrame)
+            float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
+            if (distance <= interactionRange)
             {
-                Enter();
+                indicator.SetActive(true);
+                if (Keyboard.current.eKey.wasPressedThisFrame)
+                {
+                    Enter();
+                }
+            }
+            else
+            {
+                indicator.SetActive(false);
             }
         }
-        else
-        {
-            indicator.SetActive(false);
-        }
+        
     }
 
     void Enter()

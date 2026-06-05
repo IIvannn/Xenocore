@@ -13,6 +13,7 @@ public class EnemyScript : MonoBehaviour
     public Transform firePoint;
     public NavMeshAgent agent;
 
+    public bool dead = false;
     //string state = "idle";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,12 +25,16 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (PlayerMovement.playerPosition.position != null)
+        if (!PlayerDamage.dead)
         {
-            agent.SetDestination(PlayerMovement.playerPosition.position);
-            agent.speed = movementSpeed;
+            if (dead) return;
+            if (PlayerMovement.playerPosition.position != null)
+            {
+                agent.SetDestination(PlayerMovement.playerPosition.position);
+                agent.speed = movementSpeed;
+            }
         }
+        
         
     }
 }

@@ -1073,6 +1073,7 @@ GameObject:
   - component: {fileID: 665172365}
   - component: {fileID: 665172364}
   - component: {fileID: 665172363}
+  - component: {fileID: 665172368}
   - component: {fileID: 665172362}
   - component: {fileID: 665172367}
   - component: {fileID: 665172361}
@@ -1122,8 +1123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   controller: {fileID: 665172361}
   speed: 7.5
-  dashSpeed: 25
-  dashTime: 0.1
+  dashSpeed: 17
+  dashTime: 0.2
   dashCooldwon: 3
   dashCharges: 2
 --- !u!136 &665172363
@@ -1241,9 +1242,23 @@ MonoBehaviour:
   boomerangSpeed: 20
   boomerangReturnSpeed: 35
   boomerangTimeBeforeReturn: 1
-  boomerangDamage: 10
+  boomerangDamage: 100
   ammo: 1
   currentAmmo: 1
+--- !u!114 &665172368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665172360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca5749847ed82d940810e694eae21501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDamage
+  hp: 100
+  currentHp: 1
 --- !u!1 &811583903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1515,7 @@ GameObject:
   - component: {fileID: 957696008}
   - component: {fileID: 957696007}
   - component: {fileID: 957696012}
+  - component: {fileID: 957696014}
   - component: {fileID: 957696006}
   - component: {fileID: 957696013}
   m_Layer: 0
@@ -1548,6 +1564,7 @@ MonoBehaviour:
   attackCooldown: 0.5
   firePoint: {fileID: 473599355}
   agent: {fileID: 957696006}
+  dead: 0
 --- !u!136 &957696008
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1683,6 +1700,25 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &957696014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957696005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338d13c6dae8f7e42b990ec315046edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyShoot
+  projectile: {fileID: 2549096147295879009, guid: ae914ac09d6808345966e62ec4835c5a, type: 3}
+  firePoint: {fileID: 473599355}
+  projectileSpeed: 10
+  damage: 5
+  firerate: 1
+  attackDistance: 10
+  projectileLifetime: 10
 --- !u!1 &974371212
 GameObject:
   m_ObjectHideFlags: 0

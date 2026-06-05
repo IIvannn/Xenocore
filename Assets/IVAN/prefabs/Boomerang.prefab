@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3080756117636956394}
   - component: {fileID: 3925446932013699573}
   m_Layer: 0
-  m_Name: Basic projectile
+  m_Name: Boomerang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
