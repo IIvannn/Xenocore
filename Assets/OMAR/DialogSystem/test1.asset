@@ -13,11 +13,20 @@ MonoBehaviour:
   m_Name: test1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   lines:
-  - speakerName: Shop
+  - speakerName: NPC1
     text: Hello im testing
     voiceClip: {fileID: 0}
-    speakerSprite: {fileID: 0}
-  - speakerName: Shop
-    text: Let's go!
+    speakerSprite: {fileID: 21300000, guid: 1af2b6fbfe31b6448a7894b8f4ddc424, type: 3}
+    typingSpeed: 0.03
+  - speakerName: NPC1
+    text: This text is waaaaay mooooore slow and sloooooow why is so sloooooooow
+      oh no!
     voiceClip: {fileID: 0}
-    speakerSprite: {fileID: 0}
+    speakerSprite: {fileID: 21300000, guid: 1ebcd2a027580384ba926f6e8f05c22d, type: 3}
+    typingSpeed: 0.06
+  - speakerName: NPC1
+    text: This text is fast boi! you can write anything fast and type all you like
+      and appear in an instant when there is so much text like this one
+    voiceClip: {fileID: 0}
+    speakerSprite: {fileID: 21300000, guid: 94e81c88e898aec44a43a208b33576ca, type: 3}
+    typingSpeed: 0.01

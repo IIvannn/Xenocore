@@ -12,4 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49675d3da19b054686ae9ecd58461ad, type: 3}
   m_Name: DialogueData
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
-  lines: []
+  lines:
+  - speakerName: 
+    text: 
+    voiceClip: {fileID: 0}
+    speakerSprite: {fileID: 0}
+    typingSpeed: 0
+  - speakerName: 
+    text: 
+    voiceClip: {fileID: 0}
+    speakerSprite: {fileID: 0}
+    typingSpeed: 0
+  - speakerName: 
+    text: 
+    voiceClip: {fileID: 0}
+    speakerSprite: {fileID: 0}
+    typingSpeed: 0
