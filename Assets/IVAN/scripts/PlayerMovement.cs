@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
             
 
             dashesLeft--;
-            Debug.Log("dashes left: " + dashesLeft);
+            //Debug.Log("dashes left: " + dashesLeft);
             float startTime = Time.time;
 
             while (Time.time < startTime + dashTime)
@@ -84,10 +84,10 @@ public class PlayerMovement : MonoBehaviour
         IEnumerator DashCooldown()
         {
             dashOnCooldwon = true;
-            Debug.Log("dash cooldwon started");
+            //Debug.Log("dash cooldwon started");
             yield return new WaitForSeconds(dashCooldwon);
             dashOnCooldwon = false;
-            Debug.Log("dash cooldwon finished");
+            //Debug.Log("dash cooldwon finished");
             dashesLeft = dashCharges;
         }
     }

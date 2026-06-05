@@ -13,7 +13,7 @@ public class EnemyScript : MonoBehaviour
     public Transform firePoint;
     public NavMeshAgent agent;
 
-    string state = "idle";
+    //string state = "idle";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

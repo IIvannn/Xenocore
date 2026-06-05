@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using System.Collections.Generic;
 
 public class boomerangScript : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class boomerangScript : MonoBehaviour
     public float timeBeforeReturn = 3f;
     public float rotateSpeed = 10f;
     public float damage = 1f;
+    List<GameObject> enemieshitOnLaunch = new List<GameObject>();
+    List<GameObject> enemieshitOnReturn = new List<GameObject>();
+
     bool returning = false;
     public GameObject source;
     public AudioSource shootsnd;
@@ -83,15 +87,35 @@ public class boomerangScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyDamage>().TakeDamage(damage);
-            source.GetComponent<PlayerShoot>().onHit();
+            if (!returning)
+            {
+                if (!enemieshitOnLaunch.Contains(other.gameObject))
+                {
+                    enemieshitOnLaunch.Add(other.gameObject);
+                    //Debug.Log("EnemyDamage hit for:  " + damage);
+                    other.GetComponent<EnemyDamage>().TakeDamage(damage);
+                    source.GetComponent<PlayerShoot>().onHit();
+                }
+            }
+            else
+            {
+                if (!enemieshitOnReturn.Contains(other.gameObject))
+                {
+                    enemieshitOnReturn.Add(other.gameObject);
+                    //Debug.Log("EnemyDamage hit for:  " + damage);
+                    other.GetComponent<EnemyDamage>().TakeDamage(damage);
+                    source.GetComponent<PlayerShoot>().onHit();
+                } 
+            }
+
+            
         }
     }
 
 
     IEnumerator Return()
     {
-        Debug.Log("testtttt");
+        //Debug.Log("return");
         yield return new WaitForSeconds(timeBeforeReturn);
         returning = true;
     }
