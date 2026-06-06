@@ -16,6 +16,7 @@ public class boomerangScript : MonoBehaviour
     bool returning = false;
     public GameObject source;
     public AudioSource shootsnd;
+    public GameObject sprite;
     public LayerMask groundMask;
     
 
@@ -30,6 +31,7 @@ public class boomerangScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        sprite.transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
         if (Physics.CheckSphere(transform.position, 0.5f, groundMask))
         {
             returning = true;
