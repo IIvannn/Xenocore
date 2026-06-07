@@ -15,6 +15,7 @@ namespace BarthaSzabolcs.IsometricAiming
         #region Private Fields
 
         public Camera mainCamera;
+        public static Transform cameraTransform;
 
         #endregion
 
@@ -29,10 +30,12 @@ namespace BarthaSzabolcs.IsometricAiming
         {
             // Cache the camera, Camera.main is an expensive operation.
             mainCamera = Camera.main;
+            
         }
 
         private void Update()
         {
+            cameraTransform = Camera.main.transform;
             Aim();
         }
 
@@ -40,6 +43,7 @@ namespace BarthaSzabolcs.IsometricAiming
 
         private void Aim()
         {
+            
             var (success, position) = GetMousePosition();
             if (success)
             {

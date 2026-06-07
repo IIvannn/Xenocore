@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,6 +24,7 @@ public class PlayerShoot : MonoBehaviour
     [Header("Other values")]
     public float ammo = 1;
     public float currentAmmo = 1;
+    public string attackType = "normal";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,7 +52,7 @@ public class PlayerShoot : MonoBehaviour
             ball.GetComponent<boomerangScript>().returnSpeed = boomerangReturnSpeed;
             ball.GetComponent<boomerangScript>().timeBeforeReturn = boomerangTimeBeforeReturn;
             ball.GetComponent<boomerangScript>().damage = boomerangDamage;
-
+            ball.GetComponent<boomerangScript>().type = attackType;
             nextFireTime = Time.time + firerate;
         }
 
@@ -58,6 +60,6 @@ public class PlayerShoot : MonoBehaviour
 
     public void onHit()
     {
-        Debug.Log("enemy hit");
+        //Debug.Log("enemy hit");
     }
 }

@@ -9,6 +9,7 @@ public class EnemyShoot : MonoBehaviour
     public float firerate;
     public float attackDistance;
     public float projectileLifetime;
+   
 
     public bool homing = true;
     public float homingPrecision;
@@ -42,7 +43,7 @@ public class EnemyShoot : MonoBehaviour
                     ball.GetComponent<enemyProjectileScript>().lifetime = projectileLifetime;
                     ball.GetComponent<enemyProjectileScript>().homing = homing;
                     ball.GetComponent<enemyProjectileScript>().homingPrecision = homingPrecision;
-
+                    
                     nextFireTime = Time.time + firerate;
                 }
             }

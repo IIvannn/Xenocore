@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     public static Transform playerPosition;
     public CharacterController controller;
+    public Animator animator;
     [Header("Movement")]
     public float speed = 5f;
     public float dashSpeed = 10f;
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     float sprintSpeedBonus = 0;
     int dashesLeft;
     bool dashOnCooldwon = false;
+    bool moving = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -53,6 +55,16 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = (transform.right * input.x + transform.forward * input.y).normalized;
         controller.Move(move * (speed + sprintSpeedBonus) * Time.deltaTime);
 
+        if (move == Vector3.zero)
+        {
+            moving = false;
+            
+        }
+        else
+        {
+            moving = true;
+        }
+        animator.SetBool("moving", moving);
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             if (dashesLeft > 0)
