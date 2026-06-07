@@ -10,6 +10,8 @@ public class boomerangScript : MonoBehaviour
     public float timeBeforeReturn = 3f;
     public float rotateSpeed = 10f;
     public float damage = 1f;
+    public float critDamage;
+    public float critChance;
     public string type;
     List <GameObject> enemieshitOnLaunch = new List<GameObject>();
     List<GameObject> enemieshitOnReturn = new List<GameObject>();
@@ -96,9 +98,9 @@ public class boomerangScript : MonoBehaviour
                 {
                     enemieshitOnLaunch.Add(other.gameObject);
                     //Debug.Log("EnemyDamage hit for:  " + damage);
-                    other.GetComponent<EnemyDamage>().TakeDamage(damage, type);
-                    other.GetComponent<EnemyDamage>().ApplyStatus(type);
-                    source.GetComponent<PlayerShoot>().onHit();
+                    other.GetComponent<EnemyDamage>().TakeDamage(damage, type, critChance, critDamage, source);
+                    other.GetComponent<EnemyDamage>().ApplyStatus(type,source);
+                    
                 }
             }
             else
@@ -107,9 +109,9 @@ public class boomerangScript : MonoBehaviour
                 {
                     enemieshitOnReturn.Add(other.gameObject);
                     //Debug.Log("EnemyDamage hit for:  " + damage);
-                    other.GetComponent<EnemyDamage>().TakeDamage(damage, type);
-                    other.GetComponent<EnemyDamage>().ApplyStatus(type);
-                    source.GetComponent<PlayerShoot>().onHit();
+                    other.GetComponent<EnemyDamage>().TakeDamage(damage, type, critChance, critDamage, source);
+                    other.GetComponent<EnemyDamage>().ApplyStatus(type,source);
+                    
                 } 
             }
 

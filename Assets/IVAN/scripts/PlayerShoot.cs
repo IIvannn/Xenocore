@@ -15,11 +15,13 @@ public class PlayerShoot : MonoBehaviour
     public float boomerangReturnSpeed;
     public float boomerangTimeBeforeReturn;
     public float boomerangDamage = 10;
-    
+    public float boomerangCritChance = 30f;
+    public float boomerangCritDamage = 1.5f;
 
-    
 
-    
+
+
+
 
     [Header("Other values")]
     public float ammo = 1;
@@ -53,12 +55,22 @@ public class PlayerShoot : MonoBehaviour
             ball.GetComponent<boomerangScript>().timeBeforeReturn = boomerangTimeBeforeReturn;
             ball.GetComponent<boomerangScript>().damage = boomerangDamage;
             ball.GetComponent<boomerangScript>().type = attackType;
+            ball.GetComponent<boomerangScript>().critChance = boomerangCritChance;
+            ball.GetComponent<boomerangScript>().critDamage = boomerangCritDamage;
             nextFireTime = Time.time + firerate;
         }
 
     }
 
     public void onHit()
+    {
+        //Debug.Log("enemy hit");
+    }
+    public void onCrit()
+    {
+        //Debug.Log("enemy hit");
+    }
+    public void onStatus(string type)
     {
         //Debug.Log("enemy hit");
     }

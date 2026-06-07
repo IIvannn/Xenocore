@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public static Transform playerPosition;
     public CharacterController controller;
     public Animator animator;
+    public GameObject playerSprite;
     [Header("Movement")]
     public float speed = 5f;
     public float dashSpeed = 10f;
@@ -60,10 +61,23 @@ public class PlayerMovement : MonoBehaviour
             moving = false;
             
         }
+
         else
         {
+            
             moving = true;
+            if (move.x > 0)
+            {
+                playerSprite.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else if (move.x < 0)
+            {
+                playerSprite.transform.localScale = new Vector3(1, 1, 1);
+                
+            }
         }
+
+
         animator.SetBool("moving", moving);
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {

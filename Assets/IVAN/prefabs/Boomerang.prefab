@@ -70,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59d6b64327b67a74b83aaa03fe1d9019, type: 2}
+  - {fileID: 2100000, guid: 44d356a579ddfc24695c0daa9cc41949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   timeBeforeReturn: 3
   rotateSpeed: 2000
   damage: 1
+  type: 
   source: {fileID: 0}
   shootsnd: {fileID: 0}
   sprite: {fileID: 3163795094509057185}

@@ -33,11 +33,13 @@ public class DamageNumber : MonoBehaviour
             case "crystallize":
                 break;
             case "null":
+                textDmg.color = new Color(0.1f, 0.0f, 0.4f);
                 break;
             case "starfall":
                 textDmg.color = new Color(1f, 0.1f, 0.7f);
                 break;
             case "rust":
+                textDmg.color = new Color(0.6f, 0.1f, 0.2f);
                 break;
             case "tectonic":
                 break;

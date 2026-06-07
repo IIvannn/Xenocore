@@ -16,18 +16,19 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float crystallizeEnergyChance;
     public static float crystallizeDuration;
     [Header("Null")]
-    public static float nullRange;
-    public static float nullSlow;
-    public static float nullPullStrength;
-    public static float nullDuration;
+    public static float nullRange = 10f;
+    public static float nullPullStrength = 2.5f;
+    public static float nullDuration = 3f;
+    public static int nullMaxCount = 3;
+    public static int nullCurrentCount = 0;
     [Header("Starfall")]
     public static float starfallDamage = 50;
     public static float starfallChance = 20;
     public static float starfallDuration = 5;
     [Header("Rust")]
-    public static float rustCritChance;
+    public static float rustCritChance = 35f;
     public static float rustSelfDamage;
-    public static float rustDuration;
+    public static float rustDuration = 4f;
     [Header("Tectonic")]
     public static float tectonicDamage;
     public static float tectonicAttackSpeed;

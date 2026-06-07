@@ -1,8 +1,11 @@
-using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
-using UnityEngine.UI;
 using BarthaSzabolcs.IsometricAiming;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem.XR;
+using UnityEngine.UI;
+using static Unity.VisualScripting.Member;
 
 public class EnemyDamage : MonoBehaviour
 {
@@ -18,6 +21,7 @@ public class EnemyDamage : MonoBehaviour
     public LayerMask enemyLayer;
     public GameObject damageNumber;
     public Transform damageNumberSpawn;
+    public CharacterController controller;
 
 
     [Header("Status effects")]
@@ -29,6 +33,7 @@ public class EnemyDamage : MonoBehaviour
     public bool nulled = false;
     public bool starfalled = false;
     public bool rusted;
+    float rustboost;
     public GameObject tectonic;
     public bool irradiated;
 
@@ -43,8 +48,21 @@ public class EnemyDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rusted)
+        {
+            rustboost = BoonSTaticInfo.rustCritChance;
+        }
+        else
+        {
+            rustboost = 0;
+        }
+        //Debug.Log(IsometricAiming.cameraTransform.rotation);
+        if (IsometricAiming.cameraTransform.rotation != null)
+        {
+            
+            UIParent.rotation = IsometricAiming.cameraTransform.rotation;
+        }
         
-        UIParent.rotation = IsometricAiming.cameraTransform.rotation;
 
         healthbar.value = (currentHealth / health);
         easeHealthbar.value = Mathf.Lerp(easeHealthbar.value, healthbar.value, lerpSpeed);
@@ -55,12 +73,23 @@ public class EnemyDamage : MonoBehaviour
     }
 
 
-    public void TakeDamage(float damage, string type)
+    public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
         //Debug.Log("damage:  "+damage+"  health:  "+currentHealth);
+        
+        float rcchance = Random.Range(0, 100);
+        if (rcchance < (critC+rustboost)) 
+        {
+            damage = damage * critD;
+            source.GetComponent<PlayerShoot>().onCrit();
+        }
         GameObject dmgNumber = Instantiate(damageNumber, damageNumberSpawn.position, damageNumberSpawn.rotation);
         dmgNumber.GetComponent<DamageNumber>().type = type;
         dmgNumber.GetComponent<DamageNumber>().damage = damage;
+
+        source.GetComponent<PlayerShoot>().onHit();
+        
+
         currentHealth -= damage;
         {
             if (currentHealth < 0)
@@ -77,7 +106,7 @@ public class EnemyDamage : MonoBehaviour
         Destroy(gameObject, deathDelay);
     }
 
-    public void ApplyStatus(string status)
+    public void ApplyStatus(string status, GameObject source)
     {
         switch (status)
         {
@@ -90,6 +119,7 @@ public class EnemyDamage : MonoBehaviour
                 {
                     StartCoroutine(SwarmDuration());
                     StartCoroutine(SwarmDamage());
+                    source.GetComponent<PlayerShoot>().onStatus(status);
                 }
                 swarmed = true;
 
@@ -101,20 +131,39 @@ public class EnemyDamage : MonoBehaviour
 
                 break;
             case "null":
-
-                break;
-            case "starfall":
-                int rchance = Random.Range(0, 100);
-                if (rchance < BoonSTaticInfo.starfallChance)
+                if (!nulled && BoonSTaticInfo.nullCurrentCount<BoonSTaticInfo.nullMaxCount)
                 {
-                    Debug.Log("starfall chance:  "+ rchance);
-                    
-                    TakeDamage(BoonSTaticInfo.starfallDamage, "starfall");
-                    StartCoroutine(StarfallDuration());
+                    GameObject ball = Instantiate(nullBubble, transform.position, transform.rotation);
+                    BoonSTaticInfo.nullCurrentCount++;
+                    nulled = true;
+                    StartCoroutine(NullDuration());
+                    source.GetComponent<PlayerShoot>().onStatus(status);
                 }
                 break;
-            case "rust":
 
+            case "starfall":
+                if (!starfalled)
+                {
+                    int rchance = Random.Range(0, 100);
+                    if (rchance < BoonSTaticInfo.starfallChance)
+                    {
+                        Debug.Log("starfall chance:  " + rchance);
+
+                        TakeDamage(BoonSTaticInfo.starfallDamage, "starfall", 0, 0, null);
+                        StartCoroutine(StarfallDuration());
+                        source.GetComponent<PlayerShoot>().onStatus(status);
+                    }
+                }
+                
+                break;
+            case "rust":
+                if (rusted)
+                {
+                    rusted = true;
+                    StartCoroutine(RustDuration());
+                    source.GetComponent<PlayerShoot>().onStatus(status);
+                }
+                
                 break;
             case "tectonic":
 
@@ -139,7 +188,7 @@ public class EnemyDamage : MonoBehaviour
         foreach (Collider enemy in hitEnemies)
         {
            
-            enemy.GetComponent<EnemyDamage>().TakeDamage(BoonSTaticInfo.swarmDamage, "swarm");
+            enemy.GetComponent<EnemyDamage>().TakeDamage(BoonSTaticInfo.swarmDamage, "swarm",0,0,null);
         }
         //TakeDamage(BoonSTaticInfo.swarmDamage);
         yield return new WaitForSeconds(BoonSTaticInfo.swarmAttackSpeed);
@@ -155,7 +204,25 @@ public class EnemyDamage : MonoBehaviour
         starfalled = false;
     }
 
+    public void NullPull(Vector3 direction)
+    {
+        EnemyScript enemy = gameObject.GetComponent<EnemyScript>();
+        enemy.controller.Move(direction.normalized * BoonSTaticInfo.nullPullStrength * Time.deltaTime);
+    }
+    IEnumerator NullDuration()
+    {
+        yield return new WaitForSeconds(BoonSTaticInfo.nullDuration);
+        nulled = false;
+    }
+
+    IEnumerator RustDuration()
+    {
+        yield return new WaitForSeconds(BoonSTaticInfo.rustDuration);
+        rusted = false;
+    }
 }
+
+
 
 
 

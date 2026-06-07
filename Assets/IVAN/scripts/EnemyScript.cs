@@ -14,6 +14,7 @@ public class EnemyScript : MonoBehaviour
 
     public Transform firePoint;
     public NavMeshAgent agent;
+    public CharacterController controller;
 
     public bool dead = false;
     //string state = "idle";

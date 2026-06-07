@@ -855,6 +855,7 @@ MonoBehaviour:
   distanceBeforeStop: 4
   firePoint: {fileID: 6236873243351424689}
   agent: {fileID: 3492197717654370251}
+  controller: {fileID: 4932078429975760493}
   dead: 0
 --- !u!114 &1779633672595663246
 MonoBehaviour:
@@ -879,13 +880,13 @@ MonoBehaviour:
     m_Bits: 64
   damageNumber: {fileID: 4264765405222699080, guid: d2c3b1bb813179d40aab84c52c6fc528, type: 3}
   damageNumberSpawn: {fileID: 4871220258816243359}
+  controller: {fileID: 4932078429975760493}
   swarm: {fileID: 3620615294527503794}
   swarmed: 0
   haunted: 0
   crystallized: 0
-  nullBubble: {fileID: 0}
+  nullBubble: {fileID: 350972076638921982, guid: b7c0692358e4f73498910df60f754217, type: 3}
   nulled: 0
-  starfallParticle: {fileID: 6127273759462792904}
   starfalled: 0
   rusted: 0
   tectonic: {fileID: 0}
@@ -1405,11 +1406,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
---- !u!198 &6127273759462792904 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4021103657954561960, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
-  m_PrefabInstance: {fileID: 7117278944180425056}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6127273759462792950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4021103657954561942, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}

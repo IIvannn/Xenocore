@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5a897c903aefc224e8760d74debac6d7
+guid: 319475743fec4674988e9c5c6cfe14b4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlyerMove_0
+      name: PlayerMove_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,20 +125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e83f57678302fd944bb2ac8c6cb7bba5
-      internalID: 884213212
+      spriteID: f32aeb0a295b7a649b63f81af9801bf4
+      internalID: 1003098139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlyerMove_1
+      name: PlayerMove_1
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 512
         y: 0
-        width: 1024
-        height: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,8 +147,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bbddccecb1219247aa59feaec65c82a
-      internalID: 1433901529
+      spriteID: 2414286eb7406344e91a488d990079a5
+      internalID: 1376249870
       vertices: []
       indices: 
       edges: []
@@ -157,7 +157,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9ddd6cff202fb0a4fa47fd4f00d54d00
+    spriteID: 1a60fd17e6115b44489e3602903e1d7c
     internalID: 0
     vertices: []
     indices: 
@@ -167,10 +167,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      PlyerMove_0: 884213212
-      PlyerMove_1: 1433901529
+      PlayerMove_0: 1003098139
+      PlayerMove_1: 1376249870
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
