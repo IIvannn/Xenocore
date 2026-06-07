@@ -9,12 +9,13 @@ public class DamageNumber : MonoBehaviour
     public float damage;
     public TextMeshProUGUI textDmg;
     public string type;
+    float xoffset = 0.6f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Destroy(gameObject, 0.7f);
         textDmg.text = damage.ToString();
-        float offset = Random.Range(-0.3f, 0.3f);
+        float offset = Random.Range(-xoffset, xoffset);
         transform.position += new Vector3(offset, 0, 0);
         float bsize = damage / 70f;
         textDmg.fontSize += bsize;
@@ -23,7 +24,7 @@ public class DamageNumber : MonoBehaviour
         switch (type)
         {
             case "normal":
-                textDmg.outlineColor = Color.black;
+                textDmg.outlineColor = new Color(0.1f, 0.1f, 0.1f);
                 break;
             case "swarm":
                 textDmg.color = new Color(0.7f,1f,0.2f);

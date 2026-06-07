@@ -2830,7 +2830,7 @@ PrefabInstance:
       objectReference: {fileID: 2029769044}
     - target: {fileID: 6260905542698369766, guid: 32093059130e36c4bb78fec5553f4deb, type: 3}
       propertyPath: attackType
-      value: null
+      value: starfall
       objectReference: {fileID: 0}
     - target: {fileID: 6260905542698369766, guid: 32093059130e36c4bb78fec5553f4deb, type: 3}
       propertyPath: boomerangCritChance

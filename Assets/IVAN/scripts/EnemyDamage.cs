@@ -1,4 +1,5 @@
 using BarthaSzabolcs.IsometricAiming;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -48,6 +49,7 @@ public class EnemyDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(swarmed);
         if (rusted)
         {
             rustboost = BoonSTaticInfo.rustCritChance;
@@ -76,18 +78,22 @@ public class EnemyDamage : MonoBehaviour
     public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
         //Debug.Log("damage:  "+damage+"  health:  "+currentHealth);
-        
+        GameObject dmgNumber = Instantiate(damageNumber, damageNumberSpawn.position, damageNumberSpawn.rotation);
         float rcchance = Random.Range(0, 100);
         if (rcchance < (critC+rustboost)) 
         {
             damage = damage * critD;
             source.GetComponent<PlayerShoot>().onCrit();
+            dmgNumber.GetComponent<DamageNumber>().textDmg.outlineColor = new Color(1,0,0);
         }
-        GameObject dmgNumber = Instantiate(damageNumber, damageNumberSpawn.position, damageNumberSpawn.rotation);
+        
         dmgNumber.GetComponent<DamageNumber>().type = type;
         dmgNumber.GetComponent<DamageNumber>().damage = damage;
-
-        source.GetComponent<PlayerShoot>().onHit();
+        if (source != null)
+        {
+            source.GetComponent<PlayerShoot>().onHit();
+        }
+        
         
 
         currentHealth -= damage;
@@ -194,6 +200,7 @@ public class EnemyDamage : MonoBehaviour
         yield return new WaitForSeconds(BoonSTaticInfo.swarmAttackSpeed);
         if (swarmed)
         {
+            Debug.Log("swarm ATTACK");
             StartCoroutine(SwarmDamage());
         }
     }

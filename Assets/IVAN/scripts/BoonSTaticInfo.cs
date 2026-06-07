@@ -22,11 +22,11 @@ public class BoonSTaticInfo : MonoBehaviour
     public static int nullMaxCount = 3;
     public static int nullCurrentCount = 0;
     [Header("Starfall")]
-    public static float starfallDamage = 50;
+    public static float starfallDamage = 60;
     public static float starfallChance = 20;
     public static float starfallDuration = 5;
     [Header("Rust")]
-    public static float rustCritChance = 35f;
+    public static float rustCritChance = 40f;
     public static float rustSelfDamage;
     public static float rustDuration = 4f;
     [Header("Tectonic")]
