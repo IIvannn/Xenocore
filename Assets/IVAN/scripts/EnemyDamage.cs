@@ -29,6 +29,7 @@ public class EnemyDamage : MonoBehaviour
     public GameObject swarm;
     public bool swarmed = false;
     public bool haunted = false;
+    public GameObject crystallizedDrop;
     public bool crystallized = false;
     public GameObject nullBubble;
     public bool nulled = false;
@@ -98,7 +99,14 @@ public class EnemyDamage : MonoBehaviour
             source.GetComponent<PlayerShoot>().onHit();
         }
         
-        
+        if (crystallized)
+        {
+            float rcrystal = Random.Range(0, 100);
+            if (rcrystal < BoonSTaticInfo.crystallizeCrystalChance)
+            {
+                GameObject ball = Instantiate(crystallizedDrop, transform.position, transform.rotation);
+            }
+        }
 
         currentHealth -= damage;
         {
@@ -123,7 +131,7 @@ public class EnemyDamage : MonoBehaviour
             case "normal":
                 break;
             case "swarm":
-                
+
                 swarm.SetActive(true);
                 if (!swarmed)
                 {
@@ -135,10 +143,18 @@ public class EnemyDamage : MonoBehaviour
 
                 break;
             case "haunted":
-
+                if (!haunted)
+                {
+                    source.GetComponent<PlayerShoot>().onStatus(status);
+                }
                 break;
             case "crystallize":
-
+                if (!crystallized)
+                {
+                    crystallized = true;
+                    StartCoroutine(CrystallizeDuration());
+                    source.GetComponent<PlayerShoot>().onStatus(status);
+                }
                 break;
             case "null":
                 if (!nulled && BoonSTaticInfo.nullCurrentCount<BoonSTaticInfo.nullMaxCount)
@@ -181,7 +197,10 @@ public class EnemyDamage : MonoBehaviour
 
                 break;
             case "radiation":
-
+                if (!irradiated)
+                {
+                    source.GetComponent<PlayerShoot>().onStatus(status);
+                }
                 break;
 
         }
@@ -226,6 +245,12 @@ public class EnemyDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(BoonSTaticInfo.nullDuration);
         nulled = false;
+    }
+
+    IEnumerator CrystallizeDuration()
+    {
+        yield return new WaitForSeconds(BoonSTaticInfo.crystallizeDuration);
+        crystallized = false;
     }
 
     IEnumerator RustDuration()

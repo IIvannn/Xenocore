@@ -32,6 +32,7 @@ public class DamageNumber : MonoBehaviour
             case "haunted":
                 break;
             case "crystallize":
+                textDmg.color = new Color(0.7f, 0.7f, 0.9f);
                 break;
             case "null":
                 textDmg.color = new Color(0.1f, 0.0f, 0.4f);

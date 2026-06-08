@@ -884,6 +884,7 @@ MonoBehaviour:
   swarm: {fileID: 3620615294527503794}
   swarmed: 0
   haunted: 0
+  crystallizedDrop: {fileID: 6002246723806393276, guid: 0b2196ecbb7d2334dbfbb4ee8442ca96, type: 3}
   crystallized: 0
   nullBubble: {fileID: 350972076638921982, guid: b7c0692358e4f73498910df60f754217, type: 3}
   nulled: 0
@@ -910,6 +911,7 @@ MonoBehaviour:
   firerate: 1
   attackDistance: 10
   projectileLifetime: 10
+  rusted: 0
   homing: 1
   homingPrecision: 0
 --- !u!195 &3492197717654370251

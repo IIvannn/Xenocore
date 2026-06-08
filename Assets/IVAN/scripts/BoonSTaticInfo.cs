@@ -12,9 +12,10 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float hauntedDamagePercentage;
     public static float hauntedDuration;
     [Header("Crystallize")]
-    public static float crystallizeCrystalChance;
-    public static float crystallizeEnergyChance;
-    public static float crystallizeDuration;
+    public static float crystallizeCrystalChance = 25f;
+    public static int crystallizeCrystalAmmount = 1;
+    public static float crystallizeEnergyAmmount = 1.5f;
+    public static float crystallizeDuration = 6f;
     [Header("Null")]
     public static float nullRange = 10f;
     public static float nullPullStrength = 2.5f;
@@ -39,6 +40,10 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float radiationWeakness;
     public static float radiationRange;
     public static float radiationCloseStrength;
+
+
+    [Header("Economy")]
+    public static int crystals = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
