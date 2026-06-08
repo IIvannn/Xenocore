@@ -77,16 +77,20 @@ public class EnemyDamage : MonoBehaviour
 
     public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
-        //Debug.Log("damage:  "+damage+"  health:  "+currentHealth);
+        
         GameObject dmgNumber = Instantiate(damageNumber, damageNumberSpawn.position, damageNumberSpawn.rotation);
         float rcchance = Random.Range(0, 100);
         if (rcchance < (critC+rustboost)) 
         {
             damage = damage * critD;
-            source.GetComponent<PlayerShoot>().onCrit();
+            if (source != null)
+            {
+                source.GetComponent<PlayerShoot>().onCrit();
+            }
             dmgNumber.GetComponent<DamageNumber>().textDmg.outlineColor = new Color(1,0,0);
         }
-        
+        Debug.Log("crit chance: "+ (critC + rustboost));
+
         dmgNumber.GetComponent<DamageNumber>().type = type;
         dmgNumber.GetComponent<DamageNumber>().damage = damage;
         if (source != null)
@@ -163,11 +167,13 @@ public class EnemyDamage : MonoBehaviour
                 
                 break;
             case "rust":
-                if (rusted)
+                if (!rusted)
                 {
                     rusted = true;
                     StartCoroutine(RustDuration());
                     source.GetComponent<PlayerShoot>().onStatus(status);
+                    EnemyShoot body = GetComponent<EnemyShoot>();
+                    body.rusted = true;
                 }
                 
                 break;
@@ -226,6 +232,8 @@ public class EnemyDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(BoonSTaticInfo.rustDuration);
         rusted = false;
+        EnemyShoot body = GetComponent<EnemyShoot>();
+        body.rusted = false;
     }
 }
 

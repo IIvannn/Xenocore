@@ -77,8 +77,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-
-        animator.SetBool("moving", moving);
+        if (animator != null)
+        {
+            animator.SetBool("moving", moving);
+        }
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             if (dashesLeft > 0)
