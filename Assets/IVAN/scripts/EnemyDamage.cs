@@ -29,6 +29,7 @@ public class EnemyDamage : MonoBehaviour
     public GameObject swarm;
     public bool swarmed = false;
     public bool haunted = false;
+    public GameObject crystallizedDrop;
     public bool crystallized = false;
     public GameObject nullBubble;
     public bool nulled = false;
@@ -77,16 +78,20 @@ public class EnemyDamage : MonoBehaviour
 
     public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
-        //Debug.Log("damage:  "+damage+"  health:  "+currentHealth);
+        
         GameObject dmgNumber = Instantiate(damageNumber, damageNumberSpawn.position, damageNumberSpawn.rotation);
         float rcchance = Random.Range(0, 100);
         if (rcchance < (critC+rustboost)) 
         {
             damage = damage * critD;
-            source.GetComponent<PlayerShoot>().onCrit();
+            if (source != null)
+            {
+                source.GetComponent<PlayerShoot>().onCrit();
+            }
             dmgNumber.GetComponent<DamageNumber>().textDmg.outlineColor = new Color(1,0,0);
         }
-        
+        Debug.Log("crit chance: "+ (critC + rustboost));
+
         dmgNumber.GetComponent<DamageNumber>().type = type;
         dmgNumber.GetComponent<DamageNumber>().damage = damage;
         if (source != null)
@@ -94,7 +99,14 @@ public class EnemyDamage : MonoBehaviour
             source.GetComponent<PlayerShoot>().onHit();
         }
         
-        
+        if (crystallized)
+        {
+            float rcrystal = Random.Range(0, 100);
+            if (rcrystal < BoonSTaticInfo.crystallizeCrystalChance)
+            {
+                GameObject ball = Instantiate(crystallizedDrop, transform.position, transform.rotation);
+            }
+        }
 
         currentHealth -= damage;
         {
@@ -119,7 +131,7 @@ public class EnemyDamage : MonoBehaviour
             case "normal":
                 break;
             case "swarm":
-                
+
                 swarm.SetActive(true);
                 if (!swarmed)
                 {
@@ -131,10 +143,18 @@ public class EnemyDamage : MonoBehaviour
 
                 break;
             case "haunted":
-
+                if (!haunted)
+                {
+                    source.GetComponent<PlayerShoot>().onStatus(status);
+                }
                 break;
             case "crystallize":
-
+                if (!crystallized)
+                {
+                    crystallized = true;
+                    StartCoroutine(CrystallizeDuration());
+                    source.GetComponent<PlayerShoot>().onStatus(status);
+                }
                 break;
             case "null":
                 if (!nulled && BoonSTaticInfo.nullCurrentCount<BoonSTaticInfo.nullMaxCount)
@@ -163,11 +183,13 @@ public class EnemyDamage : MonoBehaviour
                 
                 break;
             case "rust":
-                if (rusted)
+                if (!rusted)
                 {
                     rusted = true;
                     StartCoroutine(RustDuration());
                     source.GetComponent<PlayerShoot>().onStatus(status);
+                    EnemyShoot body = GetComponent<EnemyShoot>();
+                    body.rusted = true;
                 }
                 
                 break;
@@ -175,7 +197,10 @@ public class EnemyDamage : MonoBehaviour
 
                 break;
             case "radiation":
-
+                if (!irradiated)
+                {
+                    source.GetComponent<PlayerShoot>().onStatus(status);
+                }
                 break;
 
         }
@@ -222,10 +247,18 @@ public class EnemyDamage : MonoBehaviour
         nulled = false;
     }
 
+    IEnumerator CrystallizeDuration()
+    {
+        yield return new WaitForSeconds(BoonSTaticInfo.crystallizeDuration);
+        crystallized = false;
+    }
+
     IEnumerator RustDuration()
     {
         yield return new WaitForSeconds(BoonSTaticInfo.rustDuration);
         rusted = false;
+        EnemyShoot body = GetComponent<EnemyShoot>();
+        body.rusted = false;
     }
 }
 

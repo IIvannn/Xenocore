@@ -9,6 +9,8 @@ public class EnemyShoot : MonoBehaviour
     public float firerate;
     public float attackDistance;
     public float projectileLifetime;
+
+    public bool rusted = false;
    
 
     public bool homing = true;
@@ -30,6 +32,7 @@ public class EnemyShoot : MonoBehaviour
     {
         if (!PlayerDamage.dead)
         {
+            
             float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
             if (distance <= attackDistance)
             {
@@ -45,6 +48,12 @@ public class EnemyShoot : MonoBehaviour
                     ball.GetComponent<enemyProjectileScript>().homingPrecision = homingPrecision;
                     
                     nextFireTime = Time.time + firerate;
+                    float rchance = Random.Range(0, 100);
+                    if (rusted && BoonSTaticInfo.rustSelfDamageChance > rchance)
+                    {
+                        EnemyDamage body = GetComponent<EnemyDamage>();
+                        body.TakeDamage(BoonSTaticInfo.rustSelfDamage, "rust", 0, 0, null);
+                    }
                 }
             }
         }

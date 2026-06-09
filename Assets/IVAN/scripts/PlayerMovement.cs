@@ -55,16 +55,15 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = (transform.right * input.x + transform.forward * input.y).normalized;
         controller.Move(move * (speed + sprintSpeedBonus) * Time.deltaTime);
+        
 
         if (move == Vector3.zero)
         {
             moving = false;
             
         }
-
         else
         {
-            
             moving = true;
             if (move.x > 0)
             {
@@ -75,10 +74,23 @@ public class PlayerMovement : MonoBehaviour
                 playerSprite.transform.localScale = new Vector3(1, 1, 1);
                 
             }
+            if (move.z <0)
+            {
+                animator.SetBool("down", true);
+            }
+            else
+            {
+                animator.SetBool("down", false);
+            }
+        }
+        
+
+        if (animator != null)
+        {
+            animator.SetBool("moving", moving);
         }
 
 
-        animator.SetBool("moving", moving);
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             if (dashesLeft > 0)

@@ -17,6 +17,7 @@ public class PlayerShoot : MonoBehaviour
     public float boomerangDamage = 10;
     public float boomerangCritChance = 30f;
     public float boomerangCritDamage = 1.5f;
+    public float energyPerHit;
 
 
 
@@ -64,7 +65,8 @@ public class PlayerShoot : MonoBehaviour
 
     public void onHit()
     {
-        //Debug.Log("enemy hit");
+        PlayerDamage body = gameObject.GetComponent<PlayerDamage>();
+        body.energy += energyPerHit;
     }
     public void onCrit()
     {
