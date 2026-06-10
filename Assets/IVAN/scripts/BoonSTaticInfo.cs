@@ -3,8 +3,8 @@ using UnityEngine;
 public class BoonSTaticInfo : MonoBehaviour
 {
     [Header("Swarm")]
-    public static float swarmDamage = 2f;
-    public static float swarmAttackSpeed = 0.3f;
+    public static float swarmDamage = 3f;
+    public static float swarmAttackSpeed = 0.2f;
     public static float swarmRange = 3f;
     public static float swarmDuration = 5f;
     [Header("Haunted")]
@@ -32,14 +32,18 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float rustSelfDamageChance = 30;
     public static float rustDuration = 4f;
     [Header("Tectonic")]
-    public static float tectonicDamage;
-    public static float tectonicAttackSpeed;
-    public static float tectonicDuration;
-    public static float tectonicCooldown;
+    public static float tectonicDamage = 10f;
+    public static float tectonicAttackSpeed = 1f;
+    public static float tectonicRange = 3f;
+    public static float tectonicDuration = 8;
+    public static float tectonicMaxCount = 2;
+    public static float tectonicCurrentCount = 0;
+    public static float tectonicSpreadSpeed = 1.3f;
     [Header("Radiation")]
     public static float radiationWeakness;
-    public static float radiationRange;
+    public static float radiationRange = 7f;
     public static float radiationCloseStrength;
+    public static float radiationDuration = 8f;
 
 
     [Header("Economy")]

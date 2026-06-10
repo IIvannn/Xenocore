@@ -18,6 +18,8 @@ public class EnemyDamage : MonoBehaviour
     [Header("References")]
     public Slider healthbar;
     public Slider easeHealthbar;
+    public GameObject radiationBarParent;
+    public Slider radiationBar;
     public Transform UIParent;
     public LayerMask enemyLayer;
     public GameObject damageNumber;
@@ -37,6 +39,9 @@ public class EnemyDamage : MonoBehaviour
     public bool rusted;
     float rustboost;
     public GameObject tectonic;
+    public bool tectoniked = false;
+    public GameObject radiationRing;
+    public float radiationAmmount;
     public bool irradiated;
 
     float lerpSpeed = 0.03f;
@@ -50,6 +55,23 @@ public class EnemyDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (irradiated)
+        {
+            radiationAmmount = 1;
+        }
+        if (radiationAmmount>0)
+        {
+            radiationBarParent.SetActive(true);
+            Slider slider = radiationBar.GetComponent<Slider>();
+            radiationBar.value = radiationAmmount+0.1f;
+            radiationAmmount -= 1f * Time.deltaTime;
+        }
+        else
+        {
+            radiationBar.value = radiationAmmount;
+            radiationBarParent.SetActive(false);
+        }
+
         //Debug.Log(swarmed);
         if (rusted)
         {
@@ -60,18 +82,21 @@ public class EnemyDamage : MonoBehaviour
             rustboost = 0;
         }
         //Debug.Log(IsometricAiming.cameraTransform.rotation);
-        if (IsometricAiming.cameraTransform.rotation != null)
-        {
-            
-            UIParent.rotation = IsometricAiming.cameraTransform.rotation;
-        }
-        
+
+
+        Debug.Log(radiationAmmount);
 
         healthbar.value = (currentHealth / health);
         easeHealthbar.value = Mathf.Lerp(easeHealthbar.value, healthbar.value, lerpSpeed);
         if (currentHealth > health)
         {
             currentHealth = health;
+            
+        }
+
+        if (IsometricAiming.cameraTransform != null)
+        {
+            UIParent.rotation = IsometricAiming.cameraTransform.rotation;
         }
     }
 
@@ -90,7 +115,7 @@ public class EnemyDamage : MonoBehaviour
             }
             dmgNumber.GetComponent<DamageNumber>().textDmg.outlineColor = new Color(1,0,0);
         }
-        Debug.Log("crit chance: "+ (critC + rustboost));
+        //Debug.Log("crit chance: "+ (critC + rustboost));
 
         dmgNumber.GetComponent<DamageNumber>().type = type;
         dmgNumber.GetComponent<DamageNumber>().damage = damage;
@@ -194,12 +219,23 @@ public class EnemyDamage : MonoBehaviour
                 
                 break;
             case "tectonic":
-
+                if (!tectoniked && BoonSTaticInfo.tectonicCurrentCount < BoonSTaticInfo.tectonicMaxCount)
+                {
+                    GameObject ball = Instantiate(tectonic, transform.position, transform.rotation);
+                    BoonSTaticInfo.tectonicCurrentCount++;
+                    tectoniked = true;
+                    StartCoroutine(TectonicDuration());
+                    source.GetComponent<PlayerShoot>().onStatus(status);
+                }
+                
                 break;
             case "radiation":
                 if (!irradiated)
                 {
+                    irradiated = true;
+                    radiationRing.SetActive(true);
                     source.GetComponent<PlayerShoot>().onStatus(status);
+                    StartCoroutine(RadiationDuration());
                 }
                 break;
 
@@ -241,6 +277,7 @@ public class EnemyDamage : MonoBehaviour
         EnemyScript enemy = gameObject.GetComponent<EnemyScript>();
         enemy.controller.Move(direction.normalized * BoonSTaticInfo.nullPullStrength * Time.deltaTime);
     }
+
     IEnumerator NullDuration()
     {
         yield return new WaitForSeconds(BoonSTaticInfo.nullDuration);
@@ -260,6 +297,20 @@ public class EnemyDamage : MonoBehaviour
         EnemyShoot body = GetComponent<EnemyShoot>();
         body.rusted = false;
     }
+
+    IEnumerator TectonicDuration()
+    {
+        yield return new WaitForSeconds(BoonSTaticInfo.tectonicDuration);
+        tectoniked = false;
+    }
+
+    IEnumerator RadiationDuration()
+    {
+        yield return new WaitForSeconds(BoonSTaticInfo.radiationDuration+0.1f);
+        radiationRing.SetActive(false);
+        irradiated = false;
+    }
+
 }
 
 

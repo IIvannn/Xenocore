@@ -44,8 +44,10 @@ public class DamageNumber : MonoBehaviour
                 textDmg.color = new Color(0.6f, 0.1f, 0.2f);
                 break;
             case "tectonic":
+                textDmg.color = new Color(0.8f, 0.6f, 0.2f);
                 break;
             case "radiation":
+                textDmg.color = new Color(1f, 1f, 0.2f);
                 break;
         }
     }

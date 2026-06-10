@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerDamage : MonoBehaviour
 {
+    [Header("References")]
     public Slider healthbar;
     public Slider easeHealthbar;
     public Slider energybar;
@@ -13,9 +14,11 @@ public class PlayerDamage : MonoBehaviour
     public TextMeshProUGUI energyText;
     public TextMeshProUGUI crystalText;
     float lerpSpeed = 0.03f;
+    [Header("Health")]
     public float hp = 100f;
     public float currentHp = 1f;
     public static bool dead = false;
+    [Header("Energy")]
     public float energy = 100;
     public float currentEnergy = 0;
     

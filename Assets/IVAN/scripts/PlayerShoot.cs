@@ -1,7 +1,7 @@
 using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using System.Collections;
 public class PlayerShoot : MonoBehaviour
 {
     [Header("References")]
@@ -18,10 +18,6 @@ public class PlayerShoot : MonoBehaviour
     public float boomerangCritChance = 30f;
     public float boomerangCritDamage = 1.5f;
     public float energyPerHit;
-
-
-
-
 
 
     [Header("Other values")]
@@ -42,6 +38,8 @@ public class PlayerShoot : MonoBehaviour
         {
             FireNow();
         }
+
+
     }
 
     void FireNow()
@@ -76,4 +74,7 @@ public class PlayerShoot : MonoBehaviour
     {
         //Debug.Log("enemy hit");
     }
+
+
+
 }
