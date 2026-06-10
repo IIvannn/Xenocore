@@ -70,6 +70,7 @@ public class DoorScript : MonoBehaviour
             }
             else
             {
+                BoonSTaticInfo.enemiesInRange.Clear();
                 switch (numbers[(numbers.Length - currentRoom) - 1])
                 {
                     case 0:

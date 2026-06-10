@@ -18,7 +18,7 @@ public class RadiationRing : MonoBehaviour
     {
         if (gameObject.activeSelf == true)
         {
-            Debug.Log("enemies in radiation ring:  " + enemieshit.Count);
+            //Debug.Log("enemies in radiation ring:  " + enemieshit.Count);
 
             foreach (GameObject enemy in enemieshit)
             {
