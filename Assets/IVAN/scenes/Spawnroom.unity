@@ -4109,7 +4109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5350251277059146443, guid: 32093059130e36c4bb78fec5553f4deb, type: 3}
       propertyPath: energy
-      value: 10000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5350251277059146443, guid: 32093059130e36c4bb78fec5553f4deb, type: 3}
       propertyPath: energybar
@@ -4137,7 +4137,7 @@ PrefabInstance:
       objectReference: {fileID: 2029769044}
     - target: {fileID: 6260905542698369766, guid: 32093059130e36c4bb78fec5553f4deb, type: 3}
       propertyPath: attackType
-      value: haunted
+      value: radiation
       objectReference: {fileID: 0}
     - target: {fileID: 6260905542698369766, guid: 32093059130e36c4bb78fec5553f4deb, type: 3}
       propertyPath: boomerangCritChance

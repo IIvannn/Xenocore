@@ -87,8 +87,11 @@ public class EnemyDamage : MonoBehaviour
         }
         //Debug.Log(IsometricAiming.cameraTransform.rotation);
 
-        
 
+        if (radiationAmmount<0.01)
+        {
+            radiationAmmount = 0;
+        }
 
         ghostBar.value = (currentHealth / health);
         healthbar.value = ((currentHealth - hauntedStoredDamage) / health);
@@ -136,11 +139,14 @@ public class EnemyDamage : MonoBehaviour
                 GameObject ball = Instantiate(crystallizedDrop, transform.position, transform.rotation);
             }
         }
-        hauntedStoredDamage += damage*BoonSTaticInfo.hauntedDamagePercentage/100;
+        if (haunted)
+        {
+            hauntedStoredDamage += damage * BoonSTaticInfo.hauntedDamagePercentage / 100;
+        }
 
-        finalDamage = (int)(damage * (1+((radiationAmmount*BoonSTaticInfo.radiationWeakness)/100)));
+        finalDamage = (int)(damage * (1+(((radiationAmmount+0.02f)*BoonSTaticInfo.radiationWeakness)/100)));
 
-        Debug.Log(finalDamage);
+        
         dmgNumber.GetComponent<DamageNumber>().type = type;
         dmgNumber.GetComponent<DamageNumber>().damage = finalDamage;
         currentHealth -= finalDamage;
@@ -304,7 +310,6 @@ public class EnemyDamage : MonoBehaviour
         yield return new WaitForSeconds(BoonSTaticInfo.swarmAttackSpeed);
         if (swarmed)
         {
-            Debug.Log("swarm ATTACK");
             StartCoroutine(SwarmDamage());
         }
     }
