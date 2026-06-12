@@ -60,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
         if (move == Vector3.zero)
         {
             moving = false;
-            
         }
         else
         {
@@ -77,9 +76,16 @@ public class PlayerMovement : MonoBehaviour
             if (move.z <0)
             {
                 animator.SetBool("down", true);
+                animator.SetBool("up", false);
+            }
+            else if (move.z >0)
+            {
+                animator.SetBool("up", true);
+                animator.SetBool("down", false);
             }
             else
             {
+                animator.SetBool("up", false);
                 animator.SetBool("down", false);
             }
         }

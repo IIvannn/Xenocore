@@ -30,6 +30,7 @@ public class DamageNumber : MonoBehaviour
                 textDmg.color = new Color(0.7f,1f,0.2f);
                 break;
             case "haunted":
+                textDmg.color = new Color(0.2f, 0.5f, 0.7f);
                 break;
             case "crystallize":
                 textDmg.color = new Color(0.7f, 0.7f, 0.9f);
@@ -44,8 +45,10 @@ public class DamageNumber : MonoBehaviour
                 textDmg.color = new Color(0.6f, 0.1f, 0.2f);
                 break;
             case "tectonic":
+                textDmg.color = new Color(0.8f, 0.6f, 0.2f);
                 break;
             case "radiation":
+                textDmg.color = new Color(1f, 1f, 0.2f);
                 break;
         }
     }

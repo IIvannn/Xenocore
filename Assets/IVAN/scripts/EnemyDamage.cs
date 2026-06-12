@@ -14,21 +14,27 @@ public class EnemyDamage : MonoBehaviour
     public float health;
     public float deathDelay;
     public float currentHealth;
+    public bool dead = false;
 
     [Header("References")]
-    public Slider healthbar;
-    public Slider easeHealthbar;
     public Transform UIParent;
     public LayerMask enemyLayer;
     public GameObject damageNumber;
     public Transform damageNumberSpawn;
     public CharacterController controller;
 
+    [Header("UI")]
+    public Slider healthbar;
+    public Slider easeHealthbar;
+    public Slider radiationBar;
+    public Slider ghostBar;
 
     [Header("Status effects")]
     public GameObject swarm;
     public bool swarmed = false;
+    public GameObject ghost;
     public bool haunted = false;
+    float hauntedStoredDamage;
     public GameObject crystallizedDrop;
     public bool crystallized = false;
     public GameObject nullBubble;
@@ -37,6 +43,9 @@ public class EnemyDamage : MonoBehaviour
     public bool rusted;
     float rustboost;
     public GameObject tectonic;
+    public bool tectoniked = false;
+    public GameObject radiationRing;
+    public float radiationAmmount;
     public bool irradiated;
 
     float lerpSpeed = 0.03f;
@@ -50,6 +59,23 @@ public class EnemyDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (irradiated)
+        {
+            radiationAmmount = 1;
+        }
+        if (radiationAmmount>0)
+        {
+            radiationBar.gameObject.SetActive(true);
+            Slider slider = radiationBar.GetComponent<Slider>();
+            radiationBar.value = radiationAmmount+0.1f;
+            radiationAmmount -= 1f * Time.deltaTime;
+        }
+        else
+        {
+            radiationBar.value = radiationAmmount;
+            radiationBar.gameObject.SetActive(false);
+        }
+
         //Debug.Log(swarmed);
         if (rusted)
         {
@@ -60,25 +86,32 @@ public class EnemyDamage : MonoBehaviour
             rustboost = 0;
         }
         //Debug.Log(IsometricAiming.cameraTransform.rotation);
-        if (IsometricAiming.cameraTransform.rotation != null)
-        {
-            
-            UIParent.rotation = IsometricAiming.cameraTransform.rotation;
-        }
-        
 
-        healthbar.value = (currentHealth / health);
+
+        if (radiationAmmount<0.01)
+        {
+            radiationAmmount = 0;
+        }
+
+        ghostBar.value = (currentHealth / health);
+        healthbar.value = ((currentHealth - hauntedStoredDamage) / health);
         easeHealthbar.value = Mathf.Lerp(easeHealthbar.value, healthbar.value, lerpSpeed);
         if (currentHealth > health)
         {
             currentHealth = health;
+            
+        }
+
+        if (IsometricAiming.cameraTransform != null)
+        {
+            UIParent.rotation = IsometricAiming.cameraTransform.rotation;
         }
     }
 
 
     public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
-        
+        int finalDamage;
         GameObject dmgNumber = Instantiate(damageNumber, damageNumberSpawn.position, damageNumberSpawn.rotation);
         float rcchance = Random.Range(0, 100);
         if (rcchance < (critC+rustboost)) 
@@ -90,10 +123,9 @@ public class EnemyDamage : MonoBehaviour
             }
             dmgNumber.GetComponent<DamageNumber>().textDmg.outlineColor = new Color(1,0,0);
         }
-        Debug.Log("crit chance: "+ (critC + rustboost));
+        //Debug.Log("crit chance: "+ (critC + rustboost));
 
-        dmgNumber.GetComponent<DamageNumber>().type = type;
-        dmgNumber.GetComponent<DamageNumber>().damage = damage;
+        
         if (source != null)
         {
             source.GetComponent<PlayerShoot>().onHit();
@@ -107,8 +139,17 @@ public class EnemyDamage : MonoBehaviour
                 GameObject ball = Instantiate(crystallizedDrop, transform.position, transform.rotation);
             }
         }
+        if (haunted)
+        {
+            hauntedStoredDamage += damage * BoonSTaticInfo.hauntedDamagePercentage / 100;
+        }
 
-        currentHealth -= damage;
+        finalDamage = (int)(damage * (1+(((radiationAmmount+0.02f)*BoonSTaticInfo.radiationWeakness)/100)));
+
+        
+        dmgNumber.GetComponent<DamageNumber>().type = type;
+        dmgNumber.GetComponent<DamageNumber>().damage = finalDamage;
+        currentHealth -= finalDamage;
         {
             if (currentHealth < 0)
             {
@@ -119,8 +160,13 @@ public class EnemyDamage : MonoBehaviour
 
     public void Death()
     {
+        dead = true;
+        if (haunted)
+        {
+            SummonGhost();
+        }
         EnemyScript body = GetComponent<EnemyScript>();
-        body.dead = true;
+        body.dead = dead;
         Destroy(gameObject, deathDelay);
     }
 
@@ -137,7 +183,11 @@ public class EnemyDamage : MonoBehaviour
                 {
                     StartCoroutine(SwarmDuration());
                     StartCoroutine(SwarmDamage());
-                    source.GetComponent<PlayerShoot>().onStatus(status);
+                    if (source != null)
+                    {
+                        source.GetComponent<PlayerShoot>().onStatus(status);
+                    }
+                    
                 }
                 swarmed = true;
 
@@ -145,7 +195,13 @@ public class EnemyDamage : MonoBehaviour
             case "haunted":
                 if (!haunted)
                 {
-                    source.GetComponent<PlayerShoot>().onStatus(status);
+                    haunted = true;
+                    StartCoroutine(HauntedDuration());
+                    if (source != null)
+                    {
+                        source.GetComponent<PlayerShoot>().onStatus(status);
+                    }
+
                 }
                 break;
             case "crystallize":
@@ -153,7 +209,10 @@ public class EnemyDamage : MonoBehaviour
                 {
                     crystallized = true;
                     StartCoroutine(CrystallizeDuration());
-                    source.GetComponent<PlayerShoot>().onStatus(status);
+                    if (source != null)
+                    {
+                        source.GetComponent<PlayerShoot>().onStatus(status);
+                    }
                 }
                 break;
             case "null":
@@ -163,7 +222,10 @@ public class EnemyDamage : MonoBehaviour
                     BoonSTaticInfo.nullCurrentCount++;
                     nulled = true;
                     StartCoroutine(NullDuration());
-                    source.GetComponent<PlayerShoot>().onStatus(status);
+                    if (source != null)
+                    {
+                        source.GetComponent<PlayerShoot>().onStatus(status);
+                    }
                 }
                 break;
 
@@ -177,7 +239,10 @@ public class EnemyDamage : MonoBehaviour
 
                         TakeDamage(BoonSTaticInfo.starfallDamage, "starfall", 0, 0, null);
                         StartCoroutine(StarfallDuration());
-                        source.GetComponent<PlayerShoot>().onStatus(status);
+                        if (source != null)
+                        {
+                            source.GetComponent<PlayerShoot>().onStatus(status);
+                        }
                     }
                 }
                 
@@ -187,19 +252,39 @@ public class EnemyDamage : MonoBehaviour
                 {
                     rusted = true;
                     StartCoroutine(RustDuration());
-                    source.GetComponent<PlayerShoot>().onStatus(status);
+                    if (source != null)
+                    {
+                        source.GetComponent<PlayerShoot>().onStatus(status);
+                    }
                     EnemyShoot body = GetComponent<EnemyShoot>();
                     body.rusted = true;
                 }
                 
                 break;
             case "tectonic":
-
+                if (!tectoniked && BoonSTaticInfo.tectonicCurrentCount < BoonSTaticInfo.tectonicMaxCount)
+                {
+                    GameObject ball = Instantiate(tectonic, transform.position, transform.rotation);
+                    BoonSTaticInfo.tectonicCurrentCount++;
+                    tectoniked = true;
+                    StartCoroutine(TectonicDuration());
+                    if (source != null)
+                    {
+                        source.GetComponent<PlayerShoot>().onStatus(status);
+                    }
+                }
+                
                 break;
             case "radiation":
                 if (!irradiated)
                 {
-                    source.GetComponent<PlayerShoot>().onStatus(status);
+                    irradiated = true;
+                    radiationRing.SetActive(true);
+                    if (source != null)
+                    {
+                        source.GetComponent<PlayerShoot>().onStatus(status);
+                    }
+                    StartCoroutine(RadiationDuration());
                 }
                 break;
 
@@ -225,7 +310,6 @@ public class EnemyDamage : MonoBehaviour
         yield return new WaitForSeconds(BoonSTaticInfo.swarmAttackSpeed);
         if (swarmed)
         {
-            Debug.Log("swarm ATTACK");
             StartCoroutine(SwarmDamage());
         }
     }
@@ -241,6 +325,7 @@ public class EnemyDamage : MonoBehaviour
         EnemyScript enemy = gameObject.GetComponent<EnemyScript>();
         enemy.controller.Move(direction.normalized * BoonSTaticInfo.nullPullStrength * Time.deltaTime);
     }
+
     IEnumerator NullDuration()
     {
         yield return new WaitForSeconds(BoonSTaticInfo.nullDuration);
@@ -259,6 +344,37 @@ public class EnemyDamage : MonoBehaviour
         rusted = false;
         EnemyShoot body = GetComponent<EnemyShoot>();
         body.rusted = false;
+    }
+
+    IEnumerator TectonicDuration()
+    {
+        yield return new WaitForSeconds(BoonSTaticInfo.tectonicDuration);
+        tectoniked = false;
+    }
+
+    IEnumerator RadiationDuration()
+    {
+        yield return new WaitForSeconds(BoonSTaticInfo.radiationDuration+0.1f);
+        radiationRing.SetActive(false);
+        irradiated = false;
+    }
+
+    IEnumerator HauntedDuration()
+    {
+        yield return new WaitForSeconds(BoonSTaticInfo.hauntedDuration);
+        SummonGhost();
+        haunted = false;
+    }
+
+    public void SummonGhost()
+    {
+        if (currentHealth>0)
+        {
+            TakeDamage(hauntedStoredDamage, "haunted", 0, 0, null);
+            hauntedStoredDamage = 0;
+        }
+        GameObject ball = Instantiate(ghost, transform.position, transform.rotation);
+        ball.GetComponent<Ghost>().source = gameObject; 
     }
 }
 
