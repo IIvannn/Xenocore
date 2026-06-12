@@ -15,8 +15,8 @@ public class PlayerDamage : MonoBehaviour
     public TextMeshProUGUI crystalText;
     float lerpSpeed = 0.03f;
     [Header("Health")]
-    public float hp = 100f;
-    public float currentHp = 1f;
+    public static float hp = 100f;
+    public static float currentHp = 1f;
     public static bool dead = false;
     [Header("Energy")]
     public float energy = 100;
