@@ -30,7 +30,7 @@ public class Pickup : MonoBehaviour
             {
                 switch (reward)
                 {
-                    case "crystals":
+                    case "crystal":
                         BoonSTaticInfo.crystals += (int)(amount);
                         return;
                     case "health":

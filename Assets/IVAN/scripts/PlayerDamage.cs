@@ -16,12 +16,16 @@ public class PlayerDamage : MonoBehaviour
     float lerpSpeed = 0.03f;
     [Header("Health")]
     public static float hp = 100f;
-    public static float currentHp = 1f;
+    public static float currentHp = 100f;
     public static bool dead = false;
     [Header("Energy")]
     public float energy = 100;
     public float currentEnergy = 0;
-    
+
+
+    float crystalerp;
+    float hplerp;
+    float energylerp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,11 +37,18 @@ public class PlayerDamage : MonoBehaviour
     void Update()
     {
         healthbar.value = (currentHp/hp);
-        healthText.text = (currentHp + "/" + hp);
+        
         easeHealthbar.value = Mathf.Lerp(easeHealthbar.value, healthbar.value, lerpSpeed);
         energybar.value = (currentEnergy / energy);
-        energyText.text = (currentEnergy + "/" + energy);
-        crystalText.text = (BoonSTaticInfo.crystals).ToString();
+
+        hplerp = Mathf.Lerp(hplerp, currentHp, lerpSpeed);
+        energylerp = Mathf.Lerp(energylerp, currentEnergy, lerpSpeed);
+        crystalerp = Mathf.Lerp(crystalerp, BoonSTaticInfo.crystals, lerpSpeed);
+
+        crystalText.text = ((int)crystalerp+1).ToString();
+        healthText.text = (((int)hplerp + 1) + "/" + hp);
+        energyText.text = (((int)energylerp + 1) + "/" + energy);
+
         if (currentHp > hp)
         {
             currentHp = hp;
