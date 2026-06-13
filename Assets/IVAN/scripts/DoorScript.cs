@@ -25,14 +25,14 @@ public class DoorScript : MonoBehaviour
         {
             numbers = Enumerable.Range(0, numberOfRooms).ToArray(); // 0 to 10 inclusive
 
-            
+
             for (int i = numbers.Length - 1; i > 0; i--)
             {
                 int j = Random.Range(0, i + 1);
                 (numbers[i], numbers[j]) = (numbers[j], numbers[i]);
             }
 
-            Debug.Log("Room order:  "+string.Join(", ", numbers));
+            Debug.Log(numbers[0]);
         }
         
     }

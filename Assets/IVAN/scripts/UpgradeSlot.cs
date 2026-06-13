@@ -22,6 +22,8 @@ public class UpgradeSlot : MonoBehaviour
 
     void UpgradeSelected()
     {
-        Debug.Log(upgrade);
+        Debug.Log(upgrade+"  chosen");
+        UpgradeManager.UpgradeSelected(upgrade);
     }
+
 }
