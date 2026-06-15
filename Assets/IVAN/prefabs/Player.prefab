@@ -697,6 +697,7 @@ MonoBehaviour:
   healthText: {fileID: 6304800302729855892}
   energyText: {fileID: 454642322759231190}
   crystalText: {fileID: 2368016752935333281}
+  upgrader: {fileID: 8811324942328180004}
   energy: 100
   currentEnergy: 0
 --- !u!114 &1040869567622031174
@@ -849,6 +850,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2922518227371902231, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922518227371902231, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922518227371902231, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922518227371902231, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3519656040782659199, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -953,9 +970,41 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4507630608195936065, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507630608195936065, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507630608195936065, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507630608195936065, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4653376198913341320, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
       propertyPath: m_Name
       value: IngameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852816608121471558, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852816608121471558, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852816608121471558, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852816608121471558, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5657697108379983751, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
       propertyPath: ud
@@ -982,6 +1031,54 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6591554946923516544, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484888828197391377, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484888828197391377, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484888828197391377, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484888828197391377, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337334306858160666, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337334306858160666, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337334306858160666, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337334306858160666, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945614119436427769, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945614119436427769, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945614119436427769, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945614119436427769, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -1062,6 +1159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &8811324942328180004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7190936263660028266, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}
+  m_PrefabInstance: {fileID: 1838395774538148942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &9175081645247976536 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7410456662300604438, guid: c62d7e0b382c4e7438a33a631a45e157, type: 3}

@@ -32,7 +32,7 @@ public class DoorScript : MonoBehaviour
                 (numbers[i], numbers[j]) = (numbers[j], numbers[i]);
             }
 
-            Debug.Log(numbers[0]);
+            //Debug.Log(string.Join(", ", numbers));
         }
         
     }

@@ -28,26 +28,32 @@ public class Pickup : MonoBehaviour
             closeIndicator.SetActive(true);
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {
-                switch (reward)
-                {
-                    case "crystal":
-                        BoonSTaticInfo.crystals += (int)(amount);
-                        return;
-                    case "health":
-                        PlayerDamage.currentHp += (int)(amount);
-                        return;
-                    case "maxHealth":
-                        PlayerDamage.currentHp += (int)(amount);
-                        PlayerDamage.hp += (int)(amount);
-                        return;
-
-                }
+                Pick();
                 Destroy(gameObject);
+                
             }
         }
         else
         {
             closeIndicator.SetActive(false);
+        }
+    }
+
+    void Pick()
+    {
+        switch (reward)
+        {
+            case "crystal":
+                BoonSTaticInfo.crystals += (int)(amount);
+                return;
+            case "health":
+                PlayerDamage.currentHp += (int)(amount);
+                return;
+            case "maxHealth":
+                PlayerDamage.currentHp += (int)(amount);
+                PlayerDamage.hp += (int)(amount);
+                return;
+
         }
     }
 }
