@@ -23,20 +23,6 @@ public class UpgradeManager : MonoBehaviour
     public List<UpgradeData> radiationUpgrades = new List<UpgradeData>();
 
 
-    bool hasAttack = false;
-    bool hasSpecial = false;
-    bool hasSpell = false;
-
-    bool hasSwarm = false;
-    bool hasHaunted = false;
-    bool hasCrystallize = false;
-    bool hasNull = false;
-    bool hasStarfall = false;
-    bool hasRust = false;
-    bool hasTectonic = false;
-    bool hasRadiation = false;
-
-
     List<UpgradeData> AvailableUpgrades = new List<UpgradeData>();
     List<UpgradeData> SelectedUpgrades = new List<UpgradeData>();
     public static List<UpgradeData> OwnedUpgrades = new List<UpgradeData>();
@@ -206,6 +192,16 @@ public class UpgradeManager : MonoBehaviour
         switch (upg)
         {
             case "boomerang grow":
+                BoonSTaticInfo.boomerangGrow = true;
+                return;
+            case "boomerang mark":
+                BoonSTaticInfo.boomerangMark = true;
+                return;
+            case "boomerang return shockwave":
+                BoonSTaticInfo.boomerangReturnShockwave = true;
+                return;
+            case "boomerang speed":
+                BoonSTaticInfo.boomerangSpeed = true;
                 return;
         }
     }

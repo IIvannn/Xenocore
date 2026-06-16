@@ -52,6 +52,30 @@ public class BoonSTaticInfo : MonoBehaviour
 
     public static  List<Transform> enemiesInRange = new List<Transform>();
 
+
+
+    public static bool hasAttack = false;
+    public static bool hasSpecial = false;
+    public static bool hasSpell = false;
+
+    public static bool hasSwarm = false;
+    public static bool hasHaunted = false;
+    public static bool hasCrystallize = false;
+    public static bool hasNull = false;
+    public static bool hasStarfall = false;
+    public static bool hasRust = false;
+    public static bool hasTectonic = false;
+    public static bool hasRadiation = false;
+
+    [Header("Boomerang Boons")]
+    public static bool boomerangGrow = false;
+    public static float boomerangGrowBonus = 0.2f;
+    public static bool boomerangMark = false;
+    public static bool boomerangReturnShockwave = false;
+    public static bool boomerangSpeed = false;
+    public static float boomerangSpeedBonus = 15f;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
