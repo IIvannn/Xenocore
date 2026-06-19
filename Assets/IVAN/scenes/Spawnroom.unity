@@ -2383,6 +2383,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 6260905542698369766, guid: 32093059130e36c4bb78fec5553f4deb, type: 3}
+      propertyPath: boomerangSpecialRotationSpeed
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6271093964553761737, guid: 32093059130e36c4bb78fec5553f4deb, type: 3}
       propertyPath: ud
       value: 

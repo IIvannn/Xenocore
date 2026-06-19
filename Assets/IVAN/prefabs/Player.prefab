@@ -570,8 +570,8 @@ GameObject:
   - component: {fileID: 2897085874952422343}
   - component: {fileID: 4776068984403747632}
   - component: {fileID: 5350251277059146443}
-  - component: {fileID: 1040869567622031174}
   - component: {fileID: 6260905542698369766}
+  - component: {fileID: 1040869567622031174}
   - component: {fileID: 6770461742096778746}
   m_Layer: 0
   m_Name: Player
@@ -700,6 +700,40 @@ MonoBehaviour:
   upgrader: {fileID: 8811324942328180004}
   energy: 100
   currentEnergy: 0
+--- !u!114 &6260905542698369766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9162987725772162685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47924896fb35bd84d866e7137e4625c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
+  firePoint: {fileID: 550758163460921558}
+  aimer: {fileID: 2442787637561615738}
+  boomerang: {fileID: 2549096147295879009, guid: 2bbf14146cff70e42bc9e5af216266c1, type: 3}
+  boomerangSpecial: {fileID: 182578793256550664, guid: 8215f977d19f74d4fa13f561d74cd191, type: 3}
+  firerate: 0.1
+  boomerangSpeed: 20
+  boomerangReturnSpeed: 35
+  boomerangTimeBeforeReturn: 1
+  boomerangDamage: 20
+  boomerangCritChance: 30
+  boomerangCritDamage: 1.5
+  energyPerHit: 0
+  attackType: normal
+  boomerangSpecialDamage: 5
+  boomerangSpecialDuration: 1
+  boomerangSpecialRotationSpeed: 5000
+  boomerangSpecialCooldown: 1.7
+  boomerangSpecialCritChance: 10
+  boomerangSpecialCritDamage: 1.5
+  boomerangSpecialType: normal
+  ammo: 1
+  currentAmmo: 1
 --- !u!114 &1040869567622031174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,31 +754,6 @@ MonoBehaviour:
   dashTime: 0.2
   dashCooldwon: 3
   dashCharges: 2
---- !u!114 &6260905542698369766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9162987725772162685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47924896fb35bd84d866e7137e4625c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
-  firePoint: {fileID: 550758163460921558}
-  boomerang: {fileID: 2549096147295879009, guid: 2bbf14146cff70e42bc9e5af216266c1, type: 3}
-  firerate: 0.1
-  boomerangSpeed: 20
-  boomerangReturnSpeed: 35
-  boomerangTimeBeforeReturn: 1
-  boomerangDamage: 20
-  boomerangCritChance: 30
-  boomerangCritDamage: 1.5
-  energyPerHit: 0
-  ammo: 1
-  currentAmmo: 1
-  attackType: crystallize
 --- !u!143 &6770461742096778746
 CharacterController:
   m_ObjectHideFlags: 0

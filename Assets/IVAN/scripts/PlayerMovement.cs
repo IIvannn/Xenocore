@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     int dashesLeft;
     bool dashOnCooldwon = false;
     bool moving = false;
+    public bool right = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -67,11 +68,12 @@ public class PlayerMovement : MonoBehaviour
             if (move.x > 0)
             {
                 playerSprite.transform.localScale = new Vector3(-1, 1, 1);
+                right = false;
             }
             else if (move.x < 0)
             {
                 playerSprite.transform.localScale = new Vector3(1, 1, 1);
-                
+                right = true;
             }
             if (move.z <0)
             {
