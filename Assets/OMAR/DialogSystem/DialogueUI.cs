@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
@@ -18,43 +18,59 @@ public class DialogueUI : MonoBehaviour
     [Header("Audio")]
     public AudioSource audioSource;
 
+    [Header("Options UI")]
+    public GameObject optionsPanel;
+    public Button optionButtonPrefab;
+
     private DialogueData currentData;
     private int index;
 
     private NPCDialogue npcRef;
+    private bool optionsActive = false;
 
-    //typing effect
+    // typing effect
     private bool isTyping = false;
     private string fullText;
     private float currentTypingSpeed = 0.03f;
 
+    //playeshoot stop
     public bool IsOpen => panel.activeSelf;
+    public bool OptionsActive => optionsActive;
+
+    //revious dialogue in options
+    private DialogueData previousData;
+    private bool hasPreviousDialogue = false;
 
     void Start()
     {
         panel.SetActive(false);
         nextButton.onClick.AddListener(NextLine);
+        optionsPanel.SetActive(false);
     }
 
     void Update()
     {
         if (!panel.activeSelf) return;
 
-        //f control the dialogue
         if (npcRef != null && npcRef.ConsumeJustOpenedFlag())
             return;
 
-        if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame)
-            NextLine();
+        if (!optionsActive)
+        {
+            if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame)
+                NextLine();
+        }
     }
 
-    public void StartDialogue(DialogueData data, NPCDialogue npc)
+    public void StartDialogue(DialogueData data, NPCDialogue npc, int startIndex = 0)
     {
         npcRef = npc;
         currentData = data;
-        index = 0;
+        index = Mathf.Clamp(startIndex, 0, data.lines.Length - 1);
 
         panel.SetActive(true);
+        optionsPanel.SetActive(false);
+
         ShowLine();
     }
 
@@ -65,17 +81,42 @@ public class DialogueUI : MonoBehaviour
 
     void ShowLine()
     {
-        if (currentData == null || index >= currentData.lines.Length)
+        if (currentData == null || currentData.lines == null || currentData.lines.Length == 0)
         {
             EndDialogue();
             return;
         }
 
+        if (index >= currentData.lines.Length)
+        {
+            ShowOptionsOrEnd();
+            return;
+        }
+
         var line = currentData.lines[index];
 
+        //jump for previous dialogue
+        if (line.jumpBackToPreviousDialogue && hasPreviousDialogue && previousData != null)
+        {
+            hasPreviousDialogue = false;
+            StartDialogue(previousData, npcRef, line.previousDialogueLineIndex);
+            return;
+        }
+
+        //lane of jumping dialogue
+        if (line.showOptionsHere)
+        {
+            nameText.text = line.speakerName;
+
+            StopAllCoroutines();
+            StartCoroutine(TypeText(line.text));
+            StartCoroutine(WaitForLineEnd(line));
+            return;
+        }
+
+        //text
         nameText.text = line.speakerName;
 
-        //sprite on the lane
         if (speakerImage != null)
         {
             if (line.speakerSprite != null)
@@ -89,7 +130,6 @@ public class DialogueUI : MonoBehaviour
             }
         }
 
-        //sound of the lane
         if (audioSource != null)
         {
             audioSource.Stop();
@@ -97,15 +137,14 @@ public class DialogueUI : MonoBehaviour
                 audioSource.PlayOneShot(line.voiceClip);
         }
 
-        //speed on lane
         currentTypingSpeed = line.typingSpeed;
 
-        //typing effect on lane
         StopAllCoroutines();
         StartCoroutine(TypeText(line.text));
+        StartCoroutine(WaitForLineEnd(line));
     }
 
-    private IEnumerator TypeText(string text)
+    IEnumerator TypeText(string text)
     {
         isTyping = true;
         dialogueText.text = "";
@@ -118,6 +157,27 @@ public class DialogueUI : MonoBehaviour
         }
 
         isTyping = false;
+    }
+
+    IEnumerator WaitForLineEnd(DialogueLine line)
+    {
+        while (isTyping)
+            yield return null;
+
+        //jump dialogue
+        if (line.jumpBackToPreviousDialogue && hasPreviousDialogue && previousData != null)
+        {
+            hasPreviousDialogue = false;
+            StartDialogue(previousData, npcRef, line.previousDialogueLineIndex);
+            yield break;
+        }
+
+        //show options after lane finish
+        if (line.showOptionsHere)
+        {
+            ShowOptions();
+            yield break;
+        }
     }
 
     public void NextLine()
@@ -134,6 +194,52 @@ public class DialogueUI : MonoBehaviour
         ShowLine();
     }
 
+    void ShowOptionsOrEnd()
+    {
+        if (currentData.options != null && currentData.options.Length > 0)
+        {
+            ShowOptions();
+        }
+        else
+        {
+            EndDialogue();
+        }
+    }
+
+    void ShowOptions()
+    {
+        optionsActive = true;
+        nextButton.gameObject.SetActive(false);
+        optionsPanel.SetActive(true);
+
+        foreach (Transform child in optionsPanel.transform)
+            Destroy(child.gameObject);
+
+        foreach (var option in currentData.options)
+        {
+            Button btn = Instantiate(optionButtonPrefab, optionsPanel.transform);
+            btn.GetComponentInChildren<TMP_Text>().text = option.optionText;
+
+            btn.onClick.AddListener(() =>
+            {
+                optionsActive = false;
+                optionsPanel.SetActive(false);
+                nextButton.gameObject.SetActive(true);
+
+                previousData = currentData;
+                hasPreviousDialogue = true;
+
+                if (option.nextDialogue != null)
+                {
+                    StartDialogue(option.nextDialogue, npcRef, 0);
+                    return;
+                }
+
+                EndDialogue();
+            });
+        }
+    }
+
     void EndDialogue()
     {
         panel.SetActive(false);
@@ -143,5 +249,7 @@ public class DialogueUI : MonoBehaviour
             npcRef.RestoreMovement();
 
         npcRef = null;
+        hasPreviousDialogue = false;
+        previousData = null;
     }
 }

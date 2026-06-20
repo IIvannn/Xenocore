@@ -10,36 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a49675d3da19b054686ae9ecd58461ad, type: 3}
-  m_Name: DialogueData
+  m_Name: option4 NPC 3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   lines:
-  - speakerName: 
-    text: 
+  - speakerName: NPC1
+    text: this is the fourth option
     voiceClip: {fileID: 0}
-    speakerSprite: {fileID: 0}
-    typingSpeed: 0
+    speakerSprite: {fileID: 21300000, guid: 1af2b6fbfe31b6448a7894b8f4ddc424, type: 3}
+    typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
     previousDialogueLineIndex: 0
-  - speakerName: 
-    text: 
+  - speakerName: NPC1
+    text: Talktative cat wanna end the chat here
     voiceClip: {fileID: 0}
-    speakerSprite: {fileID: 0}
-    typingSpeed: 0
+    speakerSprite: {fileID: 21300000, guid: 1af2b6fbfe31b6448a7894b8f4ddc424, type: 3}
+    typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
     previousDialogueLineIndex: 0
-  - speakerName: 
-    text: 
-    voiceClip: {fileID: 0}
-    speakerSprite: {fileID: 0}
-    typingSpeed: 0
-    showOptionsHere: 0
-    jumpBackToPreviousDialogue: 0
-    previousDialogueLineIndex: 0
-  options:
-  - optionText: Yes
-    nextDialogue: {fileID: 0}
-  - optionText: No
-    nextDialogue: {fileID: 0}
-  isFinalDialogue: 0
+  options: []
+  isFinalDialogue: 1

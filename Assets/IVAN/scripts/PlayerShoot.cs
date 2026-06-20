@@ -34,8 +34,8 @@ public class PlayerShoot : MonoBehaviour
 
     bool canspecial = true;
     bool specialing;
-    
 
+    private DialogueUI dialogueUI;
 
     [Header("Other values")]
     public float ammo = 1;
@@ -46,11 +46,15 @@ public class PlayerShoot : MonoBehaviour
     void Start()
     {
         currentAmmo = ammo;
+        dialogueUI = FindAnyObjectByType<DialogueUI>(FindObjectsInactive.Include);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (dialogueUI != null && (dialogueUI.IsOpen || dialogueUI.OptionsActive))
+            return;
+
         //Debug.Log(aimer.rotation.y);
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49675d3da19b054686ae9ecd58461ad, type: 3}
+  m_Name: test2
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: NPC1
+    text: So you are here again uh?
+    voiceClip: {fileID: 0}
+    speakerSprite: {fileID: 21300000, guid: 1af2b6fbfe31b6448a7894b8f4ddc424, type: 3}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+  - speakerName: NPC1
+    text: This is the second time we talk! why are you here again?
+    voiceClip: {fileID: 0}
+    speakerSprite: {fileID: 21300000, guid: 1ebcd2a027580384ba926f6e8f05c22d, type: 3}
+    typingSpeed: 0.06
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+  - speakerName: NPC1
+    text: Ask me anything
+    voiceClip: {fileID: 0}
+    speakerSprite: {fileID: 21300000, guid: 1ebcd2a027580384ba926f6e8f05c22d, type: 3}
+    typingSpeed: 0.06
+    showOptionsHere: 1
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+  options:
+  - optionText: That's Cool!
+    nextDialogue: {fileID: 11400000, guid: 30caf3a0ad4cec74b8f520a66e9e7e92, type: 2}
+  - optionText: What do you say?
+    nextDialogue: {fileID: 11400000, guid: 224e2bba709753f42b978bcdcf2e0cb0, type: 2}
+  - optionText: Is there a 3 option?
+    nextDialogue: {fileID: 11400000, guid: 91bf4269292d83e4b8e5592ceb11b766, type: 2}
+  - optionText: 4 options!
+    nextDialogue: {fileID: 11400000, guid: 07e44587d7dc4ef4a9815b4555d38ca7, type: 2}
+  isFinalDialogue: 0
