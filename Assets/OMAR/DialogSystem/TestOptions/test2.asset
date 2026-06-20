@@ -30,20 +30,12 @@ MonoBehaviour:
     jumpBackToPreviousDialogue: 0
     previousDialogueLineIndex: 0
   - speakerName: NPC1
-    text: Ask me anything
+    text: but this time i'm not gonna give you any options tehee
     voiceClip: {fileID: 0}
     speakerSprite: {fileID: 21300000, guid: 1ebcd2a027580384ba926f6e8f05c22d, type: 3}
     typingSpeed: 0.06
     showOptionsHere: 1
     jumpBackToPreviousDialogue: 0
     previousDialogueLineIndex: 0
-  options:
-  - optionText: That's Cool!
-    nextDialogue: {fileID: 11400000, guid: 30caf3a0ad4cec74b8f520a66e9e7e92, type: 2}
-  - optionText: What do you say?
-    nextDialogue: {fileID: 11400000, guid: 224e2bba709753f42b978bcdcf2e0cb0, type: 2}
-  - optionText: Is there a 3 option?
-    nextDialogue: {fileID: 11400000, guid: 91bf4269292d83e4b8e5592ceb11b766, type: 2}
-  - optionText: 4 options!
-    nextDialogue: {fileID: 11400000, guid: 07e44587d7dc4ef4a9815b4555d38ca7, type: 2}
+  options: []
   isFinalDialogue: 0
