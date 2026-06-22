@@ -21,19 +21,19 @@ public class PlayerShoot : MonoBehaviour
     public float boomerangCritChance = 30f;
     public float boomerangCritDamage = 1.5f;
     public float energyPerHit;
-    public string attackType = "normal";
+    public static string attackType = "normal";
 
     [Header("Boomerang Special")]
     public float boomerangSpecialDamage = 5;
     public float boomerangSpecialDuration = 1;
-    public float boomerangSpecialRotationSpeed = 100f;
-    public float boomerangSpecialCooldown = 1.7f;
+    public float boomerangSpecialRotationSpeed = 3f;
+    public float boomerangSpecialCooldown = 2f;
     public float boomerangSpecialCritChance = 10;
     public float boomerangSpecialCritDamage = 1.5f;
-    public string boomerangSpecialType = "normal";
+    public static string boomerangSpecialType = "normal";
 
-    bool canspecial = true;
-    bool specialing;
+    public bool canspecial = true;
+    public bool specialing;
 
     private DialogueUI dialogueUI;
 

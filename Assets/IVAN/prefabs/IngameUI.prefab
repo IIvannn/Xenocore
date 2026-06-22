@@ -2199,25 +2199,40 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 33b13631536357c43a2f7d0e384695c1, type: 2}
   - {fileID: 11400000, guid: 82b54c88a4afe5248b68e5e4c466f4f6, type: 2}
   - {fileID: 11400000, guid: 36b144e31e494d44481610df08c9e9ec, type: 2}
+  - {fileID: 11400000, guid: d67501bbe22e57149848edee0cfa82c1, type: 2}
+  - {fileID: 11400000, guid: 27d98a049093eec4d854ead4a3bb441a, type: 2}
   swarmUpgrades:
   - {fileID: 11400000, guid: 1d7a111156146a942bd207f81146dfa0, type: 2}
-  - {fileID: 11400000, guid: 79b58e2dcd379ed4b828e4859d649a36, type: 2}
-  - {fileID: 11400000, guid: fd90f1ade77c71845bfdc9e223caaa56, type: 2}
+  - {fileID: 11400000, guid: 4953194d984797246ab10f6b95a4efd2, type: 2}
+  - {fileID: 11400000, guid: f984b04273af3c0438b5f08153f9c31a, type: 2}
   hauntedUpgrades:
   - {fileID: 11400000, guid: 79b58e2dcd379ed4b828e4859d649a36, type: 2}
+  - {fileID: 11400000, guid: ac071f22adb955f4f9edd1ca64dd1756, type: 2}
+  - {fileID: 11400000, guid: 1b8549c986030d246baece6648525df8, type: 2}
   crystallizeUpgrades:
   - {fileID: 11400000, guid: 59bcdc4b55a70fc498cb699b7c6c6fde, type: 2}
+  - {fileID: 11400000, guid: 805fbcaf84bdf3540bb2766cec43df15, type: 2}
+  - {fileID: 11400000, guid: 8ef059fb7445cbf419173a08911c84c7, type: 2}
   nullUpgrades:
   - {fileID: 11400000, guid: 4990a911f7ff0c849a86032c00304172, type: 2}
+  - {fileID: 11400000, guid: 44812b4c673086240816a8e7f8dc5d82, type: 2}
+  - {fileID: 11400000, guid: 8abcbfb592611314eaad1d081d785a94, type: 2}
   starfallUpgrades:
   - {fileID: 11400000, guid: 338cc7e576b217a43a2f1802281b9026, type: 2}
+  - {fileID: 11400000, guid: 7ad7f19fd6ddcb247af08ca114cbc1cd, type: 2}
+  - {fileID: 11400000, guid: 7bc97cde9ad4da3449089a6ba0a1c3da, type: 2}
   rustUpgrades:
   - {fileID: 11400000, guid: fd90f1ade77c71845bfdc9e223caaa56, type: 2}
+  - {fileID: 11400000, guid: a16bc54d8b57a8b48b75f82715a3c994, type: 2}
+  - {fileID: 11400000, guid: 70d6e7982c3f0a7408f80c3fedf1e01d, type: 2}
   tectonicUpgrades:
   - {fileID: 11400000, guid: 7c2c5573a9321124b918c017f1d3ca7d, type: 2}
+  - {fileID: 11400000, guid: 3540209c8090ac5459146b5ebce1cd66, type: 2}
+  - {fileID: 11400000, guid: 4b9ff257d07414942a4a4845e0fb02dc, type: 2}
   radiationUpgrades:
   - {fileID: 11400000, guid: 54e0e5796529a804ca4a0ebced64f133, type: 2}
-  AvailableUpgrades: []
+  - {fileID: 11400000, guid: cd10bc0b0b2ebcd4fa8f74442fa6f919, type: 2}
+  - {fileID: 11400000, guid: b54fbaaa481c63a4498b526ca3d6986f, type: 2}
 --- !u!1 &7509536875558957452
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeName: boomerang mark
   description: If enemies are hit by the initial launch of the boomerang, on return
     to them
-  upgradeIcon: {fileID: 21300000, guid: 57a2a5b07a7eb5749b88d903c719e09f, type: 3}
+  upgradeIcon: {fileID: 21300000, guid: 861be883197612240b60d2db79a52fea, type: 3}

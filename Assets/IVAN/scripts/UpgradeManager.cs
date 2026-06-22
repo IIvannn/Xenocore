@@ -64,7 +64,7 @@ public class UpgradeManager : MonoBehaviour
                 }
                 return;
             case "haunted":
-                foreach (var item in boomerangUpgrades)
+                foreach (var item in hauntedUpgrades)
                 {
                     if (!OwnedUpgrades.Contains(item))
                     {
@@ -73,7 +73,7 @@ public class UpgradeManager : MonoBehaviour
                 }
                 return;
             case "crystallize":
-                foreach (var item in boomerangUpgrades)
+                foreach (var item in crystallizeUpgrades)
                 {
                     if (!OwnedUpgrades.Contains(item))
                     {
@@ -82,7 +82,7 @@ public class UpgradeManager : MonoBehaviour
                 }
                 return;
             case "null":
-                foreach (var item in boomerangUpgrades)
+                foreach (var item in nullUpgrades)
                 {
                     if (!OwnedUpgrades.Contains(item))
                     {
@@ -91,7 +91,7 @@ public class UpgradeManager : MonoBehaviour
                 }
                 return;
             case "starfall":
-                foreach (var item in boomerangUpgrades)
+                foreach (var item in starfallUpgrades)
                 {
                     if (!OwnedUpgrades.Contains(item))
                     {
@@ -100,7 +100,7 @@ public class UpgradeManager : MonoBehaviour
                 }
                 return;
             case "rust":
-                foreach (var item in boomerangUpgrades)
+                foreach (var item in rustUpgrades)
                 {
                     if (!OwnedUpgrades.Contains(item))
                     {
@@ -109,7 +109,7 @@ public class UpgradeManager : MonoBehaviour
                 }
                 return;
             case "tectonic":
-                foreach (var item in boomerangUpgrades)
+                foreach (var item in tectonicUpgrades)
                 {
                     if (!OwnedUpgrades.Contains(item))
                     {
@@ -118,7 +118,7 @@ public class UpgradeManager : MonoBehaviour
                 }
                 return;
             case "radiation":
-                foreach (var item in boomerangUpgrades)
+                foreach (var item in radiationUpgrades)
                 {
                     if (!OwnedUpgrades.Contains(item))
                     {
@@ -189,8 +189,10 @@ public class UpgradeManager : MonoBehaviour
 
     void ApplyUpgrade(string upg)
     {
+        Debug.Log("apply upgrade:  "+upg);
         switch (upg)
         {
+            //BOOMERANG
             case "boomerang grow":
                 BoonSTaticInfo.boomerangGrow = true;
                 return;
@@ -202,6 +204,78 @@ public class UpgradeManager : MonoBehaviour
                 return;
             case "boomerang speed":
                 BoonSTaticInfo.boomerangSpeed = true;
+                return;
+            case "boomerang special cooldown":
+                BoonSTaticInfo.boomerangSpecialCooldwon = true;
+                return;
+            case "boomerang special grow":
+                BoonSTaticInfo.boomerangSpecialGrow = true;
+                return;
+
+            //SWARM
+            case "swarm attack":
+                PlayerShoot.attackType = "swarm";
+                return;
+            case "swarm special":
+                PlayerShoot.boomerangSpecialType = "swarm";
+                return;
+
+            //HAUNTED
+            case "haunted attack":
+                PlayerShoot.attackType = "haunted";
+                return;
+            case "haunted special":
+                PlayerShoot.boomerangSpecialType = "haunted";
+                return;
+
+            //CRYSTALLIZE
+            case "crystallize attack":
+                PlayerShoot.attackType = "crystallize";
+                return;
+            case "crystallize special":
+                PlayerShoot.boomerangSpecialType = "crystallize";
+                return;
+
+            //NULL
+            case "null attack":
+                PlayerShoot.attackType = "null";
+                return;
+            case "null special":
+                PlayerShoot.boomerangSpecialType = "null";
+                return;
+
+            //STARFALL
+            case "starfall attack":
+                PlayerShoot.attackType = "starfall";
+                return;
+            case "starfall special":
+                PlayerShoot.boomerangSpecialType = "starfall";
+                return;
+
+            //RUST
+            case "rust attack":
+                PlayerShoot.attackType = "rust";
+                return;
+            case "rust special":
+                PlayerShoot.boomerangSpecialType = "rust";
+                return;
+
+
+            //TECTONIC
+            case "tectonic attack":
+                PlayerShoot.attackType = "tectonic";
+                return;
+            case "tectonic special":
+                PlayerShoot.boomerangSpecialType = "tectonic";
+                return;
+
+
+            //RADIATION
+            case "radiation attack":
+                PlayerShoot.attackType = "radiation";
+                return;
+            case "radiation special":
+                PlayerShoot.boomerangSpecialType = "radiation";
                 return;
         }
     }

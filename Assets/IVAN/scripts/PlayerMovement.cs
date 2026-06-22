@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public int dashCharges = 2;
     float sprintSpeedBonus = 0;
     int dashesLeft;
-    bool dashOnCooldwon = false;
+    public bool dashOnCooldwon = false;
     bool moving = false;
     public bool right = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -114,8 +114,6 @@ public class PlayerMovement : MonoBehaviour
 
         IEnumerator Dash()
         {
-            
-
             dashesLeft--;
             //Debug.Log("dashes left: " + dashesLeft);
             float startTime = Time.time;
@@ -124,6 +122,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 controller.Move(move * dashSpeed * Time.deltaTime);
                 yield return null;
+                
+            }
+            if (BoonSTaticInfo.boomerangSpecialCooldwon)
+            {
+                PlayerShoot playerShoot = GetComponent<PlayerShoot>();
+                if (!playerShoot.specialing)
+                {
+                    playerShoot.canspecial = true;
+                }
             }
         }
 
