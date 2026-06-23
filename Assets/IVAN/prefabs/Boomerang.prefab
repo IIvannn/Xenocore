@@ -132,6 +132,8 @@ MonoBehaviour:
   timeBeforeReturn: 3
   rotateSpeed: 2000
   damage: 1
+  critDamage: 0
+  critChance: 0
   type: 
   source: {fileID: 0}
   shootsnd: {fileID: 0}
@@ -139,6 +141,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  shockwave: {fileID: 1722624632512583627, guid: ef651324ef8d58e45a9ea50c2507e96f, type: 3}
 --- !u!135 &3925446932013699573
 SphereCollider:
   m_ObjectHideFlags: 0

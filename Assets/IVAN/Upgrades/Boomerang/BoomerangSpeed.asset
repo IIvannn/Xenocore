@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BoomerangSpeed
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeName: boomerang speed
-  description: Increased projectile speed
-  upgradeIcon: {fileID: 21300000, guid: 57a2a5b07a7eb5749b88d903c719e09f, type: 3}
+  description: Increased attack speed, projectile speed and special speed
+  upgradeIcon: {fileID: 21300000, guid: 861be883197612240b60d2db79a52fea, type: 3}

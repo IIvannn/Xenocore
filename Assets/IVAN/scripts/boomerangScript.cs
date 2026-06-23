@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class boomerangScript : MonoBehaviour
 {
+    
     public float moveSpeed = 10f;
     public float returnSpeed = 1.0f;
     public float timeBeforeReturn = 3f;
@@ -21,6 +22,7 @@ public class boomerangScript : MonoBehaviour
     public AudioSource shootsnd;
     public GameObject sprite;
     public LayerMask groundMask;
+    public GameObject shockwave;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +31,11 @@ public class boomerangScript : MonoBehaviour
         //Destroy(gameObject, 8);
         //shootsnd.Play();
         StartCoroutine(Return());
+        if (BoonSTaticInfo.boomerangSpeed)
+        {
+            moveSpeed += BoonSTaticInfo.boomerangSpeedBonus;
+            returnSpeed += BoonSTaticInfo.boomerangSpeedBonus;
+        }
     }
 
     // Update is called once per frame
@@ -37,13 +44,13 @@ public class boomerangScript : MonoBehaviour
         sprite.transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
         if (Physics.CheckSphere(transform.position, 0.5f, groundMask))
         {
-            returning = true;
+            ReturnTrigger();
         }
 
 
         if (Mouse.current.leftButton.wasPressedThisFrame && returning == false)
         {
-            returning = true;
+            ReturnTrigger();
         }
 
         if (returning)
@@ -92,6 +99,7 @@ public class boomerangScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
+            
             if (!returning)
             {
                 if (!enemieshitOnLaunch.Contains(other.gameObject))
@@ -100,7 +108,10 @@ public class boomerangScript : MonoBehaviour
                     //Debug.Log("EnemyDamage hit for:  " + damage);
                     other.GetComponent<EnemyDamage>().TakeDamage(damage, type, critChance, critDamage, source);
                     other.GetComponent<EnemyDamage>().ApplyStatus(type,source);
-                    
+                    if (BoonSTaticInfo.boomerangGrow)
+                    {
+                        gameObject.transform.localScale += new Vector3(BoonSTaticInfo.boomerangGrowBonus, BoonSTaticInfo.boomerangGrowBonus, BoonSTaticInfo.boomerangGrowBonus);
+                    }
                 }
             }
             else
@@ -111,7 +122,10 @@ public class boomerangScript : MonoBehaviour
                     //Debug.Log("EnemyDamage hit for:  " + damage);
                     other.GetComponent<EnemyDamage>().TakeDamage(damage, type, critChance, critDamage, source);
                     other.GetComponent<EnemyDamage>().ApplyStatus(type,source);
-                    
+                    if (BoonSTaticInfo.boomerangMark && enemieshitOnLaunch.Contains(other.gameObject))
+                    {
+                        Shockwave();
+                    }
                 } 
             }
 
@@ -125,5 +139,20 @@ public class boomerangScript : MonoBehaviour
         //Debug.Log("return");
         yield return new WaitForSeconds(timeBeforeReturn);
         returning = true;
+    }
+
+    void ReturnTrigger()
+    {
+        returning = true;
+        if (BoonSTaticInfo.boomerangReturnShockwave)
+        {
+            Shockwave();
+        }
+    }
+
+    void Shockwave()
+    {
+        Debug.Log("shockwave");
+        GameObject ball = Instantiate(shockwave, transform.position, transform.rotation);
     }
 }

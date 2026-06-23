@@ -13,6 +13,7 @@ public class PlayerDamage : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI energyText;
     public TextMeshProUGUI crystalText;
+    public GameObject upgrader;
     float lerpSpeed = 0.03f;
     [Header("Health")]
     public static float hp = 100f;

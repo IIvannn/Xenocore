@@ -150,11 +150,20 @@ public class EnemyDamage : MonoBehaviour
         dmgNumber.GetComponent<DamageNumber>().type = type;
         dmgNumber.GetComponent<DamageNumber>().damage = finalDamage;
         currentHealth -= finalDamage;
+
+
+
+        int rschance = Random.Range(0, 100);
+        if (rschance < BoonSTaticInfo.starfallChance && starfalled)
         {
-            if (currentHealth < 0)
-            {
-                Death();
-            }
+            Debug.Log("starfall chance:  " + rschance);
+
+            TakeDamage(BoonSTaticInfo.starfallDamage, "starfall", 0, 0, null);
+
+        }
+        if (currentHealth < 0)
+        {
+            Death();
         }
     }
 
@@ -232,18 +241,13 @@ public class EnemyDamage : MonoBehaviour
             case "starfall":
                 if (!starfalled)
                 {
-                    int rchance = Random.Range(0, 100);
-                    if (rchance < BoonSTaticInfo.starfallChance)
+                    starfalled = true;
+                    StartCoroutine(StarfallDuration());
+                    if (source != null)
                     {
-                        Debug.Log("starfall chance:  " + rchance);
-
-                        TakeDamage(BoonSTaticInfo.starfallDamage, "starfall", 0, 0, null);
-                        StartCoroutine(StarfallDuration());
-                        if (source != null)
-                        {
-                            source.GetComponent<PlayerShoot>().onStatus(status);
-                        }
+                       source.GetComponent<PlayerShoot>().onStatus(status);
                     }
+                    
                 }
                 
                 break;
@@ -276,8 +280,9 @@ public class EnemyDamage : MonoBehaviour
                 
                 break;
             case "radiation":
-                if (!irradiated)
+                if (!irradiated && BoonSTaticInfo.radiationCurrentCount < BoonSTaticInfo.radiationMaxCount)
                 {
+                    BoonSTaticInfo.radiationCurrentCount++;
                     irradiated = true;
                     radiationRing.SetActive(true);
                     if (source != null)
@@ -356,6 +361,7 @@ public class EnemyDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(BoonSTaticInfo.radiationDuration+0.1f);
         radiationRing.SetActive(false);
+        BoonSTaticInfo.radiationCurrentCount--;
         irradiated = false;
     }
 

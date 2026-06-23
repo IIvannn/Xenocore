@@ -6,9 +6,16 @@ public class DialogueLine
     public string speakerName;
     [TextArea] public string text;
 
-    public AudioClip voiceClip;//sound
-    public Sprite speakerSprite;//sprite
+    public AudioClip voiceClip;
+    public Sprite speakerSprite;
 
     [Header("Typing Speed")]
-    public float typingSpeed = 0.03f; //speed of the lane
+    public float typingSpeed = 0.03f;
+
+    [Header("Options")]
+    public bool showOptionsHere = false;
+
+    [Header("Return to previous dialogue")]
+    public bool jumpBackToPreviousDialogue = false;
+    public int previousDialogueLineIndex = 0;
 }

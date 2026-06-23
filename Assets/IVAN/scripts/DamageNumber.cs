@@ -17,7 +17,7 @@ public class DamageNumber : MonoBehaviour
         textDmg.text = damage.ToString();
         float offset = Random.Range(-xoffset, xoffset);
         transform.position += new Vector3(offset, 0, 0);
-        float bsize = damage / 70f;
+        float bsize = damage / 60f;
         textDmg.fontSize += bsize;
         
 
