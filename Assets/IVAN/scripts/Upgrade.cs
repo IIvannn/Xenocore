@@ -47,7 +47,7 @@ public class Upgrade : MonoBehaviour
         GameObject upgrader = player.GetComponent<PlayerDamage>().upgrader;
         upgrader.SetActive(true);
         UpgradeManager upgradeManager = upgrader.GetComponent<UpgradeManager>();
-
+        //upgradeManager.ChoseUpgrades();
         switch (type)
         {
             case "boomerang":

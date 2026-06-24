@@ -21,7 +21,7 @@ public class CrystalDrop : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            BoonSTaticInfo.crystals += BoonSTaticInfo.crystallizeCrystalAmmount;
+            BoonSTaticInfo.crystals += (int)(BoonSTaticInfo.crystallizeCrystalAmmount* BoonSTaticInfo.moneyMultiplier);
             other.GetComponent<PlayerDamage>().currentEnergy += BoonSTaticInfo.crystallizeEnergyAmmount;
             Destroy(gameObject);
         }

@@ -2176,7 +2176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 12.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2353958841882990639
@@ -2202,37 +2202,141 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d67501bbe22e57149848edee0cfa82c1, type: 2}
   - {fileID: 11400000, guid: 27d98a049093eec4d854ead4a3bb441a, type: 2}
   swarmUpgrades:
+  - {fileID: 11400000, guid: cee0aaad97d60c5428d0c49be17ec664, type: 2}
+  - {fileID: 11400000, guid: 572437781bfc96748b19646b1b3c0fea, type: 2}
+  - {fileID: 11400000, guid: f850482d87d3e9844802a4b850d3a221, type: 2}
+  swarmyUpgrades:
+  - {fileID: 11400000, guid: 8fd1628528e65ea439c61d78cd90c94d, type: 2}
+  - {fileID: 11400000, guid: ec8bd386f0c302c4cb1ccf4a16afa966, type: 2}
+  - {fileID: 11400000, guid: 4f7c17f7ca39a114aa5d79fa4d2a8136, type: 2}
+  - {fileID: 11400000, guid: 55f014feff5becb40badc2895f68fa5a, type: 2}
+  - {fileID: 11400000, guid: 3d777f76109c0f140927c61078c689f8, type: 2}
+  - {fileID: 11400000, guid: bdaae9cdb8753364dafa573371dec5da, type: 2}
+  swarmAttack:
   - {fileID: 11400000, guid: 1d7a111156146a942bd207f81146dfa0, type: 2}
+  swarmSpecial:
   - {fileID: 11400000, guid: 4953194d984797246ab10f6b95a4efd2, type: 2}
+  swarmSpell:
   - {fileID: 11400000, guid: f984b04273af3c0438b5f08153f9c31a, type: 2}
-  hauntedUpgrades:
+  hauntedyUpgrades:
+  - {fileID: 11400000, guid: 128289d43a605024490ed5d48cc7afe8, type: 2}
+  - {fileID: 11400000, guid: 1fe838f98b6663c428d65e9c3b3e4b01, type: 2}
+  - {fileID: 11400000, guid: df13a2fa9d52247498a7e6f18fa5976c, type: 2}
+  - {fileID: 11400000, guid: be6757b7ce3b2134785ed2da71375c24, type: 2}
+  - {fileID: 11400000, guid: 016d8fbb150d0504a85d626133f67453, type: 2}
+  - {fileID: 11400000, guid: 99bbebd2bd4aec643b2bdfabaab44552, type: 2}
+  hauntedAttack:
   - {fileID: 11400000, guid: 79b58e2dcd379ed4b828e4859d649a36, type: 2}
+  hauntedSpecial:
   - {fileID: 11400000, guid: ac071f22adb955f4f9edd1ca64dd1756, type: 2}
+  hauntedSpell:
   - {fileID: 11400000, guid: 1b8549c986030d246baece6648525df8, type: 2}
-  crystallizeUpgrades:
+  hauntedUpgrades:
+  - {fileID: 11400000, guid: 64112ce448340ea4094874fd9028c139, type: 2}
+  - {fileID: 11400000, guid: 07e206df4e9172046a6d67ebb212932b, type: 2}
+  - {fileID: 11400000, guid: 06987743f655dd04cbaff315a8ceb185, type: 2}
+  crystallizeyUpgrades:
+  - {fileID: 11400000, guid: 835ea67b37db9c346938f6e8e4c06261, type: 2}
+  - {fileID: 11400000, guid: 0755e6b1b649f8049870dd07349cbc1c, type: 2}
+  - {fileID: 11400000, guid: a5186dfc1d8315f489a101cb8699906d, type: 2}
+  - {fileID: 11400000, guid: be834afc3bffd1f4cabf49dd2ca52f49, type: 2}
+  - {fileID: 11400000, guid: 0e89f93fa5dd8ff45a74b8edec8d8fff, type: 2}
+  - {fileID: 11400000, guid: a83f39024251d46459578fb5707306c0, type: 2}
+  crystallizeAttack:
   - {fileID: 11400000, guid: 59bcdc4b55a70fc498cb699b7c6c6fde, type: 2}
+  crystallizeSpecial:
   - {fileID: 11400000, guid: 805fbcaf84bdf3540bb2766cec43df15, type: 2}
+  crystallizeSpell:
   - {fileID: 11400000, guid: 8ef059fb7445cbf419173a08911c84c7, type: 2}
-  nullUpgrades:
+  crystallizeUpgrades:
+  - {fileID: 11400000, guid: 8a59de41b7b55ba48b7978a5dc634cb1, type: 2}
+  - {fileID: 11400000, guid: 5626b917efeb5f8469e524baf1aaf22a, type: 2}
+  - {fileID: 11400000, guid: 5236214a6555e1242b605cfe6673138f, type: 2}
+  nullyUpgrades:
+  - {fileID: 11400000, guid: 47a12c08256f6b94c96b783dfc3b4669, type: 2}
+  - {fileID: 11400000, guid: 2dbe9e717c3dd214bae05d5751081bcb, type: 2}
+  - {fileID: 11400000, guid: 021624dfdc496b64da179f14b1d2e0f2, type: 2}
+  - {fileID: 11400000, guid: 7746b398d4ad4604baa9df7953365c8a, type: 2}
+  - {fileID: 11400000, guid: 5c9551d51964dec469c0b31db8413d07, type: 2}
+  - {fileID: 11400000, guid: d791878529d85b84689e8a8e96005efa, type: 2}
+  nullAttack:
   - {fileID: 11400000, guid: 4990a911f7ff0c849a86032c00304172, type: 2}
+  nullSpecial:
   - {fileID: 11400000, guid: 44812b4c673086240816a8e7f8dc5d82, type: 2}
+  nullSpell:
   - {fileID: 11400000, guid: 8abcbfb592611314eaad1d081d785a94, type: 2}
+  nullUpgrades:
+  - {fileID: 11400000, guid: a9ead2945b2d9b74fa07a89943487437, type: 2}
+  - {fileID: 11400000, guid: 7023b539ea7e7c449ae89fb3a9816028, type: 2}
+  - {fileID: 11400000, guid: 4cb939ba312329e4a83cd952b1dd7a71, type: 2}
   starfallUpgrades:
+  - {fileID: 11400000, guid: cb07c945582f9124f9d79584c2142e61, type: 2}
+  - {fileID: 11400000, guid: 1a53d6bcf373a9147b9214389cb9de56, type: 2}
+  - {fileID: 11400000, guid: f53d704c79645f0498827455762f29a2, type: 2}
+  starfallAttack:
   - {fileID: 11400000, guid: 338cc7e576b217a43a2f1802281b9026, type: 2}
+  starfallSpecial:
   - {fileID: 11400000, guid: 7ad7f19fd6ddcb247af08ca114cbc1cd, type: 2}
+  starfallSpell:
   - {fileID: 11400000, guid: 7bc97cde9ad4da3449089a6ba0a1c3da, type: 2}
+  starfallyUpgrades:
+  - {fileID: 11400000, guid: 2c0303ab54127244fb7d19c6a9e5de88, type: 2}
+  - {fileID: 11400000, guid: 302095423ea013542a475b7ea16ec1b8, type: 2}
+  - {fileID: 11400000, guid: ffac152324ed4694686b3d23f0a4bd9f, type: 2}
+  - {fileID: 11400000, guid: a938550b454b13649a7d92ca4147e3d0, type: 2}
+  - {fileID: 11400000, guid: ad0cfa06fb97f7443bcba47fe9e6bb29, type: 2}
+  - {fileID: 11400000, guid: ad6c5f2611e2b1f4f8db9ac8d67f5121, type: 2}
   rustUpgrades:
+  - {fileID: 11400000, guid: f16d38592e136024dbc5bdc3ca348df3, type: 2}
+  - {fileID: 11400000, guid: 1e39635c86e1dd044b190142920b05d1, type: 2}
+  - {fileID: 11400000, guid: 01f3435eb6c1bd8489ef9c9fceae021b, type: 2}
+  rustAttack:
   - {fileID: 11400000, guid: fd90f1ade77c71845bfdc9e223caaa56, type: 2}
+  rustSpecial:
   - {fileID: 11400000, guid: a16bc54d8b57a8b48b75f82715a3c994, type: 2}
+  rustSpell:
   - {fileID: 11400000, guid: 70d6e7982c3f0a7408f80c3fedf1e01d, type: 2}
+  rustyUpgrades:
+  - {fileID: 11400000, guid: fe751e7042483ad4d9bd8b59c8f55bdf, type: 2}
+  - {fileID: 11400000, guid: 5662c265081f72f4289a5ffe165c3ec6, type: 2}
+  - {fileID: 11400000, guid: 54a3011fba727ce4783c7eb803287642, type: 2}
+  - {fileID: 11400000, guid: 18529337709736946b7c70a70b88b0fd, type: 2}
+  - {fileID: 11400000, guid: 25851d6db639da24697ea664d6cfa366, type: 2}
+  - {fileID: 11400000, guid: 81cf51a66a80a9442b2a5c5c851c82ab, type: 2}
   tectonicUpgrades:
+  - {fileID: 11400000, guid: 98d583540121de04cae4c30ed3afbac6, type: 2}
+  - {fileID: 11400000, guid: 30be913d21e3c1e42a072ce40a696f86, type: 2}
+  - {fileID: 11400000, guid: 983b187594d0f50449ecd2f09da4e934, type: 2}
+  tectonicAttack:
   - {fileID: 11400000, guid: 7c2c5573a9321124b918c017f1d3ca7d, type: 2}
+  tectonicSpecial:
   - {fileID: 11400000, guid: 3540209c8090ac5459146b5ebce1cd66, type: 2}
+  tectonicSpell:
   - {fileID: 11400000, guid: 4b9ff257d07414942a4a4845e0fb02dc, type: 2}
+  tectonicyUpgrades:
+  - {fileID: 11400000, guid: 5264e46f44d3f8a4f9590fe71da1995d, type: 2}
+  - {fileID: 11400000, guid: f184f958eb10fd94c884679f8617bee6, type: 2}
+  - {fileID: 11400000, guid: 943922e600a83974d817f98ebe8fac65, type: 2}
+  - {fileID: 11400000, guid: 172650be36085fb4e8cf0018ffb38916, type: 2}
+  - {fileID: 11400000, guid: 4c26caaaf1f9dd744b2ba12de796453b, type: 2}
+  - {fileID: 11400000, guid: 80cf6508d3eb7ee41b2b87c004a4d4d2, type: 2}
   radiationUpgrades:
+  - {fileID: 11400000, guid: e143dcfdd20228a41bdc2ea473df8cfb, type: 2}
+  - {fileID: 11400000, guid: 158cb744570e2fb41b6d1a3fdb424ca5, type: 2}
+  - {fileID: 11400000, guid: 4c135ad6d0d60d044bd89314c4b30c8f, type: 2}
+  radiationAttack:
   - {fileID: 11400000, guid: 54e0e5796529a804ca4a0ebced64f133, type: 2}
+  radiationSpecial:
   - {fileID: 11400000, guid: cd10bc0b0b2ebcd4fa8f74442fa6f919, type: 2}
+  radiationSpell:
   - {fileID: 11400000, guid: b54fbaaa481c63a4498b526ca3d6986f, type: 2}
+  radiationyUpgrades:
+  - {fileID: 11400000, guid: f23cc2cf409f2e940b1997ebb54c9c31, type: 2}
+  - {fileID: 11400000, guid: f888987321f8bb64385518bc6400abbb, type: 2}
+  - {fileID: 11400000, guid: 18a70b72646d0b944b1905bc7282704f, type: 2}
+  - {fileID: 11400000, guid: 41b77d73724bda74ab1e84746e7be8f5, type: 2}
+  - {fileID: 11400000, guid: 9ad8ee0096621854db60554326b7f44f, type: 2}
+  - {fileID: 11400000, guid: 443595f302d5ea7439ccb4f78dd32ba2, type: 2}
 --- !u!1 &7509536875558957452
 GameObject:
   m_ObjectHideFlags: 0

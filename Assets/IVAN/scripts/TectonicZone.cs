@@ -23,7 +23,7 @@ public class TectonicZone : MonoBehaviour
         float finalscale = baseScale + bonusscale;
         
         bonusscale += BoonSTaticInfo.tectonicSpreadSpeed*Time.deltaTime;
-        Debug.Log(finalscale);
+        //Debug.Log(finalscale);
         transform.localScale = new Vector3(finalscale, 0.2f, finalscale);
     }
     IEnumerator TectonicDamage()
@@ -33,6 +33,14 @@ public class TectonicZone : MonoBehaviour
         foreach (Collider enemy in hitEnemies)
         {
             enemy.GetComponent<EnemyDamage>().TakeDamage(BoonSTaticInfo.tectonicDamage, "tectonic", 0, 0, null);
+
+            float rchance = Random.Range(1, 100);
+            //Debug.Log(rchance);
+            if (rchance<35)
+            {
+                enemy.GetComponent<EnemyDamage>().ApplyStatus("volcanic", null);
+            }
+            
         }
         
         yield return new WaitForSeconds(BoonSTaticInfo.tectonicAttackSpeed);

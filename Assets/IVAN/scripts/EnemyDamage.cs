@@ -47,6 +47,8 @@ public class EnemyDamage : MonoBehaviour
     public GameObject radiationRing;
     public float radiationAmmount;
     public bool irradiated;
+    public bool burning = false;
+    public bool petrified = false;
 
     float lerpSpeed = 0.03f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -292,6 +294,21 @@ public class EnemyDamage : MonoBehaviour
                     StartCoroutine(RadiationDuration());
                 }
                 break;
+            case "volcanic":
+                if (!burning)
+                {
+                    burning = true;
+                    StartCoroutine(VolcanicDamage());
+                    StartCoroutine(VolcanicDuration());
+                }
+                break;
+            case "petrify":
+                if (!petrified)
+                {
+                    petrified = true;
+                    StartCoroutine(PetrifiedDuration());
+                }
+                break;
 
         }
 
@@ -317,6 +334,29 @@ public class EnemyDamage : MonoBehaviour
         {
             StartCoroutine(SwarmDamage());
         }
+    }
+
+    IEnumerator VolcanicDamage()
+    {
+        if (burning)
+        {
+            TakeDamage(1,"volcanic",0,0,null);
+            yield return new WaitForSeconds(0.1f);
+            if (burning)
+            {
+                StartCoroutine(VolcanicDamage());
+            }
+        }
+    }
+    IEnumerator VolcanicDuration()
+    {
+        yield return new WaitForSeconds(2);
+        burning = false;
+    }
+    IEnumerator PetrifiedDuration()
+    {
+        yield return new WaitForSeconds(2.5f);
+        petrified = false;
     }
 
     IEnumerator StarfallDuration()

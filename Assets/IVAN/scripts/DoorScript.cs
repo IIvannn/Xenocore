@@ -61,6 +61,7 @@ public class DoorScript : MonoBehaviour
 
     void Enter()
     {
+        PlayerDamage.currentHp += (BoonSTaticInfo.doorHeal*BoonSTaticInfo.healingMultiplier);
         if (currentRoom < numberOfRooms)
         {
             if (currentRoom == shopRoom && sceneName != "IvanroomShop")

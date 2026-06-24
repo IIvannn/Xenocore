@@ -50,6 +50,9 @@ public class DamageNumber : MonoBehaviour
             case "radiation":
                 textDmg.color = new Color(1f, 1f, 0.2f);
                 break;
+            case "volcanic":
+                textDmg.color = new Color(1f, 1f, 0.5f);
+                break;
         }
     }
 

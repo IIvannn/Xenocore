@@ -44,13 +44,13 @@ public class Pickup : MonoBehaviour
         switch (reward)
         {
             case "crystal":
-                BoonSTaticInfo.crystals += (int)(amount);
+                BoonSTaticInfo.crystals += (int)(amount* BoonSTaticInfo.moneyMultiplier);
                 return;
             case "health":
                 PlayerDamage.currentHp += (int)(amount);
                 return;
             case "maxHealth":
-                PlayerDamage.currentHp += (int)(amount);
+                PlayerDamage.currentHp += (int)(amount*BoonSTaticInfo.healingMultiplier);
                 PlayerDamage.hp += (int)(amount);
                 return;
 

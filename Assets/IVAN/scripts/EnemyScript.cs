@@ -28,14 +28,19 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        EnemyDamage enemyDamage = GetComponent<EnemyDamage>();
+
         if (!PlayerDamage.dead)
         {
-            float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
-            if (distance <= attackRange)
+            if (!enemyDamage.petrified)
             {
-                if (dead) return;
-                MoveToPlayer(distance);
+                float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
+                if (distance <= attackRange)
+                {
+                    if (dead) return;
+                    MoveToPlayer(distance);
 
+                }
             }
 
         }
