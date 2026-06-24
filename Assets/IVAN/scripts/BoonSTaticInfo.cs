@@ -4,14 +4,14 @@ using UnityEngine;
 public class BoonSTaticInfo : MonoBehaviour
 {
     [Header("Swarm")]
-    public static float swarmDamage = 6f;
+    public static float swarmDamage = 4f;
     public static float swarmAttackSpeed = 0.4f;
     public static float swarmRange = 3f;
     public static float swarmDuration = 5f;
     [Header("Haunted")]
-    public static float hauntedInitialDamage = 10f;
-    public static float hauntedDamagePercentage = 10f;
-    public static float hauntedDuration = 6f;
+    public static float hauntedInitialDamage = 30f;
+    public static float hauntedDamagePercentage = 45f;
+    public static float hauntedDuration = 3f;
     public static float hauntedGhostSpeed = 5f;
     [Header("Crystallize")]
     public static float crystallizeCrystalChance = 25f;
@@ -25,24 +25,25 @@ public class BoonSTaticInfo : MonoBehaviour
     public static int nullMaxCount = 3;
     public static int nullCurrentCount = 0;
     [Header("Starfall")]
-    public static float starfallDamage = 45;
-    public static float starfallChance = 10;
+    public static float starfallDamage = 66;
+    public static float starfallChance = 17;
     public static float starfallDuration = 5;
     [Header("Rust")]
-    public static float rustCritChance = 40f;
+    public static float rustCritChance = 35f;
     public static float rustSelfDamage = 25;
-    public static float rustSelfDamageChance = 30;
+    public static float rustSelfDamageChance = 40;
     public static float rustDuration = 4f;
     [Header("Tectonic")]
-    public static float tectonicDamage = 10f;
-    public static float tectonicAttackSpeed = 1f;
-    public static float tectonicRange = 3f;
-    public static float tectonicDuration = 8;
+    public static float tectonicDamage = 50f;
+    public static float tectonicAttackSpeed = 2.6f;
+    public static float tectonicRange = 2f;
+    public static float tectonicDuration = 7.8f;
     public static float tectonicMaxCount = 2;
     public static float tectonicCurrentCount = 0;
-    public static float tectonicSpreadSpeed = 1.3f;
+    public static float tectonicSpread = 1.5f;
+    public static float tectonicSpreadSpeed = 0.6f;
     [Header("Radiation")]
-    public static float radiationWeakness = 25;
+    public static float radiationWeakness = 22;
     public static float radiationRange = 7f;
     public static float radiationDuration = 8f;
     public static int radiationMaxCount = 4;

@@ -18,6 +18,7 @@ public class PlayerDamage : MonoBehaviour
     [Header("Health")]
     public static float hp = 100f;
     public static float currentHp = 100f;
+    public float maxHp = 100;
     public static bool dead = false;
     [Header("Energy")]
     public float energy = 100;
@@ -30,6 +31,7 @@ public class PlayerDamage : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        hp = maxHp;
         currentHp = hp;
         
     }

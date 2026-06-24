@@ -41,6 +41,7 @@ public class PlayerShoot : MonoBehaviour
     public float ammo = 1;
     public float currentAmmo = 1;
     
+    bool att = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -70,6 +71,22 @@ public class PlayerShoot : MonoBehaviour
             Special();
         }
 
+        if (Mouse.current.middleButton.wasPressedThisFrame)
+        {
+            if (!att)
+            {
+                att = true;
+            }
+            else
+            {
+                att = false;
+            }
+        }
+
+        if (att)
+        {
+            FireNow();
+        }
     }
 
     void Special()
@@ -163,6 +180,7 @@ public class PlayerShoot : MonoBehaviour
     }
 
 
+    
     public void onHit()
     {
         PlayerDamage body = gameObject.GetComponent<PlayerDamage>();

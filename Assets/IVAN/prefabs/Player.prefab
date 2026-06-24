@@ -698,6 +698,7 @@ MonoBehaviour:
   energyText: {fileID: 3570381284479245716}
   crystalText: {fileID: 1666154449528739555}
   upgrader: {fileID: 5587737118693135974}
+  maxHp: 4000
   energy: 100
   currentEnergy: 0
 --- !u!114 &6260905542698369766
@@ -721,17 +722,17 @@ MonoBehaviour:
   boomerangReturnSpeed: 35
   boomerangTimeBeforeReturn: 5
   boomerangDamage: 20
-  boomerangCritChance: 30
-  boomerangCritDamage: 1.5
+  boomerangCritChance: 10
+  boomerangCritDamage: 1.7
   energyPerHit: 0
-  attackType: normal
   boomerangSpecialDamage: 8
   boomerangSpecialDuration: 1
   boomerangSpecialRotationSpeed: 600
   boomerangSpecialCooldown: 2
   boomerangSpecialCritChance: 10
   boomerangSpecialCritDamage: 1.5
-  boomerangSpecialType: normal
+  canspecial: 1
+  specialing: 0
   ammo: 1
   currentAmmo: 1
 --- !u!114 &1040869567622031174
@@ -754,6 +755,7 @@ MonoBehaviour:
   dashTime: 0.2
   dashCooldwon: 3
   dashCharges: 2
+  dashOnCooldwon: 0
   right: 1
 --- !u!143 &6770461742096778746
 CharacterController:

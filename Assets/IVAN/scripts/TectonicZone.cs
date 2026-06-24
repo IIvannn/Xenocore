@@ -28,14 +28,15 @@ public class TectonicZone : MonoBehaviour
     }
     IEnumerator TectonicDamage()
     {
-
-        Collider[] hitEnemies = Physics.OverlapSphere(transform.position, BoonSTaticInfo.tectonicRange, enemyLayer);
+        bonusscale += BoonSTaticInfo.tectonicSpread;
+        Collider[] hitEnemies = Physics.OverlapSphere(transform.position, transform.localScale.x, enemyLayer);
         foreach (Collider enemy in hitEnemies)
         {
             enemy.GetComponent<EnemyDamage>().TakeDamage(BoonSTaticInfo.tectonicDamage, "tectonic", 0, 0, null);
         }
         
         yield return new WaitForSeconds(BoonSTaticInfo.tectonicAttackSpeed);
+        
         StartCoroutine(TectonicDamage());
 
     }
@@ -50,7 +51,7 @@ public class TectonicZone : MonoBehaviour
     public void Death()
     {
         BoonSTaticInfo.tectonicCurrentCount--;
-        Destroy(gameObject);
+        Destroy(gameObject,0.5f);
 
     }
 
