@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MultiversalStrike
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeName: multiversal strike
-  description: "Multiversal strike: \nA portion of the damage dealt to an enemy in
-    a null bubble is shared between all enemies in null bubbles."
+  description: "Multiversal strike: \nWhen an enemy takes damage within a null bubble,
+    all other enemies in null bubbles also take some damage."
   upgradeIcon: {fileID: 21300000, guid: 0d8cee3e592baab469e9337e44d1c249, type: 3}

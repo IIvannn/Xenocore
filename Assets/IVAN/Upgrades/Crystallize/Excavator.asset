@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Excavator
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeName: excavator
-  description: "Excavator: \nGain 20% more crystals."
+  description: "Excavator: \nGain 20% more gems."
   upgradeIcon: {fileID: 21300000, guid: bef9e6a4cdd1ddc438442fed9720a5b5, type: 3}
