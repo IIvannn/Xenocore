@@ -64,10 +64,29 @@ public class PlayerDamage : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHp -= damage;
-        if (currentHp <= 0)
+        if (BoonSTaticInfo.untouchable)
         {
-            Death();
+            float rchance = Random.Range(1, 100);
+            if (rchance >=BoonSTaticInfo.untouchableChance)
+            {
+                currentHp -= damage;
+                if (currentHp <= 0)
+                {
+                    Death();
+                }
+            }
+            else
+            {
+                Debug.Log("Dodge!");
+            }
+        }
+        else
+        {
+            currentHp -= damage;
+            if (currentHp <= 0)
+            {
+                Death();
+            }
         }
     }
 

@@ -46,7 +46,7 @@ public class BoomerangSpecial : MonoBehaviour
             other.GetComponent<EnemyDamage>().ApplyStatus(type, source);
             if (BoonSTaticInfo.boomerangSpecialGrow)
             {
-                if (bsize<140)
+                if (bsize<155)
                 {
                     bsize += BoonSTaticInfo.boomerangSpecialGrowBonus;
                     Debug.Log(bsize);

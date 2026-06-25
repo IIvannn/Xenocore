@@ -1,12 +1,9 @@
 using BarthaSzabolcs.IsometricAiming;
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
-using static Unity.VisualScripting.Member;
 
 public class EnemyDamage : MonoBehaviour
 {
@@ -15,6 +12,8 @@ public class EnemyDamage : MonoBehaviour
     public float deathDelay;
     public float currentHealth;
     public bool dead = false;
+    public float armor;
+    float startingArmor = 0;
 
     [Header("References")]
     public Transform UIParent;
@@ -22,12 +21,17 @@ public class EnemyDamage : MonoBehaviour
     public GameObject damageNumber;
     public Transform damageNumberSpawn;
     public CharacterController controller;
+    public GameObject wasp;
+    public GameObject nest;
+    public GameObject phantom;
+    public GameObject exorcism;
 
     [Header("UI")]
     public Slider healthbar;
     public Slider easeHealthbar;
     public Slider radiationBar;
     public Slider ghostBar;
+    public Slider armorBar;
 
     [Header("Status effects")]
     public GameObject swarm;
@@ -51,11 +55,16 @@ public class EnemyDamage : MonoBehaviour
     public bool petrified = false;
 
     float lerpSpeed = 0.03f;
+    float bcd = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         swarm.SetActive(false);
         currentHealth = health;
+        startingArmor = armor;
+
+        BoonSTaticInfo.enemiesAlive.Add(gameObject);
     }
 
     // Update is called once per frame
@@ -98,6 +107,8 @@ public class EnemyDamage : MonoBehaviour
         ghostBar.value = (currentHealth / health);
         healthbar.value = ((currentHealth - hauntedStoredDamage) / health);
         easeHealthbar.value = Mathf.Lerp(easeHealthbar.value, healthbar.value, lerpSpeed);
+        armorBar.value = (armor/startingArmor);
+    
         if (currentHealth > health)
         {
             currentHealth = health;
@@ -113,64 +124,144 @@ public class EnemyDamage : MonoBehaviour
 
     public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
-        int finalDamage;
-        GameObject dmgNumber = Instantiate(damageNumber, damageNumberSpawn.position, damageNumberSpawn.rotation);
-        float rcchance = Random.Range(0, 100);
-        if (rcchance < (critC+rustboost)) 
+        if (!dead)
         {
-            damage = damage * critD;
+            if (BoonSTaticInfo.emotionalDamage)
+            {
+                bcd = BoonSTaticInfo.emotionalDamageBonus;
+            }
+            float armorReduction = 0.7f;
+            int finalDamage;
+            GameObject dmgNumber = Instantiate(damageNumber, damageNumberSpawn.position, damageNumberSpawn.rotation);
+            float rcchance = Random.Range(0, 100);
+            if (rcchance < (critC + rustboost))
+            {
+                damage = damage * (critD + bcd);
+                if (source != null)
+                {
+                    source.GetComponent<PlayerShoot>().onCrit();
+                }
+                dmgNumber.GetComponent<DamageNumber>().textDmg.outlineColor = new Color(1, 0, 0);
+            }
+            //Debug.Log("crit chance: "+ (critC + rustboost));
+
+
             if (source != null)
             {
-                source.GetComponent<PlayerShoot>().onCrit();
+                source.GetComponent<PlayerShoot>().onHit();
             }
-            dmgNumber.GetComponent<DamageNumber>().textDmg.outlineColor = new Color(1,0,0);
-        }
-        //Debug.Log("crit chance: "+ (critC + rustboost));
 
-        
-        if (source != null)
-        {
-            source.GetComponent<PlayerShoot>().onHit();
-        }
-        
-        if (crystallized)
-        {
-            float rcrystal = Random.Range(0, 100);
-            if (rcrystal < BoonSTaticInfo.crystallizeCrystalChance)
+            if (crystallized)
             {
-                GameObject ball = Instantiate(crystallizedDrop, transform.position, transform.rotation);
+                float rcrystal = Random.Range(0, 100);
+                if (rcrystal < BoonSTaticInfo.crystallizeCrystalChance)
+                {
+                    GameObject ball = Instantiate(crystallizedDrop, transform.position, transform.rotation);
+                }
+            }
+            if (haunted)
+            {
+                hauntedStoredDamage += damage * BoonSTaticInfo.hauntedDamagePercentage / 100;
+            }
+
+            finalDamage = (int)(damage * (1 + (((radiationAmmount + 0.02f) * BoonSTaticInfo.radiationWeakness) / 100)));
+
+            if (BoonSTaticInfo.reaper)
+            {
+                finalDamage += (BoonSTaticInfo.reaperBonus) / 2;
+            }
+
+            if (type == "swarm" && BoonSTaticInfo.corrosive)
+            {
+                armorReduction += BoonSTaticInfo.corrosiveBonus;
+            }
+            if (BoonSTaticInfo.molten)
+            {
+                armorReduction += BoonSTaticInfo.moltenBonus;
+            }
+
+            if (armor > 0)
+            {
+                armor -= (finalDamage) * armorReduction;
+                dmgNumber.GetComponent<DamageNumber>().type = type;
+                dmgNumber.GetComponent<DamageNumber>().damage = (finalDamage) * armorReduction;
+            }
+
+            else
+            {
+                currentHealth -= finalDamage;
+                dmgNumber.GetComponent<DamageNumber>().type = type;
+                dmgNumber.GetComponent<DamageNumber>().damage = finalDamage;
+            }
+
+
+            if (BoonSTaticInfo.nested)
+            {
+                float nestChance = Random.Range(1, 100);
+                if (nestChance < BoonSTaticInfo.nestedChance)
+                {
+                    GameObject ball = Instantiate(wasp, transform.position, transform.rotation);
+                    ball.GetComponent<DamageOnContact>().damage = BoonSTaticInfo.waspDamage;
+                    ball.GetComponent<DamageOnContact>().type = "swarm";
+                    ball.GetComponent<FollowNearestEnemy>().movespeed = BoonSTaticInfo.waspSpeed;
+                    ball.GetComponent<FollowNearestEnemy>().source = gameObject;
+                    ball.GetComponent<DamageOnContact>().source = gameObject;
+                }
+            }
+
+            int rschance = Random.Range(0, 100);
+            if (rschance < BoonSTaticInfo.starfallChance && starfalled)
+            {
+                Debug.Log("starfall chance:  " + rschance);
+
+                TakeDamage(BoonSTaticInfo.starfallDamage, "starfall", 0, 0, null);
+
+            }
+
+            if (PlayerDamage.currentHp < (PlayerDamage.hp * BoonSTaticInfo.adaptationLimit) && BoonSTaticInfo.adaptation)
+            {
+                PlayerDamage.currentHp++;
+            }
+
+
+
+            if (currentHealth < 0)
+            {
+                Death();
             }
         }
-        if (haunted)
-        {
-            hauntedStoredDamage += damage * BoonSTaticInfo.hauntedDamagePercentage / 100;
-        }
-
-        finalDamage = (int)(damage * (1+(((radiationAmmount+0.02f)*BoonSTaticInfo.radiationWeakness)/100)));
-
         
-        dmgNumber.GetComponent<DamageNumber>().type = type;
-        dmgNumber.GetComponent<DamageNumber>().damage = finalDamage;
-        currentHealth -= finalDamage;
-
-
-
-        int rschance = Random.Range(0, 100);
-        if (rschance < BoonSTaticInfo.starfallChance && starfalled)
-        {
-            Debug.Log("starfall chance:  " + rschance);
-
-            TakeDamage(BoonSTaticInfo.starfallDamage, "starfall", 0, 0, null);
-
-        }
-        if (currentHealth < 0)
-        {
-            Death();
-        }
     }
+    
 
     public void Death()
     {
+        if (BoonSTaticInfo.exorcism && !dead)
+        {
+            GameObject exo = Instantiate(exorcism, transform.position, transform.rotation);
+        }
+            
+        if (BoonSTaticInfo.necromancer && !dead)
+        {
+            float necroChance = Random.Range(1, 100);
+            if (necroChance < BoonSTaticInfo.necroancerChance)
+            {
+                GameObject ball = Instantiate(phantom, transform.position, transform.rotation);
+            }
+        }
+
+        if (BoonSTaticInfo.reaper)
+        {
+            BoonSTaticInfo.reaperBonus++;
+        }
+        if (BoonSTaticInfo.infestation)
+        {
+            float nestchance = Random.Range(1, 100);
+            if (nestchance < BoonSTaticInfo.infestationChance)
+            {
+                GameObject nestSummon = Instantiate(nest, transform.position, transform.rotation);
+            }
+        }
         dead = true;
         if (haunted)
         {
@@ -192,6 +283,7 @@ public class EnemyDamage : MonoBehaviour
                 swarm.SetActive(true);
                 if (!swarmed)
                 {
+                    swarm.transform.localScale = new Vector3(BoonSTaticInfo.swarmRange, 0.2f, BoonSTaticInfo.swarmRange);
                     StartCoroutine(SwarmDuration());
                     StartCoroutine(SwarmDamage());
                     if (source != null)
@@ -340,8 +432,8 @@ public class EnemyDamage : MonoBehaviour
     {
         if (burning)
         {
-            TakeDamage(1,"volcanic",0,0,null);
-            yield return new WaitForSeconds(0.1f);
+            TakeDamage(BoonSTaticInfo.volcanicDamage, "volcanic",0,0,null);
+            yield return new WaitForSeconds(BoonSTaticInfo.volcanicAttackSpeed);
             if (burning)
             {
                 StartCoroutine(VolcanicDamage());

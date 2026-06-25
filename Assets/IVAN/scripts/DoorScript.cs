@@ -61,6 +61,7 @@ public class DoorScript : MonoBehaviour
 
     void Enter()
     {
+        BoonSTaticInfo.reaperBonus = 0;
         PlayerDamage.currentHp += (BoonSTaticInfo.doorHeal*BoonSTaticInfo.healingMultiplier);
         if (currentRoom < numberOfRooms)
         {

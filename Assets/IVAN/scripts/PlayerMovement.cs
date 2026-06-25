@@ -1,7 +1,7 @@
 using System.Collections;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public Animator animator;
     public GameObject playerSprite;
+    public GameObject pob;
+    public GameObject phaseDash;
     [Header("Movement")]
     public float speed = 5f;
     public float dashSpeed = 10f;
@@ -22,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     public bool dashOnCooldwon = false;
     bool moving = false;
     public bool right = true;
+
+    float btime = 0;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -114,16 +120,35 @@ public class PlayerMovement : MonoBehaviour
 
         IEnumerator Dash()
         {
+            
+            if (BoonSTaticInfo.phaseDash)
+            {
+                phaseDash.SetActive(true);
+                phaseDash.GetComponent<Shockwave>().damage = BoonSTaticInfo.phaseDashDashDamage;
+                btime = BoonSTaticInfo.phaseDashDashDurationBonus;
+            }
+            if (BoonSTaticInfo.pob)
+            {
+                GameObject ball = Instantiate(pob, transform.position, transform.rotation);
+            }
+
             dashesLeft--;
             //Debug.Log("dashes left: " + dashesLeft);
             float startTime = Time.time;
 
-            while (Time.time < startTime + dashTime)
+            while (Time.time < startTime + (dashTime+btime))
             {
                 controller.Move(move * dashSpeed * Time.deltaTime);
                 yield return null;
                 
             }
+
+            if (BoonSTaticInfo.phaseDash)
+            {
+                phaseDash.SetActive(false);
+                phaseDash.GetComponent<Shockwave>().enemieshit.Clear();
+            }
+
             if (BoonSTaticInfo.boomerangSpecialCooldwon)
             {
                 PlayerShoot playerShoot = GetComponent<PlayerShoot>();

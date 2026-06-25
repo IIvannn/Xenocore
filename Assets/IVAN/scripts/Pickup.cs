@@ -47,10 +47,10 @@ public class Pickup : MonoBehaviour
                 BoonSTaticInfo.crystals += (int)(amount* BoonSTaticInfo.moneyMultiplier);
                 return;
             case "health":
-                PlayerDamage.currentHp += (int)(amount);
+                PlayerDamage.currentHp += (int)(amount * BoonSTaticInfo.healingMultiplier);
                 return;
             case "maxHealth":
-                PlayerDamage.currentHp += (int)(amount*BoonSTaticInfo.healingMultiplier);
+                PlayerDamage.currentHp += (int)(amount * BoonSTaticInfo.healingMultiplier);
                 PlayerDamage.hp += (int)(amount);
                 return;
 

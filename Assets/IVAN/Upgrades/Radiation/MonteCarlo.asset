@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MonteCarlo
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeName: monte carlo
-  description: "Monte Carlo: \nAll chance based effects have increased chance on
-    irradiated enemies."
+  description: "Monte Carlo: \nWhen dealing damage to an irradiated target, you have
+    a chance of afflicting a random status effect."
   upgradeIcon: {fileID: 21300000, guid: 48fca529059aa6641bb2ac44cf66360d, type: 3}

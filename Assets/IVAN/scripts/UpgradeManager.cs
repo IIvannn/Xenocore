@@ -638,28 +638,28 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.swarmRange += BoonSTaticInfo.proliferationBonus; //DONE
                 return;
             case "adaptation":
-                BoonSTaticInfo.adaptation = true; //TBD
+                BoonSTaticInfo.adaptation = true; //DONE
                 return;
             case "corrosive":
-                BoonSTaticInfo.corrosive = true; //TBD
+                BoonSTaticInfo.corrosive = true; //DONE
                 return;
             case "feast":
                 BoonSTaticInfo.healingMultiplier += BoonSTaticInfo.frenzyBonus; //DONE
                 return;
             case "frenzy":
-                BoonSTaticInfo.swarmAttackSpeed += BoonSTaticInfo.frenzyBonus; //DONE
+                BoonSTaticInfo.swarmAttackSpeed -= BoonSTaticInfo.frenzyBonus; //DONE
                 return;
             case "infestation":
-                BoonSTaticInfo.infestation = true; //TBD
+                BoonSTaticInfo.infestation = true; //DONE
                 return;
             case "nested":
-                BoonSTaticInfo.nested = true; //TBD
+                BoonSTaticInfo.nested = true; //DONE
                 return;
             case "path of the bug":
-                BoonSTaticInfo.pob = true; //TBD
+                BoonSTaticInfo.pob = true; //DONE
                 return;
             case "silky":
-                BoonSTaticInfo.silky = true; //TBD
+                BoonSTaticInfo.silky = true; //DONE
                 return;
             
 
@@ -678,13 +678,13 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.hasSpell = true; //TBD
                 return;
             case "reaper":
-                BoonSTaticInfo.reaper = true; //TBD
+                BoonSTaticInfo.reaper = true; //DONE
                 return;
             case "untouchable":
-                BoonSTaticInfo.untouchable = true; //TBD
+                BoonSTaticInfo.untouchable = true; //DONE
                 return;
             case "phase dash":
-                BoonSTaticInfo.phaseDash = true; //TBD
+                BoonSTaticInfo.phaseDash = true; //DONE
                 return;
             case "dread":
                 BoonSTaticInfo.hauntedDamagePercentage += BoonSTaticInfo.dreadBonus; //DONE
@@ -693,10 +693,10 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.hauntedInitialDamage += BoonSTaticInfo.jumpscareBonus; //DONE
                 return;
             case "possession":
-                BoonSTaticInfo.posession = true; //TBD
+                BoonSTaticInfo.posession = true; //DONE
                 return;
             case "emotional damage":
-                BoonSTaticInfo.emotionalDamage = true; //TBD
+                BoonSTaticInfo.emotionalDamage = true; //DONE
                 return;
             case "necromancer":
                 BoonSTaticInfo.necromancer = true; //TBD
@@ -764,13 +764,13 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.hasSpell = true; //TBD
                 return;
             case "a long time ago in a galaxy far far away":
-                BoonSTaticInfo.farFar = true;
+                BoonSTaticInfo.farFar = true; //TBD
                 return;
             case "collapse":
-                BoonSTaticInfo.collapse = true;
+                BoonSTaticInfo.collapse = true; //TBD
                 return;
             case "exponentiality":
-                BoonSTaticInfo.exponentiallity = true;
+                BoonSTaticInfo.exponentiallity = true; //TBD
                 return;
             case "grasp":
                 BoonSTaticInfo.nullRange += BoonSTaticInfo.graspBonus; //DONE
@@ -779,16 +779,16 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.nullPullStrength += BoonSTaticInfo.gravityBonus; //DONE
                 return;
             case "into the void":
-                BoonSTaticInfo.nullMaxCount++;
+                BoonSTaticInfo.nullMaxCount++; //DONE
                 return;
             case "mass accumulation":
-                BoonSTaticInfo.massAccumulation = true;
+                BoonSTaticInfo.massAccumulation = true; //TBD
                 return;
             case "multiversal strike":
-                BoonSTaticInfo.multiversalStrike = true;
+                BoonSTaticInfo.multiversalStrike = true; //TBD
                 return;
             case "no escape":
-                BoonSTaticInfo.noEscape = true;
+                BoonSTaticInfo.noEscape = true; //TBD
                 return;
 
 
@@ -806,6 +806,34 @@ public class UpgradeManager : MonoBehaviour
             case "starfall spell":
                 BoonSTaticInfo.hasSpell = true; //TBD
                 return;
+            case "clear sky":
+                BoonSTaticInfo.starfallChance += BoonSTaticInfo.clearSkyBonus; //DONE
+                return;
+            case "crater":
+                BoonSTaticInfo.crater = true; //TBD
+                return;
+            case "double trouble":
+                BoonSTaticInfo.doubleTrouble = true; //TBD
+                return;
+            case "fated":
+                BoonSTaticInfo.fated = true; //TBD
+                return;
+            case "lucky star":
+                BoonSTaticInfo.luckyStar = true; //TBD
+                return;
+            case "make a wish":
+                BoonSTaticInfo.makeAWish = true; //TBD
+                return;
+            case "meteorite":
+                BoonSTaticInfo.starfallDamage += BoonSTaticInfo.meteoriteBonus; //DONE
+                return;
+            case "no you":
+                BoonSTaticInfo.noYou = true; //TBD
+                return;
+            case "shenanigans":
+                BoonSTaticInfo.shenanigans = true; //TBD
+                return;
+
 
             //RUST
             case "rust attack":
@@ -821,6 +849,35 @@ public class UpgradeManager : MonoBehaviour
             case "rust spell":
                 BoonSTaticInfo.hasSpell = true; //TBD
                 return;
+            case "cracked":
+                BoonSTaticInfo.cracked = true; //TBD
+                return;
+            case "embrittled":
+                BoonSTaticInfo.embrittled = true; //TBD
+                return;
+            case "fatigue":
+                BoonSTaticInfo.fatigue = true; //TBD
+                return;
+            case "galvanized":
+                BoonSTaticInfo.galvanized = true; //TBD
+                return;
+            case "mutilation":
+                BoonSTaticInfo.rustSelfDamage += BoonSTaticInfo.mutilationBonus; //DONE
+                return;
+            case "oxidised":
+                BoonSTaticInfo.rustCritChance += BoonSTaticInfo.oxidisedBonus; //DONE
+                return;
+            case "purge":
+                BoonSTaticInfo.purge = true;
+                PlayerDamage.hp -= (PlayerDamage.hp / 2); //TBD
+                return;
+            case "soldering":
+                BoonSTaticInfo.soldering = true; //TBD
+                return;
+            case "tetanus":
+                BoonSTaticInfo.tetanus = true; //TBD
+                return;
+
 
 
             //TECTONIC
@@ -836,6 +893,33 @@ public class UpgradeManager : MonoBehaviour
                 return;
             case "tectonic spell":
                 BoonSTaticInfo.hasSpell = true; //TBD
+                return;
+            case "face off":
+                BoonSTaticInfo.faceOff = true; //TBD
+                return;
+            case "molten":
+                BoonSTaticInfo.molten = true; //DONE
+                return;
+            case "mudbath":
+                BoonSTaticInfo.mudbath = true; //TBD
+                return;
+            case "eruption":
+                BoonSTaticInfo.eruption = true; //TBD
+                return;
+            case "shatter":
+                BoonSTaticInfo.tectonicDamage += BoonSTaticInfo.shatterBonus; //DONE
+                return;
+            case "tremble":
+                BoonSTaticInfo.tremble = true; //TBD
+                return;
+            case "tremor":
+                BoonSTaticInfo.tectonicSpread += BoonSTaticInfo.tremorBonus; //DONE
+                return;
+            case "troglodite":
+                BoonSTaticInfo.troglodite = true; //TBD
+                return;
+            case "volcanic":
+                BoonSTaticInfo.volcanic = true; //DONE
                 return;
 
 
@@ -853,6 +937,34 @@ public class UpgradeManager : MonoBehaviour
             case "radiation spell":
                 BoonSTaticInfo.hasSpell = true; //TBD
                 return;
+            case "armagedon":
+                BoonSTaticInfo.radiationMaxCount ++; //DONE
+                return;
+            case "contamination":
+                BoonSTaticInfo.contamination = true; //TBD
+                return;
+            case "fallout":
+                BoonSTaticInfo.radiationWeakness += BoonSTaticInfo.falloutBonus; //DONE
+                return;
+            case "finish him":
+                BoonSTaticInfo.finishHim = true; //TBD
+                return;
+            case "monte carlo":
+                BoonSTaticInfo.monteCarlo = true; //TBD
+                return;
+            case "no mans land":
+                BoonSTaticInfo.noMansLand = true; //TBD
+                return;
+            case "nuclear":
+                BoonSTaticInfo.nuclear = true; //TBD
+                return;
+            case "radon blood":
+                BoonSTaticInfo.radonBlood = true; //TBD
+                return;
+            case "wasteland":
+                BoonSTaticInfo.radiationRange += BoonSTaticInfo.wastelandBonus; //DONE
+                return;
+
         }
     }
 

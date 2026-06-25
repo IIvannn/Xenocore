@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tremble
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeName: tremble
-  description: "Tremble: \nTectonic damage slowly inflicts fracture, fracture enemies
-    take more damage"
+  description: "Tremble: \nTectonic damage has a chance to inflict stagger, eventually
+    stunning them."
   upgradeIcon: {fileID: 21300000, guid: fb567cd90fb2ba14eb1b32f58a75d164, type: 3}

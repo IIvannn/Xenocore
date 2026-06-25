@@ -34,11 +34,14 @@ public class TectonicZone : MonoBehaviour
         {
             enemy.GetComponent<EnemyDamage>().TakeDamage(BoonSTaticInfo.tectonicDamage, "tectonic", 0, 0, null);
 
-            float rchance = Random.Range(1, 100);
-            //Debug.Log(rchance);
-            if (rchance<35)
+            if (BoonSTaticInfo.volcanic)
             {
-                enemy.GetComponent<EnemyDamage>().ApplyStatus("volcanic", null);
+                float rchance = Random.Range(1, 100);
+                //Debug.Log(rchance);
+                if (rchance < BoonSTaticInfo.volcanicChance)
+                {
+                    enemy.GetComponent<EnemyDamage>().ApplyStatus("volcanic", null);
+                }
             }
             
         }

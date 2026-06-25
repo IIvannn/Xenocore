@@ -1,10 +1,10 @@
-using Unity.VisualScripting;
+
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyScript : MonoBehaviour
 {
-
+    float slowfactor;
     public float movementSpeed = 6f;
 
     public float attackCooldown = 0.5f;
@@ -44,18 +44,31 @@ public class EnemyScript : MonoBehaviour
             }
 
         }
-        
-        
+
+        else
+        {
+
+        }
+
     }
 
     public void MoveToPlayer(float distance)
     {
+        EnemyDamage enemyDamage = GetComponent<EnemyDamage>();
         if (PlayerMovement.playerPosition.position != null)
         {
             agent.SetDestination(PlayerMovement.playerPosition.position);
             if (distance > distanceBeforeStop)
             {
-                agent.speed = movementSpeed;
+                if (enemyDamage.swarmed && BoonSTaticInfo.silky)
+                {
+                    agent.speed = movementSpeed*BoonSTaticInfo.silkyBonus;
+                }
+                else
+                {
+                    agent.speed = movementSpeed;
+                }
+                
             }
             
         }

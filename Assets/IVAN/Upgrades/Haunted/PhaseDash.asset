@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PhaseDash
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeName: phase dash
-  description: "Phase dash: \nDecreased dash cooldown, deal damage around you when
-    dashing"
+  description: "Phase dash: \nIncreased Dash distance and also deal damage around
+    you when dashing."
   upgradeIcon: {fileID: 21300000, guid: 40b6befcd0328794ea76ac6283b3adf9, type: 3}

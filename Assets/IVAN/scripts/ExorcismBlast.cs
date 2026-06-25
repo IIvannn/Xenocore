@@ -1,11 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shockwave : MonoBehaviour
+public class ExorcismBlast : MonoBehaviour
 {
     public bool temporary = true;
-    public float damage = 10;
-    public string type = "normal";
     public List<GameObject> enemieshit = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,11 +24,11 @@ public class Shockwave : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if (!enemieshit.Contains(other.gameObject))
+            if (!enemieshit.Contains(other.gameObject) && other.GetComponent<EnemyDamage>().haunted && !other.GetComponent<EnemyDamage>().dead)
             {
                 enemieshit.Add(other.gameObject);
                 //Debug.Log("EnemyDamage hit for:  " + damage);
-                other.GetComponent<EnemyDamage>().TakeDamage(damage, "type", 0, 0, null);
+                other.GetComponent<EnemyDamage>().TakeDamage(BoonSTaticInfo.exorcismBonus, "haunted", 0, 0, null);
             }
         }
 

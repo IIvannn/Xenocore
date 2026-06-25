@@ -58,6 +58,8 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float moneyMultiplier = 1f;
     public static float doorHeal = 5f;
     public static  List<Transform> enemiesInRange = new List<Transform>();
+    public static List<GameObject> enemiesAlive = new List<GameObject>();
+
 
 
     public static bool hasAttack = false;
@@ -89,35 +91,40 @@ public class BoonSTaticInfo : MonoBehaviour
 
     [Header("Swarm Boons")]
     public static bool silky = false;
+    public static float silkyBonus = 0.3f;
     public static bool adaptation = false;
+    public static float adaptationLimit = 0.3f;
     public static bool corrosive = false;
-    public static float corrosiveBonus = 1.5f;
+    public static float corrosiveBonus = 0.5f;
     public static bool infestation = false;
+    public static float infestationChance = 35f;
     public static bool nested = false;
+    public static float nestedChance = 15f;
     public static bool pob = false;
+    public static float nestDuration = 8f;
+    public static float waspSpawnSpeed = 1f;
     public static float waspDamage = 10f;
     public static float waspSpeed = 10f;
     public static float proliferationBonus = 1.5f;
-    public static float frenzyBonus = 1.5f;
+    public static float frenzyBonus = 0.15f;
 
 
     [Header("Haunted Boons")]
     public static float dreadBonus = 15f;
     public static bool emotionalDamage = false;
-    public static float emotionalDamageBonus = 15f;
+    public static float emotionalDamageBonus = 0.2f;
     public static bool exorcism = false;
-    public static float exorcismBonus = 30f;
+    public static float exorcismBonus = 10f;
     public static float jumpscareBonus = 35f;
     public static bool necromancer = false;
-    public static float phantomDamage = 10f;
-    public static float phantomSpeed = 10f;
-    public static float phantomAttackSpeed = 0.8f;
+    public static float necroancerChance = 15f;
     public static bool phaseDash = false;
-    public static float phaseDashDashReduction = 1.5f;
     public static float phaseDashDashDamage = 20f;
+    public static float phaseDashDashDurationBonus = 0.2f;
     public static bool posession = false;
+    public static float possessionChance = 5f;
     public static bool reaper = false;
-    public static float reaperBonus = 20f;
+    public static int reaperBonus = 0;
     public static bool untouchable = false;
     public static float untouchableChance = 10f;
 
@@ -143,6 +150,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static bool resonance = false;
     public static float resonanceDamage = 22f;
 
+
     [Header("Null Boons")]
     public static bool farFar = false;
     public static float farFarBonus = 0.1f;
@@ -161,6 +169,85 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float noEscapeSpeed = 3;
 
 
+    [Header("Starfall Boons")]
+    public static float clearSkyBonus = 10f;
+    public static bool crater = false;
+    public static float craterRange = 3f;
+    public static bool doubleTrouble = false;
+    public static bool fated = false;
+    public static float fatedBonus = 1.25f;
+    public static bool luckyStar = false;
+    public static bool makeAWish = false;
+    public static float makeAWishCC = 25;
+    public static float makeAWishCD = 1.3f;
+    public static float meteoriteBonus = 15f;
+    public static bool noYou = false;
+    public static float noYouChance = 10f;
+    public static bool shenanigans = false;
+
+
+    [Header("Rust Boons")]
+    public static bool cracked = false;
+    public static float crackedBonus = 30f;
+    public static bool embrittled = false;
+    public static bool fatigue = false;
+    public static float fatigueBonus = 3f;
+    public static bool galvanized = false;
+    public static float galvanizedBonus = 1.2f;
+    public static float mutilationBonus = 20f;
+    public static float oxidisedBonus = 20f;
+    public static bool purge = false;
+    public static bool soldering = false;
+    public static float solderingBonus = 3f;
+    public static bool tetanus = false;
+    public static float tetanusChance = 10f;
+
+
+
+    [Header("Tectonic Boons")]
+    public static bool faceOff = false;
+    public static float faceOffBonus = 25f;
+    public static bool molten = false;
+    public static float moltenBonus = 0.3f;
+    public static bool mudbath = false;
+    public static float mudbathChance = 25f;
+    public static float mudbathMax = 15f;
+    public static bool eruption = false;
+    public static float eruptionDuration = 2f;
+    public static float eruptionDamage = 20f;
+    public static float shatterBonus = 18f;
+    public static bool tremble = false;
+    public static int staggerCap = 4;
+    public static float staggerDuration = 1.5f;
+    public static float tremorBonus = 1f;
+    public static bool troglodite = false;
+    public static bool volcanic = false;
+    public static float volcanicChance = 35f;
+    public static float volcanicDamage = 1f;
+    public static float volcanicAttackSpeed = 0.1f;
+
+
+
+    [Header("Radiation Boons")]
+    public static bool contamination = false;
+    public static float contaminationBonus = 1.5f;
+    public static float falloutBonus = 12;
+    public static bool finishHim = false;
+    public static float finishHimBonus = 20;
+    public static bool monteCarlo;
+    public static float monteCarloChance = 2f;
+    public static bool noMansLand = false;
+    public static float noMansLandDamage = 5f;
+    public static float noMansLandAttackSpeed = 0.35f;
+    public static bool nuclear = false;
+    public static float nuclearRegenerationSpeed = 0.2f;
+    public static float nuclearRegeneration = 1f;
+    public static bool radonBlood = false;
+    public static float radonDamage = 10f;
+    public static float radonAttackSpeed = 0.5f;
+    public static float radonDuration = 4f;
+    public static float radonRange = 4f;
+    public static float wastelandBonus = 2.5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

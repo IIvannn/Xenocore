@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45dde762105914a4a94f2d0e325089e3, type: 3}
-  m_Name: Quake
+  m_Name: Eruption
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
-  upgradeName: quake
-  description: "Quake: \nCreate an earthquake at the start and end of your dash"
+  upgradeName: eruption
+  description: "Quake: \nCreate a volcanic fissure setting enemies aflame at the
+    start and end of your dash."
   upgradeIcon: {fileID: 21300000, guid: fb567cd90fb2ba14eb1b32f58a75d164, type: 3}
