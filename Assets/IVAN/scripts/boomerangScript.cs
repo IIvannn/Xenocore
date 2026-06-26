@@ -89,9 +89,19 @@ public class boomerangScript : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("hit"+other.name);
+        if (other.gameObject.CompareTag("Prism"))
+        {
+            
+            other.GetComponent<Prism>().Hurt();
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<PlayerShoot>().currentAmmo = other.GetComponent<PlayerShoot>().ammo;
             //Debug.Log("Player has " + other.GetComponent<PlayerShoot>().currentAmmo + " ammo");

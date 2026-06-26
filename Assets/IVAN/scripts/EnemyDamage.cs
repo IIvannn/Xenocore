@@ -26,6 +26,7 @@ public class EnemyDamage : MonoBehaviour
     public GameObject phantom;
     public GameObject exorcism;
     public GameObject petrify;
+    public GameObject prism;
 
     [Header("UI")]
     public Slider healthbar;
@@ -154,6 +155,16 @@ public class EnemyDamage : MonoBehaviour
 
             if (crystallized)
             {
+
+                if (BoonSTaticInfo.overgrowth)
+                {
+                    float rprism = Random.Range(0, 100);
+                    if (rprism < BoonSTaticInfo.overgrowthChance)
+                    {
+                        GameObject ball = Instantiate(prism, transform.position, transform.rotation);
+                    }
+                }
+
                 float rcrystal = Random.Range(0, 100);
                 if (rcrystal < BoonSTaticInfo.crystallizeCrystalChance)
                 {

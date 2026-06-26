@@ -26,6 +26,10 @@ public class Shockwave : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (other.gameObject.CompareTag("Prism"))
+        {
+            other.GetComponent<Prism>().Hurt();
+        }
         if (other.gameObject.CompareTag("Enemy"))
         {
             if (!enemieshit.Contains(other.gameObject))

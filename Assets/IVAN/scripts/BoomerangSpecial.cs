@@ -23,8 +23,8 @@ public class BoomerangSpecial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        b1.Rotate(0, 0, (-(rotationSpeed + bspeed) * Time.deltaTime) * 5);
-        b2.Rotate(0, 0, (-(rotationSpeed + bspeed) * Time.deltaTime) * 5);
+        b1.Rotate(0, 0, (-(rotationSpeed + bspeed) * Time.deltaTime) * -5);
+        b2.Rotate(0, 0, (-(rotationSpeed + bspeed) * Time.deltaTime) * -5);
 
 
         if (BoonSTaticInfo.boomerangSpeed)
@@ -40,6 +40,11 @@ public class BoomerangSpecial : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Prism"))
+        {
+            other.GetComponent<Prism>().Hurt();
+            Debug.Log("prism");
+        }
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<EnemyDamage>().TakeDamage(damage, type, critChance, critDamage, source);

@@ -145,10 +145,11 @@ public class BoonSTaticInfo : MonoBehaviour
     public static bool monopoly = false;
     public static float momopolyBonus = 0.02f;
     public static bool overgrowth = false;
+    public static float overgrowthChance = 10f;
     public static float prismDuration = 10f;
-    public static float prismDamage = 25f;
+    public static float prismDamage = 12f;
     public static float prismRange = 8f;
-    public static float prismCooldown = 0.8f;
+    public static float prismCooldown = 1.2f;
     public static bool resonance = false;
     public static float resonanceDamage = 18f;
 
