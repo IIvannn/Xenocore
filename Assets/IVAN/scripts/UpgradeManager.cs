@@ -699,10 +699,10 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.emotionalDamage = true; //DONE
                 return;
             case "necromancer":
-                BoonSTaticInfo.necromancer = true; //TBD
+                BoonSTaticInfo.necromancer = true; //DONE
                 return;
             case "exorcism":
-                BoonSTaticInfo.exorcism = true; //TBD
+                BoonSTaticInfo.exorcism = true; //DONE
                 return;
 
 
@@ -721,16 +721,16 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.hasSpell = true; //TBD
                 return;
             case "arcane swiftness":
-                BoonSTaticInfo.arcaneSwiftness = true; //TBD
+                BoonSTaticInfo.arcaneSwiftness = true; //DONE
                 return;
             case "resonance":
-                BoonSTaticInfo.resonance = true; //TBD
+                BoonSTaticInfo.resonance = true; //DONE
                 return;
             case "crystalline armor":
-                BoonSTaticInfo.crystallineArmor = true; //TBD
+                BoonSTaticInfo.crystallineArmor = true; //DONE
                 return;
             case "energized":
-                BoonSTaticInfo.energized = true; //TBD
+                BoonSTaticInfo.energized = true; //DONE
                 return;
             case "excavator":
                 BoonSTaticInfo.moneyMultiplier += BoonSTaticInfo.excavationBonus; //DONE
@@ -739,7 +739,7 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.crystallizeCrystalChance += BoonSTaticInfo.fortuneBonus; //DONE
                 return;
             case "medusa":
-                BoonSTaticInfo.medusa = true; //TBD
+                BoonSTaticInfo.medusa = true; //DONE
                 return;
             case "monopoly":
                 BoonSTaticInfo.monopoly = false; //TBD

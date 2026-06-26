@@ -44,6 +44,7 @@ public class BoomerangSpecial : MonoBehaviour
         {
             other.GetComponent<EnemyDamage>().TakeDamage(damage, type, critChance, critDamage, source);
             other.GetComponent<EnemyDamage>().ApplyStatus(type, source);
+            source.GetComponent<PlayerShoot>().onHit();
             if (BoonSTaticInfo.boomerangSpecialGrow)
             {
                 if (bsize<155)

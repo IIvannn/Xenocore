@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public bool right = true;
 
     float btime = 0;
-
+    float energizedBoost;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,7 +38,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerDamage pd = GetComponent<PlayerDamage>();
         
+
+        if (BoonSTaticInfo.energized)
+        {
+            energizedBoost = (pd.currentEnergy / pd.energy)*BoonSTaticInfo.energizedBonus;
+        }
 
         Vector2 input = Vector2.zero;
 
@@ -59,9 +65,10 @@ public class PlayerMovement : MonoBehaviour
             input.x -= 1;
         }
 
+        float finalSpeed = speed+energizedBoost;
 
         Vector3 move = (transform.right * input.x + transform.forward * input.y).normalized;
-        controller.Move(move * (speed + sprintSpeedBonus) * Time.deltaTime);
+        controller.Move(move * (finalSpeed + sprintSpeedBonus) * Time.deltaTime);
         
 
         if (move == Vector3.zero)

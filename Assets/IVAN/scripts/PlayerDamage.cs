@@ -64,6 +64,7 @@ public class PlayerDamage : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        
         if (BoonSTaticInfo.untouchable)
         {
             float rchance = Random.Range(1, 100);
@@ -78,6 +79,22 @@ public class PlayerDamage : MonoBehaviour
             else
             {
                 Debug.Log("Dodge!");
+            }
+        }
+        else if (BoonSTaticInfo.crystallineArmor)
+        {
+            float rchance = Random.Range(1, 100);
+            if (rchance < BoonSTaticInfo.crystallineArmorChance)
+            {
+                BoonSTaticInfo.crystals -= (int)damage;
+            }
+            else
+            {
+                currentHp -= damage;
+                if (currentHp <= 0)
+                {
+                    Death();
+                }
             }
         }
         else

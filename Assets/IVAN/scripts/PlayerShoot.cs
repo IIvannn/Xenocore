@@ -65,6 +65,21 @@ public class PlayerShoot : MonoBehaviour
         {
             Special();
         }
+        if (Keyboard.current.qKey.wasPressedThisFrame)
+        {
+            PlayerDamage body = gameObject.GetComponent<PlayerDamage>();
+            if (body.currentEnergy >= 100)
+            {
+                body.currentEnergy-= 100;
+                Debug.Log("spell");
+                if (BoonSTaticInfo.arcaneSwiftness)
+                {
+                    StartCoroutine(AS());
+
+                }
+            }
+        }
+
 
         if (specialing)
         {
@@ -175,6 +190,7 @@ public class PlayerShoot : MonoBehaviour
             ball.GetComponent<boomerangScript>().critChance = boomerangCritChance;
             ball.GetComponent<boomerangScript>().critDamage = boomerangCritDamage;
             nextFireTime = Time.time + firerate;
+            
         }
 
     }
@@ -183,8 +199,9 @@ public class PlayerShoot : MonoBehaviour
     
     public void onHit()
     {
+        //Debug.Log("hit");
         PlayerDamage body = gameObject.GetComponent<PlayerDamage>();
-        body.energy += energyPerHit;
+        body.currentEnergy += energyPerHit;
     }
     public void onCrit()
     {
@@ -195,6 +212,21 @@ public class PlayerShoot : MonoBehaviour
         //Debug.Log("enemy hit");
     }
 
+
+    IEnumerator AS()
+    {
+        float originalSpeed = boomerangSpeed;
+        float attSpeed = firerate;
+
+        firerate *= BoonSTaticInfo.arcaneSwiftnessBonus;
+        boomerangSpeed *= BoonSTaticInfo.arcaneSwiftnessBonus;
+
+        yield return new WaitForSeconds(BoonSTaticInfo.arcaneSwiftnessDuration);
+
+        boomerangSpeed = originalSpeed;
+        firerate = attSpeed;
+
+    }
 
 
 }

@@ -34,7 +34,7 @@ public class EnemyShoot : MonoBehaviour
     {
         EnemyDamage enemyDamage = GetComponent<EnemyDamage>();
 
-        if (!PlayerDamage.dead)
+        if (!PlayerDamage.dead && !enemyDamage.petrified)
         {
 
             float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);

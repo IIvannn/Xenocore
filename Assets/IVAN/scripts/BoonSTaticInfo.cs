@@ -131,14 +131,16 @@ public class BoonSTaticInfo : MonoBehaviour
 
     [Header("Crystallize Boons")]
     public static bool arcaneSwiftness = false;
-    public static float arcaneSwiftnessBonus = 1.20f;
+    public static float arcaneSwiftnessBonus = 1.50f;
+    public static float arcaneSwiftnessDuration = 5f;
     public static bool crystallineArmor = false;
-    public static float crystallineArmorChance = 15f;
+    public static float crystallineArmorChance = 20f;
     public static bool energized = false;
-    public static float energizedBonus = 8f;
+    public static float energizedBonus = 5f;
     public static float excavationBonus = 0.20f;
     public static float fortuneBonus = 12f;
     public static bool medusa = false;
+    public static float medusaChance = 45f;
     public static float petrifyDuration = 1.3f;
     public static bool monopoly = false;
     public static float momopolyBonus = 0.02f;
@@ -148,7 +150,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float prismRange = 8f;
     public static float prismCooldown = 0.8f;
     public static bool resonance = false;
-    public static float resonanceDamage = 22f;
+    public static float resonanceDamage = 18f;
 
 
     [Header("Null Boons")]

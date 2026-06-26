@@ -6,14 +6,16 @@ public class Shockwave : MonoBehaviour
     public bool temporary = true;
     public float damage = 10;
     public string type = "normal";
+    public float range = 4.2f;
     public List<GameObject> enemieshit = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (temporary)
         {
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 0.5f);
         }
+        transform.localScale = new Vector3(range, range, range);
     }
 
     // Update is called once per frame

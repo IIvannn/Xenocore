@@ -28,6 +28,7 @@ public class boomerangScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         //Destroy(gameObject, 8);
         //shootsnd.Play();
         StartCoroutine(Return());
@@ -112,6 +113,7 @@ public class boomerangScript : MonoBehaviour
                     {
                         gameObject.transform.localScale += new Vector3(BoonSTaticInfo.boomerangGrowBonus, BoonSTaticInfo.boomerangGrowBonus, BoonSTaticInfo.boomerangGrowBonus);
                     }
+                    source.GetComponent<PlayerShoot>().onHit();
                 }
             }
             else
@@ -126,6 +128,7 @@ public class boomerangScript : MonoBehaviour
                     {
                         Shockwave();
                     }
+                    source.GetComponent<PlayerShoot>().onHit();
                 } 
             }
 

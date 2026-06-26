@@ -725,11 +725,11 @@ MonoBehaviour:
   boomerangDamage: 20
   boomerangCritChance: 10
   boomerangCritDamage: 1.7
-  energyPerHit: 0
-  boomerangSpecialDamage: 8
-  boomerangSpecialDuration: 1
+  energyPerHit: 0.7
+  boomerangSpecialDamage: 10
+  boomerangSpecialDuration: 0.5
   boomerangSpecialRotationSpeed: 600
-  boomerangSpecialCooldown: 2
+  boomerangSpecialCooldown: 1.3
   boomerangSpecialCritChance: 10
   boomerangSpecialCritDamage: 1.5
   canspecial: 1

@@ -25,6 +25,7 @@ public class EnemyDamage : MonoBehaviour
     public GameObject nest;
     public GameObject phantom;
     public GameObject exorcism;
+    public GameObject petrify;
 
     [Header("UI")]
     public Slider healthbar;
@@ -157,11 +158,27 @@ public class EnemyDamage : MonoBehaviour
                 if (rcrystal < BoonSTaticInfo.crystallizeCrystalChance)
                 {
                     GameObject ball = Instantiate(crystallizedDrop, transform.position, transform.rotation);
+                    if (BoonSTaticInfo.medusa)
+                    {
+                        float rm = Random.Range(0, 100);
+                        if (rm < BoonSTaticInfo.medusaChance)
+                        {
+                            ApplyStatus("petrify", null);
+                        }
+                    }
                 }
             }
             if (haunted)
             {
                 hauntedStoredDamage += damage * BoonSTaticInfo.hauntedDamagePercentage / 100;
+            }
+
+            float monopolyBonus;
+            if (BoonSTaticInfo.monopoly)
+            {
+                monopolyBonus = (((BoonSTaticInfo.crystals)/5)*0.01f)+1;
+                damage*= monopolyBonus;
+                //Debug.Log("monopoly: "+monopolyBonus);
             }
 
             finalDamage = (int)(damage * (1 + (((radiationAmmount + 0.02f) * BoonSTaticInfo.radiationWeakness) / 100)));
@@ -179,6 +196,8 @@ public class EnemyDamage : MonoBehaviour
             {
                 armorReduction += BoonSTaticInfo.moltenBonus;
             }
+
+            
 
             if (armor > 0)
             {
@@ -398,6 +417,7 @@ public class EnemyDamage : MonoBehaviour
                 if (!petrified)
                 {
                     petrified = true;
+                    petrify.SetActive(true);
                     StartCoroutine(PetrifiedDuration());
                 }
                 break;
@@ -448,6 +468,7 @@ public class EnemyDamage : MonoBehaviour
     IEnumerator PetrifiedDuration()
     {
         yield return new WaitForSeconds(2.5f);
+        petrify.SetActive(false);
         petrified = false;
     }
 

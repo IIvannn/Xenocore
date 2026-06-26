@@ -19,6 +19,7 @@ public class EnemyScript : MonoBehaviour
     public bool dead = false;
     //string state = "idle";
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +30,16 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         EnemyDamage enemyDamage = GetComponent<EnemyDamage>();
+
+        if (enemyDamage.petrified)
+        {
+            agent.isStopped = true;
+        }
+        else
+        {
+            agent.isStopped = false;
+        }
+
 
         if (!PlayerDamage.dead)
         {
@@ -55,7 +66,8 @@ public class EnemyScript : MonoBehaviour
     public void MoveToPlayer(float distance)
     {
         EnemyDamage enemyDamage = GetComponent<EnemyDamage>();
-        if (PlayerMovement.playerPosition.position != null)
+
+        if (PlayerMovement.playerPosition.position != null && !enemyDamage.petrified)
         {
             agent.SetDestination(PlayerMovement.playerPosition.position);
             if (distance > distanceBeforeStop)
