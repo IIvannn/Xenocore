@@ -14,6 +14,8 @@ public class DialogueUI : MonoBehaviour
 
     [Header("Speaker Image")]
     public Image speakerImage;
+    public Image leftPortrait;
+
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -117,6 +119,7 @@ public class DialogueUI : MonoBehaviour
         //text
         nameText.text = line.speakerName;
 
+        //right portrait sprite
         if (speakerImage != null)
         {
             if (line.speakerSprite != null)
@@ -130,6 +133,28 @@ public class DialogueUI : MonoBehaviour
             }
         }
 
+        //left portrait sprite
+        if (leftPortrait != null)
+        {
+            if (line.leftPortrait != null)
+                leftPortrait.sprite = line.leftPortrait;
+        }
+
+        //ilumination system for the images
+        if (line.isLeftSpeaker)
+        {
+            //left is speaking
+            leftPortrait.color = new Color(1f, 1f, 1f, 1f);       //left lighted
+            speakerImage.color = new Color(0.5f, 0.5f, 0.5f, 1f); //right darker
+        }
+        else
+        {
+            //right is speaking
+            leftPortrait.color = new Color(0.5f, 0.5f, 0.5f, 1f);  //left darker
+            speakerImage.color = new Color(1f, 1f, 1f, 1f);       //right lighted
+        }
+
+        //audio
         if (audioSource != null)
         {
             audioSource.Stop();
@@ -137,8 +162,10 @@ public class DialogueUI : MonoBehaviour
                 audioSource.PlayOneShot(line.voiceClip);
         }
 
+        //typing speed
         currentTypingSpeed = line.typingSpeed;
 
+        //typing coroutines
         StopAllCoroutines();
         StartCoroutine(TypeText(line.text));
         StartCoroutine(WaitForLineEnd(line));

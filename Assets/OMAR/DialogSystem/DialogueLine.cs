@@ -7,7 +7,6 @@ public class DialogueLine
     [TextArea] public string text;
 
     public AudioClip voiceClip;
-    public Sprite speakerSprite;
 
     [Header("Typing Speed")]
     public float typingSpeed = 0.03f;
@@ -18,4 +17,9 @@ public class DialogueLine
     [Header("Return to previous dialogue")]
     public bool jumpBackToPreviousDialogue = false;
     public int previousDialogueLineIndex = 0;
+
+    [Header("Portraits")]
+    public Sprite speakerSprite;   //sprite of the right
+    public bool isLeftSpeaker;     //left speaking on or off
+    public Sprite leftPortrait;    //sprite of the left
 }
