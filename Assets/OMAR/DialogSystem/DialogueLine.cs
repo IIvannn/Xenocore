@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 [System.Serializable]
@@ -22,4 +23,7 @@ public class DialogueLine
     public Sprite speakerSprite;   //sprite of the right
     public bool isLeftSpeaker;     //left speaking on or off
     public Sprite leftPortrait;    //sprite of the left
+
+    [Header("Font")]
+    public TMP_FontAsset customFont; //font used
 }

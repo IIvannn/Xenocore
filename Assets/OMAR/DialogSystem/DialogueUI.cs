@@ -119,6 +119,12 @@ public class DialogueUI : MonoBehaviour
         //text
         nameText.text = line.speakerName;
 
+        //font each lane
+        if (line.customFont !=null)
+        {
+            dialogueText.font = line.customFont;
+        }
+
         //right portrait sprite
         if (speakerImage != null)
         {
@@ -274,6 +280,9 @@ public class DialogueUI : MonoBehaviour
 
         if (npcRef != null)
             npcRef.RestoreMovement();
+
+        //Free the selected npc
+        NPCDialogue.activeNPC = null;
 
         npcRef = null;
         hasPreviousDialogue = false;

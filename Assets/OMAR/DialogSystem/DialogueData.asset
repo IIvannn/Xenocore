@@ -16,27 +16,36 @@ MonoBehaviour:
   - speakerName: 
     text: 
     voiceClip: {fileID: 0}
-    speakerSprite: {fileID: 0}
     typingSpeed: 0
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
     previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 0}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 0}
+    customFont: {fileID: 0}
   - speakerName: 
     text: 
     voiceClip: {fileID: 0}
-    speakerSprite: {fileID: 0}
     typingSpeed: 0
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
     previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 0}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 0}
+    customFont: {fileID: 0}
   - speakerName: 
     text: 
     voiceClip: {fileID: 0}
-    speakerSprite: {fileID: 0}
     typingSpeed: 0
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
     previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 0}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 0}
+    customFont: {fileID: 0}
   options:
   - optionText: Yes
     nextDialogue: {fileID: 0}
