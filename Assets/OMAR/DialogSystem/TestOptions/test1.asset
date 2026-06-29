@@ -23,6 +23,7 @@ MonoBehaviour:
     speakerSprite: {fileID: 21300000, guid: ce9dd73dd37f0ee418dc9aed5dcf254d, type: 3}
     isLeftSpeaker: 0
     leftPortrait: {fileID: 21300000, guid: 707848a1873fed448ae246e9817fc92b, type: 3}
+    customFont: {fileID: 0}
   - speakerName: NPC1
     text: This text is waaaaay mooooore slow and sloooooow why is so sloooooooow
       oh no!
@@ -34,6 +35,7 @@ MonoBehaviour:
     speakerSprite: {fileID: 21300000, guid: 1ebcd2a027580384ba926f6e8f05c22d, type: 3}
     isLeftSpeaker: 1
     leftPortrait: {fileID: 21300000, guid: 707848a1873fed448ae246e9817fc92b, type: 3}
+    customFont: {fileID: 11400000, guid: 018f01cd1915e5c4599bb266710fadd9, type: 2}
   - speakerName: NPC1
     text: This text is fast boi! you can write anything fast and type all you like
       and appear in an instant when there is so much text like this one
@@ -45,6 +47,7 @@ MonoBehaviour:
     speakerSprite: {fileID: 21300000, guid: 94e81c88e898aec44a43a208b33576ca, type: 3}
     isLeftSpeaker: 0
     leftPortrait: {fileID: 0}
+    customFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   - speakerName: NPC1
     text: What do you want to ask?
     voiceClip: {fileID: 0}
@@ -55,6 +58,7 @@ MonoBehaviour:
     speakerSprite: {fileID: 21300000, guid: 94e81c88e898aec44a43a208b33576ca, type: 3}
     isLeftSpeaker: 0
     leftPortrait: {fileID: 0}
+    customFont: {fileID: 0}
   options:
   - optionText: That's Cool!
     nextDialogue: {fileID: 11400000, guid: 30caf3a0ad4cec74b8f520a66e9e7e92, type: 2}

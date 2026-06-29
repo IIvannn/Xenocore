@@ -7,7 +7,7 @@ public class NPCDialogue : MonoBehaviour
     public string npcID = "NPC_001";
 
     [Header("Dialogue States")]
-    public DialogueData[] dialogues; //ist of dialogues
+    public DialogueData[] dialogues; //list of dialogues
 
     private int dialogueState = 0; //state on dialogues
 
@@ -24,6 +24,7 @@ public class NPCDialogue : MonoBehaviour
     private PlayerMovement playerMovement;
     private bool playerInRange;
     private bool dialogueJustOpened = false;
+    public static NPCDialogue activeNPC = null;
 
     void Start()
     {
@@ -41,6 +42,10 @@ public class NPCDialogue : MonoBehaviour
     {
         if (player == null) return;
 
+        //Bloq dialogue of other npc to appear
+        if (NPCDialogue.activeNPC != null && NPCDialogue.activeNPC != this)
+            return;
+
         float dist = Vector3.Distance(player.position, transform.position);
         playerInRange = dist <= interactDistance;
 
@@ -55,13 +60,15 @@ public class NPCDialogue : MonoBehaviour
 
         if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame)
         {
+            //if there is open a dialogue dont open the other npcs
             if (dialogueUI.IsOpen)
                 return;
 
             DialogueData selected = dialogues[Mathf.Clamp(dialogueState, 0, dialogues.Length - 1)];
-
-            //index for dialogue
             dialogueUI.StartDialogue(selected, this, 0);
+
+            //Active NPC only this dialogue
+            NPCDialogue.activeNPC = this;
 
             dialogueJustOpened = true;
 
@@ -73,6 +80,7 @@ public class NPCDialogue : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
+
 
     public bool ConsumeJustOpenedFlag()
     {
