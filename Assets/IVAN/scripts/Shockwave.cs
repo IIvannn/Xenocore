@@ -8,6 +8,9 @@ public class Shockwave : MonoBehaviour
     public string type = "normal";
     public float range = 4.2f;
     public List<GameObject> enemieshit = new List<GameObject>();
+    public bool mstrike = false;
+    public float cc = 0;
+    public float cd = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,7 +29,7 @@ public class Shockwave : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Prism"))
+        if (other.gameObject.CompareTag("Prism") && !mstrike)
         {
             other.GetComponent<Prism>().Hurt();
         }
@@ -34,9 +37,19 @@ public class Shockwave : MonoBehaviour
         {
             if (!enemieshit.Contains(other.gameObject))
             {
-                enemieshit.Add(other.gameObject);
-                //Debug.Log("EnemyDamage hit for:  " + damage);
-                other.GetComponent<EnemyDamage>().TakeDamage(damage, "type", 0, 0, null);
+                if (mstrike && BoonSTaticInfo.nulledEnemies.Contains(other.gameObject))
+                {
+                    enemieshit.Add(other.gameObject);
+                    //Debug.Log("EnemyDamage hit for:  " + damage);
+                    other.GetComponent<EnemyDamage>().TakeDamage(damage, "type", cc, cd, null);
+                }
+                else if (!mstrike)
+                {
+                    enemieshit.Add(other.gameObject);
+                    //Debug.Log("EnemyDamage hit for:  " + damage);
+                    other.GetComponent<EnemyDamage>().TakeDamage(damage, "type", cc, cd, null);
+                }
+                    
             }
         }
 

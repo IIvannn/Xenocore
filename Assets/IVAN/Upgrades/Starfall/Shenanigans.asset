@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Shenanigans
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeName: shenanigans
-  description: "Shenanigans: \nYour attacks now deal either -20%, +5% or +30% damage."
+  description: "Shenanigans: \nYour attacks and special now deal either -20%, +5%
+    or +30% damage."
   upgradeIcon: {fileID: 21300000, guid: e8ccf603a61be0947a19b1910ad29a7e, type: 3}

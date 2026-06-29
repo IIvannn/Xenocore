@@ -23,7 +23,9 @@ public class boomerangScript : MonoBehaviour
     public GameObject sprite;
     public LayerMask groundMask;
     public GameObject shockwave;
-    
+    float distance;
+    float farb = 1;
+    float bspeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -42,6 +44,21 @@ public class boomerangScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (BoonSTaticInfo.exponentiallity)
+        {
+            bspeed += BoonSTaticInfo.exponentiallityBonus * Time.deltaTime;
+        }
+        
+        
+        distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
+        if (BoonSTaticInfo.farFar)
+        {
+            farb = ((distance * BoonSTaticInfo.farFarBonus) * 0.01f) + 1;
+        }
+        
+        //Debug.Log(farb);
+
         sprite.transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
         if (Physics.CheckSphere(transform.position, 0.5f, groundMask))
         {
@@ -60,7 +77,8 @@ public class boomerangScript : MonoBehaviour
         }
         else
         {
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
+
+            transform.position += transform.forward * (moveSpeed+bspeed) * Time.deltaTime;
         }
 
         if (source == null)
@@ -72,7 +90,7 @@ public class boomerangScript : MonoBehaviour
     void moveToPlayer()
     {
         Vector3 dir = (source.transform.position - transform.position).normalized;
-        transform.position += dir * returnSpeed * Time.deltaTime;
+        transform.position += dir * (returnSpeed+bspeed) * Time.deltaTime;
     }
 
     void RotateToPlayer()
@@ -91,7 +109,7 @@ public class boomerangScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("hit"+other.name);
+        //Debug.Log("hit"+other.name);
         if (other.gameObject.CompareTag("Prism"))
         {
             
@@ -101,7 +119,29 @@ public class boomerangScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-            if (other.gameObject.CompareTag("Player"))
+
+        float bshen = 1;
+        if (BoonSTaticInfo.shenanigans)
+        {
+            int shen = Random.Range(1, 4);
+            
+            //Debug.Log("shenanigans chance: " + shen);
+            if (shen == 1)
+            {
+                bshen = 0.8f;
+            }
+            else if (shen == 2)
+            {
+                bshen = 1.05f;
+            }
+            else if (shen == 3)
+            {
+                bshen = 1.3f;
+            }
+
+        }
+
+        if (other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<PlayerShoot>().currentAmmo = other.GetComponent<PlayerShoot>().ammo;
             //Debug.Log("Player has " + other.GetComponent<PlayerShoot>().currentAmmo + " ammo");
@@ -117,8 +157,22 @@ public class boomerangScript : MonoBehaviour
                 {
                     enemieshitOnLaunch.Add(other.gameObject);
                     //Debug.Log("EnemyDamage hit for:  " + damage);
-                    other.GetComponent<EnemyDamage>().TakeDamage(damage, type, critChance, critDamage, source);
+                    
+
+                    other.GetComponent<EnemyDamage>().TakeDamage(damage*farb* bshen, type, critChance, critDamage, source);
                     other.GetComponent<EnemyDamage>().ApplyStatus(type,source);
+
+                    if (BoonSTaticInfo.doubleTrouble)
+                    {
+                        float dt = Random.Range(1, 100);
+                        if (dt <= BoonSTaticInfo.doubleTroubleChance)
+                        {
+                            other.GetComponent<EnemyDamage>().TakeDamage(damage * farb * bshen, type, critChance, critDamage, source);
+                        }
+
+                    }
+
+
                     if (BoonSTaticInfo.boomerangGrow)
                     {
                         gameObject.transform.localScale += new Vector3(BoonSTaticInfo.boomerangGrowBonus, BoonSTaticInfo.boomerangGrowBonus, BoonSTaticInfo.boomerangGrowBonus);
@@ -132,8 +186,19 @@ public class boomerangScript : MonoBehaviour
                 {
                     enemieshitOnReturn.Add(other.gameObject);
                     //Debug.Log("EnemyDamage hit for:  " + damage);
-                    other.GetComponent<EnemyDamage>().TakeDamage(damage, type, critChance, critDamage, source);
+                    other.GetComponent<EnemyDamage>().TakeDamage(damage * farb, type, critChance, critDamage, source);
                     other.GetComponent<EnemyDamage>().ApplyStatus(type,source);
+
+                    if (BoonSTaticInfo.doubleTrouble)
+                    {
+                        float dt = Random.Range(1, 100);
+                        if (dt <= BoonSTaticInfo.doubleTroubleChance)
+                        {
+                            other.GetComponent<EnemyDamage>().TakeDamage(damage * farb, type, critChance, critDamage, source);
+                        }
+
+                    }
+
                     if (BoonSTaticInfo.boomerangMark && enemieshitOnLaunch.Contains(other.gameObject))
                     {
                         Shockwave();

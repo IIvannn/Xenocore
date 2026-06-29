@@ -40,6 +40,27 @@ public class BoomerangSpecial : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        float bshen = 1;
+        if (BoonSTaticInfo.shenanigans)
+        {
+            int shen = Random.Range(1, 4);
+            
+            //Debug.Log("shenanigans chance: " + shen);
+            if (shen == 1)
+            {
+                bshen = 0.8f;
+            }
+            else if (shen == 2)
+            {
+                bshen = 1.05f;
+            }
+            else
+            {
+                bshen = 1.3f;
+            }
+        }
+        
+
         if (other.gameObject.CompareTag("Prism"))
         {
             other.GetComponent<Prism>().Hurt();
@@ -47,7 +68,7 @@ public class BoomerangSpecial : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyDamage>().TakeDamage(damage, type, critChance, critDamage, source);
+            other.GetComponent<EnemyDamage>().TakeDamage(damage* bshen, type, critChance, critDamage, source);
             other.GetComponent<EnemyDamage>().ApplyStatus(type, source);
             source.GetComponent<PlayerShoot>().onHit();
             if (BoonSTaticInfo.boomerangSpecialGrow)

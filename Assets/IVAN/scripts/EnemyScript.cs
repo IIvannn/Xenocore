@@ -19,6 +19,9 @@ public class EnemyScript : MonoBehaviour
     public bool dead = false;
     //string state = "idle";
 
+    public bool pulled = true;
+    float nslow = 2;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +32,17 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EnemyDamage enemyDamage = GetComponent<EnemyDamage>();
+
+        if (BoonSTaticInfo.nulledEnemies.Contains(gameObject))
+        {
+            nslow = 2;
+        }
+        else
+        {
+            nslow = 0;
+        }
+
+            EnemyDamage enemyDamage = GetComponent<EnemyDamage>();
 
         if (enemyDamage.petrified)
         {
@@ -74,11 +87,11 @@ public class EnemyScript : MonoBehaviour
             {
                 if (enemyDamage.swarmed && BoonSTaticInfo.silky)
                 {
-                    agent.speed = movementSpeed*BoonSTaticInfo.silkyBonus;
+                    agent.speed = (movementSpeed*BoonSTaticInfo.silkyBonus) - nslow;
                 }
                 else
                 {
-                    agent.speed = movementSpeed;
+                    agent.speed = movementSpeed - nslow;
                 }
                 
             }

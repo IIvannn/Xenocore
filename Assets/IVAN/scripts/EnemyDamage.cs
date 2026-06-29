@@ -27,6 +27,7 @@ public class EnemyDamage : MonoBehaviour
     public GameObject exorcism;
     public GameObject petrify;
     public GameObject prism;
+    public GameObject shockwave;
 
     [Header("UI")]
     public Slider healthbar;
@@ -58,6 +59,8 @@ public class EnemyDamage : MonoBehaviour
 
     float lerpSpeed = 0.03f;
     float bcd = 0;
+    bool fated;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -72,6 +75,8 @@ public class EnemyDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (irradiated)
         {
             radiationAmmount = 1;
@@ -126,6 +131,16 @@ public class EnemyDamage : MonoBehaviour
 
     public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
+        
+
+
+
+        float fb = 1;
+        if (fated)
+        {
+            fb = BoonSTaticInfo.fatedBonus;
+        }
+
         if (!dead)
         {
             if (BoonSTaticInfo.emotionalDamage)
@@ -138,14 +153,22 @@ public class EnemyDamage : MonoBehaviour
             float rcchance = Random.Range(0, 100);
             if (rcchance < (critC + rustboost))
             {
-                damage = damage * (critD + bcd);
+                
+                damage *= ((critD*fb) + bcd);
                 if (source != null)
                 {
                     source.GetComponent<PlayerShoot>().onCrit();
                 }
                 dmgNumber.GetComponent<DamageNumber>().textDmg.outlineColor = new Color(1, 0, 0);
+                fated = false;
             }
             //Debug.Log("crit chance: "+ (critC + rustboost));
+
+            if (BoonSTaticInfo.massAccumulation)
+            {
+                damage *= ((BoonSTaticInfo.UPGRADES * BoonSTaticInfo.massAccumulationBonus) / 100) + 1;
+                Debug.Log(((BoonSTaticInfo.UPGRADES * BoonSTaticInfo.massAccumulationBonus) / 100) + 1);
+            }
 
 
             if (source != null)
@@ -192,7 +215,7 @@ public class EnemyDamage : MonoBehaviour
                 //Debug.Log("monopoly: "+monopolyBonus);
             }
 
-            finalDamage = (int)(damage * (1 + (((radiationAmmount + 0.02f) * BoonSTaticInfo.radiationWeakness) / 100)));
+            finalDamage = (int)((damage * (1 + ((radiationAmmount + 0.02f) * BoonSTaticInfo.radiationWeakness) / 100)));
 
             if (BoonSTaticInfo.reaper)
             {
@@ -208,7 +231,18 @@ public class EnemyDamage : MonoBehaviour
                 armorReduction += BoonSTaticInfo.moltenBonus;
             }
 
-            
+            if (BoonSTaticInfo.multiversalStrike && BoonSTaticInfo.mstrike)
+            {
+                StartCoroutine(MStrikeDuration());
+                BoonSTaticInfo.mstrike = false;
+                GameObject exo = Instantiate(shockwave, transform.position, transform.rotation);
+                exo.GetComponent<Shockwave>().damage = BoonSTaticInfo.multiversalStrikeDamage;
+                exo.GetComponent<Shockwave>().range = 300;
+                exo.GetComponent<Shockwave>().mstrike = true;
+                exo.GetComponent<Shockwave>().type = "null";
+            }
+
+
 
             if (armor > 0)
             {
@@ -240,11 +274,31 @@ public class EnemyDamage : MonoBehaviour
             }
 
             int rschance = Random.Range(0, 100);
-            if (rschance < BoonSTaticInfo.starfallChance && starfalled)
+            if (rschance < BoonSTaticInfo.starfallChance && starfalled && type != "star")
             {
+                if (BoonSTaticInfo.fated)
+                {
+                    fated = true;
+                }
+                
                 Debug.Log("starfall chance:  " + rschance);
+                if (BoonSTaticInfo.crater)
+                {
+                    GameObject ball = Instantiate(shockwave, transform.position, transform.rotation);
+                    ball.GetComponent<Shockwave>().damage = BoonSTaticInfo.starfallDamage;
+                    ball.GetComponent<Shockwave>().range = BoonSTaticInfo.craterRange;
+                    ball.GetComponent<Shockwave>().type = "star";
+                }
+                else
+                {
+                    TakeDamage(BoonSTaticInfo.starfallDamage, "star", BoonSTaticInfo.starfallCritChance, BoonSTaticInfo.makeAWishCD, null);
+                }
 
-                TakeDamage(BoonSTaticInfo.starfallDamage, "starfall", 0, 0, null);
+                float rcrystal = Random.Range(0, 100);
+                if (rcrystal < BoonSTaticInfo.luckyStarChance && BoonSTaticInfo.luckyStar)
+                {
+                    BoonSTaticInfo.crystals+=2;
+                }
 
             }
 
@@ -269,6 +323,7 @@ public class EnemyDamage : MonoBehaviour
         if (BoonSTaticInfo.exorcism && !dead)
         {
             GameObject exo = Instantiate(exorcism, transform.position, transform.rotation);
+            exo.GetComponent<Shockwave>().damage = BoonSTaticInfo.exorcismBonus;
         }
             
         if (BoonSTaticInfo.necromancer && !dead)
@@ -352,6 +407,7 @@ public class EnemyDamage : MonoBehaviour
                 if (!nulled && BoonSTaticInfo.nullCurrentCount<BoonSTaticInfo.nullMaxCount)
                 {
                     GameObject ball = Instantiate(nullBubble, transform.position, transform.rotation);
+                    ball.GetComponent<NullBubble>().source = gameObject;
                     BoonSTaticInfo.nullCurrentCount++;
                     nulled = true;
                     StartCoroutine(NullDuration());
@@ -491,6 +547,8 @@ public class EnemyDamage : MonoBehaviour
 
     public void NullPull(Vector3 direction)
     {
+        Debug.Log("nulled");
+        
         EnemyScript enemy = gameObject.GetComponent<EnemyScript>();
         enemy.controller.Move(direction.normalized * BoonSTaticInfo.nullPullStrength * Time.deltaTime);
     }
@@ -545,6 +603,12 @@ public class EnemyDamage : MonoBehaviour
         }
         GameObject ball = Instantiate(ghost, transform.position, transform.rotation);
         ball.GetComponent<Ghost>().source = gameObject; 
+    }
+
+    IEnumerator MStrikeDuration()
+    {
+        yield return new WaitForSeconds(BoonSTaticInfo.multiversalStrikeCooldown);
+        BoonSTaticInfo.mstrike = true;
     }
 }
 

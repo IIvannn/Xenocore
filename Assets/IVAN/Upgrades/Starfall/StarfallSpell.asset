@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StarfallSpell
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeName: starfall spell
-  description: 'Starfall Attack:
+  description: 'Starfall Spell:
 
     Your spell creates an area of falling stars
     dealing damage over time.'

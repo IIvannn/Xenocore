@@ -14,7 +14,9 @@ public class PlayerDamage : MonoBehaviour
     public TextMeshProUGUI energyText;
     public TextMeshProUGUI crystalText;
     public GameObject upgrader;
+    public GameObject shockwave;
     float lerpSpeed = 0.03f;
+
     [Header("Health")]
     public static float hp = 100f;
     public static float currentHp = 100f;
@@ -64,6 +66,20 @@ public class PlayerDamage : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+
+
+        if (BoonSTaticInfo.noYou)
+        {
+            float nychance = Random.Range(1, 100);
+            if (nychance < BoonSTaticInfo.noYouChance)
+            {
+                GameObject ball = Instantiate(shockwave, transform.position, transform.rotation);
+                ball.GetComponent<Shockwave>().damage = damage;
+                ball.GetComponent<Shockwave>().range = BoonSTaticInfo.noYouRange;
+                ball.GetComponent<Shockwave>().type = "star";
+                return;
+            }
+        }
         
         if (BoonSTaticInfo.untouchable)
         {

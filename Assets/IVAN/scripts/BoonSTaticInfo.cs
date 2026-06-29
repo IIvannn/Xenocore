@@ -25,8 +25,8 @@ public class BoonSTaticInfo : MonoBehaviour
     public static int nullMaxCount = 3;
     public static int nullCurrentCount = 0;
     [Header("Starfall")]
-    public static float starfallDamage = 66;
-    public static float starfallChance = 17;
+    public static float starfallDamage = 50;
+    public static float starfallChance = 25;
     public static float starfallDuration = 5;
     [Header("Rust")]
     public static float rustCritChance = 35f;
@@ -59,6 +59,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float doorHeal = 5f;
     public static  List<Transform> enemiesInRange = new List<Transform>();
     public static List<GameObject> enemiesAlive = new List<GameObject>();
+    public static int UPGRADES = 0;
 
 
 
@@ -126,7 +127,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static bool reaper = false;
     public static int reaperBonus = 0;
     public static bool untouchable = false;
-    public static float untouchableChance = 10f;
+    public static float untouchableChance = 18f;
 
 
     [Header("Crystallize Boons")]
@@ -156,11 +157,11 @@ public class BoonSTaticInfo : MonoBehaviour
 
     [Header("Null Boons")]
     public static bool farFar = false;
-    public static float farFarBonus = 0.1f;
+    public static float farFarBonus = 0.6f;
     public static bool collapse = false;
-    public static float collapseDamage = 50f;
+    public static float collapseDamage = 20f;
     public static bool exponentiallity = false;
-    public static float exponentiallityBonus = 0.2f;
+    public static float exponentiallityBonus = 50f;
     public static float graspBonus = 3.5f;
     public static float gravityBonus = 0.5f;
     public static bool massAccumulation = false;
@@ -168,24 +169,28 @@ public class BoonSTaticInfo : MonoBehaviour
     public static bool multiversalStrike = false;
     public static float multiversalStrikeDamage = 10;
     public static float multiversalStrikeCooldown = 2f;
-    public static bool noEscape = false;
-    public static float noEscapeSpeed = 3;
+    public static bool mstrike = true;
+    public static bool pb = false;
+    public static List<GameObject> nulledEnemies = new List<GameObject>();
 
 
     [Header("Starfall Boons")]
     public static float clearSkyBonus = 10f;
     public static bool crater = false;
-    public static float craterRange = 3f;
+    public static float craterRange = 2.5f;
     public static bool doubleTrouble = false;
+    public static float doubleTroubleChance = 8;
     public static bool fated = false;
     public static float fatedBonus = 1.25f;
     public static bool luckyStar = false;
-    public static bool makeAWish = false;
+    public static float luckyStarChance = 50;
+    public static float starfallCritChance = 0;
     public static float makeAWishCC = 25;
     public static float makeAWishCD = 1.3f;
     public static float meteoriteBonus = 15f;
     public static bool noYou = false;
-    public static float noYouChance = 10f;
+    public static float noYouChance = 15f;
+    public static float noYouRange = 15f;
     public static bool shenanigans = false;
 
 

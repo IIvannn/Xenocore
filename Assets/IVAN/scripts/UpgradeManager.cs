@@ -598,6 +598,7 @@ public class UpgradeManager : MonoBehaviour
     void ApplyUpgrade(string upg)
     {
         Debug.Log("apply upgrade:  "+upg);
+        BoonSTaticInfo.UPGRADES++;
         switch (upg)
         {
             //BOOMERANG
@@ -764,13 +765,13 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.hasSpell = true; //TBD
                 return;
             case "a long time ago in a galaxy far far away":
-                BoonSTaticInfo.farFar = true; //TBD
+                BoonSTaticInfo.farFar = true; //DONE
                 return;
             case "collapse":
-                BoonSTaticInfo.collapse = true; //TBD
+                BoonSTaticInfo.collapse = true; //DONE
                 return;
             case "exponentiality":
-                BoonSTaticInfo.exponentiallity = true; //TBD
+                BoonSTaticInfo.exponentiallity = true; //DONE
                 return;
             case "grasp":
                 BoonSTaticInfo.nullRange += BoonSTaticInfo.graspBonus; //DONE
@@ -782,13 +783,13 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.nullMaxCount++; //DONE
                 return;
             case "mass accumulation":
-                BoonSTaticInfo.massAccumulation = true; //TBD
+                BoonSTaticInfo.massAccumulation = true; //DONE
                 return;
             case "multiversal strike":
-                BoonSTaticInfo.multiversalStrike = true; //TBD
+                BoonSTaticInfo.multiversalStrike = true; //DONE
                 return;
-            case "no escape":
-                BoonSTaticInfo.noEscape = true; //TBD
+            case "pocket black hole":
+                BoonSTaticInfo.pb = true; //DONE
                 return;
 
 
@@ -822,7 +823,7 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.luckyStar = true; //TBD
                 return;
             case "make a wish":
-                BoonSTaticInfo.makeAWish = true; //TBD
+                BoonSTaticInfo.starfallCritChance += BoonSTaticInfo.makeAWishCC; //TBD
                 return;
             case "meteorite":
                 BoonSTaticInfo.starfallDamage += BoonSTaticInfo.meteoriteBonus; //DONE

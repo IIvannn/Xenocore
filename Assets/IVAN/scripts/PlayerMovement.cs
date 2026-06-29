@@ -65,7 +65,13 @@ public class PlayerMovement : MonoBehaviour
             input.x -= 1;
         }
 
+        
         float finalSpeed = speed+energizedBoost;
+        if (BoonSTaticInfo.massAccumulation)
+        {
+            finalSpeed += (BoonSTaticInfo.UPGRADES * BoonSTaticInfo.massAccumulationBonus / 2);
+        }
+
 
         Vector3 move = (transform.right * input.x + transform.forward * input.y).normalized;
         controller.Move(move * (finalSpeed + sprintSpeedBonus) * Time.deltaTime);

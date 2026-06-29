@@ -699,6 +699,7 @@ MonoBehaviour:
   energyText: {fileID: 3570381284479245716}
   crystalText: {fileID: 1666154449528739555}
   upgrader: {fileID: 5587737118693135974}
+  shockwave: {fileID: 1722624632512583627, guid: ef651324ef8d58e45a9ea50c2507e96f, type: 3}
   maxHp: 4000
   energy: 100
   currentEnergy: 0

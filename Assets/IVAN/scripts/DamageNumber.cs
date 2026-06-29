@@ -9,7 +9,7 @@ public class DamageNumber : MonoBehaviour
     public float damage;
     public TextMeshProUGUI textDmg;
     public string type;
-    float xoffset = 0.6f;
+    float xoffset = 0.9f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,7 +17,7 @@ public class DamageNumber : MonoBehaviour
         textDmg.text = damage.ToString();
         float offset = Random.Range(-xoffset, xoffset);
         transform.position += new Vector3(offset, 0, 0);
-        float bsize = damage / 55f;
+        float bsize = damage / 50f;
         textDmg.fontSize += bsize;
         
 
@@ -25,13 +25,13 @@ public class DamageNumber : MonoBehaviour
         switch (type)
         {
             case "normal":
-                textDmg.outlineColor = new Color(0.1f, 0.1f, 0.1f);
+                textDmg.color = new Color(1f, 1f, 1f);
                 break;
             case "swarm":
                 textDmg.color = new Color(0.7f,1f,0.2f);
                 break;
             case "haunted":
-                textDmg.color = new Color(0.2f, 0.5f, 0.7f);
+                textDmg.color = new Color(0.2f, 0.7f, 0.8f);
                 break;
             case "crystallize":
                 textDmg.color = new Color(0.7f, 0.7f, 0.9f);
@@ -53,6 +53,9 @@ public class DamageNumber : MonoBehaviour
                 break;
             case "volcanic":
                 textDmg.color = new Color(1f, 1f, 0.5f);
+                break;
+            case "star":
+                textDmg.color = new Color(1f, 0.4f, 1f);
                 break;
         }
     }

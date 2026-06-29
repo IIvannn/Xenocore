@@ -1553,6 +1553,7 @@ MonoBehaviour:
   agent: {fileID: 3492197717654370251}
   controller: {fileID: 4932078429975760493}
   dead: 0
+  pulled: 1
 --- !u!114 &1779633672595663246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,6 +1584,7 @@ MonoBehaviour:
   exorcism: {fileID: 8191229876238765316, guid: 16e72236198b2bb4fac6bf890c364e4f, type: 3}
   petrify: {fileID: 8966451028301592062}
   prism: {fileID: 556435408946063239, guid: 03b7d38a97827f54b8ac7e839c886a17, type: 3}
+  shockwave: {fileID: 1722624632512583627, guid: ef651324ef8d58e45a9ea50c2507e96f, type: 3}
   healthbar: {fileID: 246536509866423315}
   easeHealthbar: {fileID: 6710397304752464673}
   radiationBar: {fileID: 8353767645226957503}
@@ -1596,6 +1598,7 @@ MonoBehaviour:
   crystallized: 0
   nullBubble: {fileID: 350972076638921982, guid: b7c0692358e4f73498910df60f754217, type: 3}
   nulled: 0
+  nullv: 0
   starfalled: 0
   rusted: 0
   tectonic: {fileID: 9013498233890415692, guid: dbbc0151089475e4c81c55f50770ff0a, type: 3}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45dde762105914a4a94f2d0e325089e3, type: 3}
   m_Name: NoEscape
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
-  upgradeName: no escape
-  description: "No escape: \nNull bubbles follow enemies now"
+  upgradeName: pocket black hole
+  description: "Pocket black hole: \nNull bubbles follow enemies now"
   upgradeIcon: {fileID: 21300000, guid: 0d8cee3e592baab469e9337e44d1c249, type: 3}
