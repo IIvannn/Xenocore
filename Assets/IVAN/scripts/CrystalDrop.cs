@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class CrystalDrop : MonoBehaviour
     float travelSpeed = 30f;
     public GameObject resonnance;
     List<GameObject> enemieshit = new List<GameObject>();
+    bool canshock = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +25,13 @@ public class CrystalDrop : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            float rchance = Random.Range(1, 100);
+            if (rchance < BoonSTaticInfo.excavationBonus*100)
+            {
+                BoonSTaticInfo.crystals += (int)(BoonSTaticInfo.crystallizeCrystalAmmount * BoonSTaticInfo.moneyMultiplier);
+            }
+
+
             BoonSTaticInfo.crystals += (int)(BoonSTaticInfo.crystallizeCrystalAmmount* BoonSTaticInfo.moneyMultiplier);
             other.GetComponent<PlayerDamage>().currentEnergy += BoonSTaticInfo.crystallizeEnergyAmmount;
             Destroy(gameObject);
@@ -32,18 +41,27 @@ public class CrystalDrop : MonoBehaviour
             
             if (BoonSTaticInfo.resonance)
             {
-                
-                if (!enemieshit.Contains(other.gameObject))
+                //Debug.Log(canshock);
+                if (!enemieshit.Contains(other.gameObject) && canshock)
                 {
+                    StartCoroutine(shockwaveCooldown());
+                    canshock = false;
                     enemieshit.Add(other.gameObject);
                     GameObject ball = Instantiate(resonnance, transform.position, transform.rotation);
                     ball.GetComponent<Shockwave>().damage = BoonSTaticInfo.resonanceDamage;
                     ball.GetComponent<Shockwave>().range = 6;
-                    ball.GetComponent<Shockwave>().type = "crystallize";
+                    ball.GetComponent<Shockwave>().type = "gem";
+                    //Debug.Log("crysshock");
                 }
                     
             }
         }
     }
 
+    IEnumerator shockwaveCooldown()
+    {
+        yield return new WaitForSeconds(1);
+        canshock = true;
     }
+
+}

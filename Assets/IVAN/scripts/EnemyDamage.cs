@@ -28,6 +28,7 @@ public class EnemyDamage : MonoBehaviour
     public GameObject petrify;
     public GameObject prism;
     public GameObject shockwave;
+    public GameObject rust;
 
     [Header("UI")]
     public Slider healthbar;
@@ -131,30 +132,72 @@ public class EnemyDamage : MonoBehaviour
 
     public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
-        
+        //Debug.Log(type);
 
+        float purgeBonus = 0;
+        if (BoonSTaticInfo.purge)
+        {
+            purgeBonus = 0.3f;
+            Debug.Log("Purge: "+purgeBonus);
+        }
 
+        float cb = 0;
+        if (BoonSTaticInfo.cracked)
+        {
+            cb = ((1 - (PlayerDamage.currentHp / PlayerDamage.hp)) * BoonSTaticInfo.crackedBonus);
+            Debug.Log("Cracked: " + cb);
+        }
+
+        float monopolyBonus = 0;
+        if (BoonSTaticInfo.monopoly)
+        {
+            monopolyBonus = (((BoonSTaticInfo.crystals) / 5) * 0.01f);
+            Debug.Log("monopoly: "+monopolyBonus);
+        }
+
+        damage *= 1+(cb+ purgeBonus + monopolyBonus);
+        //Debug.Log(1 + (cb + purgeBonus));
 
         float fb = 1;
         if (fated)
         {
             fb = BoonSTaticInfo.fatedBonus;
         }
-
+        
         if (!dead)
         {
             if (BoonSTaticInfo.emotionalDamage)
             {
                 bcd = BoonSTaticInfo.emotionalDamageBonus;
             }
+
+            float critDmult = 1;
+            if (BoonSTaticInfo.galvanized)
+            {
+                critDmult *= BoonSTaticInfo.galvanizedBonus;
+            }
+
             float armorReduction = 0.7f;
             int finalDamage;
             GameObject dmgNumber = Instantiate(damageNumber, damageNumberSpawn.position, damageNumberSpawn.rotation);
             float rcchance = Random.Range(0, 100);
-            if (rcchance < (critC + rustboost))
+            if (rcchance < (critC + rustboost) && critC !=0)
             {
-                
-                damage *= ((critD*fb) + bcd);
+                if (source !=null && source.name == "Player" && BoonSTaticInfo.soldering)
+                {
+                    source.GetComponent<PlayerDamage>().currentEnergy += BoonSTaticInfo.solderingBonus;
+                }
+
+                if (BoonSTaticInfo.tetanus)
+                {
+                    float rchance = Random.Range(1, 100);
+                    if (rcchance < BoonSTaticInfo.tetanusChance)
+                    {
+                        critD *= 2;
+                    }
+                }
+
+                damage *= ((critD*fb* critDmult) + bcd);
                 if (source != null)
                 {
                     source.GetComponent<PlayerShoot>().onCrit();
@@ -162,6 +205,7 @@ public class EnemyDamage : MonoBehaviour
                 dmgNumber.GetComponent<DamageNumber>().textDmg.outlineColor = new Color(1, 0, 0);
                 fated = false;
             }
+            
             //Debug.Log("crit chance: "+ (critC + rustboost));
 
             if (BoonSTaticInfo.massAccumulation)
@@ -189,7 +233,7 @@ public class EnemyDamage : MonoBehaviour
                 }
 
                 float rcrystal = Random.Range(0, 100);
-                if (rcrystal < BoonSTaticInfo.crystallizeCrystalChance)
+                if (rcrystal < BoonSTaticInfo.crystallizeCrystalChance && type != "gem")
                 {
                     GameObject ball = Instantiate(crystallizedDrop, transform.position, transform.rotation);
                     if (BoonSTaticInfo.medusa)
@@ -207,13 +251,7 @@ public class EnemyDamage : MonoBehaviour
                 hauntedStoredDamage += damage * BoonSTaticInfo.hauntedDamagePercentage / 100;
             }
 
-            float monopolyBonus;
-            if (BoonSTaticInfo.monopoly)
-            {
-                monopolyBonus = (((BoonSTaticInfo.crystals)/5)*0.01f)+1;
-                damage*= monopolyBonus;
-                //Debug.Log("monopoly: "+monopolyBonus);
-            }
+            
 
             finalDamage = (int)((damage * (1 + ((radiationAmmount + 0.02f) * BoonSTaticInfo.radiationWeakness) / 100)));
 
@@ -434,6 +472,7 @@ public class EnemyDamage : MonoBehaviour
             case "rust":
                 if (!rusted)
                 {
+                    rust.SetActive(true);
                     rusted = true;
                     StartCoroutine(RustDuration());
                     if (source != null)
@@ -571,6 +610,7 @@ public class EnemyDamage : MonoBehaviour
         rusted = false;
         EnemyShoot body = GetComponent<EnemyShoot>();
         body.rusted = false;
+        rust.SetActive(false);
     }
 
     IEnumerator TectonicDuration()

@@ -42,6 +42,7 @@ public class PlayerShoot : MonoBehaviour
     public float currentAmmo = 1;
     
     bool att = false;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,6 +54,7 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (dialogueUI != null && (dialogueUI.IsOpen || dialogueUI.OptionsActive))
             return;
 

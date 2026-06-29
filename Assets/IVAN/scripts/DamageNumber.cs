@@ -57,6 +57,9 @@ public class DamageNumber : MonoBehaviour
             case "star":
                 textDmg.color = new Color(1f, 0.4f, 1f);
                 break;
+            case "gem":
+                textDmg.color = new Color(0.7f, 0.7f, 0.9f);
+                break;
         }
     }
 

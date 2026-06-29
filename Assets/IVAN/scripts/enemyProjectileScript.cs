@@ -13,6 +13,14 @@ public class enemyProjectileScript : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, lifetime);
+
+        if (source.GetComponent<EnemyDamage>().rusted && BoonSTaticInfo.fatigue)
+        {
+            
+            float raim = Random.Range(-BoonSTaticInfo.fatigueBonus, BoonSTaticInfo.fatigueBonus);
+            transform.Rotate(0, raim, 0);
+        }
+
     }
 
     // Update is called once per frame

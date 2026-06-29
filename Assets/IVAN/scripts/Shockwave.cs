@@ -14,6 +14,7 @@ public class Shockwave : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //Debug.Log(type);
         if (temporary)
         {
             Destroy(gameObject, 0.5f);
@@ -41,16 +42,21 @@ public class Shockwave : MonoBehaviour
                 {
                     enemieshit.Add(other.gameObject);
                     //Debug.Log("EnemyDamage hit for:  " + damage);
-                    other.GetComponent<EnemyDamage>().TakeDamage(damage, "type", cc, cd, null);
+                    other.GetComponent<EnemyDamage>().TakeDamage(damage, type, cc, cd, null);
                 }
                 else if (!mstrike)
                 {
                     enemieshit.Add(other.gameObject);
                     //Debug.Log("EnemyDamage hit for:  " + damage);
-                    other.GetComponent<EnemyDamage>().TakeDamage(damage, "type", cc, cd, null);
+                    other.GetComponent<EnemyDamage>().TakeDamage(damage, type, cc, cd, null);
                 }
                     
             }
+        }
+        if (other.gameObject.CompareTag("Prism"))
+        {
+            other.GetComponent<Prism>().Hurt();
+            Debug.Log("prism");
         }
 
     }

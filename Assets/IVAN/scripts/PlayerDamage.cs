@@ -41,6 +41,7 @@ public class PlayerDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         healthbar.value = (currentHp/hp);
         
         easeHealthbar.value = Mathf.Lerp(easeHealthbar.value, healthbar.value, lerpSpeed);

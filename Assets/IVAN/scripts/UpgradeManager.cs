@@ -743,10 +743,10 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.medusa = true; //DONE
                 return;
             case "monopoly":
-                BoonSTaticInfo.monopoly = false; //TBD
+                BoonSTaticInfo.monopoly = true; //DONE
                 return;
             case "overgrowth":
-                BoonSTaticInfo.overgrowth = true; //TBD
+                BoonSTaticInfo.overgrowth = true; //DONE
                 return;
 
 
@@ -811,28 +811,28 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.starfallChance += BoonSTaticInfo.clearSkyBonus; //DONE
                 return;
             case "crater":
-                BoonSTaticInfo.crater = true; //TBD
+                BoonSTaticInfo.crater = true; //DONE
                 return;
             case "double trouble":
-                BoonSTaticInfo.doubleTrouble = true; //TBD
+                BoonSTaticInfo.doubleTrouble = true; //DONE
                 return;
             case "fated":
-                BoonSTaticInfo.fated = true; //TBD
+                BoonSTaticInfo.fated = true; //DONE
                 return;
             case "lucky star":
-                BoonSTaticInfo.luckyStar = true; //TBD
+                BoonSTaticInfo.luckyStar = true; //DONE
                 return;
             case "make a wish":
-                BoonSTaticInfo.starfallCritChance += BoonSTaticInfo.makeAWishCC; //TBD
+                BoonSTaticInfo.starfallCritChance += BoonSTaticInfo.makeAWishCC; //DONE
                 return;
             case "meteorite":
                 BoonSTaticInfo.starfallDamage += BoonSTaticInfo.meteoriteBonus; //DONE
                 return;
             case "no you":
-                BoonSTaticInfo.noYou = true; //TBD
+                BoonSTaticInfo.noYou = true; //DONE
                 return;
             case "shenanigans":
-                BoonSTaticInfo.shenanigans = true; //TBD
+                BoonSTaticInfo.shenanigans = true; //DONE
                 return;
 
 
@@ -851,16 +851,16 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.hasSpell = true; //TBD
                 return;
             case "cracked":
-                BoonSTaticInfo.cracked = true; //TBD
+                BoonSTaticInfo.cracked = true; //DONE
                 return;
             case "embrittled":
-                BoonSTaticInfo.embrittled = true; //TBD
+                BoonSTaticInfo.embrittled = true; //DONE
                 return;
             case "fatigue":
-                BoonSTaticInfo.fatigue = true; //TBD
+                BoonSTaticInfo.fatigue = true; //DONE
                 return;
             case "galvanized":
-                BoonSTaticInfo.galvanized = true; //TBD
+                BoonSTaticInfo.galvanized = true; //DONE
                 return;
             case "mutilation":
                 BoonSTaticInfo.rustSelfDamage += BoonSTaticInfo.mutilationBonus; //DONE
@@ -870,13 +870,13 @@ public class UpgradeManager : MonoBehaviour
                 return;
             case "purge":
                 BoonSTaticInfo.purge = true;
-                PlayerDamage.hp -= (PlayerDamage.hp / 2); //TBD
+                PlayerDamage.hp -= (PlayerDamage.hp / 2); //DONE
                 return;
             case "soldering":
-                BoonSTaticInfo.soldering = true; //TBD
+                BoonSTaticInfo.soldering = true; //DONE
                 return;
             case "tetanus":
-                BoonSTaticInfo.tetanus = true; //TBD
+                BoonSTaticInfo.tetanus = true; //DONE
                 return;
 
 

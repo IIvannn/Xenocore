@@ -32,7 +32,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float rustCritChance = 35f;
     public static float rustSelfDamage = 25;
     public static float rustSelfDamageChance = 40;
-    public static float rustDuration = 4f;
+    public static float rustDuration = 5f;
     [Header("Tectonic")]
     public static float tectonicDamage = 50f;
     public static float tectonicAttackSpeed = 2.6f;
@@ -196,10 +196,11 @@ public class BoonSTaticInfo : MonoBehaviour
 
     [Header("Rust Boons")]
     public static bool cracked = false;
-    public static float crackedBonus = 30f;
+    public static float crackedBonus = 0.4f;
     public static bool embrittled = false;
+    public static float embrittledChance = 40;
     public static bool fatigue = false;
-    public static float fatigueBonus = 3f;
+    public static float fatigueBonus = 15f;
     public static bool galvanized = false;
     public static float galvanizedBonus = 1.2f;
     public static float mutilationBonus = 20f;

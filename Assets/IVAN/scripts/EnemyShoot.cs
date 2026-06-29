@@ -55,6 +55,9 @@ public class EnemyShoot : MonoBehaviour
                     }
                     else
                     {
+                        EnemyDamage body = GetComponent<EnemyDamage>();
+                        
+
                         GameObject ball = Instantiate(projectile, firePoint.position, firePoint.rotation);
                         ball.GetComponent<enemyProjectileScript>().source = gameObject;
                         ball.GetComponent<enemyProjectileScript>().moveSpeed = projectileSpeed;
@@ -64,10 +67,23 @@ public class EnemyShoot : MonoBehaviour
                         ball.GetComponent<enemyProjectileScript>().homingPrecision = homingPrecision;
                         nextFireTime = Time.time + firerate;
                         float rchance = Random.Range(0, 100);
+                        //Debug.Log("rust self damage chance = " + rchance);
                         if (rusted && BoonSTaticInfo.rustSelfDamageChance > rchance)
                         {
-                            EnemyDamage body = GetComponent<EnemyDamage>();
-                            body.TakeDamage(BoonSTaticInfo.rustSelfDamage, "rust", 0, 0, null);
+                            
+
+                            float embrittledBonus = 1;
+                            if (BoonSTaticInfo.embrittled)
+                            {
+                                float embchance = Random.Range(1, 100);
+                                if (embchance < BoonSTaticInfo.embrittledChance)
+                                {
+                                    embrittledBonus = 3;
+                                }
+                            }
+
+                            body.TakeDamage(BoonSTaticInfo.rustSelfDamage*embrittledBonus, "rust", 0, 0, null);
+                            //Debug.Log(BoonSTaticInfo.rustSelfDamage * embrittledBonus);
                         }
                     }
                     
