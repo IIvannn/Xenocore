@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject playerSprite;
     public GameObject pob;
     public GameObject phaseDash;
+    public GameObject volcanicFissure;
+    public GameObject nml;
     [Header("Movement")]
     public float speed = 5f;
     public float dashSpeed = 10f;
@@ -40,6 +42,13 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerDamage pd = GetComponent<PlayerDamage>();
         
+        if (BoonSTaticInfo.noMansLand)
+        {
+            nml.SetActive(true);
+            nml.GetComponent<AOEDamageOverTime>().damage = BoonSTaticInfo.noMansLandDamage;
+            nml.GetComponent<AOEDamageOverTime>().attackSpeed = BoonSTaticInfo.noMansLandAttackSpeed;
+        }
+
 
         if (BoonSTaticInfo.energized)
         {
@@ -145,6 +154,13 @@ public class PlayerMovement : MonoBehaviour
                 GameObject ball = Instantiate(pob, transform.position, transform.rotation);
             }
 
+            if (BoonSTaticInfo.eruption)
+            {
+                GameObject ball = Instantiate(volcanicFissure, transform.position, transform.rotation);
+                ball.GetComponent<Shockwave>().damage = BoonSTaticInfo.eruptionDamage;
+                ball.GetComponent<Shockwave>().range = BoonSTaticInfo.eruptionRange;
+            }
+
             dashesLeft--;
             //Debug.Log("dashes left: " + dashesLeft);
             float startTime = Time.time;
@@ -154,6 +170,13 @@ public class PlayerMovement : MonoBehaviour
                 controller.Move(move * dashSpeed * Time.deltaTime);
                 yield return null;
                 
+            }
+
+            if (BoonSTaticInfo.eruption)
+            {
+                GameObject ball = Instantiate(volcanicFissure, transform.position, transform.rotation);
+                ball.GetComponent<Shockwave>().damage = BoonSTaticInfo.eruptionDamage;
+                ball.GetComponent<Shockwave>().range = BoonSTaticInfo.eruptionRange;
             }
 
             if (BoonSTaticInfo.phaseDash)

@@ -44,7 +44,7 @@ public class EnemyScript : MonoBehaviour
 
             EnemyDamage enemyDamage = GetComponent<EnemyDamage>();
 
-        if (enemyDamage.petrified)
+        if (enemyDamage.petrified || enemyDamage.fissured)
         {
             agent.isStopped = true;
         }

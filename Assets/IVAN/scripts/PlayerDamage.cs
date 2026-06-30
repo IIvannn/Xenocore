@@ -10,6 +10,8 @@ public class PlayerDamage : MonoBehaviour
     public Slider healthbar;
     public Slider easeHealthbar;
     public Slider energybar;
+    public Slider armorbar;
+
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI energyText;
     public TextMeshProUGUI crystalText;
@@ -22,6 +24,9 @@ public class PlayerDamage : MonoBehaviour
     public static float currentHp = 100f;
     public float maxHp = 100;
     public static bool dead = false;
+    public static float playerArmor = 0;
+    public float dr = 1;
+    public static bool tr = false;
     [Header("Energy")]
     public float energy = 100;
     public float currentEnergy = 0;
@@ -30,6 +35,9 @@ public class PlayerDamage : MonoBehaviour
     float crystalerp;
     float hplerp;
     float energylerp;
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,12 +50,14 @@ public class PlayerDamage : MonoBehaviour
     void Update()
     {
 
+
+
         healthbar.value = (currentHp/hp);
-        
+        armorbar.value = playerArmor/hp;
         easeHealthbar.value = Mathf.Lerp(easeHealthbar.value, healthbar.value, lerpSpeed);
         energybar.value = (currentEnergy / energy);
 
-        hplerp = Mathf.Lerp(hplerp, currentHp, lerpSpeed);
+        hplerp = Mathf.Lerp(hplerp, currentHp+playerArmor, lerpSpeed);
         energylerp = Mathf.Lerp(energylerp, currentEnergy, lerpSpeed);
         crystalerp = Mathf.Lerp(crystalerp, BoonSTaticInfo.crystals, lerpSpeed);
 
@@ -67,6 +77,12 @@ public class PlayerDamage : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (tr)
+        {
+            dr = 0.7f;
+            damage *= dr;
+        }
+        
 
 
         if (BoonSTaticInfo.noYou)
@@ -116,11 +132,23 @@ public class PlayerDamage : MonoBehaviour
         }
         else
         {
-            currentHp -= damage;
-            if (currentHp <= 0)
+            if (playerArmor >0)
             {
-                Death();
+                playerArmor -= damage;
+                if (playerArmor<0)
+                {
+                    playerArmor = 0;
+                }
             }
+            else
+            {
+                currentHp -= damage;
+                if (currentHp <= 0)
+                {
+                    Death();
+                }
+            }
+                
         }
     }
 

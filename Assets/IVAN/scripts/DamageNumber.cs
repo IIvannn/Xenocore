@@ -66,6 +66,10 @@ public class DamageNumber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerDamage.dead)
+        {
+            return; 
+        }
         textDmg.alpha -= 0.6f*Time.deltaTime;
         textDmg.fontSize -= 0.6f * Time.deltaTime;
         transform.rotation = IsometricAiming.cameraTransform.rotation;

@@ -14,10 +14,16 @@ public class BoomerangSpecial : MonoBehaviour
 
     float bspeed = 0;
     float bsize = 0;
+    float csize = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Destroy(gameObject, duration);
+        if (BoonSTaticInfo.contamination)
+        {
+            csize = BoonSTaticInfo.contaminationBonus;
+        }
+
     }
 
     // Update is called once per frame
@@ -35,7 +41,7 @@ public class BoomerangSpecial : MonoBehaviour
         transform.position = PlayerMovement.playerPosition.position;
         //Debug.Log(rotationSpeed + bspeed);
 
-        transform.localScale = new Vector3((1 + (bsize * Time.deltaTime)), 1, (1 + (bsize * Time.deltaTime)));
+        transform.localScale = new Vector3((1 + (bsize * Time.deltaTime))+csize, 1, (1 + (bsize * Time.deltaTime)) + csize);
     }
 
     private void OnTriggerEnter(Collider other)

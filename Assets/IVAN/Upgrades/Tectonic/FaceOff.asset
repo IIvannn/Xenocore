@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FaceOff
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeName: face off
-  description: "Face off: \nDeal bonus damage the closer you are to a target."
+  description: "Face off: \nDeal bonus damage when within 10 meters from the target."
   upgradeIcon: {fileID: 21300000, guid: fb567cd90fb2ba14eb1b32f58a75d164, type: 3}

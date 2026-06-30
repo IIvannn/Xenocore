@@ -11,14 +11,20 @@ public class Shockwave : MonoBehaviour
     public bool mstrike = false;
     public float cc = 0;
     public float cd = 1;
+
+    public bool status = false;
+
+    public float lifetime = 0.5f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //Debug.Log(type);
         if (temporary)
         {
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject, lifetime);
         }
+
         transform.localScale = new Vector3(range, range, range);
     }
 
@@ -43,21 +49,24 @@ public class Shockwave : MonoBehaviour
                     enemieshit.Add(other.gameObject);
                     //Debug.Log("EnemyDamage hit for:  " + damage);
                     other.GetComponent<EnemyDamage>().TakeDamage(damage, type, cc, cd, null);
+                    if (status)
+                    {
+                        other.GetComponent<EnemyDamage>().ApplyStatus(type, null);
+                    }
                 }
                 else if (!mstrike)
                 {
                     enemieshit.Add(other.gameObject);
                     //Debug.Log("EnemyDamage hit for:  " + damage);
                     other.GetComponent<EnemyDamage>().TakeDamage(damage, type, cc, cd, null);
+
+                    if (status)
+                    {
+                        other.GetComponent<EnemyDamage>().ApplyStatus(type, null);
+                    }
                 }
                     
             }
         }
-        if (other.gameObject.CompareTag("Prism"))
-        {
-            other.GetComponent<Prism>().Hurt();
-            Debug.Log("prism");
-        }
-
     }
 }

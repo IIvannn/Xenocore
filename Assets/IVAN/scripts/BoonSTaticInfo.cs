@@ -216,16 +216,18 @@ public class BoonSTaticInfo : MonoBehaviour
     [Header("Tectonic Boons")]
     public static bool faceOff = false;
     public static float faceOffBonus = 25f;
+    public static float faceOffRange = 10;
     public static bool molten = false;
     public static float moltenBonus = 0.3f;
     public static bool mudbath = false;
-    public static float mudbathChance = 25f;
+    public static float mudbathChance = 6.25f;
     public static float mudbathMax = 15f;
     public static bool eruption = false;
-    public static float eruptionDuration = 2f;
+    public static float eruptionRange = 8.5f;
     public static float eruptionDamage = 20f;
     public static float shatterBonus = 18f;
     public static bool tremble = false;
+    public static float trembleChance = 50;
     public static int staggerCap = 4;
     public static float staggerDuration = 1.5f;
     public static float tremorBonus = 1f;
@@ -239,18 +241,17 @@ public class BoonSTaticInfo : MonoBehaviour
 
     [Header("Radiation Boons")]
     public static bool contamination = false;
-    public static float contaminationBonus = 1.5f;
+    public static float contaminationBonus = 0.35f;
     public static float falloutBonus = 12;
     public static bool finishHim = false;
-    public static float finishHimBonus = 20;
+    public static float finishHimBonus = 30;
     public static bool monteCarlo;
-    public static float monteCarloChance = 2f;
+    public static float monteCarloChance = 5f;
     public static bool noMansLand = false;
     public static float noMansLandDamage = 5f;
     public static float noMansLandAttackSpeed = 0.35f;
     public static bool nuclear = false;
-    public static float nuclearRegenerationSpeed = 0.2f;
-    public static float nuclearRegeneration = 1f;
+    public static float nuclearRegeneration = 1.5f;
     public static bool radonBlood = false;
     public static float radonDamage = 10f;
     public static float radonAttackSpeed = 0.5f;

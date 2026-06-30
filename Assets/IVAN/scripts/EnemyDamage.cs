@@ -29,6 +29,8 @@ public class EnemyDamage : MonoBehaviour
     public GameObject prism;
     public GameObject shockwave;
     public GameObject rust;
+    public GameObject stun;
+    public GameObject radonBlood;
 
     [Header("UI")]
     public Slider healthbar;
@@ -36,6 +38,7 @@ public class EnemyDamage : MonoBehaviour
     public Slider radiationBar;
     public Slider ghostBar;
     public Slider armorBar;
+    public Slider fissureBar;
 
     [Header("Status effects")]
     public GameObject swarm;
@@ -61,7 +64,11 @@ public class EnemyDamage : MonoBehaviour
     float lerpSpeed = 0.03f;
     float bcd = 0;
     bool fated;
-    
+
+    public float fissure = 0;
+    public bool fissured = false;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -77,6 +84,25 @@ public class EnemyDamage : MonoBehaviour
     void Update()
     {
 
+        fissureBar.value = fissure/4;
+        //Debug.Log(fissure);
+
+        if (fissure <=0)
+        {
+            fissureBar.gameObject.SetActive(false);
+        }
+        else
+        {
+            fissureBar.gameObject.SetActive(true);
+        }
+
+        if (fissure >= 4)
+        {
+            fissured = true;
+            fissure = 0;
+            stun.SetActive(true);
+            StartCoroutine(fissureDuration());
+        }
 
         if (irradiated)
         {
@@ -87,7 +113,7 @@ public class EnemyDamage : MonoBehaviour
             radiationBar.gameObject.SetActive(true);
             Slider slider = radiationBar.GetComponent<Slider>();
             radiationBar.value = radiationAmmount+0.1f;
-            radiationAmmount -= 1f * Time.deltaTime;
+            radiationAmmount -= 0.5f * Time.deltaTime;
         }
         else
         {
@@ -133,29 +159,45 @@ public class EnemyDamage : MonoBehaviour
     public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
         //Debug.Log(type);
+        float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
+
+        float foBonus = 0;
+        if (BoonSTaticInfo.faceOff && distance <= BoonSTaticInfo.faceOffRange)
+        {
+            foBonus = BoonSTaticInfo.faceOffBonus / 100;
+            //Debug.Log("Face Off: " + foBonus);
+        }
+
+        float fiBonus = 0;
+        if (BoonSTaticInfo.finishHim)
+        {
+            fiBonus = (1-(currentHealth / health));
+            fiBonus *= (BoonSTaticInfo.finishHimBonus)/100;
+            Debug.Log("Finish Him: " + fiBonus);
+        }
 
         float purgeBonus = 0;
         if (BoonSTaticInfo.purge)
         {
             purgeBonus = 0.3f;
-            Debug.Log("Purge: "+purgeBonus);
+            //Debug.Log("Purge: "+purgeBonus);
         }
 
         float cb = 0;
         if (BoonSTaticInfo.cracked)
         {
             cb = ((1 - (PlayerDamage.currentHp / PlayerDamage.hp)) * BoonSTaticInfo.crackedBonus);
-            Debug.Log("Cracked: " + cb);
+            //Debug.Log("Cracked: " + cb);
         }
 
         float monopolyBonus = 0;
         if (BoonSTaticInfo.monopoly)
         {
             monopolyBonus = (((BoonSTaticInfo.crystals) / 5) * 0.01f);
-            Debug.Log("monopoly: "+monopolyBonus);
+            //Debug.Log("monopoly: "+monopolyBonus);
         }
 
-        damage *= 1+(cb+ purgeBonus + monopolyBonus);
+        damage *= 1+(cb+ purgeBonus + monopolyBonus + foBonus + fiBonus);
         //Debug.Log(1 + (cb + purgeBonus));
 
         float fb = 1;
@@ -296,6 +338,51 @@ public class EnemyDamage : MonoBehaviour
                 dmgNumber.GetComponent<DamageNumber>().damage = finalDamage;
             }
 
+            if (BoonSTaticInfo.monteCarlo)
+            {
+                float monte = Random.Range(1, 100);
+                if (monte < BoonSTaticInfo.monteCarloChance)
+                {
+                    float carlo = Random.Range(1, 11);
+                    {
+                        switch (carlo)
+                        {
+                            case 1:
+                                ApplyStatus("swarm", null);
+                                return;
+                            case 2:
+                                ApplyStatus("haunted", null);
+                                return;
+                            case 3:
+                                ApplyStatus("crystallize", null);
+                                return;
+                            case 4:
+                                ApplyStatus("null", null);
+                                return;
+                            case 5:
+                                ApplyStatus("starfall", null);
+                                return;
+                            case 6:
+                                ApplyStatus("rust", null);
+                                return;
+                            case 7:
+                                ApplyStatus("tectonic", null);
+                                return;
+                            case 8:
+                                ApplyStatus("petrify", null);
+                                return;
+                            case 9:
+                                ApplyStatus("volcanic", null);
+                                return;
+                            case 10:
+                                ApplyStatus("petrify", null);
+                                return;
+                        }
+
+                    }
+                }
+            }
+
 
             if (BoonSTaticInfo.nested)
             {
@@ -358,6 +445,19 @@ public class EnemyDamage : MonoBehaviour
 
     public void Death()
     {
+        if (radiationAmmount>0 && BoonSTaticInfo.radonBlood)
+        {
+            GameObject rb = Instantiate(radonBlood, transform.position, transform.rotation);
+            rb.GetComponent<AOEDamageOverTime>().damage = BoonSTaticInfo.radonDamage;
+            rb.GetComponent<AOEDamageOverTime>().range = BoonSTaticInfo.radonRange;
+            rb.GetComponent<AOEDamageOverTime>().lifetime = BoonSTaticInfo.radonDuration;
+            rb.GetComponent<AOEDamageOverTime>().attackSpeed = BoonSTaticInfo.radonAttackSpeed;
+
+        }
+        radiationRing.SetActive(false);
+        BoonSTaticInfo.radiationCurrentCount--;
+        irradiated = false;
+
         if (BoonSTaticInfo.exorcism && !dead)
         {
             GameObject exo = Instantiate(exorcism, transform.position, transform.rotation);
@@ -649,6 +749,13 @@ public class EnemyDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(BoonSTaticInfo.multiversalStrikeCooldown);
         BoonSTaticInfo.mstrike = true;
+    }
+
+    IEnumerator fissureDuration()
+    {
+        yield return new WaitForSeconds(BoonSTaticInfo.multiversalStrikeCooldown);
+        stun.SetActive(false);
+        fissured = false;
     }
 }
 

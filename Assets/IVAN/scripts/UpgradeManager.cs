@@ -896,7 +896,7 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.hasSpell = true; //TBD
                 return;
             case "face off":
-                BoonSTaticInfo.faceOff = true; //TBD
+                BoonSTaticInfo.faceOff = true; //DONE
                 return;
             case "molten":
                 BoonSTaticInfo.molten = true; //DONE
@@ -905,19 +905,19 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.mudbath = true; //TBD
                 return;
             case "eruption":
-                BoonSTaticInfo.eruption = true; //TBD
+                BoonSTaticInfo.eruption = true; //DONE
                 return;
             case "shatter":
                 BoonSTaticInfo.tectonicDamage += BoonSTaticInfo.shatterBonus; //DONE
                 return;
             case "tremble":
-                BoonSTaticInfo.tremble = true; //TBD
+                BoonSTaticInfo.tremble = true; //DONE
                 return;
             case "tremor":
                 BoonSTaticInfo.tectonicSpread += BoonSTaticInfo.tremorBonus; //DONE
                 return;
             case "troglodite":
-                BoonSTaticInfo.troglodite = true; //TBD
+                BoonSTaticInfo.troglodite = true; //DONE
                 return;
             case "volcanic":
                 BoonSTaticInfo.volcanic = true; //DONE
@@ -942,22 +942,22 @@ public class UpgradeManager : MonoBehaviour
                 BoonSTaticInfo.radiationMaxCount ++; //DONE
                 return;
             case "contamination":
-                BoonSTaticInfo.contamination = true; //TBD
+                BoonSTaticInfo.contamination = true; //DONE
                 return;
             case "fallout":
                 BoonSTaticInfo.radiationWeakness += BoonSTaticInfo.falloutBonus; //DONE
                 return;
             case "finish him":
-                BoonSTaticInfo.finishHim = true; //TBD
+                BoonSTaticInfo.finishHim = true; //DONE
                 return;
             case "monte carlo":
-                BoonSTaticInfo.monteCarlo = true; //TBD
+                BoonSTaticInfo.monteCarlo = true; //DONE
                 return;
             case "no mans land":
-                BoonSTaticInfo.noMansLand = true; //TBD
+                BoonSTaticInfo.noMansLand = true; //DONE
                 return;
             case "nuclear":
-                BoonSTaticInfo.nuclear = true; //TBD
+                BoonSTaticInfo.nuclear = true; //DONE
                 return;
             case "radon blood":
                 BoonSTaticInfo.radonBlood = true; //TBD

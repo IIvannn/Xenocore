@@ -72,6 +72,12 @@ public class RadiationRing : MonoBehaviour
         }
     }
 
-
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && BoonSTaticInfo.nuclear)
+        {
+            other.GetComponent<PlayerDamage>().currentEnergy += BoonSTaticInfo.nuclearRegeneration * Time.deltaTime;
+        }
+    }
 
 }
