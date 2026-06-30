@@ -45,6 +45,11 @@ public class boomerangScript : MonoBehaviour
     void Update()
     {
 
+        if (PlayerDamage.dead)
+        {
+            return;
+        }
+
         if (BoonSTaticInfo.exponentiallity)
         {
             bspeed += BoonSTaticInfo.exponentiallityBonus * Time.deltaTime;
