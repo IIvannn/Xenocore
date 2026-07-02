@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DamageNumber : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 4f;
     public float damage;
     public TextMeshProUGUI textDmg;
     public string type;
@@ -17,7 +17,7 @@ public class DamageNumber : MonoBehaviour
         textDmg.text = damage.ToString();
         float offset = Random.Range(-xoffset, xoffset);
         transform.position += new Vector3(offset, 0, 0);
-        float bsize = damage / 50f;
+        float bsize = damage / 60f;
         textDmg.fontSize += bsize;
         
 
@@ -70,9 +70,10 @@ public class DamageNumber : MonoBehaviour
         {
             return; 
         }
+
         textDmg.alpha -= 0.6f*Time.deltaTime;
         textDmg.fontSize -= 0.6f * Time.deltaTime;
         transform.rotation = IsometricAiming.cameraTransform.rotation;
-        transform.position += new Vector3(0, speed*Time.deltaTime, 0);
+        transform.position += new Vector3(0, (speed + (damage / 50)) * Time.deltaTime, 0);
     }
 }

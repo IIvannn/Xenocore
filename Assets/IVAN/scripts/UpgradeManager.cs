@@ -634,6 +634,8 @@ public class UpgradeManager : MonoBehaviour
                 return;
             case "swarm spell":
                 BoonSTaticInfo.hasSpell = true; //TBD
+                PlayerShoot.spellType = "swarm";
+                BoonSTaticInfo.spellCost = BoonSTaticInfo.swarmSpellCost;
                 return;
             case "proliferation":
                 BoonSTaticInfo.swarmRange += BoonSTaticInfo.proliferationBonus; //DONE
@@ -676,7 +678,9 @@ public class UpgradeManager : MonoBehaviour
                 PlayerShoot.boomerangSpecialType = "haunted"; //DONE
                 return;
             case "haunted spell":
+                PlayerShoot.spellType = "haunted";
                 BoonSTaticInfo.hasSpell = true; //TBD
+                BoonSTaticInfo.spellCost = BoonSTaticInfo.hauntedSpellCost;
                 return;
             case "reaper":
                 BoonSTaticInfo.reaper = true; //DONE
@@ -720,6 +724,8 @@ public class UpgradeManager : MonoBehaviour
                 return;
             case "crystallize spell":
                 BoonSTaticInfo.hasSpell = true; //TBD
+                PlayerShoot.spellType = "crystallize";
+                BoonSTaticInfo.spellCost = BoonSTaticInfo.crystallizeSpellCost;
                 return;
             case "arcane swiftness":
                 BoonSTaticInfo.arcaneSwiftness = true; //DONE
@@ -763,6 +769,8 @@ public class UpgradeManager : MonoBehaviour
                 return;
             case "null spell":
                 BoonSTaticInfo.hasSpell = true; //TBD
+                PlayerShoot.spellType = "null";
+                BoonSTaticInfo.spellCost = BoonSTaticInfo.nullSpellCost;
                 return;
             case "a long time ago in a galaxy far far away":
                 BoonSTaticInfo.farFar = true; //DONE
@@ -805,7 +813,9 @@ public class UpgradeManager : MonoBehaviour
                 PlayerShoot.boomerangSpecialType = "starfall"; //DONE
                 return;
             case "starfall spell":
+                PlayerShoot.spellType = "starfall";
                 BoonSTaticInfo.hasSpell = true; //TBD
+                BoonSTaticInfo.spellCost = BoonSTaticInfo.starfallSpellCost;
                 return;
             case "clear sky":
                 BoonSTaticInfo.starfallChance += BoonSTaticInfo.clearSkyBonus; //DONE
@@ -848,7 +858,9 @@ public class UpgradeManager : MonoBehaviour
                 PlayerShoot.boomerangSpecialType = "rust"; //DONE
                 return;
             case "rust spell":
+                PlayerShoot.spellType = "rust";
                 BoonSTaticInfo.hasSpell = true; //TBD
+                BoonSTaticInfo.spellCost = BoonSTaticInfo.rustSpellCost;
                 return;
             case "cracked":
                 BoonSTaticInfo.cracked = true; //DONE
@@ -894,6 +906,8 @@ public class UpgradeManager : MonoBehaviour
                 return;
             case "tectonic spell":
                 BoonSTaticInfo.hasSpell = true; //TBD
+                PlayerShoot.spellType = "tectonic";
+                BoonSTaticInfo.spellCost = BoonSTaticInfo.tectonicSpellCost;
                 return;
             case "face off":
                 BoonSTaticInfo.faceOff = true; //DONE
@@ -937,6 +951,8 @@ public class UpgradeManager : MonoBehaviour
                 return;
             case "radiation spell":
                 BoonSTaticInfo.hasSpell = true; //TBD
+                PlayerShoot.spellType = "radiation";
+                BoonSTaticInfo.spellCost = BoonSTaticInfo.radiationSpellCost;
                 return;
             case "armagedon":
                 BoonSTaticInfo.radiationMaxCount ++; //DONE

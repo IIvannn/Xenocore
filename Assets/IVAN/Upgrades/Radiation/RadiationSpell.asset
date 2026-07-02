@@ -15,7 +15,6 @@ MonoBehaviour:
   upgradeName: radiation spell
   description: 'Radiation Spell:
 
-    Your spell throws an atomic barrel that creates
-    a radiation ring that deals damage over time scaling with the amount of enemies
-    within range.'
+    Your spell periodically pulses damaging waves
+    and increases in range for every enemy hit.'
   upgradeIcon: {fileID: 21300000, guid: 48fca529059aa6641bb2ac44cf66360d, type: 3}

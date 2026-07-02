@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeName: rust spell
   description: 'Rust Spell:
 
-    Your spell temporarily gives you a critical chance
-    to all sources of damage that gradually becomes stronger until the end of the
-    spell.'
+    Your spell temporarily gives you a speed boost as
+    well as critical chance and damage to all sources of damage, including those
+    that usually can''t be critical.'
   upgradeIcon: {fileID: 21300000, guid: 88a04cf6c434fa94588afe20c7eb0573, type: 3}

@@ -16,6 +16,7 @@ namespace BarthaSzabolcs.IsometricAiming
 
         public Camera mainCamera;
         public static Transform cameraTransform;
+        public static Vector3 mousePosition;
 
         #endregion
 
@@ -49,7 +50,7 @@ namespace BarthaSzabolcs.IsometricAiming
             {
                 // Calculate the direction
                 var direction = position - transform.position;
-
+                mousePosition = position;
                 // You might want to delete this line.
                 // Ignore the height difference.
                 direction.y = 0;

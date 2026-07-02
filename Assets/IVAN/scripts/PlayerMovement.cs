@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     float btime = 0;
     float energizedBoost;
+    public bool hauntedSpell = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -142,7 +143,14 @@ public class PlayerMovement : MonoBehaviour
 
         IEnumerator Dash()
         {
-            
+            if (hauntedSpell)
+            {
+                PlayerDamage pd = GetComponent<PlayerDamage>();
+                GameObject ball = Instantiate(pd.shockwave, transform.position, transform.rotation);
+                ball.GetComponent<Shockwave>().damage = BoonSTaticInfo.hauntedSpellDamage;
+                ball.GetComponent<Shockwave>().range = BoonSTaticInfo.hauntedSpellRange;
+                ball.GetComponent<Shockwave>().type = "haunted";
+            }
             if (BoonSTaticInfo.phaseDash)
             {
                 phaseDash.SetActive(true);

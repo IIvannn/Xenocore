@@ -17,9 +17,11 @@ public class PlayerDamage : MonoBehaviour
     public TextMeshProUGUI crystalText;
     public GameObject upgrader;
     public GameObject shockwave;
+    public GameObject inv;
     float lerpSpeed = 0.03f;
 
     [Header("Health")]
+    public bool invincible = false;
     public static float hp = 100f;
     public static float currentHp = 100f;
     public float maxHp = 100;
@@ -49,7 +51,16 @@ public class PlayerDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (invincible)
+        {
+            inv.SetActive(true);
+        }
+        else
+        {
+            inv.SetActive(false);
+        }
 
+        energy = BoonSTaticInfo.spellCost;
 
 
         healthbar.value = (currentHp/hp);
@@ -77,6 +88,11 @@ public class PlayerDamage : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (invincible)
+        {
+            return;
+        }
+
         if (tr)
         {
             dr = 0.7f;

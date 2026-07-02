@@ -7,6 +7,7 @@ TagManager:
   - terrain
   - Enemy
   - Prism
+  - EnemyProj
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - enemy
-  - 
+  - enemyProj
   - 
   - 
   - 

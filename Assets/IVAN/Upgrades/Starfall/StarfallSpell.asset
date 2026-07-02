@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: starfall spell
   description: 'Starfall Spell:
 
-    Your spell creates an area of falling stars
-    dealing damage over time.'
+    Create a comet bouncing between enemies, increasing
+    in damage by a random ammount each time.'
   upgradeIcon: {fileID: 21300000, guid: e8ccf603a61be0947a19b1910ad29a7e, type: 3}

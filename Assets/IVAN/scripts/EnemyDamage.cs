@@ -78,6 +78,7 @@ public class EnemyDamage : MonoBehaviour
         startingArmor = armor;
 
         BoonSTaticInfo.enemiesAlive.Add(gameObject);
+        //Debug.Log(BoonSTaticInfo.enemiesAlive.Count);
     }
 
     // Update is called once per frame
@@ -158,6 +159,13 @@ public class EnemyDamage : MonoBehaviour
 
     public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
+        if (BoonSTaticInfo.globalCritChance >0)
+        {
+            critD += 1 + (BoonSTaticInfo.globalCritChance / 120);
+            critC += BoonSTaticInfo.globalCritChance;
+        }
+        
+
         //Debug.Log(type);
         float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
 
@@ -223,8 +231,11 @@ public class EnemyDamage : MonoBehaviour
             int finalDamage;
             GameObject dmgNumber = Instantiate(damageNumber, damageNumberSpawn.position, damageNumberSpawn.rotation);
             float rcchance = Random.Range(0, 100);
+            //Debug.Log(critC + rustboost + BoonSTaticInfo.globalCritChance);
             if (rcchance < (critC + rustboost) && critC !=0)
             {
+                
+
                 if (source !=null && source.name == "Player" && BoonSTaticInfo.soldering)
                 {
                     source.GetComponent<PlayerDamage>().currentEnergy += BoonSTaticInfo.solderingBonus;
@@ -239,7 +250,7 @@ public class EnemyDamage : MonoBehaviour
                     }
                 }
 
-                damage *= ((critD*fb* critDmult) + bcd);
+                damage *= ((critD*fb* critDmult + bcd));
                 if (source != null)
                 {
                     source.GetComponent<PlayerShoot>().onCrit();
