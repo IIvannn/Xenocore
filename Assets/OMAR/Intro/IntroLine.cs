@@ -16,6 +16,19 @@ public class IntroLine
     public float imageFadeOutTime = 1f;
     public float imageDisplayTime = 3f;
 
+    [Header("Image Effects")]
+    public bool shakeEffect = false;
+    public float shakeIntensity = 10f;
+    public float shakeSpeed = 20f;
+
+    public bool zoomEffect = false;
+    public float zoomAmount = 1.05f;
+    public float zoomSpeed = 0.5f;
+
+    public bool panEffect = false;
+    public float panAmount = 20f;
+    public float panSpeed = 0.5f;
+
     [Header("Audio")]
     public AudioClip sound;
 }

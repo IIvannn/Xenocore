@@ -60,6 +60,16 @@ public class IntroCinematic : MonoBehaviour
 
                     //fade in
                     yield return StartCoroutine(FadeImage(cinematicImage, 0f, 1f, line.imageFadeInTime));
+
+                    //image effects
+                    if (line.shakeEffect)
+                        StartCoroutine(ShakeImage(cinematicImage, line.shakeIntensity, line.shakeSpeed));
+
+                    if (line.zoomEffect)
+                        StartCoroutine(ZoomImage(cinematicImage, line.zoomAmount, line.zoomSpeed));
+
+                    if (line.panEffect)
+                        StartCoroutine(PanImage(cinematicImage, line.panAmount, line.panSpeed));
                 }
                 else
                 {
@@ -137,5 +147,54 @@ public class IntroCinematic : MonoBehaviour
             yield return null;
         }
     }
+
+    //effects for the image
+
+    IEnumerator ShakeImage(Image img, float intensity, float speed)
+    {
+        RectTransform rt = img.rectTransform;
+        Vector3 originalPos = rt.anchoredPosition;
+
+        while (!skipping)
+        {
+            float x = Mathf.Sin(Time.time * speed) * intensity;
+            float y = Mathf.Cos(Time.time * speed) * intensity * 0.5f;
+            rt.anchoredPosition = originalPos + new Vector3(x, y, 0);
+            yield return null;
+        }
+
+        rt.anchoredPosition = originalPos;
+    }
+
+    IEnumerator ZoomImage(Image img, float amount, float speed)
+    {
+        RectTransform rt = img.rectTransform;
+        Vector3 startScale = rt.localScale;
+        Vector3 targetScale = startScale * amount;
+
+        float t = 0f;
+        while (t < 1f && !skipping)
+        {
+            t += Time.deltaTime * speed;
+            rt.localScale = Vector3.Lerp(startScale, targetScale, t);
+            yield return null;
+        }
+    }
+
+    IEnumerator PanImage(Image img, float amount, float speed)
+    {
+        RectTransform rt = img.rectTransform;
+        Vector3 startPos = rt.anchoredPosition;
+        Vector3 targetPos = startPos + new Vector3(amount, 0, 0);
+
+        float t = 0f;
+        while (t < 1f && !skipping)
+        {
+            t += Time.deltaTime * speed;
+            rt.anchoredPosition = Vector3.Lerp(startPos, targetPos, t);
+            yield return null;
+        }
+    }
 }
+
 
