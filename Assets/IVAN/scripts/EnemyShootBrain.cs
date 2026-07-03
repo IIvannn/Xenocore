@@ -1,0 +1,81 @@
+using UnityEngine;
+using UnityEngine.AI;
+
+public class EnemyShootBrain : MonoBehaviour
+{
+    float distance;
+    public bool LOS = false;
+    public NavMeshAgent agent;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+
+        StayAtDistance esd = GetComponent<StayAtDistance>();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (PlayerDamage.dead)
+        {
+            return;
+        }
+        EnemyDamage ed = GetComponent<EnemyDamage>();
+        EnemyScript esc = GetComponent<EnemyScript>();
+        EnemyShoot esh = GetComponent<EnemyShoot>();
+        distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
+
+        if (ed.petrified || ed.fissured || esh.firing)
+        {
+            agent.isStopped = true;
+
+        }
+        else
+        {
+            if (distance < esh.attackDistance && distance > esc.distanceBeforeStop - 3 && LOS)
+            {
+                esh.fired = 0;
+                esh.Fire();
+                agent.isStopped = true;
+            }
+            else
+            {
+
+                if (distance < esh.attackDistance && LOS)
+                {
+                    Vector3 dirtop = (PlayerMovement.playerPosition.position - gameObject.transform.position);
+                    agent.velocity = Vector3.Lerp(
+                        agent.desiredVelocity,
+                        -dirtop.normalized * agent.speed,
+                        1
+                        );
+                }
+                else
+                {
+                    esc.MoveToPlayer(PlayerMovement.playerPosition);
+                    agent.isStopped = false;
+                }
+                
+            }
+            //agent.isStopped = false;
+        }
+
+       
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(esh.firePoint.transform.position, esh.firePoint.transform.forward, out hit, distance))
+        {
+
+            if (hit.transform.CompareTag("Player"))
+            {
+                LOS = true;
+            }
+            else
+            {
+                LOS = false;
+            }
+        }
+    }
+}

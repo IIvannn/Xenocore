@@ -742,7 +742,8 @@ GameObject:
   - component: {fileID: 6260905542698369766}
   - component: {fileID: 1040869567622031174}
   - component: {fileID: 6770461742096778746}
-  m_Layer: 0
+  - component: {fileID: 5197605438267828419}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -905,11 +906,11 @@ MonoBehaviour:
   boomerangSpeed: 20
   boomerangReturnSpeed: 35
   boomerangTimeBeforeReturn: 5
-  boomerangDamage: 20
+  boomerangDamage: 15
   boomerangCritChance: 10
   boomerangCritDamage: 1.7
   energyPerHit: 0.7
-  boomerangSpecialDamage: 10
+  boomerangSpecialDamage: 20
   boomerangSpecialDuration: 0.5
   boomerangSpecialRotationSpeed: 600
   boomerangSpecialCooldown: 1.3
@@ -972,6 +973,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &5197605438267828419
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9162987725772162685}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 10, y: 1, z: 10}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &2202229498295842247
 PrefabInstance:
   m_ObjectHideFlags: 0

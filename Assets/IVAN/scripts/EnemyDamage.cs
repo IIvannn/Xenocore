@@ -159,6 +159,10 @@ public class EnemyDamage : MonoBehaviour
 
     public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
+        if (PlayerDamage.dead)
+        {
+            return;
+        }
         if (BoonSTaticInfo.globalCritChance >0)
         {
             critD += 1 + (BoonSTaticInfo.globalCritChance / 120);
