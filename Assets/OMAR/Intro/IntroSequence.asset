@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02672ae0df09ad246ae1593ff2c8121c, type: 3}
+  m_Name: IntroSequence
+  m_EditorClassIdentifier: Assembly-CSharp::IntroSequence
+  lines:
+  - text: "A signal\u2026 faint, distorted\u2026 carrying the signature of a micro
+      black hole."
+    font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    textDisplayTime: 3
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    image: {fileID: 21300000, guid: 26261b832b41a5e4ba5b0103f014f8ca, type: 3}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
+  - text: A gravitational pulse no planet should emit.
+    font: {fileID: 0}
+    textDisplayTime: 3
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    image: {fileID: 0}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
+  - text: "Its pattern matches an anomaly I\u2019ve encountered once before\u2026"
+    font: {fileID: 0}
+    textDisplayTime: 3
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
+  - text: "\u2026but I still don\u2019t understand why."
+    font: {fileID: 0}
+    textDisplayTime: 3
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
+  - text: The source comes from deep beneath an uncharted world.
+    font: {fileID: 0}
+    textDisplayTime: 3
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
+  - text: Astraeon.
+    font: {fileID: 0}
+    textDisplayTime: 3
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
+  - text: No records. No maps. No history.
+    font: {fileID: 0}
+    textDisplayTime: 3
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
+  - text: "Just this call\u2026 steady, persistent\u2026 as if something inside is
+      reaching out."
+    font: {fileID: 0}
+    textDisplayTime: 3
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
+  - text: "I don\u2019t know what waits down there."
+    font: {fileID: 0}
+    textDisplayTime: 3
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
+  - text: But I have to find out.
+    font: {fileID: 0}
+    textDisplayTime: 3
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
+  - text: "[Ship] - \u201CGenetic Sync Device online.\u201D"
+    font: {fileID: 0}
+    textDisplayTime: 3
+    textColor: {r: 1, g: 0.5719802, b: 0, a: 1}
+    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
+  - text: "[Ship] - \u201CBeginning descent.\u201D "
+    font: {fileID: 0}
+    textDisplayTime: 3
+    textColor: {r: 0.990566, g: 0, b: 0.07513775, a: 1}
+    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    imageFadeInTime: 1
+    imageFadeOutTime: 1
+    imageDisplayTime: 3
+    sound: {fileID: 0}
