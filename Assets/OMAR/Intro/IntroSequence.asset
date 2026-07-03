@@ -18,10 +18,19 @@ MonoBehaviour:
     font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     textDisplayTime: 3
     textColor: {r: 1, g: 1, b: 1, a: 1}
-    image: {fileID: 21300000, guid: 26261b832b41a5e4ba5b0103f014f8ca, type: 3}
+    image: {fileID: 21300000, guid: b02f40b33a0ea6f489874c29eb0fc30f, type: 3}
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
   - text: A gravitational pulse no planet should emit.
     font: {fileID: 0}
@@ -31,6 +40,15 @@ MonoBehaviour:
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
   - text: "Its pattern matches an anomaly I\u2019ve encountered once before\u2026"
     font: {fileID: 0}
@@ -40,6 +58,15 @@ MonoBehaviour:
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
   - text: "\u2026but I still don\u2019t understand why."
     font: {fileID: 0}
@@ -49,6 +76,15 @@ MonoBehaviour:
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
   - text: The source comes from deep beneath an uncharted world.
     font: {fileID: 0}
@@ -58,6 +94,15 @@ MonoBehaviour:
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
   - text: Astraeon.
     font: {fileID: 0}
@@ -67,6 +112,15 @@ MonoBehaviour:
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
   - text: No records. No maps. No history.
     font: {fileID: 0}
@@ -76,6 +130,15 @@ MonoBehaviour:
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
   - text: "Just this call\u2026 steady, persistent\u2026 as if something inside is
       reaching out."
@@ -86,6 +149,15 @@ MonoBehaviour:
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
   - text: "I don\u2019t know what waits down there."
     font: {fileID: 0}
@@ -95,6 +167,15 @@ MonoBehaviour:
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
   - text: But I have to find out.
     font: {fileID: 0}
@@ -104,15 +185,33 @@ MonoBehaviour:
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
   - text: "[Ship] - \u201CGenetic Sync Device online.\u201D"
     font: {fileID: 0}
     textDisplayTime: 3
     textColor: {r: 1, g: 0.5719802, b: 0, a: 1}
-    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    image: {fileID: 21300000, guid: a791ef0ea78e5194d97f94cd0a29ff5c, type: 3}
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
   - text: "[Ship] - \u201CBeginning descent.\u201D "
     font: {fileID: 0}
@@ -122,4 +221,13 @@ MonoBehaviour:
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
+    shakeEffect: 0
+    shakeIntensity: 10
+    shakeSpeed: 20
+    zoomEffect: 0
+    zoomAmount: 1.05
+    zoomSpeed: 0.5
+    panEffect: 0
+    panAmount: 20
+    panSpeed: 0.5
     sound: {fileID: 0}
