@@ -134,7 +134,7 @@ public class UpgradeManager : MonoBehaviour
 
                 if (!BoonSTaticInfo.hasAttack)
                 {
-                    Debug.Log("Attack added");
+                    //Debug.Log("Attack added");
                     foreach (var item in swarmAttack)
                     {
                         if (!OwnedUpgrades.Contains(item))
@@ -186,7 +186,7 @@ public class UpgradeManager : MonoBehaviour
 
                 if (!BoonSTaticInfo.hasAttack)
                 {
-                    Debug.Log("Attack added");
+                    //Debug.Log("Attack added");
                     foreach (var item in hauntedAttack)
                     {
                         if (!OwnedUpgrades.Contains(item))
@@ -238,7 +238,7 @@ public class UpgradeManager : MonoBehaviour
 
                 if (!BoonSTaticInfo.hasAttack)
                 {
-                    Debug.Log("Attack added");
+                    //Debug.Log("Attack added");
                     foreach (var item in crystallizeAttack)
                     {
                         if (!OwnedUpgrades.Contains(item))
@@ -290,7 +290,7 @@ public class UpgradeManager : MonoBehaviour
 
                 if (!BoonSTaticInfo.hasAttack)
                 {
-                    Debug.Log("Attack added");
+                    //Debug.Log("Attack added");
                     foreach (var item in nullAttack)
                     {
                         if (!OwnedUpgrades.Contains(item))
@@ -342,7 +342,7 @@ public class UpgradeManager : MonoBehaviour
 
                 if (!BoonSTaticInfo.hasAttack)
                 {
-                    Debug.Log("Attack added");
+                    //Debug.Log("Attack added");
                     foreach (var item in starfallAttack)
                     {
                         if (!OwnedUpgrades.Contains(item))
@@ -394,7 +394,7 @@ public class UpgradeManager : MonoBehaviour
 
                 if (!BoonSTaticInfo.hasAttack)
                 {
-                    Debug.Log("Attack added");
+                    //Debug.Log("Attack added");
                     foreach (var item in rustAttack)
                     {
                         if (!OwnedUpgrades.Contains(item))
@@ -446,7 +446,7 @@ public class UpgradeManager : MonoBehaviour
 
                 if (!BoonSTaticInfo.hasAttack)
                 {
-                    Debug.Log("Attack added");
+                    //Debug.Log("Attack added");
                     foreach (var item in tectonicAttack)
                     {
                         if (!OwnedUpgrades.Contains(item))
@@ -498,7 +498,7 @@ public class UpgradeManager : MonoBehaviour
 
                 if (!BoonSTaticInfo.hasAttack)
                 {
-                    Debug.Log("Attack added");
+                    //Debug.Log("Attack added");
                     foreach (var item in radiationAttack)
                     {
                         if (!OwnedUpgrades.Contains(item))
@@ -543,7 +543,7 @@ public class UpgradeManager : MonoBehaviour
         AvailableUpgrades.RemoveAll(item => OwnedUpgrades.Contains(item));
         numbers = Enumerable.Range(0, AvailableUpgrades.Count).ToArray(); // 0 to 10 inclusive
         
-        Debug.Log("Available upgrades after removing already selected ones:  "+AvailableUpgrades.Count);
+        //Debug.Log("Available upgrades after removing already selected ones:  "+AvailableUpgrades.Count);
 
         //Debug.Log(string.Join(", ", numbers));
 
@@ -591,13 +591,13 @@ public class UpgradeManager : MonoBehaviour
         ApplyUpgrade(upg);
         gameObject.SetActive(false);
         AvailableUpgrades.Clear();
-        Debug.Log("Available Upgrades after selection:  " + AvailableUpgrades.Count);
+        //Debug.Log("Available Upgrades after selection:  " + AvailableUpgrades.Count);
         //Debug.Log("Selected upgrades after reintroduction:  " + SelectedUpgrades.Count);
     }
 
     void ApplyUpgrade(string upg)
     {
-        Debug.Log("apply upgrade:  "+upg);
+        //Debug.Log("apply upgrade:  "+upg);
         BoonSTaticInfo.UPGRADES++;
         switch (upg)
         {

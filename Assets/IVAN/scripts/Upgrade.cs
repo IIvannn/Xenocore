@@ -16,6 +16,9 @@ public class Upgrade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
         if (close && Keyboard.current.eKey.wasPressedThisFrame)
         {
             Pick();

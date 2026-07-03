@@ -1,3 +1,4 @@
+using BarthaSzabolcs.IsometricAiming;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,11 +19,12 @@ public class EnemeyHealBrain : MonoBehaviour
     public GameObject last;
     bool healing = false;
     public GameObject healingZone;
+    public Animator animator;
+    public GameObject spriteHolder;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-        StartCoroutine(changeTarget());
+        StartCoroutine(startBrain());
     }
 
     void Reset()
@@ -61,6 +63,16 @@ public class EnemeyHealBrain : MonoBehaviour
         }
         
     }
+
+    IEnumerator startBrain()
+    {
+        yield return new WaitForSeconds(0.3f);
+        Debug.Log("brainstart");
+        Reset();
+        StartCoroutine(changeTarget());
+    }
+
+
     IEnumerator changeTarget()
     {
         yield return new WaitForSeconds(5);
@@ -70,10 +82,13 @@ public class EnemeyHealBrain : MonoBehaviour
 
     IEnumerator heal()
     {
+        EnemyDamage ed = GetComponent<EnemyDamage>();
         healingZone.SetActive(true);
         healing = true;
         healingZone.GetComponent<healingCircle>().sh();
+        animator.SetBool("healing", true);
         yield return new WaitForSeconds(5);
+        animator.SetBool("healing", false);
         healingZone.SetActive(false);
         healing = false;
         Reset();
@@ -93,6 +108,12 @@ public class EnemeyHealBrain : MonoBehaviour
         {
             return;
         }
+        if (IsometricAiming.cameraTransform != null)
+        {
+            spriteHolder.transform.rotation = IsometricAiming.cameraTransform.rotation;
+        }
+
+
 
         firePoint.transform.LookAt(target.transform.position);
 
@@ -104,11 +125,17 @@ public class EnemeyHealBrain : MonoBehaviour
         EnemyHeal eh = GetComponent<EnemyHeal>();
         distance = Vector3.Distance(target.transform.position, gameObject.transform.position);
 
+        if (ed.petrified || ed.fissured)
+        {
+            healingZone.SetActive(false);
+        }
+
         if (eh != null)
         { eh.move = move; }
         if (ed.petrified || ed.fissured)
         {
             agent.isStopped = true;
+            animator.SetBool("canmove", false);
 
         }
         else
@@ -125,12 +152,24 @@ public class EnemeyHealBrain : MonoBehaviour
 
                     agent.isStopped = true;
                     StartCoroutine(heal());
+                    animator.SetTrigger("heal");
                 }
                 else
                 {
                     //eda.Dash();
                     esc.MoveToWeakest(target.transform);
                     agent.isStopped = false;
+                    if (target != null)
+                    {
+                        if (target.transform.position.x <= transform.position.x)
+                        {
+                            spriteHolder.transform.localScale = new Vector3(-1, 1, 1);
+                        }
+                        else
+                        {
+                            spriteHolder.transform.localScale = new Vector3(1, 1, 1);
+                        }
+                    }
                 }
             }
 

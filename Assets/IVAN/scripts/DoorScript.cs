@@ -16,6 +16,7 @@ public class DoorScript : MonoBehaviour
     Scene m_Scene;
     string sceneName;
 
+    public static int difficulty = 0;
 
     void Start()
     {
@@ -32,8 +33,10 @@ public class DoorScript : MonoBehaviour
                 (numbers[i], numbers[j]) = (numbers[j], numbers[i]);
             }
 
-            //Debug.Log(string.Join(", ", numbers));
+            Debug.Log(string.Join(", ", numbers));
         }
+
+        Debug.Log(currentRoom);
         
     }
 
@@ -61,6 +64,7 @@ public class DoorScript : MonoBehaviour
 
     void Enter()
     {
+        Waver.roomEnded = false;
         BoonSTaticInfo.reaperBonus = 0;
         PlayerDamage.currentHp += (BoonSTaticInfo.doorHeal*BoonSTaticInfo.healingMultiplier);
         if (currentRoom < numberOfRooms)

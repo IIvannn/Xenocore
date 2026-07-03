@@ -34,7 +34,7 @@ public class EnemyMelee : MonoBehaviour
     {
         canattack = false;
         attIndicator.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.6f);
         attIndicator.SetActive(false);
         GameObject ball = Instantiate(hitbox, transform.position, transform.rotation);
         hitbox.GetComponent<EnemyHitbox>().damage = damage;

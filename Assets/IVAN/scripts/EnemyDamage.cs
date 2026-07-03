@@ -78,6 +78,7 @@ public class EnemyDamage : MonoBehaviour
         startingArmor = armor;
 
         BoonSTaticInfo.enemiesAlive.Add(gameObject);
+        Debug.Log("Enemies alive:  " + BoonSTaticInfo.enemiesAlive.Count);
         //Debug.Log(BoonSTaticInfo.enemiesAlive.Count);
     }
 
@@ -103,6 +104,11 @@ public class EnemyDamage : MonoBehaviour
             fissure = 0;
             stun.SetActive(true);
             StartCoroutine(fissureDuration());
+        }
+
+        if (radiationAmmount>1)
+        {
+            radiationAmmount = 1;
         }
 
         if (irradiated)
@@ -421,7 +427,7 @@ public class EnemyDamage : MonoBehaviour
                     fated = true;
                 }
                 
-                Debug.Log("starfall chance:  " + rschance);
+                //Debug.Log("starfall chance:  " + rschance);
                 if (BoonSTaticInfo.crater)
                 {
                     GameObject ball = Instantiate(shockwave, transform.position, transform.rotation);
@@ -507,6 +513,8 @@ public class EnemyDamage : MonoBehaviour
         }
         EnemyScript body = GetComponent<EnemyScript>();
         body.dead = dead;
+        BoonSTaticInfo.enemiesAlive.Remove(gameObject);
+        Debug.Log("Enemies alive:  " + BoonSTaticInfo.enemiesAlive.Count);
         Destroy(gameObject, deathDelay);
     }
 
@@ -523,7 +531,6 @@ public class EnemyDamage : MonoBehaviour
                 {
                     swarm.transform.localScale = new Vector3(BoonSTaticInfo.swarmRange, 0.2f, BoonSTaticInfo.swarmRange);
                     StartCoroutine(SwarmDuration());
-                    StartCoroutine(SwarmDamage());
                     if (source != null)
                     {
                         source.GetComponent<PlayerShoot>().onStatus(status);
@@ -595,7 +602,8 @@ public class EnemyDamage : MonoBehaviour
                         source.GetComponent<PlayerShoot>().onStatus(status);
                     }
                     EnemyShoot body = GetComponent<EnemyShoot>();
-                    body.rusted = true;
+                    if (body != null)
+                    { body.rusted = true; }
                 }
                 
                 break;
@@ -649,25 +657,14 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator SwarmDuration()
     {
+        GameObject swarms = Instantiate(swarm, transform.position, transform.rotation);
+        swarms.GetComponent<Swarm>().source = gameObject;
+        swarms.GetComponent<Swarm>().lifetime = BoonSTaticInfo.swarmDuration;
         yield return new WaitForSeconds(BoonSTaticInfo.swarmDuration);
-        swarm.SetActive(false);
+       
         swarmed = false;
     }
-    IEnumerator SwarmDamage()
-    {
-        Collider[] hitEnemies = Physics.OverlapSphere(transform.position, BoonSTaticInfo.swarmRange, enemyLayer);
-        foreach (Collider enemy in hitEnemies)
-        {
-           
-            enemy.GetComponent<EnemyDamage>().TakeDamage(BoonSTaticInfo.swarmDamage, "swarm",0,0,null);
-        }
-        //TakeDamage(BoonSTaticInfo.swarmDamage);
-        yield return new WaitForSeconds(BoonSTaticInfo.swarmAttackSpeed);
-        if (swarmed)
-        {
-            StartCoroutine(SwarmDamage());
-        }
-    }
+
 
     IEnumerator VolcanicDamage()
     {
@@ -724,7 +721,8 @@ public class EnemyDamage : MonoBehaviour
         yield return new WaitForSeconds(BoonSTaticInfo.rustDuration);
         rusted = false;
         EnemyShoot body = GetComponent<EnemyShoot>();
-        body.rusted = false;
+        if (body !=null)
+        { body.rusted = false; }
         rust.SetActive(false);
     }
 

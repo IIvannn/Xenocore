@@ -34,7 +34,7 @@ public class UpgradeSlot : MonoBehaviour
 
     public void UpgradeSelected()
     {
-        Debug.Log(upgrade+"  chosen");
+        //Debug.Log(upgrade+"  chosen");
         upgradeManager.GetComponent<UpgradeManager>().UpgradeSelected(upgrade, slot);
     }
 

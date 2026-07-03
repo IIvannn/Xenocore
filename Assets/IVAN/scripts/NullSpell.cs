@@ -37,6 +37,7 @@ public class NullSpell : MonoBehaviour
         yield return new WaitForSeconds(6f);
         GameObject ball = Instantiate(shockwave, transform.position, transform.rotation);
         ball.GetComponent<Shockwave>().damage = damage;
+        ball.GetComponent<Shockwave>().type = "null";
         ball.GetComponent<Shockwave>().range = 10f;
         Destroy(gameObject);
     }

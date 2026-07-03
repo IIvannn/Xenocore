@@ -11,6 +11,7 @@ public class EnemyHitbox : MonoBehaviour
     void Start()
     {
         transform.localScale = new Vector3(range, 0.2f, range);
+        //Debug.Log(range);
         if (onetime)
         {
             Destroy(gameObject,0.2f);

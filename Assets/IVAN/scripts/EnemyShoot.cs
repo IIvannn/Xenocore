@@ -57,12 +57,14 @@ public class EnemyShoot : MonoBehaviour
     {
         
         EnemyDamage enemyDamage = GetComponent<EnemyDamage>();
+        EnemyShootBrain esh = GetComponent<EnemyShootBrain>();
 
         if (!PlayerDamage.dead && !enemyDamage.petrified)
         {
             float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
             if (Time.time >= nextFireTime)
             {
+                esh.animator.SetTrigger("shoot");
                 Fire();
                 if (BoonSTaticInfo.posession && enemyDamage.haunted)
                 {
@@ -80,14 +82,14 @@ public class EnemyShoot : MonoBehaviour
                     EnemyDamage body = GetComponent<EnemyDamage>();
 
 
-                    GameObject ball = Instantiate(projectile, new Vector3(firePoint.position.x - 1, firePoint.position.y, firePoint.position.z), firePoint.rotation);
+                    GameObject ball = Instantiate(projectile, new Vector3(firePoint.position.x - 0.3f, firePoint.position.y, firePoint.position.z), firePoint.rotation);
                     ball.GetComponent<enemyProjectileScript>().source = gameObject;
                     ball.GetComponent<enemyProjectileScript>().moveSpeed = projectileSpeed;
                     ball.GetComponent<enemyProjectileScript>().damage = damage;
                     ball.GetComponent<enemyProjectileScript>().lifetime = projectileLifetime;
                     ball.GetComponent<enemyProjectileScript>().homing = homing;
                     ball.GetComponent<enemyProjectileScript>().homingPrecision = homingPrecision;
-                    GameObject ball2 = Instantiate(projectile, new Vector3(firePoint.position.x + 1, firePoint.position.y, firePoint.position.z), firePoint.rotation);
+                    GameObject ball2 = Instantiate(projectile, new Vector3(firePoint.position.x + 0.3f, firePoint.position.y, firePoint.position.z), firePoint.rotation);
                     ball2.GetComponent<enemyProjectileScript>().source = gameObject;
                     ball2.GetComponent<enemyProjectileScript>().moveSpeed = projectileSpeed;
                     ball2.GetComponent<enemyProjectileScript>().damage = damage;

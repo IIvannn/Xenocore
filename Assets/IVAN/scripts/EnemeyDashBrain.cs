@@ -1,3 +1,4 @@
+using BarthaSzabolcs.IsometricAiming;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,6 +11,8 @@ public class EnemeyDashBrain : MonoBehaviour
     public bool LOS = false;
     public NavMeshAgent agent;
     public Vector3 move = Vector3.zero;
+    public Animator animator;
+    public GameObject spriteHolder;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,12 +22,22 @@ public class EnemeyDashBrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move = (PlayerMovement.playerPosition.position - gameObject.transform.position);
 
+        
         if (PlayerDamage.dead)
         {
             return;
         }
+
+        
+
+        if (IsometricAiming.cameraTransform != null)
+        {
+            spriteHolder.transform.rotation = IsometricAiming.cameraTransform.rotation;
+        }
+
+
+        move = (PlayerMovement.playerPosition.position - gameObject.transform.position);
 
         EnemyDamage ed = GetComponent<EnemyDamage>();
         EnemyScript esc = GetComponent<EnemyScript>();
@@ -37,20 +50,49 @@ public class EnemeyDashBrain : MonoBehaviour
         {
             agent.isStopped = true;
 
+            if (!eda.charging || !eda.dashing)
+            {
+                animator.SetBool("canmove", false);
+            }
         }
+
         else
         {
-            if (distance < eda.attackDistance && LOS && eda.candash)
+            animator.SetBool("canmove", true);
+            if (distance < eda.attackDistance && LOS && eda.candash && !eda.dashing)
             {
                 eda.Dash();
                 agent.isStopped = true;
             }
-            else
+            else if (!eda.charging)
             {
+                
                 esc.MoveToPlayer(PlayerMovement.playerPosition);
                 agent.isStopped = false;
+                if (PlayerMovement.playerPosition.position.x <= transform.position.x)
+                {
+                    spriteHolder.transform.localScale = new Vector3(-1, 1, 1);
+                }
+                else
+                {
+                    spriteHolder.transform.localScale = new Vector3(1, 1, 1);
+                }
             }
-            //agent.isStopped = false;
+
+
+
+
+            if (!agent.isStopped)
+            {
+                animator.SetBool("moving", true);
+            }
+            else
+            {
+                if (!eda.charging || !eda.dashing)
+                {
+                    animator.SetBool("moving", false);
+                }
+            }
         }
 
         RaycastHit hit;

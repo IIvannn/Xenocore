@@ -1,3 +1,4 @@
+using BarthaSzabolcs.IsometricAiming;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,6 +7,8 @@ public class EnemyMeleeBrain : MonoBehaviour
     float distance;
     public bool LOS = false;
     public NavMeshAgent agent;
+    public Animator animator;
+    public GameObject spriteHolder;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +23,10 @@ public class EnemyMeleeBrain : MonoBehaviour
         {
             return;
         }
+        if (IsometricAiming.cameraTransform != null)
+        {
+            spriteHolder.transform.rotation = IsometricAiming.cameraTransform.rotation;
+        }
 
         EnemyDamage ed = GetComponent<EnemyDamage>();
         EnemyScript esc = GetComponent<EnemyScript>();
@@ -30,7 +37,7 @@ public class EnemyMeleeBrain : MonoBehaviour
         if (ed.petrified || ed.fissured)
         {
             agent.isStopped = true;
-
+            animator.SetBool("canmove", false);
         }
         else
         {
@@ -38,11 +45,25 @@ public class EnemyMeleeBrain : MonoBehaviour
             {
                 eme.Attack();
                 agent.isStopped = true;
+                animator.SetTrigger("attack");
             }
             else if (eme.canattack)
             {
+                animator.SetBool("canmove", true);
                 esc.MoveToPlayer(PlayerMovement.playerPosition);
                 agent.isStopped = false;
+                if (PlayerMovement.playerPosition.position.x <= transform.position.x)
+                {
+                    spriteHolder.transform.localScale = new Vector3(1, 1, 1);
+                }
+                else
+                {
+                    spriteHolder.transform.localScale = new Vector3(-1, 1, 1);
+                }
+            }
+            else
+            {
+                animator.SetBool("canmove", false);
             }
             //agent.isStopped = false;
         }

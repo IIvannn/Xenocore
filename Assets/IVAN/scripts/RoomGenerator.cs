@@ -17,7 +17,7 @@ public class RoomGenerator : MonoBehaviour
             (numbers[i], numbers[j]) = (numbers[j], numbers[i]);
         }
 
-        Debug.Log(string.Join(", ", numbers));
+        //Debug.Log(string.Join(", ", numbers));
     }
 
     // Update is called once per frame
