@@ -84,7 +84,6 @@ public class UpgradeManager : MonoBehaviour
 
     void Start()
     {
-        destroyUpgrades = false;
         Debug.Log(destroyUpgrades);
     }
     private void Update()
