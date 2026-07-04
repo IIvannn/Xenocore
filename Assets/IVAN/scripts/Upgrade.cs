@@ -16,15 +16,17 @@ public class Upgrade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
         if (close && Keyboard.current.eKey.wasPressedThisFrame)
         {
             Pick();
         }
-
+        if (UpgradeManager.destroyUpgrades)
+        {
+            UpgradeManager.destroyUpgrades = false;
+            Destroy(gameObject);
+        }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -56,7 +58,6 @@ public class Upgrade : MonoBehaviour
             case "boomerang":
                 upgradeManager.Upgrader("boomerang");
                 return;
-
             case "swarm":
                 upgradeManager.Upgrader("swarm");
                 return;
@@ -81,8 +82,6 @@ public class Upgrade : MonoBehaviour
             case "radiation":
                 upgradeManager.Upgrader("radiation");
                 return;
-
-
         }
     }
 }

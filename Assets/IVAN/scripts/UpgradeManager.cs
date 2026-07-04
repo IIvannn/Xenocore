@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -79,11 +80,12 @@ public class UpgradeManager : MonoBehaviour
     public static List<UpgradeData> OwnedUpgrades = new List<UpgradeData>();
 
     int[] numbers;
-
+    public static bool destroyUpgrades = false;
 
     void Start()
     {
-        
+        destroyUpgrades = false;
+        Debug.Log(destroyUpgrades);
     }
     private void Update()
     {
@@ -597,6 +599,7 @@ public class UpgradeManager : MonoBehaviour
 
     void ApplyUpgrade(string upg)
     {
+        destroyUpgrades = true;
         //Debug.Log("apply upgrade:  "+upg);
         BoonSTaticInfo.UPGRADES++;
         switch (upg)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviour
 {
@@ -38,11 +39,15 @@ public class PlayerDamage : MonoBehaviour
     float hplerp;
     float energylerp;
 
-
+    Scene m_Scene;
+    string sceneName;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        m_Scene = SceneManager.GetActiveScene();
+        sceneName = m_Scene.name;
+        if (sceneName == "Spawnroom")
         hp = maxHp;
         currentHp = hp;
         
