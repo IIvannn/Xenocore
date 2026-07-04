@@ -89,6 +89,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static bool boomerangSpecialGrow = false;
     public static float boomerangSpecialGrowBonus = 8f;
     public static bool boomerangSpecialCooldwon = false;
+    public static int BoomerangUpgrades = 0;
 
     
 
@@ -283,5 +284,265 @@ public class BoonSTaticInfo : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    public static void RESETUPGRADES()
+    {
+        PlayerDamage.hp = 100;
+        PlayerShoot.attackType = "normal";
+        PlayerShoot.boomerangSpecialType = "normal";
+        PlayerShoot.spellType = "normal";
+
+
+
+        swarmDamage = 4f;
+        swarmAttackSpeed = 0.4f;
+        swarmRange = 3f;
+        swarmDuration = 5f;
+
+        hauntedInitialDamage = 30f;
+        hauntedDamagePercentage = 40f;
+        hauntedDuration = 3f;
+        hauntedGhostSpeed = 5f;
+
+        crystallizeCrystalChance = 25f;
+        crystallizeCrystalAmmount = 1;
+        crystallizeEnergyAmmount = 1.5f;
+        crystallizeDuration = 6f;
+
+        nullRange = 10f;
+        nullPullStrength = 1.8f;
+        nullDuration = 3f;
+        nullMaxCount = 3;
+        nullCurrentCount = 0;
+
+        starfallDamage = 50;
+        starfallChance = 25;
+        starfallDuration = 5;
+
+        rustCritChance = 35f;
+        rustSelfDamage = 25;
+        rustSelfDamageChance = 40;
+        rustDuration = 5f;
+
+        tectonicDamage = 50f;
+        tectonicAttackSpeed = 2.6f;
+        tectonicRange = 2f;
+        tectonicDuration = 7.8f;
+        tectonicMaxCount = 2;
+        tectonicCurrentCount = 0;
+        tectonicSpread = 1.5f;
+        tectonicSpreadSpeed = 0.6f;
+
+        radiationWeakness = 22;
+        radiationRange = 7f;
+        radiationDuration = 8f;
+        radiationMaxCount = 4;
+        radiationCurrentCount = 0;
+
+
+
+        crystals = 0;
+
+
+        healingMultiplier = 1f;
+        moneyMultiplier = 1f;
+        doorHeal = 5f;
+        enemiesInRange.Clear();
+        enemiesAlive.Clear();
+        UPGRADES = 0;
+        globalCritChance = 0;
+        spellCost = 100;
+
+        hasAttack = false;
+        hasSpecial = false;
+        hasSpell = false;
+
+        hasSwarm = false;
+        hasHaunted = false;
+        hasCrystallize = false;
+        hasNull = false;
+        hasStarfall = false;
+        hasRust = false;
+        hasTectonic = false;
+        hasRadiation = false;
+
+        boomerangGrow = false;
+        boomerangGrowBonus = 0.2f;
+        boomerangMark = false;
+        boomerangReturnShockwave = false;
+        boomerangSpeed = false;
+        boomerangSpeedBonus = 15f;
+        boomerangSpecialSpeedBonus = 250f;
+        boomerangSpecialGrow = false;
+        boomerangSpecialGrowBonus = 8f;
+        boomerangSpecialCooldwon = false;
+        BoomerangUpgrades = 0;
+
+        silky = false;
+        silkyBonus = 0.3f;
+        adaptation = false;
+        adaptationLimit = 0.3f;
+        corrosive = false;
+        corrosiveBonus = 0.5f;
+        infestation = false;
+        infestationChance = 35f;
+        nested = false;
+        nestedChance = 15f;
+        pob = false;
+        nestDuration = 9f;
+        waspSpawnSpeed = 1f;
+        waspDamage = 10f;
+        waspSpeed = 10f;
+        proliferationBonus = 1.5f;
+        frenzyBonus = 0.15f;
+        swarmSpellCost = 130;
+
+        dreadBonus = 15f;
+        emotionalDamage = false;
+        emotionalDamageBonus = 0.2f;
+        exorcism = false;
+        exorcismBonus = 10f;
+        jumpscareBonus = 35f;
+        necromancer = false;
+        necroancerChance = 15f;
+        phaseDash = false;
+        phaseDashDashDamage = 20f;
+        phaseDashDashDurationBonus = 0.2f;
+        posession = false;
+        possessionChance = 5f;
+        reaper = false;
+        reaperBonus = 0;
+        untouchable = false;
+        untouchableChance = 18f;
+        hauntedSpellDamage = 10f;
+        hauntedSpellRange = 6f;
+        hauntedSpellCost = 150;
+
+        arcaneSwiftness = false;
+        arcaneSwiftnessBonus = 1.50f;
+        arcaneSwiftnessDuration = 5f;
+        crystallineArmor = false;
+        crystallineArmorChance = 20f;
+        energized = false;
+        energizedBonus = 5f;
+        excavationBonus = 0.20f;
+        fortuneBonus = 12f;
+        medusa = false;
+        medusaChance = 45f;
+        petrifyDuration = 1.3f;
+        monopoly = false;
+        momopolyBonus = 0.02f;
+        overgrowth = false;
+        overgrowthChance = 10f;
+        prismDuration = 8f;
+        prismDamage = 12f;
+        prismRange = 8f;
+        prismCooldown = 1.2f;
+        resonance = false;
+        resonanceDamage = 18f;
+        crystallizeSpellCost = 70;
+
+        farFar = false;
+        farFarBonus = 0.6f;
+        collapse = false;
+        collapseDamage = 20f;
+        exponentiallity = false;
+        exponentiallityBonus = 50f;
+        graspBonus = 3.5f;
+        gravityBonus = 0.5f;
+        massAccumulation = false;
+        massAccumulationBonus = 3f;
+        multiversalStrike = false;
+        multiversalStrikeDamage = 10;
+        multiversalStrikeCooldown = 2f;
+        mstrike = true;
+        pb = false;
+        nulledEnemies.Clear();
+        nullSpellCost = 170;
+
+        clearSkyBonus = 10f;
+        crater = false;
+        craterRange = 2.5f;
+        doubleTrouble = false;
+        doubleTroubleChance = 8;
+        fated = false;
+        fatedBonus = 1.25f;
+        luckyStar = false;
+        luckyStarChance = 50;
+        starfallCritChance = 0;
+        makeAWishCC = 25;
+        makeAWishCD = 1.3f;
+        meteoriteBonus = 15f;
+        noYou = false;
+        noYouChance = 15f;
+        noYouRange = 15f;
+        shenanigans = false;
+        starfallSpellCost = 120;
+
+        cracked = false;
+        crackedBonus = 0.4f;
+        embrittled = false;
+        embrittledChance = 40f;
+        fatigue = false;
+        fatigueBonus = 15f;
+        galvanized = false;
+        galvanizedBonus = 1.2f;
+        mutilationBonus = 20f;
+        oxidisedBonus = 20f;
+        purge = false;
+        soldering = false;
+        solderingBonus = 3f;
+        tetanus = false;
+        tetanusChance = 10f;
+        rustSpellDuration = 6f;
+        rustSpellBonus = 30f;
+        rustSpellCost = 150;
+
+        faceOff = false;
+        faceOffBonus = 25f;
+        faceOffRange = 10f;
+        molten = false;
+        moltenBonus = 0.3f;
+        mudbath = false;
+        mudbathChance = 6.25f;
+        mudbathMax = 15f;
+        eruption = false;
+        eruptionRange = 8.5f;
+        eruptionDamage = 20f;
+        shatterBonus = 18f;
+        tremble = false;
+        trembleChance = 50f;
+        staggerCap = 4;
+        staggerDuration = 1.5f;
+        tremorBonus = 1f;
+        troglodite = false;
+        volcanic = false;
+        volcanicChance = 35f;
+        volcanicDamage = 1f;
+        volcanicAttackSpeed = 0.1f;
+        tectonicSpellCost = 90;
+
+        contamination = false;
+        contaminationBonus = 0.35f;
+        falloutBonus = 12f;
+        finishHim = false;
+        finishHimBonus = 30f;
+        monteCarlo = false;
+        monteCarloChance = 5f;
+        noMansLand = false;
+        noMansLandDamage = 5f;
+        noMansLandAttackSpeed = 0.35f;
+        nuclear = false;
+        nuclearRegeneration = 1.5f;
+        radonBlood = false;
+        radonDamage = 10f;
+        radonAttackSpeed = 0.5f;
+        radonDuration = 4f;
+        radonRange = 4f;
+        wastelandBonus = 2.5f;
+        radiationSpellCost = 140;
+
     }
 }

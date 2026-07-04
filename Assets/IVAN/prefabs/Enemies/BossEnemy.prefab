@@ -90,11 +90,12 @@ GameObject:
   - component: {fileID: 3324352431200338358}
   - component: {fileID: 8152814285988917526}
   - component: {fileID: 8196997042788814942}
-  - component: {fileID: 6143114973516587258}
+  - component: {fileID: 9146241976387069024}
+  - component: {fileID: 3758668352023265674}
   - component: {fileID: 3405035078434156746}
   - component: {fileID: 2957714747039882511}
   m_Layer: 6
-  m_Name: DashingEnemy
+  m_Name: BossEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,7 +221,7 @@ MonoBehaviour:
   movementSpeed: 2.5
   attackCooldown: 0.5
   attackRange: 10
-  distanceBeforeStop: 4
+  distanceBeforeStop: 10
   firePoint: {fileID: 1749458422211352558}
   agent: {fileID: 3405035078434156746}
   controller: {fileID: 2957714747039882511}
@@ -239,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f5537d21de2cc4198efb988ec90cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
-  health: 50
+  health: 1400
   deathDelay: 0
   currentHealth: 0
   dead: 0
@@ -316,7 +317,7 @@ MonoBehaviour:
   range: 1.5
   charging: 0
   move: {x: 0, y: 0, z: 0}
---- !u!114 &6143114973516587258
+--- !u!114 &9146241976387069024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -325,14 +326,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 122489880813915618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f2f6a898dbf08d42870ecbc4833a582, type: 3}
+  m_Script: {fileID: 11500000, guid: 5641817ae8e7c824e995eea9ee1ffde4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemeyDashBrain
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBossBrain
   LOS: 0
   agent: {fileID: 3405035078434156746}
   move: {x: 0, y: 0, z: 0}
   animator: {fileID: 2868495756998938236}
   spriteHolder: {fileID: 7215820844122210906}
+  spawnPoints: []
+  summons:
+  - {fileID: 6880663314845763956, guid: 5c1359d448f9f3b48b54a1f4db3d2555, type: 3}
+  - {fileID: 7926647731256987311, guid: d059ef6af917dd548acd160992544715, type: 3}
+--- !u!114 &3758668352023265674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122489880813915618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338d13c6dae8f7e42b990ec315046edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyShoot
+  projectile: {fileID: 2549096147295879009, guid: ae914ac09d6808345966e62ec4835c5a, type: 3}
+  firePoint: {fileID: 1749458422211352558}
+  projectileSpeed: 22
+  damage: 10
+  firerate: 0.6
+  attackDistance: 15
+  projectileLifetime: 10
+  hauntedProj: {fileID: 2011083098289513261, guid: 10b5d019e7acaf4429d8369a6618a38f, type: 3}
+  rusted: 0
+  rounds: 0
+  fired: 0
+  firing: 0
+  homing: 1
+  homingPrecision: 0
 --- !u!195 &3405035078434156746
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -342,8 +373,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 122489880813915618}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.41
-  m_Speed: 3.5
+  m_Radius: 0.69
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 360
@@ -373,8 +404,8 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.62
+  m_Height: 3.58
+  m_Radius: 1.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -832,8 +863,8 @@ Transform:
   m_GameObject: {fileID: 3217696565332874987}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.066, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.057, z: 0}
+  m_LocalScale: {x: 1.9811, y: 1.9811, z: 1.9811}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6570124425914604131}
@@ -1004,7 +1035,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.9
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2699,6 +2730,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5778515282719101632}
     m_Modifications:
+    - target: {fileID: 6720288722827656899, guid: 23eeb06f53d8032489612899874c8164, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6720288722827656899, guid: 23eeb06f53d8032489612899874c8164, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

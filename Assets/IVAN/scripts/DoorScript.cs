@@ -36,6 +36,13 @@ public class DoorScript : MonoBehaviour
 
         m_Scene = SceneManager.GetActiveScene();
         sceneName = m_Scene.name;
+
+        if (sceneName == "Spawnroom")
+        {
+            currentRoom = 0;
+        }
+
+
         if (currentRoom == 0)
         {
             numbers = Enumerable.Range(0, numberOfRooms).ToArray(); // 0 to 10 inclusive
@@ -74,11 +81,7 @@ public class DoorScript : MonoBehaviour
             Debug.Log(string.Join(", ", selectedRewards));
         }
 
-        if (currentRoom == 0)
-        {
-            
-            
-        }
+        
        
 
 

@@ -927,11 +927,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f5537d21de2cc4198efb988ec90cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
-  health: 100
+  health: 12
   deathDelay: 0
   currentHealth: 0
   dead: 0
-  armor: 100
+  armor: 0
   UIParent: {fileID: 2337589073672443489}
   enemyLayer:
     serializedVersion: 2
@@ -1031,7 +1031,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2649016910049198382}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50

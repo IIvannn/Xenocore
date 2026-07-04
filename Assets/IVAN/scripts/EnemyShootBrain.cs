@@ -13,7 +13,7 @@ public class EnemyShootBrain : MonoBehaviour
     void Start()
     {
 
-        StayAtDistance esd = GetComponent<StayAtDistance>();
+        
 
     }
 

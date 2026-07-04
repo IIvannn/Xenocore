@@ -80,24 +80,31 @@ public class UpgradeManager : MonoBehaviour
     public static List<UpgradeData> OwnedUpgrades = new List<UpgradeData>();
 
     int[] numbers;
-    public static bool destroyUpgrades = false;
+    //public static bool destroyUpgrades = false;
 
     void Start()
     {
-        Debug.Log(destroyUpgrades);
+        //Debug.Log(destroyUpgrades);
     }
     private void Update()
     {
-        if (Keyboard.current.escapeKey.isPressed)
-        {
-            gameObject.SetActive(false);
-        }
+        //if (Keyboard.current.escapeKey.isPressed)
+        //{
+        //    gameObject.SetActive(false);
+        //}
     }
 
-    public void Upgrader(string type)
+    public void Upgrader(string type, bool opened)
     {
-        ChooseType(type);
-        ChoseUpgrades();
+        if (!opened)
+        {
+            ChooseType(type);
+            ChoseUpgrades();
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
         
     }
 
@@ -598,7 +605,7 @@ public class UpgradeManager : MonoBehaviour
 
     void ApplyUpgrade(string upg)
     {
-        destroyUpgrades = true;
+        //destroyUpgrades = true;
         //Debug.Log("apply upgrade:  "+upg);
         BoonSTaticInfo.UPGRADES++;
         switch (upg)

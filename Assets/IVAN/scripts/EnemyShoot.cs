@@ -58,13 +58,19 @@ public class EnemyShoot : MonoBehaviour
         
         EnemyDamage enemyDamage = GetComponent<EnemyDamage>();
         EnemyShootBrain esh = GetComponent<EnemyShootBrain>();
+        EnemyBossBrain ebb = GetComponent<EnemyBossBrain>();
 
         if (!PlayerDamage.dead && !enemyDamage.petrified)
         {
             float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
             if (Time.time >= nextFireTime)
             {
-                esh.animator.SetTrigger("shoot");
+                if (esh != null)
+                { esh.animator.SetTrigger("shoot"); }
+                if (ebb !=null)
+                {
+
+                }
                 Fire();
                 if (BoonSTaticInfo.posession && enemyDamage.haunted)
                 {
@@ -89,6 +95,11 @@ public class EnemyShoot : MonoBehaviour
                     ball.GetComponent<enemyProjectileScript>().lifetime = projectileLifetime;
                     ball.GetComponent<enemyProjectileScript>().homing = homing;
                     ball.GetComponent<enemyProjectileScript>().homingPrecision = homingPrecision;
+                    EnemyShootBrain esb = GetComponent<EnemyShootBrain>();
+                    if (esb !=null)
+                    {
+                        
+                    }
                     GameObject ball2 = Instantiate(projectile, new Vector3(firePoint.position.x + 0.3f, firePoint.position.y, firePoint.position.z), firePoint.rotation);
                     ball2.GetComponent<enemyProjectileScript>().source = gameObject;
                     ball2.GetComponent<enemyProjectileScript>().moveSpeed = projectileSpeed;
@@ -96,6 +107,7 @@ public class EnemyShoot : MonoBehaviour
                     ball2.GetComponent<enemyProjectileScript>().lifetime = projectileLifetime;
                     ball2.GetComponent<enemyProjectileScript>().homing = homing;
                     ball2.GetComponent<enemyProjectileScript>().homingPrecision = homingPrecision;
+
                     nextFireTime = Time.time + firerate;
                     float rchance = Random.Range(0, 100);
                     //Debug.Log("rust self damage chance = " + rchance);

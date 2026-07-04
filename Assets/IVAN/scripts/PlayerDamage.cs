@@ -48,7 +48,10 @@ public class PlayerDamage : MonoBehaviour
         m_Scene = SceneManager.GetActiveScene();
         sceneName = m_Scene.name;
         if (sceneName == "Spawnroom")
-        hp = maxHp;
+        {
+            hp = maxHp;
+        }
+        
         currentHp = hp;
         
     }
@@ -176,7 +179,10 @@ public class PlayerDamage : MonoBehaviour
     public void Death()
     {
         dead = true;
-        Destroy(gameObject);
+        BoonSTaticInfo.RESETUPGRADES();
+        SceneManager.LoadScene("Spawnroom");
+        dead = false;
+        //Destroy(gameObject);
     }
 
 }

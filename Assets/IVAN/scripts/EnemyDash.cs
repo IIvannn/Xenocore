@@ -32,18 +32,6 @@ public class EnemyDash : MonoBehaviour
     void Update()
     {
         firePoint.transform.LookAt(PlayerMovement.playerPosition);
-        //Collider[] hitEnemies = Physics.OverlapSphere(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 1.2f, groundmask);
-        //foreach (Collider enemy in hitEnemies)
-        //{
-        //    Collider col = GetComponent<Collider>();
-        //    dashhitbox.SetActive(false);
-        //    dashhitbox.GetComponent<EnemyHitbox>().he.Clear();
-        //    controller.center = Vector3.zero;
-        //    hitwall = true;
-        //    dashing = false;
-        //    col.enabled = true;
-        //    StartCoroutine(cooldown());
-        //}
     }
 
     public void Dash()
@@ -54,13 +42,22 @@ public class EnemyDash : MonoBehaviour
     IEnumerator EDash()
     {
         EnemeyDashBrain eda = GetComponent<EnemeyDashBrain>();
+        if (eda != null)
+        { 
+            eda.animator.SetTrigger("dash");
+            eda.animator.SetBool("dashing", true);
+        }
+        EnemyBossBrain ebb = GetComponent<EnemyBossBrain>();
+        if (ebb != null)
+        {
+            ebb.animator.SetTrigger("dash");
+            ebb.animator.SetBool("dashing", true);
+        }
         EnemyDamage ed = GetComponent<EnemyDamage>();
-        eda.animator.SetTrigger("dash");
-        eda.animator.SetBool("dashing", true);
         dashhitbox.GetComponent<EnemyHitbox>().damage = damage;
         dashhitbox.GetComponent<EnemyHitbox>().range = range;
         dashhitbox.SetActive(true);
-        EnemeyDashBrain edb = GetComponent<EnemeyDashBrain>();
+        
         //controller.center = new Vector3(0f,5f,0f);
         Collider col = GetComponent<Collider>();
         col.enabled = false;
@@ -73,16 +70,18 @@ public class EnemyDash : MonoBehaviour
 
         while (Time.time < startTime + dashTime && !hitwall && !hitwall && !ed.petrified && !ed.fissured)
         {
-            //Collider[] hitEnemies = Physics.OverlapSphere(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 1.2f, groundmask);
-            //foreach (Collider enemy in hitEnemies)
-            //{
-            //    hitwall = true;
-            //}
             controller.Move(movev * dashSpeed * Time.deltaTime);
             yield return null;
 
         }
-        eda.animator.SetBool("dashing", false);
+        if (eda != null)
+        {
+            eda.animator.SetBool("dashing", false);
+        }
+        if (ebb != null)
+        {
+            ebb.animator.SetBool("dashing", false);
+        }
         dashhitbox.SetActive(false);
         dashhitbox.GetComponent<EnemyHitbox>().he.Clear();
         //controller.center = Vector3.zero;
@@ -101,7 +100,11 @@ public class EnemyDash : MonoBehaviour
     IEnumerator charge()
     {
         EnemeyDashBrain eda = GetComponent<EnemeyDashBrain>();
-        eda.animator.SetTrigger("charge");
+        if (eda != null)
+        { eda.animator.SetTrigger("charge"); }
+        EnemyBossBrain ebb = GetComponent<EnemyBossBrain>();
+        if (ebb != null)
+        { ebb.animator.SetTrigger("charge"); }
         charging = true;
         candash = false;
         //Debug.Log("charge");

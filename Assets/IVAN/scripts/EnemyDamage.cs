@@ -73,6 +73,15 @@ public class EnemyDamage : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        float rarmor = Random.Range(DoorScript.currentRoom, 20);
+
+        if (rarmor >= 14)
+        {
+            armor = (int)((health /1.5f)+(DoorScript.currentRoom*2));
+        }
+
+
+
         swarm.SetActive(false);
         currentHealth = health;
         startingArmor = armor;
@@ -426,9 +435,9 @@ public class EnemyDamage : MonoBehaviour
                 {
                     fated = true;
                 }
-                
-                //Debug.Log("starfall chance:  " + rschance);
-                if (BoonSTaticInfo.crater)
+
+
+                if (BoonSTaticInfo.crater && rschance < 15)
                 {
                     GameObject ball = Instantiate(shockwave, transform.position, transform.rotation);
                     ball.GetComponent<Shockwave>().damage = BoonSTaticInfo.starfallDamage;

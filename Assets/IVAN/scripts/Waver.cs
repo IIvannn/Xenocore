@@ -260,7 +260,7 @@ public class Waver : MonoBehaviour
                 
 
             }
-            else if (wave2.Count > 0 && waves == 2)
+            else if (wave2.Count > 0 && waves == 2 && BoonSTaticInfo.UPGRADES >= 3)
             {
                 int rspawn = Random.Range(1, spawnPoints.Count);
 
@@ -270,7 +270,7 @@ public class Waver : MonoBehaviour
                 wave2.Remove(enemyToSpawn);
                 
             }
-            else if (wave3.Count > 0 && waves == 3)
+            else if (wave3.Count > 0 && waves == 3 && BoonSTaticInfo.UPGRADES >= 6)
             {
                 int rspawn = Random.Range(1, spawnPoints.Count);
 
