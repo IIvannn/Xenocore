@@ -1564,7 +1564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7177461175614400048
 Transform:
   m_ObjectHideFlags: 0
@@ -1575,7 +1575,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3712, y: 0.19599833, z: 1.3712}
+  m_LocalScale: {x: 7.5765653, y: 1.0829887, z: 7.5765653}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 57426987559395805}
@@ -2102,6 +2102,9 @@ MonoBehaviour:
   projectileLifetime: 10
   hauntedProj: {fileID: 2011083098289513261, guid: 10b5d019e7acaf4429d8369a6618a38f, type: 3}
   rusted: 0
+  rounds: 4
+  fired: 0
+  firing: 0
   homing: 1
   homingPrecision: 0
 --- !u!195 &3492197717654370251
