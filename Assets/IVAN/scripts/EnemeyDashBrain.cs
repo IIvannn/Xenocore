@@ -1,8 +1,6 @@
 using BarthaSzabolcs.IsometricAiming;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEditor.PlayerSettings;
 
 
 public class EnemeyDashBrain : MonoBehaviour

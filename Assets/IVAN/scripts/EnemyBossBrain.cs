@@ -1,9 +1,7 @@
 using BarthaSzabolcs.IsometricAiming;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEditor.PlayerSettings;
 
 
 public class EnemyBossBrain : MonoBehaviour
@@ -17,6 +15,8 @@ public class EnemyBossBrain : MonoBehaviour
     public List<GameObject> spawnPoints = new List<GameObject>();
     public List<GameObject> summons = new List<GameObject>();
     int phase = 1;
+
+    bool changed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -112,6 +112,14 @@ public class EnemyBossBrain : MonoBehaviour
             }
             else if (!eda.charging || !eda.dashing)
             {
+                if (!changed)
+                {
+                    changed = true;
+                    animator.SetTrigger("changephase");
+                    animator.SetInteger("phase", 2);
+                }
+
+
                 //Debug.Log(phase);
                 if (distance < esh.attackDistance && distance > esc.distanceBeforeStop - 3 && LOS)
                 {
@@ -193,6 +201,7 @@ public class EnemyBossBrain : MonoBehaviour
 
     void Summon ()
     {
+        animator.SetTrigger("shummon");
         int rspawn = Random.Range(1, spawnPoints.Count);
         GameObject enemyToSpawn;
         if (phase == 1)

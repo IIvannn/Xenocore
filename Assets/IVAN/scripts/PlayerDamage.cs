@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +22,7 @@ public class PlayerDamage : MonoBehaviour
 
     [Header("Health")]
     public bool invincible = false;
-    public static float hp = 100f;
+    public static float hp = 10000f;
     public static float currentHp = 100f;
     public float maxHp = 100;
     public static bool dead = false;

@@ -10,7 +10,7 @@ public class Waver : MonoBehaviour
     public List<GameObject> wave3 = new List<GameObject>();
     public List<GameObject> rewardPool = new List<GameObject>();
     public int waves = 0;
-    public float timebeforeStart = 3;
+    float timebeforeStart = 0.1f;
     public float summonSpeed = 0.3f;
     bool finished = false;
     bool finishedFR = false;

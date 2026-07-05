@@ -81,8 +81,8 @@ public class PauseMenuController : MonoBehaviour
     private void Update()
     {
         // Toggle pause on Escape (or whichever key is set in the Inspector)
-        if (Input.GetKeyDown(pauseKey))
-            TogglePause();
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            { TogglePause(); }
     }
 
     // -------------------------------------------------------------------------
@@ -97,7 +97,7 @@ public class PauseMenuController : MonoBehaviour
     {
         if (IsPaused)
             ResumeGame();
-        else
+        else if (!settingsPanel.activeSelf)
             PauseGame();
     }
 
@@ -135,13 +135,14 @@ public class PauseMenuController : MonoBehaviour
         // Adjust CursorLockMode to match your game type:
         //   CursorLockMode.Locked  → first-person / action games
         //   CursorLockMode.None    → top-down / RTS / point-and-click
-        SetCursorState(visible: false, locked: true);
+        SetCursorState(visible: true, locked: false);
 
         SetPanelActive(pauseMenuPanel, false);
         SetPanelActive(settingsPanel,  false);
         SetPanelActive(controlsPanel,  false);
 
         Debug.Log("[PauseMenuController] Game resumed.");
+        gameObject.SetActive(false);
     }
 
     // -------------------------------------------------------------------------
@@ -151,12 +152,20 @@ public class PauseMenuController : MonoBehaviour
     /// <summary>
     /// Opens the settings panel and hides the main pause panel so they don't overlap.
     /// </summary>
+    /// 
+
+    public void sett()
+    {
+        settingsPanel.SetActive(true);
+    }
+
     public void OpenSettings()
     {
         SetPanelActive(pauseMenuPanel, false);
         SetPanelActive(controlsPanel,  false);
         SetPanelActive(settingsPanel,  true);
         Debug.Log("[PauseMenuController] Settings panel opened.");
+        settingsPanel.SetActive(true);
     }
 
     /// <summary>
@@ -244,6 +253,6 @@ public class PauseMenuController : MonoBehaviour
         if (IsPaused)
             SetCursorState(visible: true,  locked: false);
         else
-            SetCursorState(visible: false, locked: true);
+            SetCursorState(visible: true, locked: false);
     }
 }

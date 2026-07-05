@@ -1,8 +1,6 @@
 using BarthaSzabolcs.IsometricAiming;
-using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 public class DamageNumber : MonoBehaviour
 {
     public float speed = 4f;

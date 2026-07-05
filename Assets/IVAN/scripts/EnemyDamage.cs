@@ -1,7 +1,5 @@
 using BarthaSzabolcs.IsometricAiming;
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +29,14 @@ public class EnemyDamage : MonoBehaviour
     public GameObject rust;
     public GameObject stun;
     public GameObject radonBlood;
+    public GameObject starfallindicator;
+    public GameObject crystallizeindicator;
+    public GameObject fireindicator;
+    public GameObject hauntedicator;
+    public Animator star;
+    public Animator hit1;
+    public Animator hit2;
+    public Animator hit3;
 
     [Header("UI")]
     public Slider healthbar;
@@ -67,18 +73,24 @@ public class EnemyDamage : MonoBehaviour
 
     public float fissure = 0;
     public bool fissured = false;
-
+    bool canmonte = true;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        float rarmor = Random.Range(DoorScript.currentRoom, 20);
 
-        if (rarmor >= 14)
+
+        if (GetComponent<EnemyBossBrain>() == null)
         {
-            armor = (int)((health /1.5f)+(DoorScript.currentRoom*2));
+            float rarmor = Random.Range(DoorScript.currentRoom, 20);
+
+            if (rarmor >= 14)
+            {
+                armor = (int)((health / 1.5f) + (DoorScript.currentRoom * 2));
+            }
         }
+        
 
 
 
@@ -368,8 +380,90 @@ public class EnemyDamage : MonoBehaviour
                 dmgNumber.GetComponent<DamageNumber>().damage = finalDamage;
             }
 
-            if (BoonSTaticInfo.monteCarlo)
+
+            switch (type)
             {
+                case "normal":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
+                    break;
+                case "swarm":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(0.7f, 1f, 0.2f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(0.7f, 1f, 0.2f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(0.7f, 1f, 0.2f);
+                    break;
+                case "haunted":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(0.2f, 0.7f, 0.8f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(0.2f, 0.7f, 0.8f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(0.2f, 0.7f, 0.8f);
+                    break;
+                case "crystallize":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(0.7f, 0.7f, 0.9f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(0.7f, 0.7f, 0.9f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(0.7f, 0.7f, 0.9f);
+                    break;
+                case "null":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(0.1f, 0.0f, 0.4f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(0.1f, 0.0f, 0.4f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(0.1f, 0.0f, 0.4f);
+                    break;
+                case "starfall":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(1f, 0.1f, 0.7f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(1f, 0.1f, 0.7f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(1f, 0.1f, 0.7f);
+                    break;
+                case "rust":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(0.6f, 0.1f, 0.2f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(0.6f, 0.1f, 0.2f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(0.6f, 0.1f, 0.2f);
+                    break;
+                case "tectonic":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(0.8f, 0.6f, 0.2f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(0.8f, 0.6f, 0.2f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(0.8f, 0.6f, 0.2f);
+                    break;
+                case "radiation":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 0.2f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 0.2f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 0.2f);
+                    break;
+                case "volcanic":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 0.5f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 0.5f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 0.5f);
+                    break;
+                case "star":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(1f, 0.4f, 1f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(1f, 0.4f, 1f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(1f, 0.4f, 1f);
+                    break;
+                case "gem":
+                    hit1.GetComponent<SpriteRenderer>().color = new Color(0.7f, 0.7f, 0.9f);
+                    hit2.GetComponent<SpriteRenderer>().color = new Color(0.7f, 0.7f, 0.9f);
+                    hit3.GetComponent<SpriteRenderer>().color = new Color(0.7f, 0.7f, 0.9f);
+                    break;
+            }
+
+            int rhit = Random.Range(1, 3);
+            switch (rhit)
+            {
+                case 1:
+                    hit1.SetTrigger("hit");
+                    break;
+                case 2:
+                    hit2.SetTrigger("hit");
+                    break;
+                case 3:
+                    hit3.SetTrigger("hit");
+                    break;
+
+            }
+
+
+            if (BoonSTaticInfo.monteCarlo && canmonte)
+            {
+                StartCoroutine(montec());
                 float monte = Random.Range(1, 100);
                 if (monte < BoonSTaticInfo.monteCarloChance)
                 {
@@ -379,34 +473,34 @@ public class EnemyDamage : MonoBehaviour
                         {
                             case 1:
                                 ApplyStatus("swarm", null);
-                                return;
+                                break;
                             case 2:
                                 ApplyStatus("haunted", null);
-                                return;
+                                break;
                             case 3:
                                 ApplyStatus("crystallize", null);
-                                return;
+                                break;
                             case 4:
                                 ApplyStatus("null", null);
-                                return;
+                                break;
                             case 5:
                                 ApplyStatus("starfall", null);
-                                return;
+                                break;
                             case 6:
                                 ApplyStatus("rust", null);
-                                return;
+                                break;
                             case 7:
                                 ApplyStatus("tectonic", null);
-                                return;
+                                break;
                             case 8:
                                 ApplyStatus("petrify", null);
-                                return;
+                                break;
                             case 9:
                                 ApplyStatus("volcanic", null);
-                                return;
+                                break;
                             case 10:
                                 ApplyStatus("petrify", null);
-                                return;
+                                break;
                         }
 
                     }
@@ -443,10 +537,12 @@ public class EnemyDamage : MonoBehaviour
                     ball.GetComponent<Shockwave>().damage = BoonSTaticInfo.starfallDamage;
                     ball.GetComponent<Shockwave>().range = BoonSTaticInfo.craterRange;
                     ball.GetComponent<Shockwave>().type = "star";
+                    star.SetTrigger("star");
                 }
                 else
                 {
                     TakeDamage(BoonSTaticInfo.starfallDamage, "star", BoonSTaticInfo.starfallCritChance, BoonSTaticInfo.makeAWishCD, null);
+                    star.SetTrigger("star");
                 }
 
                 float rcrystal = Random.Range(0, 100);
@@ -656,6 +752,7 @@ public class EnemyDamage : MonoBehaviour
                 {
                     petrified = true;
                     petrify.SetActive(true);
+                    petrify.GetComponent<Animator>().SetTrigger("once");
                     StartCoroutine(PetrifiedDuration());
                 }
                 break;
@@ -689,7 +786,9 @@ public class EnemyDamage : MonoBehaviour
     }
     IEnumerator VolcanicDuration()
     {
+        fireindicator.SetActive(true);
         yield return new WaitForSeconds(2);
+        fireindicator.SetActive(false);
         burning = false;
     }
     IEnumerator PetrifiedDuration()
@@ -701,7 +800,9 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator StarfallDuration()
     {
+        starfallindicator.SetActive(true);
         yield return new WaitForSeconds(BoonSTaticInfo.starfallDuration);
+        starfallindicator.SetActive(false);
         starfalled = false;
     }
 
@@ -721,7 +822,9 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator CrystallizeDuration()
     {
+        crystallizeindicator.SetActive(true);
         yield return new WaitForSeconds(BoonSTaticInfo.crystallizeDuration);
+        crystallizeindicator.SetActive(false);
         crystallized = false;
     }
 
@@ -751,7 +854,9 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator HauntedDuration()
     {
+        hauntedicator.SetActive(true);
         yield return new WaitForSeconds(BoonSTaticInfo.hauntedDuration);
+        hauntedicator.SetActive(false);
         SummonGhost();
         haunted = false;
     }
@@ -778,6 +883,13 @@ public class EnemyDamage : MonoBehaviour
         yield return new WaitForSeconds(BoonSTaticInfo.multiversalStrikeCooldown);
         stun.SetActive(false);
         fissured = false;
+    }
+
+    IEnumerator montec()
+    {
+        canmonte = false;
+        yield return new WaitForSeconds(1.5f);
+        canmonte = true;
     }
 }
 

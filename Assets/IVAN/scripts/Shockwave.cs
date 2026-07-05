@@ -11,6 +11,7 @@ public class Shockwave : MonoBehaviour
     public bool mstrike = false;
     public float cc = 0;
     public float cd = 1;
+    public SpriteRenderer sprite;
 
     public bool status = false;
 
@@ -25,6 +26,47 @@ public class Shockwave : MonoBehaviour
             Destroy(gameObject, lifetime);
         }
 
+        switch (type)
+        {
+            case "normal":
+                sprite.color = new Color(1f, 1f, 1f);
+                break;
+            case "swarm":
+                sprite.color = new Color(0.7f, 1f, 0.2f);
+                break;
+            case "haunted":
+                sprite.color = new Color(0.2f, 0.7f, 0.8f);
+                break;
+            case "crystallize":
+                sprite.color = new Color(0.7f, 0.7f, 0.9f);
+                break;
+            case "null":
+                sprite.color = new Color(0.1f, 0.0f, 0.4f);
+                break;
+            case "starfall":
+                sprite.color = new Color(1f, 0.1f, 0.7f);
+                break;
+            case "rust":
+                sprite.color = new Color(0.6f, 0.1f, 0.2f);
+                break;
+            case "tectonic":
+                sprite.color = new Color(0.8f, 0.6f, 0.2f);
+                break;
+            case "radiation":
+                sprite.color = new Color(1f, 1f, 0.2f);
+                break;
+            case "volcanic":
+                sprite.color = new Color(1f, 1f, 0.5f);
+                break;
+            case "star":
+                sprite.color = new Color(1f, 0.4f, 1f);
+                break;
+            case "gem":
+                sprite.color = new Color(0.7f, 0.7f, 0.9f);
+                break;
+        }
+
+
         transform.localScale = new Vector3(range, range, range);
     }
 
@@ -36,10 +78,7 @@ public class Shockwave : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Prism") && !mstrike)
-        {
-            other.GetComponent<Prism>().Hurt();
-        }
+        
         if (other.gameObject.CompareTag("Enemy"))
         {
             if (!enemieshit.Contains(other.gameObject))

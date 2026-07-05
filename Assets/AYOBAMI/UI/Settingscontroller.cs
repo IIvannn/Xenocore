@@ -62,6 +62,12 @@ public class SettingsController : MonoBehaviour
     // Unity Lifecycle
     // -------------------------------------------------------------------------
 
+    public void CloseSettings()
+    {
+        gameObject.SetActive(false);
+    }
+
+
     private void OnEnable()
     {
         // Re-apply saved settings every time the panel opens

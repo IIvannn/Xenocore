@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 using System.Collections;
 
@@ -107,7 +106,7 @@ public class StarfallSpell : MonoBehaviour
 
     IEnumerator cooldown()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         canhit = true;
     }
 }

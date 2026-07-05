@@ -206,7 +206,7 @@ public class boomerangScript : MonoBehaviour
 
                     if (BoonSTaticInfo.boomerangMark && enemieshitOnLaunch.Contains(other.gameObject))
                     {
-                        Shockwave();
+                        Shockwave(5,3);
                     }
                     source.GetComponent<PlayerShoot>().onHit();
                 } 
@@ -229,13 +229,16 @@ public class boomerangScript : MonoBehaviour
         returning = true;
         if (BoonSTaticInfo.boomerangReturnShockwave)
         {
-            Shockwave();
+            Shockwave(15,5.5f);
         }
     }
 
-    void Shockwave()
+    void Shockwave(float bdamage, float range)
     {
         Debug.Log("shockwave");
         GameObject ball = Instantiate(shockwave, transform.position, transform.rotation);
+        ball.GetComponent<Shockwave>().range = range;
+        ball.GetComponent<Shockwave>().damage = bdamage;
+        ball.GetComponent<Shockwave>().type = type;
     }
 }

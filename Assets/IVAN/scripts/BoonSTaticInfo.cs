@@ -106,7 +106,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float nestedChance = 15f;
     public static bool pob = false;
     public static float nestDuration = 9f;
-    public static float waspSpawnSpeed = 1f;
+    public static float waspSpawnSpeed = 0.9f;
     public static float waspDamage = 10f;
     public static float waspSpeed = 10f;
     public static float proliferationBonus = 1.5f;
@@ -173,7 +173,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float graspBonus = 3.5f;
     public static float gravityBonus = 0.5f;
     public static bool massAccumulation = false;
-    public static float massAccumulationBonus = 3f;
+    public static float massAccumulationBonus = 1.5f;
     public static bool multiversalStrike = false;
     public static float multiversalStrikeDamage = 10;
     public static float multiversalStrikeCooldown = 2f;

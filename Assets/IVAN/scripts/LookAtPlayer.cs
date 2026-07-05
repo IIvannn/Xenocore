@@ -1,6 +1,5 @@
 using BarthaSzabolcs.IsometricAiming;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class LookAtPlayer : MonoBehaviour
 {

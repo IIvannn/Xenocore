@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

@@ -1,7 +1,6 @@
 
 using BarthaSzabolcs.IsometricAiming;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerShoot : MonoBehaviour
@@ -29,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
     public float boomerangCritChance = 30f;
     public float boomerangCritDamage = 1.5f;
     public float energyPerHit;
-    public static string attackType = "normal";
+    public static string attackType = "rust";
 
     [Header("Boomerang Special")]
     public float boomerangSpecialDamage = 5;
@@ -38,7 +37,7 @@ public class PlayerShoot : MonoBehaviour
     public float boomerangSpecialCooldown = 2f;
     public float boomerangSpecialCritChance = 10;
     public float boomerangSpecialCritDamage = 1.5f;
-    public static string boomerangSpecialType = "normal";
+    public static string boomerangSpecialType = "crystallize";
 
     public bool canspecial = true;
     public bool specialing;
@@ -46,7 +45,7 @@ public class PlayerShoot : MonoBehaviour
     private DialogueUI dialogueUI;
 
     [Header("Spell")]
-    public static string spellType = "normal";
+    public static string spellType = "crystallize";
     public bool spelling = false;
 
     [Header("Other values")]

@@ -1,8 +1,7 @@
-using JetBrains.Annotations;
+
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -96,16 +95,10 @@ public class UpgradeManager : MonoBehaviour
 
     public void Upgrader(string type, bool opened)
     {
-        if (!opened)
-        {
-            ChooseType(type);
-            ChoseUpgrades();
-        }
-        else
-        {
-            gameObject.SetActive(true);
-        }
         
+        ChooseType(type);
+        ChoseUpgrades();
+
     }
 
     public void ChooseType(string type)
@@ -590,6 +583,8 @@ public class UpgradeManager : MonoBehaviour
 
         AvailableUpgrades.RemoveAll(item => SelectedUpgrades.Contains(item));
         //Debug.Log("Available Upgrades at the end of the function:  "+AvailableUpgrades.Count);
+
+
 
     }
 
