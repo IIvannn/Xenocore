@@ -28,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
     public float boomerangCritChance = 30f;
     public float boomerangCritDamage = 1.5f;
     public float energyPerHit;
-    public static string attackType = "rust";
+    public static string attackType = "haunted";
 
     [Header("Boomerang Special")]
     public float boomerangSpecialDamage = 5;
@@ -37,7 +37,7 @@ public class PlayerShoot : MonoBehaviour
     public float boomerangSpecialCooldown = 2f;
     public float boomerangSpecialCritChance = 10;
     public float boomerangSpecialCritDamage = 1.5f;
-    public static string boomerangSpecialType = "crystallize";
+    public static string boomerangSpecialType = "radiation";
 
     public bool canspecial = true;
     public bool specialing;
@@ -45,7 +45,7 @@ public class PlayerShoot : MonoBehaviour
     private DialogueUI dialogueUI;
 
     [Header("Spell")]
-    public static string spellType = "crystallize";
+    public static string spellType = "null";
     public bool spelling = false;
 
     [Header("Other values")]

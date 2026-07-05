@@ -179,7 +179,7 @@ public class PlayerDamage : MonoBehaviour
     {
         dead = true;
         BoonSTaticInfo.RESETUPGRADES();
-        SceneManager.LoadScene("Spawnroom");
+        SceneManager.LoadScene("DeathMenu");
         dead = false;
         //Destroy(gameObject);
     }

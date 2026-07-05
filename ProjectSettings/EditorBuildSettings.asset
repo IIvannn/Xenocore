@@ -29,6 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/IVAN/scenes/IvanroomShop.unity
     guid: 52faf24fdd236cb4797ff3fbf57cf436
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/DeathMenu.unity
+    guid: 14bbbe2eab137c545950733330964543
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/MainMenu.unity
+    guid: 0356acd10fa240540b2a3296118c63c9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
