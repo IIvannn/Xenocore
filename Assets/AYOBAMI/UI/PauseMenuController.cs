@@ -154,10 +154,7 @@ public class PauseMenuController : MonoBehaviour
     /// </summary>
     /// 
 
-    public void sett()
-    {
-        settingsPanel.SetActive(true);
-    }
+    
 
     public void OpenSettings()
     {

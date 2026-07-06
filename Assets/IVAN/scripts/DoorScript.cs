@@ -129,72 +129,72 @@ public class DoorScript : MonoBehaviour
                 {
                     case 0:
                         //Debug.Log("room 1");
-                        SceneManager.LoadScene("Ivanroom");
+                        SceneManager.LoadScene("Room 1");
                         currentRoom++;
                         break;
 
                     case 1:
                         //Debug.Log("room 2");
-                        SceneManager.LoadScene("Ivanroom 1");
+                        SceneManager.LoadScene("Room 2");
                         currentRoom++;
                         break;
 
                     case 2:
                         //Debug.Log("room 3");
-                        SceneManager.LoadScene("Ivanroom 2");
+                        SceneManager.LoadScene("Room 3");
                         currentRoom++;
                         break;
 
                     case 3:
                         //Debug.Log("room 3");
-                        SceneManager.LoadScene("Ivanroom 3");
+                        SceneManager.LoadScene("Room 4");
                         currentRoom++;
                         break;
                     case 4:
                         //Debug.Log("room 3");
-                        SceneManager.LoadScene("Ivanroom 3");
+                        SceneManager.LoadScene("Room 5");
                         currentRoom++;
                         break;
                     case 5:
                         //Debug.Log("room 3");
-                        SceneManager.LoadScene("Ivanroom 3");
+                        SceneManager.LoadScene("Room 6");
                         currentRoom++;
                         break;
                     case 6:
                         //Debug.Log("room 3");
-                        SceneManager.LoadScene("Ivanroom 3");
+                        SceneManager.LoadScene("Room 7");
                         currentRoom++;
                         break;
                     case 7:
                         //Debug.Log("room 3");
-                        SceneManager.LoadScene("Ivanroom 3");
+                        SceneManager.LoadScene("Room 8");
                         currentRoom++;
                         break;
                     case 8:
                         //Debug.Log("room 3");
-                        SceneManager.LoadScene("Ivanroom 3");
+                        SceneManager.LoadScene("Room 9");
                         currentRoom++;
                         break;
                     case 9:
                         //Debug.Log("room 3");
-                        SceneManager.LoadScene("Ivanroom 3");
+                        SceneManager.LoadScene("Room 10");
                         currentRoom++;
                         break;
                     case 10:
                         //Debug.Log("room 3");
-                        SceneManager.LoadScene("Ivanroom 3");
+                        SceneManager.LoadScene("Room 11");
                         currentRoom++;
                         break;
                     case 11:
                         //Debug.Log("room 3");
-                        SceneManager.LoadScene("Ivanroom 3");
+                        SceneManager.LoadScene("Room 12");
                         currentRoom++;
                         break;
-                    case 12:
-                        //Debug.Log("room 3");
-                        SceneManager.LoadScene("Ivanroom 3");
-                        currentRoom++;
-                        break;
+                    //case 12:
+                    //    //Debug.Log("room 3");
+                    //    SceneManager.LoadScene("Room ");
+                    //    currentRoom++;
+                    //    break;
 
                 }
             }

@@ -24,8 +24,4 @@ public class IngameUi : MonoBehaviour
         }
     }
 
-    public void sett()
-    {
-        set.SetActive(true);
-    }
 }
