@@ -35,6 +35,42 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FINAL ASSETS/Rooms/MainMenu.unity
     guid: 0356acd10fa240540b2a3296118c63c9
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 1.unity
+    guid: 5e74dff6c1bd34c489cda9a4f7a9bad3
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 2.unity
+    guid: 980c47a7e660909429544d6a50cabb7b
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 3.unity
+    guid: 286107bdc267f1745b15be3bdc35395a
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 4.unity
+    guid: 5e51436e4136ccd40bfa6de36ccc2c41
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 5.unity
+    guid: 643622d3588bbb74f84c7f1dd143e8b9
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 6.unity
+    guid: a9f7c84fd93176340b0f15157ff903cb
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 7.unity
+    guid: 72a89936fbd3ead48a0abb283fe856e3
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 8.unity
+    guid: 3eaaf060af139f74d92602e761564bba
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 9.unity
+    guid: 50a389dfaaf1cf346bb1edf53650662a
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 10.unity
+    guid: c24b1c2a2776c484ab1f6f21399ceeae
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 11.unity
+    guid: 561e63acc7f9a8241a0dda2ec625ed7f
+  - enabled: 1
+    path: Assets/FINAL ASSETS/Rooms/Room 12.unity
+    guid: b4b1d5b765e81f34a9e85090ee02c1e6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
