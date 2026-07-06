@@ -99,7 +99,7 @@ public class EnemyDamage : MonoBehaviour
         startingArmor = armor;
 
         BoonSTaticInfo.enemiesAlive.Add(gameObject);
-        Debug.Log("Enemies alive:  " + BoonSTaticInfo.enemiesAlive.Count);
+        //Debug.Log("Enemies alive:  " + BoonSTaticInfo.enemiesAlive.Count);
         //Debug.Log(BoonSTaticInfo.enemiesAlive.Count);
     }
 
@@ -269,7 +269,7 @@ public class EnemyDamage : MonoBehaviour
 
                 if (source !=null && source.name == "Player" && BoonSTaticInfo.soldering)
                 {
-                    source.GetComponent<PlayerDamage>().currentEnergy += BoonSTaticInfo.solderingBonus;
+                    PlayerDamage.currentEnergy += BoonSTaticInfo.solderingBonus;
                 }
 
                 if (BoonSTaticInfo.tetanus)
@@ -619,7 +619,7 @@ public class EnemyDamage : MonoBehaviour
         EnemyScript body = GetComponent<EnemyScript>();
         body.dead = dead;
         BoonSTaticInfo.enemiesAlive.Remove(gameObject);
-        Debug.Log("Enemies alive:  " + BoonSTaticInfo.enemiesAlive.Count);
+        //Debug.Log("Enemies alive:  " + BoonSTaticInfo.enemiesAlive.Count);
         Destroy(gameObject, deathDelay);
     }
 

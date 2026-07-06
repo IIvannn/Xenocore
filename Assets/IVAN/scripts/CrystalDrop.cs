@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CrystalDrop : MonoBehaviour
 {
-    float travelSpeed = 30f;
+    float travelSpeed = 18f;
     public GameObject resonnance;
     List<GameObject> enemieshit = new List<GameObject>();
     bool canshock = true;
@@ -33,7 +33,7 @@ public class CrystalDrop : MonoBehaviour
 
 
             BoonSTaticInfo.crystals += (int)(BoonSTaticInfo.crystallizeCrystalAmmount* BoonSTaticInfo.moneyMultiplier);
-            other.GetComponent<PlayerDamage>().currentEnergy += BoonSTaticInfo.crystallizeEnergyAmmount;
+            PlayerDamage.currentEnergy += BoonSTaticInfo.crystallizeEnergyAmmount;
             Destroy(gameObject);
         }
         if (other.gameObject.CompareTag("Enemy"))

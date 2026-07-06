@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerDamage pd = GetComponent<PlayerDamage>();
+        //PlayerDamage pd = GetComponent<PlayerDamage>();
         
         if (BoonSTaticInfo.noMansLand)
         {
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (BoonSTaticInfo.energized)
         {
-            energizedBoost = (pd.currentEnergy / pd.energy)*BoonSTaticInfo.energizedBonus;
+            energizedBoost = (PlayerDamage.currentEnergy / PlayerDamage.energy)*BoonSTaticInfo.energizedBonus;
         }
 
         Vector2 input = Vector2.zero;

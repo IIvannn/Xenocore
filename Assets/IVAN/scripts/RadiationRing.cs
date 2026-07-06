@@ -76,7 +76,7 @@ public class RadiationRing : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && BoonSTaticInfo.nuclear)
         {
-            other.GetComponent<PlayerDamage>().currentEnergy += BoonSTaticInfo.nuclearRegeneration * Time.deltaTime;
+            PlayerDamage.currentEnergy += BoonSTaticInfo.nuclearRegeneration * Time.deltaTime;
         }
     }
 

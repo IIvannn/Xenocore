@@ -22,7 +22,7 @@ public class PlayerDamage : MonoBehaviour
 
     [Header("Health")]
     public bool invincible = false;
-    public static float hp = 10000f;
+    public static float hp = 100f;
     public static float currentHp = 100f;
     public float maxHp = 100;
     public static bool dead = false;
@@ -30,8 +30,8 @@ public class PlayerDamage : MonoBehaviour
     public float dr = 1;
     public static bool tr = false;
     [Header("Energy")]
-    public float energy = 100;
-    public float currentEnergy = 0;
+    public static float energy = 100;
+    public static float currentEnergy = 0;
 
 
     float crystalerp;
@@ -46,12 +46,13 @@ public class PlayerDamage : MonoBehaviour
     {
         m_Scene = SceneManager.GetActiveScene();
         sceneName = m_Scene.name;
+        Debug.Log(sceneName);
         if (sceneName == "Spawnroom")
         {
             hp = maxHp;
         }
         
-        currentHp = hp;
+        //currentHp = hp;
         
     }
 

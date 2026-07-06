@@ -65,7 +65,7 @@ public class EnemeyHealBrain : MonoBehaviour
     IEnumerator startBrain()
     {
         yield return new WaitForSeconds(0.3f);
-        Debug.Log("brainstart");
+        //Debug.Log("brainstart");
         Reset();
         StartCoroutine(changeTarget());
     }

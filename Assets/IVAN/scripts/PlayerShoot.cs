@@ -80,10 +80,10 @@ public class PlayerShoot : MonoBehaviour
         }
         if (Keyboard.current.qKey.wasPressedThisFrame && !spelling)
         {
-            PlayerDamage body = gameObject.GetComponent<PlayerDamage>();
-            if (body.currentEnergy >= BoonSTaticInfo.spellCost && spellType != "normal")
+            //PlayerDamage body = gameObject.GetComponent<PlayerDamage>();
+            if (PlayerDamage.currentEnergy >= BoonSTaticInfo.spellCost && spellType != "normal")
             {
-                body.currentEnergy-= BoonSTaticInfo.spellCost;
+                PlayerDamage.currentEnergy-= BoonSTaticInfo.spellCost;
                 //Debug.Log("spell");
 
                 //StartCoroutine()
@@ -243,8 +243,8 @@ public class PlayerShoot : MonoBehaviour
     public void onHit()
     {
         //Debug.Log("hit");
-        PlayerDamage body = gameObject.GetComponent<PlayerDamage>();
-        body.currentEnergy += energyPerHit;
+        //PlayerDamage body = gameObject.GetComponent<PlayerDamage>();
+        PlayerDamage.currentEnergy += energyPerHit;
     }
     public void onCrit()
     {
