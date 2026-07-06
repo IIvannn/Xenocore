@@ -217,10 +217,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -173279727, guid: 64fbeff2d2230e940b23232591cde1ad, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.30980393}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -991,8 +991,6 @@ MonoBehaviour:
   invincible: 0
   maxHp: 4000
   dr: 1
-  energy: 100
-  currentEnergy: 0
 --- !u!114 &6260905542698369766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,10 +1052,10 @@ MonoBehaviour:
   phaseDash: {fileID: 677820290311348748}
   volcanicFissure: {fileID: 7376756807723299918, guid: e522379996f30b84fa87a7af14d7f29f, type: 3}
   nml: {fileID: 1581055510347889965}
-  speed: 7.5
-  dashSpeed: 17
+  speed: 10
+  dashSpeed: 21
   dashTime: 0.2
-  dashCooldwon: 3
+  dashCooldwon: 2.5
   dashCharges: 2
   dashOnCooldwon: 0
   right: 1
