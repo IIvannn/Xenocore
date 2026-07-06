@@ -33,6 +33,10 @@ public class PlayerDamage : MonoBehaviour
     public static float energy = 100;
     public static float currentEnergy = 0;
 
+    public static int deaths = 0;
+    public static int shopkeeperEncounters = 0;
+    public static int lumenaEncounters = 0;
+
 
     float crystalerp;
     float hplerp;
@@ -178,6 +182,7 @@ public class PlayerDamage : MonoBehaviour
 
     public void Death()
     {
+        deaths++;
         dead = true;
         BoonSTaticInfo.RESETUPGRADES();
         SceneManager.LoadScene("DeathMenu");
