@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49675d3da19b054686ae9ecd58461ad, type: 3}
+  m_Name: ThirdInteractionShop
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Rift
+    text: "Back again, sync\u2011girl."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: dfd49278aaeff4b4a9423e9a4dedf194, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 40eddda1543e24346865a91cacd547f2, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Rift
+    text: "Forest hasn\u2019t scared you off yet. Good."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: dfd49278aaeff4b4a9423e9a4dedf194, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: "I\u2019ve been meaning to ask\u2026 your people. What are you exactly?"
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 19b79383905171c41b80cd4bec17b504, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Rift
+    text: "Astraelite. That\u2019s the name. We\u2019re\u2026 adaptable."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: dfd49278aaeff4b4a9423e9a4dedf194, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Rift
+    text: "This keeps me alive. The planet\u2019s energy doesn\u2019t treat us kindly
+      unless we shape ourselves around it."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: c048e118567af15419bcdcc777d7bf53, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Rift
+    text: Huh? What is it?
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 1
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 1a1f0c89fd2ad8f488fa25619df9f084, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  options:
+  - optionText: Astraelites?
+    nextDialogue: {fileID: 11400000, guid: 74e8e9cb1b4cc7747928e6ab969f00d7, type: 2}
+  - optionText: Why you sell?
+    nextDialogue: {fileID: 11400000, guid: b1ee1b162583bcf419bcee1e0d30e7aa, type: 2}
+  isFinalDialogue: 0

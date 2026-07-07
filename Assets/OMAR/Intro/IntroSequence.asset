@@ -15,10 +15,10 @@ MonoBehaviour:
   lines:
   - text: "A signal\u2026 faint, distorted\u2026 carrying the signature of a micro
       black hole."
-    font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    textDisplayTime: 3
+    font: {fileID: 11400000, guid: 86c11f45d18aa564888dd559d9889540, type: 2}
+    textDisplayTime: 6
     textColor: {r: 1, g: 1, b: 1, a: 1}
-    image: {fileID: 21300000, guid: b02f40b33a0ea6f489874c29eb0fc30f, type: 3}
+    image: {fileID: 21300000, guid: 4d21bd54c9eaee341b45e90990566d02, type: 3}
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
@@ -33,8 +33,8 @@ MonoBehaviour:
     panSpeed: 0.5
     sound: {fileID: 0}
   - text: A gravitational pulse no planet should emit.
-    font: {fileID: 0}
-    textDisplayTime: 3
+    font: {fileID: 11400000, guid: 86c11f45d18aa564888dd559d9889540, type: 2}
+    textDisplayTime: 6
     textColor: {r: 1, g: 1, b: 1, a: 1}
     image: {fileID: 0}
     imageFadeInTime: 1
@@ -52,7 +52,7 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: "Its pattern matches an anomaly I\u2019ve encountered once before\u2026"
     font: {fileID: 0}
-    textDisplayTime: 3
+    textDisplayTime: 6
     textColor: {r: 1, g: 1, b: 1, a: 1}
     image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
     imageFadeInTime: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: "\u2026but I still don\u2019t understand why."
     font: {fileID: 0}
-    textDisplayTime: 3
+    textDisplayTime: 6
     textColor: {r: 1, g: 1, b: 1, a: 1}
     image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
     imageFadeInTime: 1
@@ -88,7 +88,7 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: The source comes from deep beneath an uncharted world.
     font: {fileID: 0}
-    textDisplayTime: 3
+    textDisplayTime: 6
     textColor: {r: 1, g: 1, b: 1, a: 1}
     image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
     imageFadeInTime: 1
@@ -106,7 +106,7 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: Astraeon.
     font: {fileID: 0}
-    textDisplayTime: 3
+    textDisplayTime: 6
     textColor: {r: 1, g: 1, b: 1, a: 1}
     image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
     imageFadeInTime: 1
@@ -124,9 +124,9 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: No records. No maps. No history.
     font: {fileID: 0}
-    textDisplayTime: 3
+    textDisplayTime: 6
     textColor: {r: 1, g: 1, b: 1, a: 1}
-    image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
+    image: {fileID: 21300000, guid: e4489e7791e785d478d0c6b5e6d963ee, type: 3}
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
@@ -142,8 +142,8 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: "Just this call\u2026 steady, persistent\u2026 as if something inside is
       reaching out."
-    font: {fileID: 0}
-    textDisplayTime: 3
+    font: {fileID: 11400000, guid: 86c11f45d18aa564888dd559d9889540, type: 2}
+    textDisplayTime: 6
     textColor: {r: 1, g: 1, b: 1, a: 1}
     image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
     imageFadeInTime: 1
@@ -161,7 +161,7 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: "I don\u2019t know what waits down there."
     font: {fileID: 0}
-    textDisplayTime: 3
+    textDisplayTime: 6
     textColor: {r: 1, g: 1, b: 1, a: 1}
     image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
     imageFadeInTime: 1
@@ -179,7 +179,7 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: But I have to find out.
     font: {fileID: 0}
-    textDisplayTime: 3
+    textDisplayTime: 6
     textColor: {r: 1, g: 1, b: 1, a: 1}
     image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
     imageFadeInTime: 1
@@ -196,17 +196,17 @@ MonoBehaviour:
     panSpeed: 0.5
     sound: {fileID: 0}
   - text: "[Ship] - \u201CGenetic Sync Device online.\u201D"
-    font: {fileID: 0}
-    textDisplayTime: 3
+    font: {fileID: 11400000, guid: 7ecb229e59ee0604f89474e9c24a3c12, type: 2}
+    textDisplayTime: 6
     textColor: {r: 1, g: 0.5719802, b: 0, a: 1}
-    image: {fileID: 21300000, guid: a791ef0ea78e5194d97f94cd0a29ff5c, type: 3}
+    image: {fileID: 21300000, guid: f1458408b3de0054db0ad343ac2d2596, type: 3}
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
-    shakeEffect: 0
+    shakeEffect: 1
     shakeIntensity: 10
     shakeSpeed: 20
-    zoomEffect: 0
+    zoomEffect: 1
     zoomAmount: 1.05
     zoomSpeed: 0.5
     panEffect: 0
@@ -214,17 +214,17 @@ MonoBehaviour:
     panSpeed: 0.5
     sound: {fileID: 0}
   - text: "[Ship] - \u201CBeginning descent.\u201D "
-    font: {fileID: 0}
-    textDisplayTime: 3
+    font: {fileID: 11400000, guid: 7ecb229e59ee0604f89474e9c24a3c12, type: 2}
+    textDisplayTime: 6
     textColor: {r: 0.990566, g: 0, b: 0.07513775, a: 1}
     image: {fileID: 21300000, guid: e8c1a8c147b09754eb46d215f60e5434, type: 3}
     imageFadeInTime: 1
     imageFadeOutTime: 1
     imageDisplayTime: 3
-    shakeEffect: 0
+    shakeEffect: 1
     shakeIntensity: 10
     shakeSpeed: 20
-    zoomEffect: 0
+    zoomEffect: 1
     zoomAmount: 1.05
     zoomSpeed: 0.5
     panEffect: 0

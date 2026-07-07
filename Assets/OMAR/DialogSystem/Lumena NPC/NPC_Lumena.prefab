@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5766643028889685338}
   - component: {fileID: 1243796480372863168}
+  - component: {fileID: 3830272378336500325}
   m_Layer: 0
   m_Name: InteractButton
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1496541887883989844}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.68099976, y: 2.074, z: -0.031000137}
-  m_LocalScale: {x: 0.58744544, y: 0.58744544, z: 0.58744544}
+  m_LocalPosition: {x: 0.246, y: 2.074, z: -0.031000137}
+  m_LocalScale: {x: 3.504872, y: 3.504872, z: 3.504872}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2348896637806592427}
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 3ae8ca4cff808ce4eafdac20cab32b14, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b93058f591aae24c87f1335fecac1a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,6 +92,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &3830272378336500325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496541887883989844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdeba300e1010dc42ae290ec315d28db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LookAtPlayer
 --- !u!1 &2939081582294935571
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4725233968406187195}
   - component: {fileID: 2476983926905791021}
-  - component: {fileID: 6872981947738010601}
+  - component: {fileID: 933241460985737189}
   m_Layer: 0
   m_Name: talk
   m_TagString: Untagged
@@ -183,7 +196,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &6872981947738010601
+--- !u!114 &933241460985737189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,9 +205,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2939081582294935571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c27ad0443fb3fcd42a66b36255839607, type: 3}
+  m_Script: {fileID: 11500000, guid: cdeba300e1010dc42ae290ec315d28db, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Billboard
+  m_EditorClassIdentifier: Assembly-CSharp::LookAtPlayer
 --- !u!1 &6981336040082363592
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +335,8 @@ MonoBehaviour:
   npcID: NPC_001
   dialogues:
   - {fileID: 11400000, guid: 15a3d8fe675cec24fb6aac78165db82b, type: 2}
-  - {fileID: 11400000, guid: e6b0c40dae2159c4d9fbf98a5f010083, type: 2}
+  - {fileID: 11400000, guid: 363fc249c1728524f9e55a0e69e3055a, type: 2}
+  - {fileID: 11400000, guid: 4409b1bb79ec71c45920f9b4a504beed, type: 2}
   dialogueUI: {fileID: 0}
   interactDistance: 3
   autoCloseDistance: 5

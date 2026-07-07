@@ -24,23 +24,32 @@ public class NPCDialogue : MonoBehaviour
     private PlayerMovement playerMovement;
     private bool playerInRange;
     private bool dialogueJustOpened = false;
+
     public static NPCDialogue activeNPC = null;
+
+    // bloq interaction for loading scene
+    private bool hasInteracted = false;
+    public bool HasInteracted => hasInteracted; //interaction icon disabled
 
     void Start()
     {
-#if UNITY_EDITOR
-        PlayerPrefs.DeleteKey(npcID + "_State");
-#endif
+//#if UNITY_EDITOR
+  //      PlayerPrefs.DeleteKey(npcID + "_State");
+//#endif
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerMovement = player.GetComponent<PlayerMovement>();
 
+        //load state of npc
         dialogueState = PlayerPrefs.GetInt(npcID + "_State", 0);
     }
 
     void Update()
     {
         if (player == null) return;
+
+        //if already talked disable it
+        if (hasInteracted) return;
 
         //Bloq dialogue of other npc to appear
         if (NPCDialogue.activeNPC != null && NPCDialogue.activeNPC != this)
@@ -58,7 +67,7 @@ public class NPCDialogue : MonoBehaviour
 
         if (!playerInRange) return;
 
-        if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame)
+        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
             //if there is open a dialogue dont open the other npcs
             if (dialogueUI.IsOpen)
@@ -75,12 +84,15 @@ public class NPCDialogue : MonoBehaviour
             if (blockPlayerMovement)
                 DisableMovement();
 
+            //already interacted
+            hasInteracted = true;
+
+            //state and save it
             dialogueState++;
             PlayerPrefs.SetInt(npcID + "_State", dialogueState);
             PlayerPrefs.Save();
         }
     }
-
 
     public bool ConsumeJustOpenedFlag()
     {

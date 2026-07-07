@@ -1,15 +1,18 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NPCInteractionIcon : MonoBehaviour
 {
-    public GameObject iconFar;//icon far
-    public GameObject iconNear;//icon if the player is near
+    public GameObject iconFar;   //icon far
+    public GameObject iconNear;  //icon if the player is near
 
-    public float detectionRange = 4f;//distance detection for the player
-    public float talkRange = 2f;//distance to talk
+    public float detectionRange = 4f; //distance detection for the player
+    public float talkRange = 2f;      //distance to talk
 
     Transform player;
     DialogueUI dialogueUI;
+
+    //npc reference
+    NPCDialogue npc;
 
     void Start()
     {
@@ -18,6 +21,9 @@ public class NPCInteractionIcon : MonoBehaviour
         //fix dialogue ui finding
         dialogueUI = FindAnyObjectByType<DialogueUI>(FindObjectsInactive.Include);
 
+        //npc asociated
+        npc = GetComponent<NPCDialogue>();
+
         iconFar.SetActive(true);
         iconNear.SetActive(false);
     }
@@ -25,6 +31,14 @@ public class NPCInteractionIcon : MonoBehaviour
     void Update()
     {
         if (player == null) return;
+
+        //if already interacted remove icons
+        if (npc != null && npc.HasInteracted)
+        {
+            iconFar.SetActive(false);
+            iconNear.SetActive(false);
+            return;
+        }
 
         float dist = Vector3.Distance(player.position, transform.position);
 
@@ -44,7 +58,6 @@ public class NPCInteractionIcon : MonoBehaviour
             return;
         }
 
-        
         if (dist <= detectionRange && dist > talkRange)
         {
             iconFar.SetActive(true);
@@ -52,7 +65,6 @@ public class NPCInteractionIcon : MonoBehaviour
             return;
         }
 
-       
         if (dist <= talkRange)
         {
             iconFar.SetActive(false);

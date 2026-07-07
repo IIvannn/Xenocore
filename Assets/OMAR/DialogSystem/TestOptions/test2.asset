@@ -16,26 +16,35 @@ MonoBehaviour:
   - speakerName: NPC1
     text: So you are here again uh?
     voiceClip: {fileID: 0}
-    speakerSprite: {fileID: 21300000, guid: 1af2b6fbfe31b6448a7894b8f4ddc424, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
     previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 1af2b6fbfe31b6448a7894b8f4ddc424, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 0}
   - speakerName: NPC1
     text: This is the second time we talk! why are you here again?
     voiceClip: {fileID: 0}
-    speakerSprite: {fileID: 21300000, guid: 1ebcd2a027580384ba926f6e8f05c22d, type: 3}
     typingSpeed: 0.06
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
     previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 1ebcd2a027580384ba926f6e8f05c22d, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 0}
+    customFont: {fileID: 0}
   - speakerName: NPC1
     text: but this time i'm not gonna give you any options tehee
     voiceClip: {fileID: 0}
-    speakerSprite: {fileID: 21300000, guid: 1ebcd2a027580384ba926f6e8f05c22d, type: 3}
     typingSpeed: 0.06
     showOptionsHere: 1
     jumpBackToPreviousDialogue: 0
     previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 1ebcd2a027580384ba926f6e8f05c22d, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 0}
+    customFont: {fileID: 0}
   options: []
   isFinalDialogue: 0

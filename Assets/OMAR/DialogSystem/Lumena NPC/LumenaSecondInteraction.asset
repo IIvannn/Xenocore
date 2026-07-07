@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49675d3da19b054686ae9ecd58461ad, type: 3}
+  m_Name: LumenaSecondInteraction
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Lumena
+    text: "You\u2019re here again."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 05ab1f653215476409a566237c2bb668, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: "Astraeon\u2019s resonance pulled you back. This world does that\u2026
+      when it chooses."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: b88736a349bfb8e44997cca803c3da53, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 582011cdf7050c44f8084097286d9f66, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: I throught i... So the planet resets me. All the energy is gone..
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: 7dd5bd74fab0f024d8b7d28ff2d45b8c, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: "Not a reset. More like\u2026 a return. The energy here doesn\u2019t let
+      go easily."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.01
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 05ab1f653215476409a566237c2bb668, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 582011cdf7050c44f8084097286d9f66, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: If you fall, it brings you back to where your path began. Once.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 05ab1f653215476409a566237c2bb668, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: Good to know sooner!
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: 40eddda1543e24346865a91cacd547f2, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: Keep moving. The forest remembers you now.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 05ab1f653215476409a566237c2bb668, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 40eddda1543e24346865a91cacd547f2, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: Safe travels, Kaelaris.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: b88736a349bfb8e44997cca803c3da53, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  options: []
+  isFinalDialogue: 0

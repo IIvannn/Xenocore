@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49675d3da19b054686ae9ecd58461ad, type: 3}
+  m_Name: SecondInteractionShop
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Rift
+    text: "\u2026You again."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 1a1f0c89fd2ad8f488fa25619df9f084, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 40eddda1543e24346865a91cacd547f2, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Rift
+    text: Let me guess. Forest chewed you up and spat you back out.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: dfd49278aaeff4b4a9423e9a4dedf194, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: ae6777ac6a52f3340b37a7632bbd4eb9, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: Tha's not cool cutie!... but yeah something like that the energy from this
+      planet change the time and space.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: dfd49278aaeff4b4a9423e9a4dedf194, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: ae6777ac6a52f3340b37a7632bbd4eb9, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Rift
+    text: "Astraeon\u2019s energy likes to recycle rookies. Don\u2019t get too proud
+      about it."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 19b79383905171c41b80cd4bec17b504, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: ae6777ac6a52f3340b37a7632bbd4eb9, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Rift
+    text: You fall, the planet drags you back to where you started. Happens to outsiders
+      all the time.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: c048e118567af15419bcdcc777d7bf53, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 582011cdf7050c44f8084097286d9f66, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: At least it gives me another chance.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 19b79383905171c41b80cd4bec17b504, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Rift
+    text: Yeah, yeah. Just try not to make a habit of it.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 1a1f0c89fd2ad8f488fa25619df9f084, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Rift
+    text: "Every time you pop back in, the wildlife gets jumpy. And I don\u2019t
+      feel like dealing with extra trouble because you decided to take a nap in the
+      dirt."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 19b79383905171c41b80cd4bec17b504, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: "I\u2019ll keep that in mind."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: dfd49278aaeff4b4a9423e9a4dedf194, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: 7dd5bd74fab0f024d8b7d28ff2d45b8c, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Rift
+    text: Good. Now move and bring me some money rookie!
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: dfd49278aaeff4b4a9423e9a4dedf194, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 40eddda1543e24346865a91cacd547f2, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  options: []
+  isFinalDialogue: 0

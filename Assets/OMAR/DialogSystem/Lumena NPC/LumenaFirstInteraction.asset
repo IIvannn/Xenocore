@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49675d3da19b054686ae9ecd58461ad, type: 3}
+  m_Name: LumenaFirstInteraction
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Lumena
+    text: "The resonance shifts\u2026 and a new pattern enters Astraeon. I wondered
+      when this moment would come."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: "You aren\u2019t from this planet are you?"
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 05ab1f653215476409a566237c2bb668, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: "No\u2026 I\u2019m not. But it seems your planet noticed me before I even
+      landed."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: Welcome, traveler. I am Lumena an Elyndari, or what remains of one.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.01
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: b88736a349bfb8e44997cca803c3da53, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 582011cdf7050c44f8084097286d9f66, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: If you seek understanding, I will share what I can.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 1
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 05ab1f653215476409a566237c2bb668, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  options:
+  - optionText: What is this place?
+    nextDialogue: {fileID: 11400000, guid: 30caf3a0ad4cec74b8f520a66e9e7e92, type: 2}
+  - optionText: What are you?
+    nextDialogue: {fileID: 11400000, guid: 224e2bba709753f42b978bcdcf2e0cb0, type: 2}
+  - optionText: What happened to the creatures here?
+    nextDialogue: {fileID: 11400000, guid: 91bf4269292d83e4b8e5592ceb11b766, type: 2}
+  - optionText: About the signal... (End)
+    nextDialogue: {fileID: 11400000, guid: 07e44587d7dc4ef4a9815b4555d38ca7, type: 2}
+  isFinalDialogue: 0

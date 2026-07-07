@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49675d3da19b054686ae9ecd58461ad, type: 3}
+  m_Name: option2 Lumena First
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Lumena
+    text: I am Elyndari. A remnant of a people who no longer walk this world as they
+      once did.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: b88736a349bfb8e44997cca803c3da53, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: "We were bound to Astraeon\u2019s core by purpose. The planet\u2019s resonance
+      shaped us, and we shaped it in return."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: b88736a349bfb8e44997cca803c3da53, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: "Most of my kind have faded into memory\u2026 but echoes remain. I am one
+      of them."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: b88736a349bfb8e44997cca803c3da53, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: "So you\u2019re\u2026 not alive in the way I am. Not exactly."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: "If your people shaped the planet\u2019s energy, then whatever happened
+      here must have hit you first. Hard."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: 582011cdf7050c44f8084097286d9f66, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: "Your body isn\u2019t physical. It\u2019s more like a projection, an imprint
+      tied to the ruins. A resonance of the planet holding itself together."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: 582011cdf7050c44f8084097286d9f66, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: back to options
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: b88736a349bfb8e44997cca803c3da53, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: "We were guardians of Astraeon\u2019s pulse. When that pulse faltered,
+      our bodies could no longer endure. Some of us dissolved into the currents we
+      once guided."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 05ab1f653215476409a566237c2bb668, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: I exist because the planet still remembers us. And because you arrived.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 5
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: I exist because the planet still remembers us. And because you arrived.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 1
+    previousDialogueLineIndex: 5
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  options: []
+  isFinalDialogue: 1

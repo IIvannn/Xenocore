@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49675d3da19b054686ae9ecd58461ad, type: 3}
+  m_Name: LumenaThirdInteraction
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Lumena
+    text: "You\u2019re getting close to the temple. And close to the truth of Astraeon."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: b88736a349bfb8e44997cca803c3da53, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: c0c12ae43e657414daba01b6fa3e183f, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: "You mentioned your people\u2026 the Elyndari. I want to understand what
+      happened."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: We lived in balance with the planet. The resonance flowed through us, and
+      we shaped it to keep Astraeon stable.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 05ab1f653215476409a566237c2bb668, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 40eddda1543e24346865a91cacd547f2, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: But something beneath the surface changed. Something woke up.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.03
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 05ab1f653215476409a566237c2bb668, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 40eddda1543e24346865a91cacd547f2, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: Something inside the planet..
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.06
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: 7dd5bd74fab0f024d8b7d28ff2d45b8c, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: "A presence. A force. It wasn\u2019t part of Astraeon\u2026 but it became
+      part of us."
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.06
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 05ab1f653215476409a566237c2bb668, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 7dd5bd74fab0f024d8b7d28ff2d45b8c, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Lumena
+    text: We tried to contain it. We gathered every Xenocore Element and performed
+      the Ritual.
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.06
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 05ab1f653215476409a566237c2bb668, type: 3}
+    isLeftSpeaker: 0
+    leftPortrait: {fileID: 21300000, guid: 7dd5bd74fab0f024d8b7d28ff2d45b8c, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  - speakerName: Kaelaris
+    text: Uhmm....
+    voiceClip: {fileID: 0}
+    typingSpeed: 0.06
+    showOptionsHere: 0
+    jumpBackToPreviousDialogue: 0
+    previousDialogueLineIndex: 0
+    speakerSprite: {fileID: 21300000, guid: 9d1852908ff850847b5159c766e754fd, type: 3}
+    isLeftSpeaker: 1
+    leftPortrait: {fileID: 21300000, guid: d01bd1b437def094c9a6780dbdad5281, type: 3}
+    customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
+  options:
+  - optionText: Elyndari?
+    nextDialogue: {fileID: 11400000, guid: 46ec32767da7f0445be293e84481911f, type: 2}
+  - optionText: What ritual?
+    nextDialogue: {fileID: 11400000, guid: 382b071e688200d469465055ae3c2d20, type: 2}
+  isFinalDialogue: 0
