@@ -24,6 +24,7 @@ public class Waver : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        musicManager.musicType = "ambiant";
         rewardPosition.SetActive(false);
         StartCoroutine(StartWaves());
         waves++;
@@ -229,6 +230,7 @@ public class Waver : MonoBehaviour
         { 
             if (!finishedFR)
             {
+                musicManager.musicType = "ambiant";
                 if (finalReward != null)
                 { finalReward.SetActive(true); }
                 finishedFR = true;
@@ -241,6 +243,7 @@ public class Waver : MonoBehaviour
     IEnumerator StartWaves()
     {
         yield return new WaitForSeconds(timebeforeStart);
+        musicManager.musicType = "combat";
         StartCoroutine(SummonEnemy());
     }
 

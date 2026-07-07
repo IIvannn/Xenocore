@@ -13,6 +13,9 @@ public class EnemyDamage : MonoBehaviour
     public float armor;
     public float startingArmor = 0;
 
+    public AudioSource auso;
+
+
     [Header("References")]
     public Transform UIParent;
     public LayerMask enemyLayer;
@@ -186,6 +189,8 @@ public class EnemyDamage : MonoBehaviour
 
     public void TakeDamage(float damage, string type, float critC, float critD, GameObject source)
     {
+        enemySound es = GetComponent<enemySound>();
+
         if (PlayerDamage.dead)
         {
             return;
@@ -265,7 +270,7 @@ public class EnemyDamage : MonoBehaviour
             //Debug.Log(critC + rustboost + BoonSTaticInfo.globalCritChance);
             if (rcchance < (critC + rustboost) && critC !=0)
             {
-                
+                es.crit();
 
                 if (source !=null && source.name == "Player" && BoonSTaticInfo.soldering)
                 {
@@ -379,6 +384,7 @@ public class EnemyDamage : MonoBehaviour
                 dmgNumber.GetComponent<DamageNumber>().type = type;
                 dmgNumber.GetComponent<DamageNumber>().damage = finalDamage;
             }
+            es.hurt();
 
 
             switch (type)
@@ -525,6 +531,7 @@ public class EnemyDamage : MonoBehaviour
             int rschance = Random.Range(0, 100);
             if (rschance < BoonSTaticInfo.starfallChance && starfalled && type != "star")
             {
+                es.star();
                 if (BoonSTaticInfo.fated)
                 {
                     fated = true;

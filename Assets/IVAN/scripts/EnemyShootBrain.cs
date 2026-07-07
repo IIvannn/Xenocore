@@ -20,6 +20,8 @@ public class EnemyShootBrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (PlayerDamage.dead)
         {
             return;
@@ -28,7 +30,7 @@ public class EnemyShootBrain : MonoBehaviour
         {
             spriteHolder.transform.rotation = IsometricAiming.cameraTransform.rotation;
         }
-
+        enemySound es = GetComponent<enemySound>();
         EnemyDamage ed = GetComponent<EnemyDamage>();
         EnemyScript esc = GetComponent<EnemyScript>();
         EnemyShoot esh = GetComponent<EnemyShoot>();
@@ -50,6 +52,7 @@ public class EnemyShootBrain : MonoBehaviour
                 {
                     esh.fired = 0;
                     esh.Fire();
+                    
                     agent.isStopped = true;
                 }
                 
@@ -60,6 +63,7 @@ public class EnemyShootBrain : MonoBehaviour
                 if (eme.canattack && distance < eme.attackRange)
                 {
                     eme.Attack();
+                    es.melee();
                     animator.SetTrigger("attack");
                     agent.isStopped = true;
                 }

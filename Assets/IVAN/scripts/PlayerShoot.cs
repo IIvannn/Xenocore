@@ -53,7 +53,12 @@ public class PlayerShoot : MonoBehaviour
     public float currentAmmo = 1;
     
     bool att = false;
-    
+
+    public AudioSource auso;
+    public AudioClip attackSnd;
+    public AudioClip specialSnd;
+    public AudioClip spellSnd;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -89,6 +94,7 @@ public class PlayerShoot : MonoBehaviour
                 //StartCoroutine()
                 switch (spellType)
                 {
+
                     case "swarm":
                         GameObject swspell = Instantiate(swarmSpell, IsometricAiming.mousePosition, transform.rotation);
                         break;
@@ -113,7 +119,9 @@ public class PlayerShoot : MonoBehaviour
                     case "radiation":
                         GameObject raspell = Instantiate(radiationSpell, firePoint.position, firePoint.rotation);
                         break;
+                        
                 }
+                auso.PlayOneShot(spellSnd);
 
                 if (BoonSTaticInfo.arcaneSwiftness)
                 {
@@ -151,6 +159,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (canspecial && !spelling)
         {
+            auso.PlayOneShot(specialSnd);
             PlayerMovement playerMovement = GetComponent<PlayerMovement>();
             playerMovement.animator.SetTrigger("special");
 
@@ -233,7 +242,8 @@ public class PlayerShoot : MonoBehaviour
             ball.GetComponent<boomerangScript>().critChance = boomerangCritChance;
             ball.GetComponent<boomerangScript>().critDamage = boomerangCritDamage;
             nextFireTime = Time.time + firerate;
-            
+            auso.PlayOneShot(attackSnd);
+
         }
 
     }

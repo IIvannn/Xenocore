@@ -45,6 +45,10 @@ public class PlayerDamage : MonoBehaviour
     Scene m_Scene;
     string sceneName;
 
+    public AudioSource auso;
+    public AudioClip hurtSnd;
+    public AudioClip dodgeSnd;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -100,6 +104,8 @@ public class PlayerDamage : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+
+        auso.PlayOneShot(hurtSnd);
         if (invincible)
         {
             return;
@@ -118,11 +124,13 @@ public class PlayerDamage : MonoBehaviour
             float nychance = Random.Range(1, 100);
             if (nychance < BoonSTaticInfo.noYouChance)
             {
+                auso.PlayOneShot(dodgeSnd);
                 GameObject ball = Instantiate(shockwave, transform.position, transform.rotation);
                 ball.GetComponent<Shockwave>().damage = damage;
                 ball.GetComponent<Shockwave>().range = BoonSTaticInfo.noYouRange;
                 ball.GetComponent<Shockwave>().type = "star";
                 return;
+                
             }
         }
         
@@ -147,6 +155,7 @@ public class PlayerDamage : MonoBehaviour
             float rchance = Random.Range(1, 100);
             if (rchance < BoonSTaticInfo.crystallineArmorChance)
             {
+                auso.PlayOneShot(dodgeSnd);
                 BoonSTaticInfo.crystals -= (int)damage;
             }
             else

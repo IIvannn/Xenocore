@@ -36,7 +36,7 @@ public class EnemeyDashBrain : MonoBehaviour
 
 
         move = (PlayerMovement.playerPosition.position - gameObject.transform.position);
-
+        enemySound es = GetComponent<enemySound>();
         EnemyDamage ed = GetComponent<EnemyDamage>();
         EnemyScript esc = GetComponent<EnemyScript>();
         StayAtDistance esd = GetComponent<StayAtDistance>();
@@ -60,6 +60,7 @@ public class EnemeyDashBrain : MonoBehaviour
             if (distance < eda.attackDistance && LOS && eda.candash && !eda.dashing)
             {
                 eda.Dash();
+                es.dash();
                 agent.isStopped = true;
             }
             else if (!eda.charging)

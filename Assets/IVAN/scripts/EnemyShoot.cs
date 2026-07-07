@@ -86,7 +86,8 @@ public class EnemyShoot : MonoBehaviour
                 else
                 {
                     EnemyDamage body = GetComponent<EnemyDamage>();
-
+                    enemySound es = GetComponent<enemySound>();
+                    es.shoot();
 
                     GameObject ball = Instantiate(projectile, new Vector3(firePoint.position.x - 0.3f, firePoint.position.y, firePoint.position.z), firePoint.rotation);
                     ball.GetComponent<enemyProjectileScript>().source = gameObject;

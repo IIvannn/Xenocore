@@ -40,6 +40,8 @@ public class EnemyDash : MonoBehaviour
 
     IEnumerator EDash()
     {
+        enemySound es = GetComponent<enemySound>();
+        es.dash();
         EnemeyDashBrain eda = GetComponent<EnemeyDashBrain>();
         if (eda != null)
         { 

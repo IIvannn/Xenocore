@@ -81,10 +81,13 @@ public class EnemeyHealBrain : MonoBehaviour
 
     IEnumerator heal()
     {
+        enemySound es = GetComponent<enemySound>();
+        es.summon();
         EnemyDamage ed = GetComponent<EnemyDamage>();
         healingZone.SetActive(true);
         GameObject ball = Instantiate(healburst, transform.position, transform.rotation);
         ball.GetComponent<Shockwave>().heal = true;
+        ball.GetComponent<Shockwave>().range = 10f;
         healing = true;
         healingZone.GetComponent<healingCircle>().sh();
         animator.SetBool("healing", true);

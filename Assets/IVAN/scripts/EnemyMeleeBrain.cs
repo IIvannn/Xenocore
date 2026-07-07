@@ -18,7 +18,7 @@ public class EnemyMeleeBrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         if (PlayerDamage.dead)
         {
             return;
@@ -27,7 +27,7 @@ public class EnemyMeleeBrain : MonoBehaviour
         {
             spriteHolder.transform.rotation = IsometricAiming.cameraTransform.rotation;
         }
-
+        enemySound es = GetComponent<enemySound>();
         EnemyDamage ed = GetComponent<EnemyDamage>();
         EnemyScript esc = GetComponent<EnemyScript>();
         StayAtDistance esd = GetComponent<StayAtDistance>();
@@ -44,6 +44,7 @@ public class EnemyMeleeBrain : MonoBehaviour
             if (distance < eme.attackRange && LOS && eme.canattack)
             {
                 eme.Attack();
+                es.melee();
                 agent.isStopped = true;
                 animator.SetTrigger("attack");
             }

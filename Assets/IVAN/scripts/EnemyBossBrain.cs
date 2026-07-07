@@ -42,7 +42,7 @@ public class EnemyBossBrain : MonoBehaviour
 
 
         move = (PlayerMovement.playerPosition.position - gameObject.transform.position);
-
+        enemySound es = GetComponent<enemySound>();
         EnemyDamage ed = GetComponent<EnemyDamage>();
         EnemyScript esc = GetComponent<EnemyScript>();
         StayAtDistance esd = GetComponent<StayAtDistance>();
@@ -86,10 +86,12 @@ public class EnemyBossBrain : MonoBehaviour
                     if (BoonSTaticInfo.enemiesAlive.Count >1)
                     {
                         eda.Dash();
+                        es.dash();
                     }
                     else
                     {
                         Summon();
+                        es.summon();
                     }
 
                     
@@ -132,6 +134,7 @@ public class EnemyBossBrain : MonoBehaviour
                     else
                     {
                         Summon();
+                        es.summon();
                     }
                 }
                 else
