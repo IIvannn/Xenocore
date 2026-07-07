@@ -182,11 +182,14 @@ public class PlayerDamage : MonoBehaviour
 
     public void Death()
     {
+        
         deaths++;
         dead = true;
         BoonSTaticInfo.RESETUPGRADES();
-        SceneManager.LoadScene("DeathMenu");
+        currentHp = hp;
         dead = false;
+        SceneManager.LoadScene("DeathMenu");
+        
         //Destroy(gameObject);
     }
 
