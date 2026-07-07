@@ -2058,7 +2058,7 @@ TerrainCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: 7cc9c9d9ae5faf44889ac0e41def1c08, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 8f4cd135f067c6349bc7dfee5fc1a605, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1680046188
 Terrain:
