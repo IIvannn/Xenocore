@@ -2864,7 +2864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34bcecee9ef4e34695dac0d1050180e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
-  movementSpeed: 6.5
+  movementSpeed: 8.5
   attackCooldown: 0.5
   attackRange: 10
   distanceBeforeStop: 4
@@ -2886,7 +2886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f5537d21de2cc4198efb988ec90cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
-  health: 300
+  health: 255
   deathDelay: 0
   currentHealth: 0
   dead: 0
@@ -2969,9 +2969,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf68a87e79c82ce4f9a4551aee81123f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMelee
-  damage: 15
-  range: 7
-  attackRange: 2.5
+  damage: 20
+  range: 8
+  attackRange: 4
   canattack: 1
   attackcooldown: 0.5
   hitbox: {fileID: 8647894804881054232, guid: 23eeb06f53d8032489612899874c8164, type: 3}

@@ -73,7 +73,7 @@ public class EnemeyHealBrain : MonoBehaviour
 
     IEnumerator changeTarget()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         Reset();
         StartCoroutine(changeTarget());
     }
@@ -85,7 +85,7 @@ public class EnemeyHealBrain : MonoBehaviour
         healing = true;
         healingZone.GetComponent<healingCircle>().sh();
         animator.SetBool("healing", true);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         animator.SetBool("healing", false);
         healingZone.SetActive(false);
         healing = false;

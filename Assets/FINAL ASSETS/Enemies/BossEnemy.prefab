@@ -520,7 +520,7 @@ CharacterController:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -4009,7 +4009,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6720288722827656899, guid: 23eeb06f53d8032489612899874c8164, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.5
+      value: 4.1188
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720288722827656899, guid: 23eeb06f53d8032489612899874c8164, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.17204902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720288722827656899, guid: 23eeb06f53d8032489612899874c8164, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.4370272
       objectReference: {fileID: 0}
     - target: {fileID: 6720288722827656899, guid: 23eeb06f53d8032489612899874c8164, type: 3}
       propertyPath: m_LocalPosition.x

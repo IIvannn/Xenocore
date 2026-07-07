@@ -30,7 +30,7 @@ public class healingCircle : MonoBehaviour
             he.Add(other.gameObject);
             if (other.GetComponent<EnemyDamage>().currentHealth < other.GetComponent<EnemyDamage>().health)
             {
-                other.GetComponent<EnemyDamage>().currentHealth += 4;
+                other.GetComponent<EnemyDamage>().currentHealth += 3;
             }
             
 
