@@ -80,7 +80,7 @@ public class UpgradeManager : MonoBehaviour
 
     int[] numbers;
     //public static bool destroyUpgrades = false;
-
+    public static bool upgradeTaken = false;
     void Start()
     {
         //Debug.Log(destroyUpgrades);
@@ -603,6 +603,7 @@ public class UpgradeManager : MonoBehaviour
         //destroyUpgrades = true;
         //Debug.Log("apply upgrade:  "+upg);
         BoonSTaticInfo.UPGRADES++;
+        upgradeTaken = true;
         switch (upg)
         {
             //BOOMERANG

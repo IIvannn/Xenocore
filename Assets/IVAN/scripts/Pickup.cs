@@ -74,6 +74,7 @@ public class Pickup : MonoBehaviour
         }
         else if (!priced)
         {
+            UpgradeManager.upgradeTaken = true;
             switch (reward)
             {
                 case "crystal":

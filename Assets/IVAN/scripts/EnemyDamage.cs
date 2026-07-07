@@ -11,7 +11,7 @@ public class EnemyDamage : MonoBehaviour
     public float currentHealth;
     public bool dead = false;
     public float armor;
-    float startingArmor = 0;
+    public float startingArmor = 0;
 
     [Header("References")]
     public Transform UIParent;

@@ -16,6 +16,7 @@ public class Shockwave : MonoBehaviour
     public bool status = false;
 
     public float lifetime = 0.5f;
+    public bool heal = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -87,7 +88,21 @@ public class Shockwave : MonoBehaviour
                 {
                     enemieshit.Add(other.gameObject);
                     //Debug.Log("EnemyDamage hit for:  " + damage);
-                    other.GetComponent<EnemyDamage>().TakeDamage(damage, type, cc, cd, null);
+
+                    if (heal)
+                    {
+                        other.GetComponent<EnemyDamage>().armor += 25;
+                        if (other.GetComponent<EnemyDamage>().startingArmor < 0)
+                        {
+                            other.GetComponent<EnemyDamage>().startingArmor += 25;
+                        }
+                    }
+                    else
+                    {
+                        other.GetComponent<EnemyDamage>().TakeDamage(damage, type, cc, cd, null);
+                    }
+
+                   
                     if (status)
                     {
                         other.GetComponent<EnemyDamage>().ApplyStatus(type, null);
@@ -97,7 +112,18 @@ public class Shockwave : MonoBehaviour
                 {
                     enemieshit.Add(other.gameObject);
                     //Debug.Log("EnemyDamage hit for:  " + damage);
-                    other.GetComponent<EnemyDamage>().TakeDamage(damage, type, cc, cd, null);
+                    if (heal)
+                    {
+                        other.GetComponent<EnemyDamage>().armor += 25;
+                        if (other.GetComponent<EnemyDamage>().startingArmor<0)
+                        {
+                            other.GetComponent<EnemyDamage>().startingArmor += 25;
+                        }
+                    }
+                    else
+                    {
+                        other.GetComponent<EnemyDamage>().TakeDamage(damage, type, cc, cd, null);
+                    }
 
                     if (status)
                     {

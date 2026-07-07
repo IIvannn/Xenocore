@@ -19,6 +19,7 @@ public class EnemeyHealBrain : MonoBehaviour
     public GameObject healingZone;
     public Animator animator;
     public GameObject spriteHolder;
+    public GameObject healburst;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -82,6 +83,8 @@ public class EnemeyHealBrain : MonoBehaviour
     {
         EnemyDamage ed = GetComponent<EnemyDamage>();
         healingZone.SetActive(true);
+        GameObject ball = Instantiate(healburst, transform.position, transform.rotation);
+        ball.GetComponent<Shockwave>().heal = true;
         healing = true;
         healingZone.GetComponent<healingCircle>().sh();
         animator.SetBool("healing", true);

@@ -96,10 +96,26 @@ public class DoorScript : MonoBehaviour
             float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
             if (distance <= interactionRange)
             {
-                indicator.SetActive(true);
-                if (Keyboard.current.eKey.wasPressedThisFrame)
+                
+                if (sceneName == "Spawnroom" || sceneName == "IvanroomShop")
                 {
-                    Enter();
+                    indicator.SetActive(true);
+                    if (Keyboard.current.eKey.wasPressedThisFrame)
+                        { Enter();
+                        BoonSTaticInfo.radiationCurrentCount = 0;
+                        BoonSTaticInfo.tectonicCurrentCount = 0;
+                        BoonSTaticInfo.nullCurrentCount = 0;
+                    }
+                }
+                else if (UpgradeManager.upgradeTaken)
+                {
+                    indicator.SetActive(true);
+                    if (Keyboard.current.eKey.wasPressedThisFrame)
+                    { Enter();
+                        BoonSTaticInfo.radiationCurrentCount = 0;
+                        BoonSTaticInfo.tectonicCurrentCount = 0;
+                        BoonSTaticInfo.nullCurrentCount = 0;
+                    }
                 }
             }
             else
@@ -112,6 +128,7 @@ public class DoorScript : MonoBehaviour
 
     void Enter()
     {
+        
         Waver.roomEnded = false;
         BoonSTaticInfo.reaperBonus = 0;
         PlayerDamage.currentHp += (BoonSTaticInfo.doorHeal*BoonSTaticInfo.healingMultiplier);
