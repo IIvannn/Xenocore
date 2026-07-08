@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BoomerangMark
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeName: boomerang mark
-  description: If enemies are hit by the initial launch of the boomerang, on return
-    to them
+  description: If enemies are hit by the initial launch of the boomerang, on return,
+    they are struck by a shockwave.
   upgradeIcon: {fileID: 21300000, guid: 861be883197612240b60d2db79a52fea, type: 3}
