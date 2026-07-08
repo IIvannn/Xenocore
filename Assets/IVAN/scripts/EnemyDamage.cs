@@ -90,7 +90,7 @@ public class EnemyDamage : MonoBehaviour
 
             if (rarmor >= 14)
             {
-                armor = (int)((health / 1.5f) + (DoorScript.currentRoom * 2));
+                armor = (int)((health / 1.8f) + (DoorScript.currentRoom * 2));
             }
         }
         
@@ -172,7 +172,7 @@ public class EnemyDamage : MonoBehaviour
         ghostBar.value = (currentHealth / health);
         healthbar.value = ((currentHealth - hauntedStoredDamage) / health);
         easeHealthbar.value = Mathf.Lerp(easeHealthbar.value, healthbar.value, lerpSpeed);
-        armorBar.value = (armor/startingArmor);
+        armorBar.value = (armor/health);
     
         if (currentHealth > health)
         {
@@ -300,7 +300,7 @@ public class EnemyDamage : MonoBehaviour
             if (BoonSTaticInfo.massAccumulation)
             {
                 damage *= ((BoonSTaticInfo.UPGRADES * BoonSTaticInfo.massAccumulationBonus) / 100) + 1;
-                Debug.Log(((BoonSTaticInfo.UPGRADES * BoonSTaticInfo.massAccumulationBonus) / 100) + 1);
+                //Debug.Log(((BoonSTaticInfo.UPGRADES * BoonSTaticInfo.massAccumulationBonus) / 100) + 1);
             }
 
 

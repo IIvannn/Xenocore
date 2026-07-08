@@ -91,8 +91,8 @@ public class Shockwave : MonoBehaviour
 
                     if (heal)
                     {
-                        other.GetComponent<EnemyDamage>().armor += 25;
-                        if (other.GetComponent<EnemyDamage>().startingArmor < 0)
+                        other.GetComponent<EnemyDamage>().armor += 15;
+                        if (other.GetComponent<EnemyDamage>().startingArmor < 15)
                         {
                             other.GetComponent<EnemyDamage>().startingArmor += 25;
                         }
@@ -114,9 +114,10 @@ public class Shockwave : MonoBehaviour
                     //Debug.Log("EnemyDamage hit for:  " + damage);
                     if (heal)
                     {
-                        other.GetComponent<EnemyDamage>().armor += 25;
-                        if (other.GetComponent<EnemyDamage>().startingArmor<0)
+                        other.GetComponent<EnemyDamage>().armor += 15;
+                        if (other.GetComponent<EnemyDamage>().startingArmor<15)
                         {
+
                             other.GetComponent<EnemyDamage>().startingArmor += 25;
                         }
                     }

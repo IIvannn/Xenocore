@@ -12,6 +12,41 @@ public class ShopManager : MonoBehaviour
     void Start()
     {
 
+        if (DoorScript.selectedElements.Contains("swarm"))
+        {
+            rewardPool.RemoveAll(item => item.name == "SwarmUpgrade");
+        }
+        if (DoorScript.selectedElements.Contains("haunted"))
+        {
+            rewardPool.RemoveAll(item => item.name == "HauntedUpgrade");
+        }
+        if (DoorScript.selectedElements.Contains("crystallize"))
+        {
+            rewardPool.RemoveAll(item => item.name == "CrystallizeUpgrade");
+        }
+        if (DoorScript.selectedElements.Contains("null"))
+        {
+            rewardPool.RemoveAll(item => item.name == "NullUpgrade");
+        }
+        if (DoorScript.selectedElements.Contains("starfall"))
+        {
+            rewardPool.RemoveAll(item => item.name == "StarfallUpgrade");
+        }
+        if (DoorScript.selectedElements.Contains("rust"))
+        {
+            rewardPool.RemoveAll(item => item.name == "RustUpgrade");
+        }
+        if (DoorScript.selectedElements.Contains("tectonic"))
+        {
+            rewardPool.RemoveAll(item => item.name == "TectonicUpgrade");
+        }
+        if (DoorScript.selectedElements.Contains("radiation"))
+        {
+            rewardPool.RemoveAll(item => item.name == "RadiationUpgrade");
+        }
+
+        Debug.Log(string.Join(", ", rewardPool));
+
         slot1.gameObject.SetActive(false);
         slot2.gameObject.SetActive(false);
         slot3.gameObject.SetActive(false);
@@ -50,6 +85,9 @@ public class ShopManager : MonoBehaviour
         {
             ball2.GetComponent<Pickup>().priced = true;
         }
+
+
+        
     }
 
     // Update is called once per frame

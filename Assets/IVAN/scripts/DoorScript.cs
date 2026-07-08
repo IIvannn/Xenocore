@@ -27,11 +27,13 @@ public class DoorScript : MonoBehaviour
 
     Scene m_Scene;
     string sceneName;
-
+    public static Transform doorPos;
     
 
     void Start()
     {
+        doorPos = transform;
+        Debug.Log(shopRoom);
 
         m_Scene = SceneManager.GetActiveScene();
         sceneName = m_Scene.name;
@@ -136,6 +138,8 @@ public class DoorScript : MonoBehaviour
         if (sceneName == "After Boss Room")
         {
             BoonSTaticInfo.RESETUPGRADES();
+            selectedElements.Clear();
+            selectedRewards.Clear();
             SceneManager.LoadScene("Spawnroom");
             return;
         }
