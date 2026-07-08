@@ -42,7 +42,7 @@ public class EnemeyHealBrain : MonoBehaviour
             if (obj != null && obj != gameObject)
             {
                 aven.Add(obj);
-                Debug.Log(obj.name);
+                //Debug.Log(obj.name);
             }
         }
         
