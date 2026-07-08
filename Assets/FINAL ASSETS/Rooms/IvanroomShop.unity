@@ -1256,12 +1256,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3196165147588462884, guid: 94e7b2ed8c13fa841ac73b28a69f6477, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3527530330727894307, guid: 94e7b2ed8c13fa841ac73b28a69f6477, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 337884028}
   m_SourcePrefab: {fileID: 100100000, guid: 94e7b2ed8c13fa841ac73b28a69f6477, type: 3}
+--- !u!1 &337884027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3527530330727894307, guid: 94e7b2ed8c13fa841ac73b28a69f6477, type: 3}
+  m_PrefabInstance: {fileID: 337884026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &337884028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337884027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71e761624001994fa88d81d103bbc00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcID: NPC_002
+  dialogues:
+  - {fileID: 11400000, guid: baa63d7c612bee241b6bd7f67d898a85, type: 2}
+  - {fileID: 11400000, guid: 7c0f2e73e67994e408b899fa1431bc59, type: 2}
+  - {fileID: 11400000, guid: 7958888b151d6eb43954c55f2c91bb28, type: 2}
+  dialogueUI: {fileID: 1238588612}
+  interactDistance: 3
+  autoCloseDistance: 5
+  blockPlayerMovement: 1
 --- !u!1001 &352630603
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -243,7 +243,6 @@ GameObject:
   - component: {fileID: 912046318942544680}
   - component: {fileID: 2281817546268824440}
   - component: {fileID: 3608627559557534316}
-  - component: {fileID: 3196165147588462884}
   - component: {fileID: 1776268652244102247}
   - component: {fileID: 7998095355289039371}
   m_Layer: 0
@@ -344,27 +343,6 @@ MonoBehaviour:
   iconNear: {fileID: 2323626196250257334}
   detectionRange: 4
   talkRange: 2
---- !u!114 &3196165147588462884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3527530330727894307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b71e761624001994fa88d81d103bbc00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcID: NPC_002
-  dialogues:
-  - {fileID: 11400000, guid: baa63d7c612bee241b6bd7f67d898a85, type: 2}
-  - {fileID: 11400000, guid: 7c0f2e73e67994e408b899fa1431bc59, type: 2}
-  - {fileID: 11400000, guid: 7c0f2e73e67994e408b899fa1431bc59, type: 2}
-  dialogueUI: {fileID: 0}
-  interactDistance: 3
-  autoCloseDistance: 5
-  blockPlayerMovement: 1
 --- !u!136 &1776268652244102247
 CapsuleCollider:
   m_ObjectHideFlags: 0
