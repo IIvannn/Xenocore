@@ -70,6 +70,7 @@ public class Pickup : MonoBehaviour
                     PlayerDamage.hp += (int)(amount);
                     Destroy(gameObject);
                     return;
+                
             }
         }
         else if (!priced)
@@ -88,6 +89,10 @@ public class Pickup : MonoBehaviour
                 case "maxHealth":
                     PlayerDamage.currentHp += (int)(amount * BoonSTaticInfo.healingMultiplier);
                     PlayerDamage.hp += (int)(amount);
+                    Destroy(gameObject);
+                    return;
+                case "essence":
+                    BoonSTaticInfo.essence++;
                     Destroy(gameObject);
                     return;
 

@@ -62,6 +62,9 @@ public class BoonSTaticInfo : MonoBehaviour
     public static int UPGRADES = 0;
     public static float globalCritChance = 0;
     public static float spellCost = 100;
+    public static float damageDone = 0;
+    public static float highestDamage = 0;
+    public static int essence = 0;
 
 
 

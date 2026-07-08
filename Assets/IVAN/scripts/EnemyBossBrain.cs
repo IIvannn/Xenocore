@@ -86,7 +86,6 @@ public class EnemyBossBrain : MonoBehaviour
                     if (BoonSTaticInfo.enemiesAlive.Count >1)
                     {
                         eda.Dash();
-                        es.dash();
                     }
                     else
                     {

@@ -395,7 +395,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 822152064, guid: 1a8241fc09a9f9b4ba8c40f94f64d872, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -993,6 +993,9 @@ MonoBehaviour:
   invincible: 0
   maxHp: 4000
   dr: 1
+  auso: {fileID: 0}
+  hurtSnd: {fileID: 0}
+  dodgeSnd: {fileID: 0}
 --- !u!114 &6260905542698369766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,6 +1038,10 @@ MonoBehaviour:
   spelling: 0
   ammo: 1
   currentAmmo: 1
+  auso: {fileID: 0}
+  attackSnd: {fileID: 0}
+  specialSnd: {fileID: 0}
+  spellSnd: {fileID: 0}
 --- !u!114 &1040869567622031174
 MonoBehaviour:
   m_ObjectHideFlags: 0

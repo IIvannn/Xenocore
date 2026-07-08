@@ -97,7 +97,7 @@ public class DoorScript : MonoBehaviour
             if (distance <= interactionRange)
             {
                 
-                if (sceneName == "Spawnroom" || sceneName == "IvanroomShop")
+                if (sceneName == "Spawnroom" || sceneName == "IvanroomShop" || sceneName == "IvanroomEnd" && BoonSTaticInfo.enemiesAlive.Count == 0)
                 {
                     indicator.SetActive(true);
                     if (Keyboard.current.eKey.wasPressedThisFrame)
@@ -132,7 +132,19 @@ public class DoorScript : MonoBehaviour
         Waver.roomEnded = false;
         BoonSTaticInfo.reaperBonus = 0;
         PlayerDamage.currentHp += (BoonSTaticInfo.doorHeal*BoonSTaticInfo.healingMultiplier);
-        if (currentRoom < numberOfRooms)
+
+        if (sceneName == "After Boss Room")
+        {
+            BoonSTaticInfo.RESETUPGRADES();
+            SceneManager.LoadScene("Spawnroom");
+            return;
+        }
+
+        if (sceneName == "IvanroomEnd")
+        {
+            SceneManager.LoadScene("After Boss Room");
+        }
+        else if (currentRoom < numberOfRooms)
         {
             if (currentRoom == shopRoom && sceneName != "IvanroomShop")
             {
@@ -226,10 +238,12 @@ public class DoorScript : MonoBehaviour
                 SceneManager.LoadScene("IvanroomShop");
                 shopBeforeBoss = true;
             }
+            
+
             else
             {
                 Debug.Log("end room");
-                SceneManager.LoadScene("IvanRoomEnd");
+                SceneManager.LoadScene("IvanroomEnd");
             }
 
             
