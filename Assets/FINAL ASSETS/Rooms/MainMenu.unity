@@ -3329,6 +3329,7 @@ MonoBehaviour:
   settingsButton: {fileID: 1478812846}
   quitButton: {fileID: 126226191}
   closeSettingsButton: {fileID: 0}
+  problem: {fileID: 1776284817}
 --- !u!4 &1241940636
 Transform:
   m_ObjectHideFlags: 0

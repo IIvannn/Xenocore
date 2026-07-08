@@ -13,7 +13,13 @@ public class enemySound : MonoBehaviour
     public AudioClip selfDamageSnd;
     public AudioClip starSnd;
     public AudioClip walkSnd;
+    public AudioClip spawnSnd;
 
+
+    public void Start()
+    {
+        auso.PlayOneShot(spawnSnd);
+    }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
