@@ -578,6 +578,9 @@ public class EnemyDamage : MonoBehaviour
 
     public void Death()
     {
+        int rmoney = Random.Range(1, 5);
+        BoonSTaticInfo.crystals += rmoney;
+
         if (radiationAmmount>0 && BoonSTaticInfo.radonBlood)
         {
             GameObject rb = Instantiate(radonBlood, transform.position, transform.rotation);
