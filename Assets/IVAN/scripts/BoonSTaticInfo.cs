@@ -56,7 +56,7 @@ public class BoonSTaticInfo : MonoBehaviour
     [Header("General info")]
     public static float healingMultiplier = 1f;
     public static float moneyMultiplier = 1f;
-    public static float doorHeal = 50f;
+    public static float doorHeal = 15f;
     public static  List<Transform> enemiesInRange = new List<Transform>();
     public static List<GameObject> enemiesAlive = new List<GameObject>();
     public static int UPGRADES = 0;
