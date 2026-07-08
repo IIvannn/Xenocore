@@ -15,6 +15,9 @@ public class EnemyDamage : MonoBehaviour
 
     public AudioSource auso;
 
+    public AudioClip rad;
+    public AudioClip pet;
+
 
     [Header("References")]
     public Transform UIParent;
@@ -739,6 +742,7 @@ public class EnemyDamage : MonoBehaviour
             case "radiation":
                 if (!irradiated && BoonSTaticInfo.radiationCurrentCount < BoonSTaticInfo.radiationMaxCount)
                 {
+                    auso.PlayOneShot(rad);
                     BoonSTaticInfo.radiationCurrentCount++;
                     irradiated = true;
                     radiationRing.SetActive(true);
@@ -760,6 +764,7 @@ public class EnemyDamage : MonoBehaviour
             case "petrify":
                 if (!petrified)
                 {
+                    auso.PlayOneShot(pet);
                     petrified = true;
                     petrify.SetActive(true);
                     petrify.GetComponent<Animator>().SetTrigger("once");

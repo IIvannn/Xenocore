@@ -11,6 +11,10 @@ public class TectonicZone : MonoBehaviour
     float baseScale = 0f;
     float bonusscale = 0;
     bool tr = true;
+
+    public AudioSource auso;
+    public AudioClip clip;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,7 +34,7 @@ public class TectonicZone : MonoBehaviour
     IEnumerator TectonicDamage()
     {
         bonusscale += BoonSTaticInfo.tectonicSpread;
-        
+        auso.PlayOneShot(clip);
         //Debug.Log(transform.localScale.x);
 
         foreach (GameObject enemy in enemiesInRange)

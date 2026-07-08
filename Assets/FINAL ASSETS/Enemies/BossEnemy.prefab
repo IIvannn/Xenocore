@@ -361,7 +361,9 @@ MonoBehaviour:
   dead: 0
   armor: 0
   startingArmor: 0
-  auso: {fileID: 0}
+  auso: {fileID: 2925529521083265798}
+  rad: {fileID: 8300000, guid: cb8f226e6c03bc9469a0d63eb3ae1a52, type: 3}
+  pet: {fileID: 8300000, guid: c61e47da7ccca314bb7f30dc6533accb, type: 3}
   UIParent: {fileID: 7416028003605856320}
   enemyLayer:
     serializedVersion: 2

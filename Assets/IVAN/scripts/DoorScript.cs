@@ -12,7 +12,7 @@ public class DoorScript : MonoBehaviour
     public static int currentRoom = 0;
     public static int[] numbers;
 
-    public int shopRoom = 2;
+    int shopRoom = 6;
     public static bool shopBeforeBoss = false;
 
     
@@ -42,10 +42,15 @@ public class DoorScript : MonoBehaviour
         {
             musicManager.musicType = "godess";
         }
+        else if (sceneName == "IvanroomEnd")
+        {
+            musicManager.musicType = "boss";
+        }
         else
         {
             musicManager.musicType = "ambiant";
         }
+        
 
         m_Scene = SceneManager.GetActiveScene();
         sceneName = m_Scene.name;
@@ -152,7 +157,9 @@ public class DoorScript : MonoBehaviour
             BoonSTaticInfo.RESETUPGRADES();
             selectedElements.Clear();
             selectedRewards.Clear();
-            SceneManager.LoadScene("Spawnroom");
+
+            PlayerDamage.currentHp = 100;
+            SceneManager.LoadScene("Credits");
             return;
         }
 
