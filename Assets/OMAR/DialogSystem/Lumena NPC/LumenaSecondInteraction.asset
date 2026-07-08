@@ -15,7 +15,7 @@ MonoBehaviour:
   lines:
   - speakerName: Lumena
     text: "You\u2019re here again."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "Astraeon\u2019s resonance pulled you back. This world does that\u2026
       when it chooses."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: I throught i... So the planet resets me. All the energy is gone..
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "Not a reset. More like\u2026 a return. The energy here doesn\u2019t let
       go easily."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.01
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Lumena
     text: If you fall, it brings you back to where your path began. Once.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: Good to know sooner!
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Lumena
     text: Keep moving. The forest remembers you now.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Lumena
     text: Safe travels, Kaelaris.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0

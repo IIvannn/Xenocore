@@ -16,7 +16,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "The signal you\u2019re following\u2026 it isn\u2019t here on the surface.
       It\u2019s coming from deep inside Astraeon."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "The core\u2019s instability pushes energy upward. It twists the wildlife,
       makes them aggressive. When they fall, that energy breaks apart."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "Your device can absorb those fragments. Xenocore Elements. You\u2019ll
       need them."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: "So defeating the creatures isn\u2019t optional."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Lumena
     text: No. Their fragments will help you move forward.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "The Elyndari built a temple in these woods. It was used to channel the
       Xenocore Elements into the planet. It\u2019s still there\u2026 dormant."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
     text: "If you want to reach the signal, you\u2019ll have to activate it. The
       temple responds to Xenocore energy. Gather enough fragments, defeat the guardian
       and it will open the way inside the planet."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: And I do that alone?
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Lumena
     text: There is someone who can help you. An Astraelite named Rift.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "He knows how to find Xenocore Elements. How to stabilize them. He\u2019s
       rough around the edges, but he understands this place better than most."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "Find Rift. He\u2019ll help you gather what you need\u2026 and guide you
       to the temple."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0

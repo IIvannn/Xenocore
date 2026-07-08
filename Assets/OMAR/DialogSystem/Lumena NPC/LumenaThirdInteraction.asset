@@ -15,7 +15,7 @@ MonoBehaviour:
   lines:
   - speakerName: Lumena
     text: "You\u2019re getting close to the temple. And close to the truth of Astraeon."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   - speakerName: Kaelaris
     text: "You mentioned your people\u2026 the Elyndari. I want to understand what
       happened."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: We lived in balance with the planet. The resonance flowed through us, and
       we shaped it to keep Astraeon stable.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Lumena
     text: But something beneath the surface changed. Something woke up.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: Something inside the planet..
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.06
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "A presence. A force. It wasn\u2019t part of Astraeon\u2026 but it became
       part of us."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.06
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: We tried to contain it. We gathered every Xenocore Element and performed
       the Ritual.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.06
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: Uhmm....
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.06
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   lines:
   - speakerName: Rift
     text: "\u2026You again."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: Let me guess. Forest chewed you up and spat you back out.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
   - speakerName: Kaelaris
     text: Tha's not cool cutie!... but yeah something like that the energy from this
       planet change the time and space.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: "Astraeon\u2019s energy likes to recycle rookies. Don\u2019t get too proud
       about it."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: You fall, the planet drags you back to where you started. Happens to outsiders
       all the time.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: At least it gives me another chance.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: Yeah, yeah. Just try not to make a habit of it.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
     text: "Every time you pop back in, the wildlife gets jumpy. And I don\u2019t
       feel like dealing with extra trouble because you decided to take a nap in the
       dirt."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: "I\u2019ll keep that in mind."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: Good. Now move and bring me some money rookie!
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0

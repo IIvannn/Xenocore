@@ -15,7 +15,7 @@ MonoBehaviour:
   lines:
   - speakerName: Lumena
     text: "We weren\u2019t warriors or conquerors. We were caretakers."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: We shaped the resonance so the world could grow. We healed what broke.
       We listened to what the planet needed.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "But when the presence beneath Astraeon began to awake\u2026 we couldn\u2019t
       heal it. It wasn\u2019t a wound. It was something else."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Lumena
     text: "That\u2019s why the Ritual was created."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Lumena
     text: Back to options
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 1

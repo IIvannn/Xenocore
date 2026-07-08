@@ -16,7 +16,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: I am Elyndari. A remnant of a people who no longer walk this world as they
       once did.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "We were bound to Astraeon\u2019s core by purpose. The planet\u2019s resonance
       shaped us, and we shaped it in return."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
   - speakerName: Lumena
     text: "Most of my kind have faded into memory\u2026 but echoes remain. I am one
       of them."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: "So you\u2019re\u2026 not alive in the way I am. Not exactly."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
   - speakerName: Kaelaris
     text: "If your people shaped the planet\u2019s energy, then whatever happened
       here must have hit you first. Hard."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   - speakerName: Kaelaris
     text: "Your body isn\u2019t physical. It\u2019s more like a projection, an imprint
       tied to the ruins. A resonance of the planet holding itself together."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Lumena
     text: back to options
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
     text: "We were guardians of Astraeon\u2019s pulse. When that pulse faltered,
       our bodies could no longer endure. Some of us dissolved into the currents we
       once guided."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Lumena
     text: I exist because the planet still remembers us. And because you arrived.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Lumena
     text: I exist because the planet still remembers us. And because you arrived.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: d8d477aff7c9940478e89f860b1c0fde, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 1

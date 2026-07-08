@@ -1204,7 +1204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &918438769
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1762,7 +1762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CreditsSimple
   creditsText: {fileID: 1387790762}
   scrollSpeed: 50
-  endYPosition: 1200
+  endYPosition: 1450
   fadeGroup: {fileID: 918438769}
   fadeDuration: 2
   nextScene: MainMenu

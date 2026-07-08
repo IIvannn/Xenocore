@@ -20,6 +20,7 @@ public class DialogueUI : MonoBehaviour
     [Header("Audio")]
     public AudioSource audioSource;
 
+
     [Header("Options UI")]
     public GameObject optionsPanel;
     public Button optionButtonPrefab;
@@ -183,14 +184,32 @@ public class DialogueUI : MonoBehaviour
         dialogueText.text = "";
         fullText = text;
 
+        AudioClip blip = currentData.lines[index].voiceClip;
+
+        int letterCount = 0; //counter
+
         foreach (char c in text)
         {
             dialogueText.text += c;
+
+            //sound for letters
+            if (letterCount % 2 == 0)
+            {
+                if (audioSource != null && blip != null)
+                {
+                    audioSource.pitch = Random.Range(0.9f, 1.1f); //range pitch
+                    audioSource.PlayOneShot(blip, 0.4f);         //volume
+                }
+            }
+
+            letterCount++;
+
             yield return new WaitForSeconds(currentTypingSpeed);
         }
 
         isTyping = false;
     }
+
 
     IEnumerator WaitForLineEnd(DialogueLine line)
     {

@@ -16,7 +16,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: Because this planet is full of questions and nobody bothers to look for
       answers.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: I collect energy, yeah. But I also collect stories. Clues. Pieces of whatever
       lived here before us.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: Different races walked this place. Built things. Fought things. Maybe even
       tried to save it.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: "If I gather enough fragments, maybe I\u2019ll understand what they were
       trying to do. Maybe I\u2019ll understand what went wrong."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: "Now move, rookie. The forest isn\u2019t going to wait for you."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0

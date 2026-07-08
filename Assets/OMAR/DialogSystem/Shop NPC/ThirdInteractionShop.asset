@@ -15,7 +15,7 @@ MonoBehaviour:
   lines:
   - speakerName: Rift
     text: "Back again, sync\u2011girl."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: "Forest hasn\u2019t scared you off yet. Good."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: "I\u2019ve been meaning to ask\u2026 your people. What are you exactly?"
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: "Astraelite. That\u2019s the name. We\u2019re\u2026 adaptable."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: "This keeps me alive. The planet\u2019s energy doesn\u2019t treat us kindly
       unless we shape ourselves around it."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: Huh? What is it?
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 1
     jumpBackToPreviousDialogue: 0

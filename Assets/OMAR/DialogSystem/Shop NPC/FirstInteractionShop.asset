@@ -15,7 +15,7 @@ MonoBehaviour:
   lines:
   - speakerName: Kaelaris
     text: "\u2026Oh. You\u2019re\u2026 kind of cute."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: Cute? Seriously?
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: "I\u2019m wearing a life support helmet, rookie. Not a fashion accessory."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   - speakerName: Kaelaris
     text: "I mean... just the look. The coat, the hat, the little drone\u2026 it\u2019s
       unexpected."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: "Great. First outsider I meet in weeks and she thinks I\u2019m adorable."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: So you know about the energy these creatures carry.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: Of course I do. Creatures out here are full of fractured resonance. You
       take them down, they drop Xenocore Elements. Raw stuff. Valuable.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: "And that thing you\u2019re carrying? It reacts to them. Means you\u2019re
       not completely hopeless."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: I need Xenocore Elements to activate an Elyndari temple. Cutie help me.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: "So you\u2019re heading to the temple. Figures."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: "If you stop calling me cute, maybe I\u2019ll show you where to start."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Kaelaris
     text: No promises.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9a732a571f82d164eaae6405497a3c69, type: 3}
     typingSpeed: 0.06
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: Come on, sync-girl. Grab some Xenocore before something out here decides
       you look cute too. Trade me for anything!
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   lines:
   - speakerName: Rift
     text: "We\u2019re explorers. Scavengers. Survivors."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: "This world changes every day. If you don\u2019t adapt, you disappear.
       Simple."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
   - speakerName: Rift
     text: "That\u2019s all you need to know. We\u2019re not some ancient noble race.
       We just\u2026 keep going."
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
     customFont: {fileID: 11400000, guid: 84c1d05c69deacd4cb1362b81cba58e6, type: 2}
   - speakerName: Rift
     text: Back to options
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 3a600993eb3c1184cabb4a91cbafa7c9, type: 3}
     typingSpeed: 0.03
     showOptionsHere: 0
     jumpBackToPreviousDialogue: 1
