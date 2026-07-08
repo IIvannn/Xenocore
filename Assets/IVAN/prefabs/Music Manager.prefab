@@ -56,7 +56,7 @@ MonoBehaviour:
   combatMusic: {fileID: 8300000, guid: 4a908185f7752f544ba02536e811f1bc, type: 3}
   bossMusic: {fileID: 8300000, guid: f4d78b076be51a741b14c6b7ba9a5bbf, type: 3}
   shopMusic: {fileID: 8300000, guid: 717872998ebc5b84c8c9a72ee28e0620, type: 3}
-  godessMusic: {fileID: 0}
+  godessMusic: {fileID: 8300000, guid: 2f10e464b3fb39e49b83818d1d3bd2bf, type: 3}
 --- !u!82 &2423027131823237781
 AudioSource:
   m_ObjectHideFlags: 0
