@@ -32,6 +32,7 @@ public class DoorScript : MonoBehaviour
 
     void Start()
     {
+        musicManager.musicType = "ambiant";
         doorPos = transform;
         Debug.Log(shopRoom);
 

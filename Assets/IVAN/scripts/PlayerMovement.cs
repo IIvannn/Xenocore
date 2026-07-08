@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject phaseDash;
     public GameObject volcanicFissure;
     public GameObject nml;
+    public AudioSource rwalk;
+    public AudioSource lwalk;
     [Header("Movement")]
     public float speed = 5f;
     public float dashSpeed = 10f;
@@ -89,6 +91,8 @@ public class PlayerMovement : MonoBehaviour
         if (move == Vector3.zero)
         {
             moving = false;
+            rwalk.Stop();
+            lwalk.Stop();
         }
         else
         {
@@ -97,11 +101,21 @@ public class PlayerMovement : MonoBehaviour
             {
                 playerSprite.transform.localScale = new Vector3(-1, 1, 1);
                 right = false;
+                if (rwalk.isPlaying)
+                {
+                    rwalk.Stop();
+                    lwalk.Play();
+                }
             }
             else if (move.x < 0)
             {
                 playerSprite.transform.localScale = new Vector3(1, 1, 1);
                 right = true;
+                if (lwalk.isPlaying)
+                {
+                    rwalk.Play();
+                    lwalk.Stop();
+                }
             }
             if (move.z <0)
             {
