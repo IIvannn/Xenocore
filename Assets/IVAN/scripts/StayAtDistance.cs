@@ -10,7 +10,7 @@ public class StayAtDistance : MonoBehaviour
     public float arrivalDistance = 0.5f;
     public LayerMask obstacleMask;
 
-    bool searching;
+    //bool searching;
     public bool LOS = false;
 
     void Start()

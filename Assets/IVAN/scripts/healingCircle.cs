@@ -4,7 +4,7 @@ using System.Collections;
 public class healingCircle : MonoBehaviour
 {
     public List<GameObject> he = new List<GameObject>();
-    bool canheal = true;
+    //bool canheal = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
