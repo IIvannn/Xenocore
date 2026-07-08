@@ -3,6 +3,7 @@ using BarthaSzabolcs.IsometricAiming;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 public class PlayerShoot : MonoBehaviour
 {
     [Header("References")]
@@ -42,7 +43,7 @@ public class PlayerShoot : MonoBehaviour
     public static string boomerangSpecialType = "normal";
 
     public bool canspecial = true;
-    public bool specialing;
+    public bool specialing = false;
 
     private DialogueUI dialogueUI;
 
@@ -62,6 +63,10 @@ public class PlayerShoot : MonoBehaviour
     public AudioClip spellSnd;
 
 
+    public Image atta;
+    public Image spec;
+    public Image spell;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -72,7 +77,98 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DoorScript.doorPos != null && BoonSTaticInfo.enemiesAlive.Count >0)
+        switch (attackType)
+        {
+            case "normal":
+                atta.color = new Color(1f, 1f, 1f);
+                break;
+            case "swarm":
+                atta.color = new Color(0.7f, 1f, 0.2f);
+                break;
+            case "haunted":
+                atta.color = new Color(0.2f, 0.8f, 0.7f);
+                break;
+            case "crystallize":
+                atta.color = new Color(0.7f, 0.7f, 0.9f);
+                break;
+            case "null":
+                atta.color = new Color(0.1f, 0.0f, 0.4f);
+                break;
+            case "starfall":
+                atta.color = new Color(1f, 0.1f, 0.7f);
+                break;
+            case "rust":
+                atta.color = new Color(0.6f, 0.1f, 0.2f);
+                break;
+            case "tectonic":
+                atta.color = new Color(0.8f, 0.6f, 0.2f);
+                break;
+            case "radiation":
+                atta.color = new Color(1f, 1f, 0.2f);
+                break;
+        }
+        switch (boomerangSpecialType)
+        {
+            case "normal":
+                spec.color = new Color(1f, 1f, 1f);
+                break;
+            case "swarm":
+                spec.color = new Color(0.7f, 1f, 0.2f);
+                break;
+            case "haunted":
+                spec.color = new Color(0.2f, 0.8f, 0.7f);
+                break;
+            case "crystallize":
+                spec.color = new Color(0.7f, 0.7f, 0.9f);
+                break;
+            case "null":
+                spec.color = new Color(0.1f, 0.0f, 0.4f);
+                break;
+            case "starfall":
+                spec.color = new Color(1f, 0.1f, 0.7f);
+                break;
+            case "rust":
+                spec.color = new Color(0.6f, 0.1f, 0.2f);
+                break;
+            case "tectonic":
+                spec.color = new Color(0.8f, 0.6f, 0.2f);
+                break;
+            case "radiation":
+                spec.color = new Color(1f, 1f, 0.2f);
+                break;
+        }
+        switch (spellType)
+        {
+            case "normal":
+                spell.color = new Color(1f, 1f, 1f);
+                break;
+            case "swarm":
+                spell.color = new Color(0.7f, 1f, 0.2f);
+                break;
+            case "haunted":
+                spell.color = new Color(0.2f, 0.8f, 0.7f);
+                break;
+            case "crystallize":
+                spell.color = new Color(0.7f, 0.7f, 0.9f);
+                break;
+            case "null":
+                spell.color = new Color(0.1f, 0.0f, 0.4f);
+                break;
+            case "starfall":
+                spell.color = new Color(1f, 0.1f, 0.7f);
+                break;
+            case "rust":
+                spell.color = new Color(0.6f, 0.1f, 0.2f);
+                break;
+            case "tectonic":
+                spell.color = new Color(0.8f, 0.6f, 0.2f);
+                break;
+            case "radiation":
+                spell.color = new Color(1f, 1f, 0.2f);
+                break;
+        }
+
+        if (DoorScript.doorPos != null && BoonSTaticInfo.enemiesAlive.Count ==0)
         {
             Doordirection.transform.LookAt(DoorScript.doorPos);
         }

@@ -127,6 +127,7 @@ public class EnemeyHealBrain : MonoBehaviour
         EnemyScript esc = GetComponent<EnemyScript>();
         StayAtDistance esd = GetComponent<StayAtDistance>();
         EnemyHeal eh = GetComponent<EnemyHeal>();
+        enemySound es = GetComponent<enemySound>();
         distance = Vector3.Distance(target.transform.position, gameObject.transform.position);
 
         if (ed.petrified || ed.fissured)
@@ -161,6 +162,7 @@ public class EnemeyHealBrain : MonoBehaviour
                 else
                 {
                     //eda.Dash();
+                    
                     esc.MoveToWeakest(target.transform);
                     agent.isStopped = false;
                     if (target != null)

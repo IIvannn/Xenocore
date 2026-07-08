@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class enemySound : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class enemySound : MonoBehaviour
     public AudioClip critSnd;
     public AudioClip selfDamageSnd;
     public AudioClip starSnd;
+    public AudioClip walkSnd;
 
 
 
@@ -53,4 +55,5 @@ public class enemySound : MonoBehaviour
     {
         auso.PlayOneShot(starSnd);
     }
+
 }

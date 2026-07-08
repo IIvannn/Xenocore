@@ -70,6 +70,7 @@ public class EnemyBossBrain : MonoBehaviour
             {
                 animator.SetBool("canmove", false);
             }
+
         }
 
         else
@@ -98,7 +99,6 @@ public class EnemyBossBrain : MonoBehaviour
                 }
                 else if (!eda.charging && phase == 1)
                 {
-
                     esc.MoveToPlayer(PlayerMovement.playerPosition);
                     agent.isStopped = false;
                     if (PlayerMovement.playerPosition.position.x <= transform.position.x)
@@ -140,6 +140,7 @@ public class EnemyBossBrain : MonoBehaviour
                 {
                     if (distance < esh.attackDistance && LOS)
                     {
+ 
                         Vector3 dirtop = (PlayerMovement.playerPosition.position - gameObject.transform.position);
                         agent.velocity = Vector3.Lerp(
                             agent.desiredVelocity,
@@ -149,6 +150,7 @@ public class EnemyBossBrain : MonoBehaviour
                     }
                     else
                     {
+
                         animator.SetBool("canmove", true);
                         esc.MoveToPlayer(PlayerMovement.playerPosition);
                         agent.isStopped = false;

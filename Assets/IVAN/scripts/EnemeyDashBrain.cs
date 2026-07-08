@@ -41,6 +41,7 @@ public class EnemeyDashBrain : MonoBehaviour
         EnemyScript esc = GetComponent<EnemyScript>();
         StayAtDistance esd = GetComponent<StayAtDistance>();
         EnemyDash eda = GetComponent<EnemyDash>();
+        enemySound es = GetComponent<enemySound>();
         distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
 
         eda.move = move;
@@ -52,6 +53,7 @@ public class EnemeyDashBrain : MonoBehaviour
             {
                 animator.SetBool("canmove", false);
             }
+
         }
 
         else
@@ -64,7 +66,7 @@ public class EnemeyDashBrain : MonoBehaviour
             }
             else if (!eda.charging)
             {
-                
+
                 esc.MoveToPlayer(PlayerMovement.playerPosition);
                 agent.isStopped = false;
                 if (PlayerMovement.playerPosition.position.x <= transform.position.x)

@@ -557,6 +557,7 @@ MonoBehaviour:
   critSnd: {fileID: 8300000, guid: a928b6539b7dd4e4ca737ebc20c0dc80, type: 3}
   selfDamageSnd: {fileID: 8300000, guid: 5c29fe297f9fd0748839e00deec62f80, type: 3}
   starSnd: {fileID: 8300000, guid: 3c45bafcc007c844e91e37900546a337, type: 3}
+  walkSnd: {fileID: 8300000, guid: d83f0de74e547714f8f26c76f1e2ca12, type: 3}
 --- !u!82 &2925529521083265798
 AudioSource:
   m_ObjectHideFlags: 0
@@ -569,10 +570,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1174,8 +1175,8 @@ Transform:
   m_GameObject: {fileID: 1970841716381145032}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.54, z: -0.10999966}
-  m_LocalScale: {x: 7.199787, y: 7.199787, z: 7.199787}
+  m_LocalPosition: {x: 0, y: 5.2, z: -0.10999966}
+  m_LocalScale: {x: 12.672345, y: 12.672345, z: 12.672345}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6570124425914604131}

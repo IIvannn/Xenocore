@@ -32,6 +32,14 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        enemySound es = GetComponent<enemySound>();
+        if (es.auso.clip == es.walkSnd && agent.isStopped)
+        {
+            es.auso.clip = null;
+            //es.auso.Stop();
+
+        }
+
         if (PlayerDamage.dead)
         {
             return;
@@ -71,6 +79,26 @@ public class EnemyScript : MonoBehaviour
 
     public void MoveToPlayer(Transform target)
     {
+        enemySound es = GetComponent<enemySound>();
+
+        //if (es.auso.clip == es.walkSnd && agent.isStopped)
+        //{
+        //    es.auso.loop = false;
+        //    es.auso.Stop();
+        //}
+        //else if (es.auso.clip != es.walkSnd)
+        //{
+        //    es.auso.loop = true;
+        //    es.auso.clip = es.walkSnd;
+        //    es.auso.Play();
+        //}
+        if (es.auso.clip != es.walkSnd)
+        {
+            es.auso.clip = es.walkSnd;
+            es.auso.Play();
+
+        }
+
         EnemyDamage enemyDamage = GetComponent<EnemyDamage>();
         float distance = Vector3.Distance(PlayerMovement.playerPosition.position, gameObject.transform.position);
 
