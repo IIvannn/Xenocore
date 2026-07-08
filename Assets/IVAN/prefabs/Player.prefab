@@ -1814,8 +1814,9 @@ MonoBehaviour:
   phaseDash: {fileID: 677820290311348748}
   volcanicFissure: {fileID: 7376756807723299918, guid: e522379996f30b84fa87a7af14d7f29f, type: 3}
   nml: {fileID: 1581055510347889965}
-  rwalk: {fileID: 521118167658310817}
   lwalk: {fileID: 5120538807172267564}
+  rw: {fileID: 8300000, guid: 0d7bbf62f40f6f646a1ab27c348a2108, type: 3}
+  lw: {fileID: 8300000, guid: c259b23754a89144987b128c09c55172, type: 3}
   speed: 10
   dashSpeed: 21
   dashTime: 0.2

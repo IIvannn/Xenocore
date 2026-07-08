@@ -32,9 +32,20 @@ public class DoorScript : MonoBehaviour
 
     void Start()
     {
-        musicManager.musicType = "ambiant";
+        
+
+        
         doorPos = transform;
         Debug.Log(shopRoom);
+
+        if (sceneName == "Spawnroom")
+        {
+            musicManager.musicType = "godess";
+        }
+        else
+        {
+            musicManager.musicType = "ambiant";
+        }
 
         m_Scene = SceneManager.GetActiveScene();
         sceneName = m_Scene.name;

@@ -12,6 +12,7 @@ public class musicManager : MonoBehaviour
     public AudioClip combatMusic;
     public AudioClip bossMusic;
     public AudioClip shopMusic;
+    public AudioClip godessMusic;
     //AudioClip clip;
 
     public static string musicType = "main";
@@ -64,6 +65,14 @@ public class musicManager : MonoBehaviour
                 break;
 
             case "shop":
+                if (auso.clip != bossMusic)
+                {
+                    auso.clip = bossMusic;
+                    auso.Play();
+                }
+                break;
+
+            case "godess":
                 if (auso.clip != bossMusic)
                 {
                     auso.clip = bossMusic;

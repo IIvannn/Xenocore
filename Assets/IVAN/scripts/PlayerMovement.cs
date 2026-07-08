@@ -14,8 +14,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject phaseDash;
     public GameObject volcanicFissure;
     public GameObject nml;
-    public AudioSource rwalk;
     public AudioSource lwalk;
+    public AudioClip rw;
+    public AudioClip lw;
     [Header("Movement")]
     public float speed = 5f;
     public float dashSpeed = 10f;
@@ -70,10 +71,19 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.dKey.isPressed)
         {
             input.x += 1;
+            if (lwalk.clip == rw)
+            {
+                
+                lwalk.clip = rw;
+            }
         }
         if (Keyboard.current.aKey.isPressed)
         {
             input.x -= 1;
+            if (lwalk.clip == lw)
+            {
+                lwalk.clip = lw;
+            }
         }
 
         
@@ -91,31 +101,27 @@ public class PlayerMovement : MonoBehaviour
         if (move == Vector3.zero)
         {
             moving = false;
-            rwalk.Stop();
             lwalk.Stop();
         }
         else
         {
+            if (!lwalk.isPlaying)
+            {
+                lwalk.Play();
+            }
+
             moving = true;
             if (move.x > 0)
             {
                 playerSprite.transform.localScale = new Vector3(-1, 1, 1);
                 right = false;
-                if (rwalk.isPlaying)
-                {
-                    rwalk.Stop();
-                    lwalk.Play();
-                }
+                
             }
             else if (move.x < 0)
             {
                 playerSprite.transform.localScale = new Vector3(1, 1, 1);
                 right = true;
-                if (lwalk.isPlaying)
-                {
-                    rwalk.Play();
-                    lwalk.Stop();
-                }
+                
             }
             if (move.z <0)
             {
