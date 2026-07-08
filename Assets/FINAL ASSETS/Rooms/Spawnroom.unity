@@ -2439,11 +2439,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3284553161094138307, guid: 8c393092872daf14a84131912795b0b2, type: 3}
+      propertyPath: dialogueUI
+      value: 
+      objectReference: {fileID: 1281659834}
     - target: {fileID: 6981336040082363592, guid: 8c393092872daf14a84131912795b0b2, type: 3}
       propertyPath: m_Name
       value: NPC_Lumena
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814666340176618650, guid: 8c393092872daf14a84131912795b0b2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10331,6 +10336,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32093059130e36c4bb78fec5553f4deb, type: 3}
+--- !u!114 &1281659834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1093994880651994589, guid: 32093059130e36c4bb78fec5553f4deb, type: 3}
+  m_PrefabInstance: {fileID: 1281659833}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73407e2191ad7a4784ba620d15063dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueUI
 --- !u!1001 &1287501942
 PrefabInstance:
   m_ObjectHideFlags: 0
