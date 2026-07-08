@@ -56,6 +56,7 @@ MonoBehaviour:
   combatMusic: {fileID: 8300000, guid: 4a908185f7752f544ba02536e811f1bc, type: 3}
   bossMusic: {fileID: 8300000, guid: f4d78b076be51a741b14c6b7ba9a5bbf, type: 3}
   shopMusic: {fileID: 8300000, guid: 717872998ebc5b84c8c9a72ee28e0620, type: 3}
+  godessMusic: {fileID: 0}
 --- !u!82 &2423027131823237781
 AudioSource:
   m_ObjectHideFlags: 0
@@ -359,7 +360,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4544915071453944338, guid: 5b8f9500c0f1fc543a04f6e1f9a4e47e, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 717872998ebc5b84c8c9a72ee28e0620, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -456,7 +457,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4544915071453944338, guid: 5b8f9500c0f1fc543a04f6e1f9a4e47e, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ea64a11185f0c6c4187749046c6abe6b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -553,7 +554,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4544915071453944338, guid: 5b8f9500c0f1fc543a04f6e1f9a4e47e, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2f10e464b3fb39e49b83818d1d3bd2bf, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
