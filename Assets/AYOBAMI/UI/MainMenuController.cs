@@ -23,6 +23,22 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private Button quitButton;
     [SerializeField] private Button closeSettingsButton;
 
+    public Image problem;
+
+
+
+    public void Update()
+    {
+        if (settingsPanel.activeSelf)
+        {
+            problem.gameObject.SetActive(false);
+        }
+        else
+        {
+            problem.gameObject.SetActive(true);
+        }
+    }
+
     // -------------------------------------------------------------------------
     // Unity Lifecycle
     // -------------------------------------------------------------------------
