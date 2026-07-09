@@ -65,17 +65,17 @@ public class musicManager : MonoBehaviour
                 break;
 
             case "shop":
-                if (auso.clip != bossMusic)
+                if (auso.clip != shopMusic)
                 {
-                    auso.clip = bossMusic;
+                    auso.clip = shopMusic;
                     auso.Play();
                 }
                 break;
 
             case "godess":
-                if (auso.clip != bossMusic)
+                if (auso.clip != godessMusic)
                 {
-                    auso.clip = bossMusic;
+                    auso.clip = godessMusic;
                     auso.Play();
                 }
                 break;

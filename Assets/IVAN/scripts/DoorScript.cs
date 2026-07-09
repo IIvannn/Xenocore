@@ -32,9 +32,10 @@ public class DoorScript : MonoBehaviour
 
     void Start()
     {
-        
 
-        
+        m_Scene = SceneManager.GetActiveScene();
+        sceneName = m_Scene.name;
+
         doorPos = transform;
         Debug.Log(shopRoom);
 
@@ -52,8 +53,7 @@ public class DoorScript : MonoBehaviour
         }
         
 
-        m_Scene = SceneManager.GetActiveScene();
-        sceneName = m_Scene.name;
+       
 
         if (sceneName == "Spawnroom")
         {
