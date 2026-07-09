@@ -336,7 +336,7 @@ MonoBehaviour:
   movementSpeed: 2.5
   attackCooldown: 0.5
   attackRange: 10
-  distanceBeforeStop: 10
+  distanceBeforeStop: 7
   firePoint: {fileID: 1749458422211352558}
   agent: {fileID: 3405035078434156746}
   controller: {fileID: 2957714747039882511}

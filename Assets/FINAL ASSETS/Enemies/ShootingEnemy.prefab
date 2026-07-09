@@ -2700,7 +2700,7 @@ MonoBehaviour:
   movementSpeed: 3
   attackCooldown: 0.5
   attackRange: 18
-  distanceBeforeStop: 10
+  distanceBeforeStop: 7
   firePoint: {fileID: 4555679453528549176}
   agent: {fileID: 1956469673329584691}
   controller: {fileID: 2241713949636527378}
@@ -2795,7 +2795,7 @@ MonoBehaviour:
   projectileSpeed: 10
   damage: 5
   firerate: 1
-  attackDistance: 10
+  attackDistance: 12
   projectileLifetime: 10
   hauntedProj: {fileID: 2011083098289513261, guid: 10b5d019e7acaf4429d8369a6618a38f, type: 3}
   rusted: 0
