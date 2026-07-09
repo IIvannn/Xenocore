@@ -599,8 +599,10 @@ public class EnemyDamage : MonoBehaviour
 
         if (BoonSTaticInfo.exorcism && !dead)
         {
-            GameObject exo = Instantiate(exorcism, transform.position, transform.rotation);
+            GameObject exo = Instantiate(shockwave, transform.position, transform.rotation);
             exo.GetComponent<Shockwave>().damage = BoonSTaticInfo.exorcismBonus;
+            exo.GetComponent<Shockwave>().type = "haunted";
+            exo.GetComponent<Shockwave>().range = 15f;
         }
             
         if (BoonSTaticInfo.necromancer && !dead)

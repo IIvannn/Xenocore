@@ -298,7 +298,7 @@ public class BoonSTaticInfo : MonoBehaviour
         PlayerShoot.boomerangSpecialType = "normal";
         PlayerShoot.spellType = "normal";
 
-
+        UpgradeManager.OwnedUpgrades.Clear();
 
         swarmDamage = 4f;
         swarmAttackSpeed = 0.4f;
@@ -547,6 +547,8 @@ public class BoonSTaticInfo : MonoBehaviour
         radonRange = 4f;
         wastelandBonus = 2.5f;
         radiationSpellCost = 140;
+
+       
 
     }
 }

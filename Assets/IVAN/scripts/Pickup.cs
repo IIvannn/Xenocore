@@ -55,6 +55,7 @@ public class Pickup : MonoBehaviour
 
         if (priced && BoonSTaticInfo.crystals >= price)
         {
+            BoonSTaticInfo.crystals -= price;
             switch (reward)
             {
                 case "crystal":
