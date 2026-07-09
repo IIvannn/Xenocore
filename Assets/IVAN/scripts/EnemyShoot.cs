@@ -87,6 +87,7 @@ public class EnemyShoot : MonoBehaviour
                 {
                     EnemyDamage body = GetComponent<EnemyDamage>();
                     enemySound es = GetComponent<enemySound>();
+                    //EnemyBossBrain ebb = GetComponent<EnemyBossBrain>();
                     es.shoot();
 
                     GameObject ball = Instantiate(projectile, new Vector3(firePoint.position.x - 0.3f, firePoint.position.y, firePoint.position.z), firePoint.rotation);
@@ -97,17 +98,17 @@ public class EnemyShoot : MonoBehaviour
                     ball.GetComponent<enemyProjectileScript>().homing = homing;
                     ball.GetComponent<enemyProjectileScript>().homingPrecision = homingPrecision;
                     EnemyShootBrain esb = GetComponent<EnemyShootBrain>();
-                    if (esb !=null)
+                    if (ebb ==null)
                     {
-                        
+                        GameObject ball2 = Instantiate(projectile, new Vector3(firePoint.position.x + 0.3f, firePoint.position.y, firePoint.position.z), firePoint.rotation);
+                        ball2.GetComponent<enemyProjectileScript>().source = gameObject;
+                        ball2.GetComponent<enemyProjectileScript>().moveSpeed = projectileSpeed;
+                        ball2.GetComponent<enemyProjectileScript>().damage = damage;
+                        ball2.GetComponent<enemyProjectileScript>().lifetime = projectileLifetime;
+                        ball2.GetComponent<enemyProjectileScript>().homing = homing;
+                        ball2.GetComponent<enemyProjectileScript>().homingPrecision = homingPrecision;
                     }
-                    GameObject ball2 = Instantiate(projectile, new Vector3(firePoint.position.x + 0.3f, firePoint.position.y, firePoint.position.z), firePoint.rotation);
-                    ball2.GetComponent<enemyProjectileScript>().source = gameObject;
-                    ball2.GetComponent<enemyProjectileScript>().moveSpeed = projectileSpeed;
-                    ball2.GetComponent<enemyProjectileScript>().damage = damage;
-                    ball2.GetComponent<enemyProjectileScript>().lifetime = projectileLifetime;
-                    ball2.GetComponent<enemyProjectileScript>().homing = homing;
-                    ball2.GetComponent<enemyProjectileScript>().homingPrecision = homingPrecision;
+                    
 
                     nextFireTime = Time.time + firerate;
                     float rchance = Random.Range(0, 100);

@@ -125,7 +125,7 @@ public class EnemyDamage : MonoBehaviour
             fissureBar.gameObject.SetActive(true);
         }
 
-        if (fissure >= 4)
+        if (fissure >= 2)
         {
             fissured = true;
             fissure = 0;
@@ -895,7 +895,7 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator fissureDuration()
     {
-        yield return new WaitForSeconds(BoonSTaticInfo.multiversalStrikeCooldown);
+        yield return new WaitForSeconds(2f);
         stun.SetActive(false);
         fissured = false;
     }

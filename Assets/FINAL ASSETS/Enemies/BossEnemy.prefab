@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f5537d21de2cc4198efb988ec90cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
-  health: 1400
+  health: 1800
   deathDelay: 0
   currentHealth: 0
   dead: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69591bcc01429fc4090fea6f94019bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDash
-  attackDistance: 30
+  attackDistance: 35
   dashTime: 0.8
   dashSpeed: 22
   controller: {fileID: 2957714747039882511}
@@ -480,10 +480,10 @@ MonoBehaviour:
   projectile: {fileID: 2549096147295879009, guid: f3ca0efa66944114bbcb3910958c853f, type: 3}
   firePoint: {fileID: 1749458422211352558}
   projectileSpeed: 22
-  damage: 10
-  firerate: 0.6
+  damage: 22
+  firerate: 0.8
   attackDistance: 15
-  projectileLifetime: 10
+  projectileLifetime: 2
   hauntedProj: {fileID: 2011083098289513261, guid: 10b5d019e7acaf4429d8369a6618a38f, type: 3}
   rusted: 0
   rounds: 0

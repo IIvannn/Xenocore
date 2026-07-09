@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BarthaSzabolcs.IsometricAiming.IsometricAiming
   groundMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 512
   mainCamera: {fileID: 2043112011659713653}
 --- !u!1 &8234268906918531786
 GameObject:

@@ -10,7 +10,12 @@ public class NullBubble : MonoBehaviour
     {
         transform.localScale = new Vector3(BoonSTaticInfo.nullRange, 0.3f, BoonSTaticInfo.nullRange);
         StartCoroutine(BubbleDuration());
-        
+
+        GameObject ball = Instantiate(shockwave, transform.position, transform.rotation);
+        ball.GetComponent<Shockwave>().damage = BoonSTaticInfo.nullDamage;
+        ball.GetComponent<Shockwave>().range = BoonSTaticInfo.nullRange*2;
+        ball.GetComponent<Shockwave>().type = "null";
+
     }
 
     public void Update()
@@ -113,6 +118,7 @@ public class NullBubble : MonoBehaviour
             GameObject ball = Instantiate(shockwave, transform.position, transform.rotation);
             ball.GetComponent<Shockwave>().damage = BoonSTaticInfo.collapseDamage;
             ball.GetComponent<Shockwave>().range = BoonSTaticInfo.nullRange;
+            ball.GetComponent<Shockwave>().type = "null";
         }
 
         BoonSTaticInfo.nullCurrentCount--;

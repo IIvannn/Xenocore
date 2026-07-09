@@ -23,6 +23,7 @@ public class FollowNearestEnemy : MonoBehaviour
         if (BoonSTaticInfo.enemiesAlive.Count == 0)
         {
             Debug.Log("NO TARGETS");
+
             Destroy(gameObject);
         }
 
@@ -33,6 +34,10 @@ public class FollowNearestEnemy : MonoBehaviour
         {
             agent.SetDestination(closestEnemy.transform.position);
             agent.speed = movespeed;
+        }
+        else if (source.GetComponent<EnemyDamage>() != null)
+        {
+            source = closestEnemy;
         }
     }
 

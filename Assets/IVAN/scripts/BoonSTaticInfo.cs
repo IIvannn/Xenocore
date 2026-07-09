@@ -9,10 +9,10 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float swarmRange = 3f;
     public static float swarmDuration = 5f;
     [Header("Haunted")]
-    public static float hauntedInitialDamage = 30f;
-    public static float hauntedDamagePercentage = 40f;
-    public static float hauntedDuration = 3f;
-    public static float hauntedGhostSpeed = 5f;
+    public static float hauntedInitialDamage = 40f;
+    public static float hauntedDamagePercentage = 30f;
+    public static float hauntedDuration = 3.5f;
+    public static float hauntedGhostSpeed = 8f;
     [Header("Crystallize")]
     public static float crystallizeCrystalChance = 25f;
     public static int crystallizeCrystalAmmount = 1;
@@ -24,6 +24,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float nullDuration = 3f;
     public static int nullMaxCount = 3;
     public static int nullCurrentCount = 0;
+    public static float nullDamage = 15;
     [Header("Starfall")]
     public static float starfallDamage = 50;
     public static float starfallChance = 25;
@@ -40,7 +41,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float tectonicDuration = 7.8f;
     public static float tectonicMaxCount = 2;
     public static float tectonicCurrentCount = 0;
-    public static float tectonicSpread = 1.5f;
+    public static float tectonicSpread = 1.8f;
     public static float tectonicSpreadSpeed = 0.6f;
     [Header("Radiation")]
     public static float radiationWeakness = 22;
@@ -213,7 +214,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static bool embrittled = false;
     public static float embrittledChance = 40f;
     public static bool fatigue = false;
-    public static float fatigueBonus = 15f;
+    public static float fatigueBonus = 35f;
     public static bool galvanized = false;
     public static float galvanizedBonus = 1.2f;
     public static float mutilationBonus = 20f;
@@ -223,7 +224,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float solderingBonus = 3f;
     public static bool tetanus = false;
     public static float tetanusChance = 10f;
-    public static float rustSpellDuration = 6f;
+    public static float rustSpellDuration = 10f;
     public static float rustSpellBonus = 30f;
     public static float rustSpellCost = 150;
 
@@ -243,7 +244,7 @@ public class BoonSTaticInfo : MonoBehaviour
     public static float eruptionDamage = 20f;
     public static float shatterBonus = 18f;
     public static bool tremble = false;
-    public static float trembleChance = 50f;
+    public static float trembleChance = 80f;
     public static int staggerCap = 4;
     public static float staggerDuration = 1.5f;
     public static float tremorBonus = 1f;
@@ -304,10 +305,10 @@ public class BoonSTaticInfo : MonoBehaviour
         swarmRange = 3f;
         swarmDuration = 5f;
 
-        hauntedInitialDamage = 30f;
-        hauntedDamagePercentage = 40f;
-        hauntedDuration = 3f;
-        hauntedGhostSpeed = 5f;
+        hauntedInitialDamage = 40f;
+        hauntedDamagePercentage = 30f;
+        hauntedDuration = 3.5f;
+        hauntedGhostSpeed = 8f;
 
         crystallizeCrystalChance = 25f;
         crystallizeCrystalAmmount = 1;
@@ -335,7 +336,7 @@ public class BoonSTaticInfo : MonoBehaviour
         tectonicDuration = 7.8f;
         tectonicMaxCount = 2;
         tectonicCurrentCount = 0;
-        tectonicSpread = 1.5f;
+        tectonicSpread = 1.8f;
         tectonicSpreadSpeed = 0.6f;
 
         radiationWeakness = 22;
@@ -499,7 +500,7 @@ public class BoonSTaticInfo : MonoBehaviour
         solderingBonus = 3f;
         tetanus = false;
         tetanusChance = 10f;
-        rustSpellDuration = 6f;
+        rustSpellDuration = 10f;
         rustSpellBonus = 30f;
         rustSpellCost = 150;
 

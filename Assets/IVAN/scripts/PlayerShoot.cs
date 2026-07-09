@@ -417,13 +417,14 @@ public class PlayerShoot : MonoBehaviour
 
     IEnumerator RustSpell()
     {
+        spell.gameObject.SetActive(false);
         PlayerMovement pm = GetComponent<PlayerMovement>();
         pm.speed *= 1+(BoonSTaticInfo.rustSpellBonus/100);
         BoonSTaticInfo.globalCritChance += BoonSTaticInfo.rustSpellBonus;
         Debug.Log(pm.speed);
 
         yield return new WaitForSeconds(BoonSTaticInfo.rustSpellDuration);
-
+        spell.gameObject.SetActive(true);
         BoonSTaticInfo.globalCritChance -= BoonSTaticInfo.rustSpellBonus;
         pm.speed /= 1 + (BoonSTaticInfo.rustSpellBonus / 100);
         Debug.Log(pm.speed);
