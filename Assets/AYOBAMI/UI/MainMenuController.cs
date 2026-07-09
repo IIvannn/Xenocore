@@ -19,6 +19,7 @@ public class MainMenuController : MonoBehaviour
 
     [Header("Buttons (optional — wire up in Inspector or via OnClick)")]
     [SerializeField] private Button playButton;
+    [SerializeField] private Button continueButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private Button closeSettingsButton;
@@ -54,6 +55,7 @@ public class MainMenuController : MonoBehaviour
     {
         // This would wire up the buttons programmatically (safe if already wired in the Inspector — no duplicates)
         if (playButton     != null) playButton    .onClick.AddListener(OnPlayButtonPressed);
+        if (continueButton != null) continueButton.onClick.AddListener(OnContinueButtonPressed);
         if (settingsButton != null) settingsButton.onClick.AddListener(OnSettingsButtonPressed);
         if (quitButton     != null) quitButton    .onClick.AddListener(OnQuitButtonPressed);
         if (closeSettingsButton != null) closeSettingsButton.onClick.AddListener(CloseSettingsPanel);
@@ -69,6 +71,19 @@ public class MainMenuController : MonoBehaviour
     /// Make sure the scene is added to File > Build Settings.
     /// </summary>
     public void OnPlayButtonPressed()
+    {
+        if (string.IsNullOrEmpty(sceneToLoad))
+        {
+            Debug.LogWarning("[MainMenuController] sceneToLoad is empty. Please set a scene name in the Inspector.");
+            return;
+        }
+
+        Debug.Log($"[MainMenuController] Loading scene: {sceneToLoad}");
+        SaveSystem.DeleteSave();
+        SceneManager.LoadScene(sceneToLoad);
+    }
+
+    public void OnContinueButtonPressed()
     {
         if (string.IsNullOrEmpty(sceneToLoad))
         {

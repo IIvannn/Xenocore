@@ -41,7 +41,16 @@ public class NPCDialogue : MonoBehaviour
         playerMovement = player.GetComponent<PlayerMovement>();
 
         //load state of npc
-        dialogueState = PlayerPrefs.GetInt(npcID + "_State", 0);
+        // dialogueState = PlayerPrefs.GetInt(npcID + "_State", 0);
+
+        SaveData data = SaveSystem.Load();
+
+        NPCStateEntry entry = data.npcStates.Find(e => e.npcID == npcID);
+
+        if (entry != null)
+            dialogueState = entry.state;
+        else
+            dialogueState = 0;
     }
 
     void Update()
@@ -87,10 +96,28 @@ public class NPCDialogue : MonoBehaviour
             //already interacted
             hasInteracted = true;
 
-            //state and save it
+            //update state
             dialogueState++;
-            PlayerPrefs.SetInt(npcID + "_State", dialogueState);
-            PlayerPrefs.Save();
+
+            //save the npc state to the json file
+            SaveData data = SaveSystem.Load();
+
+            NPCStateEntry entry = data.npcStates.Find(e => e.npcID == npcID);
+
+            if (entry != null)
+            {
+                entry.state = dialogueState;
+            }
+            else
+            {
+                data.npcStates.Add(new NPCStateEntry
+                {
+                    npcID = npcID,
+                    state = dialogueState
+                });
+            }
+
+            SaveSystem.Save(data);
         }
     }
 
